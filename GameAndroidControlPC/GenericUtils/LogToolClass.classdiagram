@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="af5c710b-c25f-432b-ba46-8688ce1f114d" name="LogToolClass" linkedPackageId="887732c7-fae5-423f-b543-154f100b3ad7" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="b183bd9b-e350-402d-a1ca-e5d504eed8b3">
+      <profileInstance Id="d3b4856d-daf2-4f54-960e-30463d698669" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a719b0a6-dd1c-4d29-8a41-e2357efa5e66">
+      <profileInstance Id="23722a6d-b35e-44d8-a343-88b3a2a9fa97" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e2b17b8e-b13c-4726-b6f3-eda674ad83be" name="ILogTool" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a2fd00a0-f1ba-4ec2-bde6-0cdb30ff1397" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="79ef2335-7ac9-4abd-8dec-468e646d10b5" name="LogToolImp" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="18bb8c9c-c4ee-4e62-8431-b056d181b7b4" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="887732c7-fae5-423f-b543-154f100b3ad7" name="GenericUtils">
+    <elementDefinition Id="b3af561a-c313-42fa-9ab1-8971ea106b82" />
+  </package>
+</logicalClassDesignerModel>

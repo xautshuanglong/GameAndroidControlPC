@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
-  Id="f20607eb-69ad-48e6-89f7-cb5e55585506"
-  name="CommunicationServer" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  Id="b3af561a-c313-42fa-9ab1-8971ea106b82"
+  name="GenericUtils" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -19,62 +19,16 @@
   </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
-      <class
-        Id="1e121b5d-6b7d-4851-ab7c-2aa3285ae1ea"
-        name="SLTcpServer"
+      <Interface
+        Id="a2fd00a0-f1ba-4ec2-bde6-0cdb30ff1397"
+        name="ILogTool"
         isAbstract="false"
-        isLeaf="false"
-        isActiveClass="false">
-        <ownedAttributesInternal>
-          <property
-            Id="4059c067-d7ec-4480-8c05-25ae4c2806a1"
-            name="m_nIpAddress"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-          <property
-            Id="e1181121-6d16-4389-9918-d8c7bdaa8672"
-            name="m_nPort"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false" />
-        </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="8c85e186-2d88-4e3f-afe7-68aacb11124d"
-            name="Accept"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-          <operation
-            Id="0f87326c-69ab-49e7-9836-5f000fc4d259"
-            name="Listen"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
-      </class>
+        isLeaf="false" />
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
-        Id="8cb42382-238c-4dd6-8c55-6c0cb3a02292"
-        name="SLTcpServer"
+        Id="18bb8c9c-c4ee-4e62-8431-b056d181b7b4"
+        name="LogToolImp"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />

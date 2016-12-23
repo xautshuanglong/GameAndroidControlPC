@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LogToolClass">
+  <logicalClassDesignerModelMoniker Id="af5c710b-c25f-432b-ba46-8688ce1f114d" />
+  <nestedChildShapes>
+    <interfaceShape Id="21335f65-412c-4de4-a489-6dbf41f13805" absoluteBounds="0.5, 0.875, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="e2b17b8e-b13c-4726-b6f3-eda674ad83be" LastKnownName="ILogTool" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="a914eb68-f197-40e7-8e2e-d0387fe0b4e7" absoluteBounds="0.51500000000000012, 1.2650000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="7149b03d-7f58-4922-8c55-a07dbee07edd" absoluteBounds="0.51500000000000012, 1.4761718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+    <classShape Id="9e073277-e6ac-45d2-8c27-223df3eeaa3e" absoluteBounds="2.875, 0.875, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="79ef2335-7ac9-4abd-8dec-468e646d10b5" LastKnownName="LogToolImp" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="281dd848-78c2-40ef-ab78-f47a502c91a3" absoluteBounds="2.8899999999999997, 1.2650000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="9d117741-1046-4bf5-ba3f-386c015e0a89" absoluteBounds="2.8899999999999997, 1.4761718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

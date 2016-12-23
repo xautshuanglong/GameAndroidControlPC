@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CommunicationServerClass">
+  <logicalClassDesignerModelMoniker Id="01407bab-6805-425c-aae1-5c0ec344de2a" />
+  <nestedChildShapes>
+    <classShape Id="842a20be-d5ae-4b73-9c36-7e5e7dbfcc05" absoluteBounds="2.875, 1, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="ebc73c3f-d5bf-40f5-bedb-6154aaede643" LastKnownName="SLTcpServer" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="e2fd94a8-b4d5-4368-a43f-2ec2251d3856" absoluteBounds="2.89, 1.3900000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="2ac95562-55ff-4976-8b7e-3c4220ed0c62" absoluteBounds="2.89, 1.6011718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5b692be0-6b5d-4058-b3f1-360439767e04}</ProjectGuid>
+    <ProjectGuid>{826edac2-863f-441d-a1a6-08cdf527477f}</ProjectGuid>
     <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
-    <Name>CommunicationServer</Name>
-    <RootNamespace>CommunicationServer</RootNamespace>
+    <Name>GenericUtils</Name>
+    <RootNamespace>GenericUtils</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -22,15 +22,36 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="JsonClass.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="JsonClass.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>JsonClass.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="XmlClass.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XmlClass.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>XmlClass.classdiagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
-    <Content Include="CommunicationServerClass.classdiagram">
+    <Content Include="DirectoryClass.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="CommunicationServerClass.classdiagram.layout">
+    <Content Include="DirectoryClass.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>CommunicationServerClass.classdiagram</DependentUpon>
+      <DependentUpon>DirectoryClass.classdiagram</DependentUpon>
     </Content>
-    <Content Include="ModelDefinition\CommunicationServer.uml">
+    <Content Include="LogToolClass.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LogToolClass.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>LogToolClass.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\GenericUtils.uml">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
