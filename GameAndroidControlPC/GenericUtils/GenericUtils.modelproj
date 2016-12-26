@@ -29,6 +29,20 @@
       <SubType>Content</SubType>
       <DependentUpon>JsonClass.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Md5Class.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Md5Class.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Md5Class.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ShaClass.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ShaClass.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ShaClass.classdiagram</DependentUpon>
+    </Content>
     <Content Include="XmlClass.classdiagram">
       <SubType>Content</SubType>
     </Content>
