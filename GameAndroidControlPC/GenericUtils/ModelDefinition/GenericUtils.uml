@@ -33,6 +33,36 @@
         isLeaf="false"
         isActiveClass="false" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ada0d6df-51cf-48aa-b998-e0fa77edc5eb"
+        name="DirectoryImpl"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9fd229ee-8af7-4e3c-b952-93af7750e236"
+        name="FileImpl"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="045d61ca-c033-4d9d-82cc-8ea5fe80ce49"
+        name="IDirectory"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="ec147e07-43d9-4b6a-a25b-15c63ac2c4f8"
+        name="IFile"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
