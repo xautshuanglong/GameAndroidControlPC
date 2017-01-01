@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CodeLocationClasses">
+  <logicalClassDesignerModelMoniker Id="1d11f8ca-6069-448f-a382-f1891ec59701" />
+  <nestedChildShapes>
+    <classShape Id="6346c9e7-c4af-44a4-b306-506949611f63" absoluteBounds="1, 1.625, 2.625, 2.0234374503294634" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="2f742b42-3f2e-406e-a279-f81111b0fabf" LastKnownName="CodeLocation" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="6ab07598-44be-48dc-b85e-48ebbfef9456" absoluteBounds="1.0150000000000001, 2.015, 2.5949999999999998, 0.68164060264825832" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="761830f6-a931-4f7a-8d34-b5a62d88b1bf" absoluteBounds="1.0150000000000001, 2.7066406026482586, 2.5949999999999998, 0.84179684768120444" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <commentShape Id="9b69239c-ce3e-4687-b383-9d5e75eae1ba" absoluteBounds="1, 0.75, 1.625, 0.75" customColor="251, 247, 200">
+      <commentMoniker Id="bb1260d6-9b3c-4178-8d0a-a4cc7c3d2c56" />
+      <relativeChildShapes />
+    </commentShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

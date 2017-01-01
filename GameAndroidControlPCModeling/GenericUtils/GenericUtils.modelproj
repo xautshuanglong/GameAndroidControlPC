@@ -22,6 +22,13 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="CodeLocationClasses.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="CodeLocationClasses.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>CodeLocationClasses.classdiagram</DependentUpon>
+    </Content>
     <Content Include="JsonClass.classdiagram">
       <SubType>Content</SubType>
     </Content>
@@ -42,6 +49,13 @@
     <Content Include="ShaClass.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>ShaClass.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="TimeClasses.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="TimeClasses.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>TimeClasses.classdiagram</DependentUpon>
     </Content>
     <Content Include="XmlClass.classdiagram">
       <SubType>Content</SubType>

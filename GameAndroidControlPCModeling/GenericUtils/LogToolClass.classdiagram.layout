@@ -5,7 +5,7 @@
     <interfaceShape Id="21335f65-412c-4de4-a489-6dbf41f13805" absoluteBounds="0.5, 0.875, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
       <interfaceMoniker Id="e2b17b8e-b13c-4726-b6f3-eda674ad83be" LastKnownName="ILogTool" />
       <nestedChildShapes>
-        <AttributeElementListCompartment Id="a914eb68-f197-40e7-8e2e-d0387fe0b4e7" absoluteBounds="0.51500000000000012, 1.2650000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <AttributeElementListCompartment Id="a914eb68-f197-40e7-8e2e-d0387fe0b4e7" isExpanded="false" absoluteBounds="0.515, 1.2650000000000001, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
         <OperationElementListCompartment Id="7149b03d-7f58-4922-8c55-a07dbee07edd" absoluteBounds="0.51500000000000012, 1.4761718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </interfaceShape>

@@ -3,6 +3,13 @@
   dslVersion="1.0.0.0"
   Id="b3af561a-c313-42fa-9ab1-8971ea106b82"
   name="GenericUtils" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="e40cb1e7-64e9-4512-9d25-4a690ccfb62c">
+      <body>CodeLocation
+指明当前类对象所处位置，通常用于日志定位，方便查阅相关函数。</body>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -39,7 +46,17 @@
         name="DirectoryImpl"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="92e7b913-e502-4495-8788-2a6f4bb099e5">
+            <interfaceMoniker
+              Id="045d61ca-c033-4d9d-82cc-8ea5fe80ce49"
+              LastKnownName="IDirectory"
+              LastKnownLocation="GenericUtils.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <class
@@ -47,7 +64,17 @@
         name="FileImpl"
         isAbstract="false"
         isLeaf="false"
-        isActiveClass="false" />
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="09d7b1a9-e800-41d9-9a5a-e932ac4d7bf1">
+            <interfaceMoniker
+              Id="ec147e07-43d9-4b6a-a25b-15c63ac2c4f8"
+              LastKnownName="IFile"
+              LastKnownLocation="GenericUtils.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <Interface
@@ -62,6 +89,362 @@
         name="IFile"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9c3a0114-450c-4a52-a596-13c6f2b262f5"
+        name="CodeLocation"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="4fa09db7-f1f4-4326-9655-a455fbd058a7"
+            name="m_strFileName"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="51eca223-2fdc-418d-bea6-8b32ac387923"
+            name="m_strFuncName"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="7ff34fef-16c6-4698-8edf-b1b297e1e829"
+            name="m_nLineNumber"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="c1b2c0bb-5141-4ecd-85ee-3329ecdefd44"
+            name="GetFileName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="938d53c9-4219-4df1-8c4e-b516ce3fc4c1"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+                      LastKnownName="string"
+                      LastKnownLocation="GenericUtils.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="36a3fb93-b132-44a6-94d4-704a7e746dd6"
+            name="GetShortFileName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="61adaf95-4434-45f7-ba7a-f011867229ee"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+                      LastKnownName="string"
+                      LastKnownLocation="GenericUtils.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ed9ad057-69bc-4f2e-89d4-e0b7bae4eced"
+            name="GetFuncName"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="52c1f6a5-2e2e-4fee-8852-5082f173ba9a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+                      LastKnownName="string"
+                      LastKnownLocation="GenericUtils.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="dbc8aa72-c2d9-41c2-a228-c9e487f4e88c"
+            name="GetLineNumber"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d4f38084-c5e0-47b6-ba8b-ac2b70b73bb7"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ab54f50f-8000-4fef-9fb3-6a9a44417013"
+                      LastKnownName="int"
+                      LastKnownLocation="GenericUtils.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="36796d64-b2d5-4758-a648-adde7e5482c1"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="4705eb64-30c6-481c-95b9-e0a8100a9e46"
+            isDerived="false"
+            sourceEndRoleName="Interface1"
+            targetEndRoleName="Class1"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="39452f35-b469-44ee-8e17-059f2541bdb5"
+              LastKnownName="Class1"
+              LastKnownLocation="GenericUtils.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="801e496e-3aae-42b5-8637-33269b2e0b79"
+                  name="Interface1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b7af5f6e-1c15-4e3c-b49a-6254efd194d1"
+                  name="Class1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9466f3fd-2453-46ba-832e-aabda35db5c8"
+            isDerived="false"
+            sourceEndRoleName="Interface1"
+            targetEndRoleName="CodeLocation"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9c3a0114-450c-4a52-a596-13c6f2b262f5"
+              LastKnownName="CodeLocation"
+              LastKnownLocation="GenericUtils.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ecbb5cf6-7cac-4d87-abcd-6989228caf6d"
+                  name="Interface1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c7111cb8-0b5b-436c-8753-b1bfb27fa26c"
+                  name="CodeLocation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7d6f0e0f-f129-4050-b225-05eb7db05f9b"
+            isDerived="false"
+            sourceEndRoleName="Interface1"
+            targetEndRoleName="CodeLocation"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9c3a0114-450c-4a52-a596-13c6f2b262f5"
+              LastKnownName="CodeLocation"
+              LastKnownLocation="GenericUtils.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5dfb5792-3368-4a21-ab8d-4018cff8a89e"
+                  name="Interface1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="192a6022-9a09-43c9-bd89-007eede2284f"
+                  name="CodeLocation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="39452f35-b469-44ee-8e17-059f2541bdb5"
+        name="Class1"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="16c76f38-130c-4195-a394-010d381d6868">
+            <classMoniker
+              Id="9c3a0114-450c-4a52-a596-13c6f2b262f5"
+              LastKnownName="CodeLocation"
+              LastKnownLocation="GenericUtils.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="cfc8e12c-e27c-4493-a512-906eb59d5ce9"
+            isSubstitutable="false">
+            <classMoniker
+              Id="9c3a0114-450c-4a52-a596-13c6f2b262f5"
+              LastKnownName="CodeLocation"
+              LastKnownLocation="GenericUtils.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="917f976d-db8f-4910-b9b0-2022fe33e14b"
+            isDerived="false"
+            sourceEndRoleName="Class1"
+            targetEndRoleName="CodeLocation"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9c3a0114-450c-4a52-a596-13c6f2b262f5"
+              LastKnownName="CodeLocation"
+              LastKnownLocation="GenericUtils.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="799dd301-96ea-41d0-8eee-d1bd93052790"
+                  name="Class1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e337b92f-8c85-406b-b328-e3dcc651c311"
+                  name="CodeLocation"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="54f69cf2-44c7-4869-9fbf-780fd7d4492f"
+        name="void" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ab54f50f-8000-4fef-9fb3-6a9a44417013"
+        name="int" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
