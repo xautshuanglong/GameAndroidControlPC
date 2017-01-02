@@ -28,12 +28,27 @@
         <ownedAttributesInternal>
           <property Id="2aa68817-aa33-4d80-ad70-2422e6fc7021" name="m_strFileName" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="4fa09db7-f1f4-4326-9655-a455fbd058a7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="895958db-a7e6-4500-abe5-7eeb5fc8b24f" LastKnownName="string" />
+            </type_NamedElement>
           </property>
           <property Id="95d599f6-d3a4-4b0d-ab75-b145eb085818" name="m_strFuncName" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="51eca223-2fdc-418d-bea6-8b32ac387923" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="895958db-a7e6-4500-abe5-7eeb5fc8b24f" LastKnownName="string" />
+            </type_NamedElement>
           </property>
           <property Id="ec5d5201-00eb-4317-98cb-6e49b1a4ca1c" name="m_nLineNumber" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="7ff34fef-16c6-4698-8edf-b1b297e1e829" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8909b613-948e-4a83-b900-674a49205f4a" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="67ae475b-0486-4667-a144-e32f6139ea75" name="m_strShortFileName" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3f5d2f80-da06-4170-b36e-715a587fa3d6" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="895958db-a7e6-4500-abe5-7eeb5fc8b24f" LastKnownName="string" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
@@ -84,6 +99,19 @@
                   <elementDefinition Id="d4f38084-c5e0-47b6-ba8b-ac2b70b73bb7" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="8909b613-948e-4a83-b900-674a49205f4a" LastKnownName="int" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="77a27d4f-7506-4f17-a16d-0d42d328169a" name="ToString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bc1ee9bd-5651-4708-9e57-81f5ec303dfb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8f06c77d-03aa-4b7a-9e9f-07f250f81428" direction="Return" isUnique="false">
+                  <elementDefinition Id="5a51092a-8746-4253-b724-55455cebfa80" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="895958db-a7e6-4500-abe5-7eeb5fc8b24f" LastKnownName="string" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>

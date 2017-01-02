@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="cbfddf4c-ec9a-43b4-b581-6c3001b38bda" name="StringUtilClasses" linkedPackageId="a22c8c4f-5ace-46b7-b24c-872c8ca36116" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="3588cc14-b2aa-402e-9b37-cc6713627257">
+      <profileInstance Id="3d68cee2-5288-47fd-8b04-c15c0f5da4f9" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3c3fb593-33ec-4516-a237-7b7ff876c17e">
+      <profileInstance Id="8dfbfc75-d624-4f46-a710-56cc937aa24a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="872caca0-a387-4868-a970-e5179616a196" name="StringUtil" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="55cf213c-9db3-4df4-8847-bbee52ba84f7" />
+        <ownedOperationsInternal>
+          <operation Id="0d89d025-1f7d-4e17-b9d0-e7df150b1ebc" name="FormatWString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bf7d5fab-e723-4285-8365-bd9ba6e47bce" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a02d0c28-89f4-4e03-b186-ad6032b2eb86" direction="Return" isUnique="false">
+                  <elementDefinition Id="4d7524b1-94c2-4eaf-ba20-521d09cbb753" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9bf3ef7a-3795-4d83-be4a-5e2b449c87f8" LastKnownName="wstring" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="96f44b16-655f-420a-83a0-6c70a0af054a" name="const wchar_t* wFormat" direction="In" isUnique="false">
+                  <elementDefinition Id="f1f8afed-3291-4c8f-bca5-fdd738ee0c53" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c8d220a2-a910-4deb-9ce1-d26dc16d2c24" name="..." direction="In" isUnique="false">
+                  <elementDefinition Id="64e1c404-6cd7-49b0-a3a9-88af560aec28" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="031bb9af-5ffa-4fc2-98ba-2fa214a995e2" name="Format" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ce377dc9-0e0e-4299-9769-f3e563e19dc2" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c17f3513-0109-4b81-876f-e544d4031c5e" name="const char* format" direction="In" isUnique="false">
+                  <elementDefinition Id="19307292-cbf4-4961-acc7-ae99453a03d4" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="81161b70-d200-41aa-82e6-af2b18b600d4" name="..." direction="In" isUnique="false">
+                  <elementDefinition Id="b69845aa-9167-4408-a698-8c2689634042" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c843def1-3d9b-4b69-9f44-6a25c36ca3ec" direction="Return" isUnique="false">
+                  <elementDefinition Id="5b4a9bed-b726-4ac0-aabe-ef8ccfe6c676" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8932f83e-33d3-4606-8c5a-e700523b0602" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="acb994e8-61e0-4c1a-bcb9-aef16cc4469a" name="FormatArguments" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="44a37ad0-f847-4fe2-84e9-3badae5651ff" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="43ae21f8-6433-4de7-aba6-ff2d8ef04dc5" direction="Return" isUnique="false">
+                  <elementDefinition Id="baa66ad4-4bbc-4da9-954d-15307614a4cc" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8932f83e-33d3-4606-8c5a-e700523b0602" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="777ba52b-5e0b-4361-9d26-1e0472022e8c" name="const char* format" direction="In" isUnique="false">
+                  <elementDefinition Id="dadc207e-3555-4396-b23e-6cfa349affa9" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c54caed0-5ec6-4ed5-b33a-af228731d3e7" name="va_list argList" direction="In" isUnique="false">
+                  <elementDefinition Id="2f24dd60-563e-4604-af7e-18c6a36bbb74" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="ba37104a-0f4f-453b-92d1-e1a4b289f3c1" name="FormatArgumentsW" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b34bd3d7-2b04-4f8f-9d13-d05581f8a2f1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3558d1ac-35a8-4d01-a085-9fec195aefbe" direction="Return" isUnique="false">
+                  <elementDefinition Id="37b508f2-7a7a-4564-91dd-71a06a614a90" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="9bf3ef7a-3795-4d83-be4a-5e2b449c87f8" LastKnownName="wstring" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1295d348-8ae2-4bcf-b505-c2618fb39db1" name="const wchar_t* wFormat" direction="In" isUnique="false">
+                  <elementDefinition Id="7761b988-e27d-45aa-89f3-e9345644c12f" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="adb97906-0689-4ddd-9f30-894803e7effb" name="va_list argList" direction="In" isUnique="false">
+                  <elementDefinition Id="257508d8-793e-487e-93d2-1ef856030f9f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="8932f83e-33d3-4606-8c5a-e700523b0602" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="9ed497c7-9d5f-40d2-8af5-250fda544df9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9bf3ef7a-3795-4d83-be4a-5e2b449c87f8" name="wstring" isAbstract="false" isLeaf="false" cachedFullName="wstring">
+        <elementDefinition Id="29c993df-6923-4ef0-8767-62672986ecb0" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="a22c8c4f-5ace-46b7-b24c-872c8ca36116" name="GenericUtils">
+    <elementDefinition Id="b3af561a-c313-42fa-9ab1-8971ea106b82" />
+  </package>
+</logicalClassDesignerModel>

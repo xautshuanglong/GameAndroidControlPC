@@ -109,7 +109,14 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+                LastKnownName="string"
+                LastKnownLocation="GenericUtils.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="51eca223-2fdc-418d-bea6-8b32ac387923"
             name="m_strFuncName"
@@ -121,7 +128,14 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+                LastKnownName="string"
+                LastKnownLocation="GenericUtils.uml" />
+            </type_NamedElement>
+          </property>
           <property
             Id="7ff34fef-16c6-4698-8edf-b1b297e1e829"
             name="m_nLineNumber"
@@ -133,7 +147,33 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ab54f50f-8000-4fef-9fb3-6a9a44417013"
+                LastKnownName="int"
+                LastKnownLocation="GenericUtils.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="3f5d2f80-da06-4170-b36e-715a587fa3d6"
+            name="m_strShortFileName"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+                LastKnownName="string"
+                LastKnownLocation="GenericUtils.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -226,6 +266,30 @@
                     <undefinedTypeMoniker
                       Id="ab54f50f-8000-4fef-9fb3-6a9a44417013"
                       LastKnownName="int"
+                      LastKnownLocation="GenericUtils.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bc1ee9bd-5651-4708-9e57-81f5ec303dfb"
+            name="ToString"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5a51092a-8746-4253-b724-55455cebfa80"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+                      LastKnownName="string"
                       LastKnownLocation="GenericUtils.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -445,6 +509,174 @@
       <undefinedType
         Id="ab54f50f-8000-4fef-9fb3-6a9a44417013"
         name="int" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="55cf213c-9db3-4df4-8847-bbee52ba84f7"
+        name="StringUtil"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="bf7d5fab-e723-4285-8365-bd9ba6e47bce"
+            name="FormatWString"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4d7524b1-94c2-4eaf-ba20-521d09cbb753"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="29c993df-6923-4ef0-8767-62672986ecb0"
+                      LastKnownName="wstring"
+                      LastKnownLocation="GenericUtils.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f1f8afed-3291-4c8f-bca5-fdd738ee0c53"
+                  name="const wchar_t* wFormat"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="64e1c404-6cd7-49b0-a3a9-88af560aec28"
+                  name="..."
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ce377dc9-0e0e-4299-9769-f3e563e19dc2"
+            name="Format"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="19307292-cbf4-4961-acc7-ae99453a03d4"
+                  name="const char* format"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b69845aa-9167-4408-a698-8c2689634042"
+                  name="..."
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5b4a9bed-b726-4ac0-aabe-ef8ccfe6c676"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+                      LastKnownName="string"
+                      LastKnownLocation="GenericUtils.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="44a37ad0-f847-4fe2-84e9-3badae5651ff"
+            name="FormatArguments"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="baa66ad4-4bbc-4da9-954d-15307614a4cc"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9ed497c7-9d5f-40d2-8af5-250fda544df9"
+                      LastKnownName="string"
+                      LastKnownLocation="GenericUtils.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="dadc207e-3555-4396-b23e-6cfa349affa9"
+                  name="const char* format"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2f24dd60-563e-4604-af7e-18c6a36bbb74"
+                  name="va_list argList"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b34bd3d7-2b04-4f8f-9d13-d05581f8a2f1"
+            name="FormatArgumentsW"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="37b508f2-7a7a-4564-91dd-71a06a614a90"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="29c993df-6923-4ef0-8767-62672986ecb0"
+                      LastKnownName="wstring"
+                      LastKnownLocation="GenericUtils.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7761b988-e27d-45aa-89f3-e9345644c12f"
+                  name="const wchar_t* wFormat"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="257508d8-793e-487e-93d2-1ef856030f9f"
+                  name="va_list argList"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="29c993df-6923-4ef0-8767-62672986ecb0"
+        name="wstring" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

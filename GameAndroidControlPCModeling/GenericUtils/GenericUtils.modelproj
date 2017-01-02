@@ -50,6 +50,13 @@
       <SubType>Content</SubType>
       <DependentUpon>ShaClass.classdiagram</DependentUpon>
     </Content>
+    <Content Include="StringUtilClasses.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="StringUtilClasses.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>StringUtilClasses.classdiagram</DependentUpon>
+    </Content>
     <Content Include="TimeClasses.classdiagram">
       <SubType>Content</SubType>
     </Content>

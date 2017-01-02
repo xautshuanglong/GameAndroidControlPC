@@ -56,13 +56,13 @@ namespace ShuangLong
 		{
 			std::ostringstream oss;
 			oss << m_nLineNumber;
-			std::string retString = "[";
+			std::string retString = "[ ";
 			retString.append(m_strFuncName);
 			retString.append(" ");
 			retString.append(GetShortFileName());
 			retString.append(":");
 			retString.append(oss.str());
-			retString.append("]");
+			retString.append(" ]");
 
 			return retString;
 		}
