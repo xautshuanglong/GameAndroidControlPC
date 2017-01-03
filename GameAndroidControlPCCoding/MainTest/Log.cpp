@@ -18,6 +18,10 @@ namespace ShuangLong
 	Log::~Log()
 	{
 		//std::cout << "Log::~Log()" << std::endl;
+		if (m_osFile.is_open())
+		{
+			m_osFile.close();
+		}
 	}
 
 	Log* Log::GetInstance()
