@@ -4,6 +4,7 @@
 
 namespace ShuangLong
 {
+	volatile bool Log::m_bInitFlag = false;
 	Log::Helpper Log::helpper;
 	Log* Log::m_pInstance = nullptr;
 	std::mutex Log::m_mutex;
@@ -21,13 +22,14 @@ namespace ShuangLong
 
 	Log* Log::GetInstance()
 	{
-		if (m_pInstance == nullptr)
+		if (m_bInitFlag==false && m_pInstance==nullptr)
 		{
 			//std::lock_guard<std::mutex> lock(m_mutex);
 			m_mutex.lock();
-			if (m_pInstance == nullptr)
+			if (m_bInitFlag==false && m_pInstance==nullptr)
 			{
 				m_pInstance = new Log();
+				m_bInitFlag = true;
 			}
 			m_mutex.unlock();
 		}

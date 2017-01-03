@@ -17,6 +17,7 @@ namespace ShuangLong
 	{
 	private:
 		Log();
+		static volatile bool m_bInitFlag;
 		static Log* m_pInstance;
 		static std::mutex m_mutex;
 
