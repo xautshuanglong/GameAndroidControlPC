@@ -53,7 +53,7 @@ namespace ShuangLong
 		}
 	}
 
-	void Log::Console(Utils::CodeLocation location, char* msgFormat, ...)
+	void Log::Console(CodeLocation location, char* msgFormat, ...)
 	{
 		if (SL_DEBUG_ENABLE)
 		{
@@ -80,7 +80,7 @@ namespace ShuangLong
 		}
 	}
 
-	void Log::WriteFile(Utils::CodeLocation location, char* msgFormat, ...)
+	void Log::WriteFile(CodeLocation location, char* msgFormat, ...)
 	{
 		if (m_osFile.is_open())
 		{

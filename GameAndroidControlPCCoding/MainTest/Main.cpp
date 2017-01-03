@@ -1,5 +1,7 @@
 #include "Log.h"
 
+#include <TimeUtil.h>
+
 #include <iostream>
 
 int main(int argc, char** argv)
@@ -11,6 +13,13 @@ int main(int argc, char** argv)
 	ShuangLong::Log *pLog = ShuangLong::Log::GetInstance();
 	pLog->WriteFile("Write File Testing");
 	pLog->WriteFile("%d, %s", 234, "Write File Testing");
+
+	std::cout << ShuangLong::Utils::TimeUtil::GetFullTimeString() << std::endl;
+	std::cout << ShuangLong::Utils::TimeUtil::GetSimpleTimeString() << std::endl;
+	std::cout << ShuangLong::Utils::TimeUtil::GetFormatTimeString("%D") << std::endl;
+
+	std::cout << ShuangLong::Utils::TimeUtil::GetFullTimestamp() << std::endl;
+	std::cout << ShuangLong::Utils::TimeUtil::GetSimpleTimestamp() << std::endl;
 
 	return 0;
 }

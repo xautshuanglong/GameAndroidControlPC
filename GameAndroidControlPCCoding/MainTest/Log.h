@@ -29,9 +29,9 @@ namespace ShuangLong
 		static Log* GetInstance();
 
 		void Console(const char* msgFormat, ...);
-		void Console(Utils::CodeLocation location, char* msgFormat, ...);
+		void Console(CodeLocation location, char* msgFormat, ...);
 		void WriteFile(const char* msgFormat, ...);
-		void WriteFile(Utils::CodeLocation location, char* msgFormat, ...);
+		void WriteFile(CodeLocation location, char* msgFormat, ...);
 
 	private:
 		class Helpper

@@ -5,66 +5,63 @@
 
 namespace ShuangLong
 {
-	namespace Utils
+	CodeLocation::CodeLocation(char* fileName, char* funcName, int lineNumber)
 	{
-		CodeLocation::CodeLocation(char* fileName, char* funcName, int lineNumber)
-		{
-			m_strFileName = fileName;
-			m_strFuncName = funcName;
-			m_nLineNumber = lineNumber;
-		}
+		m_strFileName = fileName;
+		m_strFuncName = funcName;
+		m_nLineNumber = lineNumber;
+	}
 
-		CodeLocation::~CodeLocation()
-		{
-			//std::cout << "CodeLocation::~CodeLocation()" << std::endl;
-		}
+	CodeLocation::~CodeLocation()
+	{
+		//std::cout << "CodeLocation::~CodeLocation()" << std::endl;
+	}
 
-		int CodeLocation::GetLineNumber()
-		{
-			return m_nLineNumber;
-		}
+	int CodeLocation::GetLineNumber()
+	{
+		return m_nLineNumber;
+	}
 
-		std::string CodeLocation::GetFileName()
-		{
-			return m_strFileName;
-		}
+	std::string CodeLocation::GetFileName()
+	{
+		return m_strFileName;
+	}
 
-		std::string CodeLocation::GetShortFileName()
+	std::string CodeLocation::GetShortFileName()
+	{
+		if (m_strShortFileName.empty())
 		{
-			if (m_strShortFileName.empty())
+			size_t index = m_strFileName.find_last_of('\\');
+			if (index != std::string::npos)
 			{
-				size_t index = m_strFileName.find_last_of('\\');
-				if (index != std::string::npos)
-				{
-					m_strShortFileName = m_strFileName.substr(index+1);
-				}
-				else
-				{
-					m_strShortFileName = m_strFileName;
-				}
+				m_strShortFileName = m_strFileName.substr(index+1);
 			}
-
-			return m_strShortFileName;
+			else
+			{
+				m_strShortFileName = m_strFileName;
+			}
 		}
 
-		std::string CodeLocation::GetFuncName()
-		{
-			return m_strFuncName;
-		}
+		return m_strShortFileName;
+	}
 
-		std::string CodeLocation::ToString()
-		{
-			std::ostringstream oss;
-			oss << m_nLineNumber;
-			std::string retString = "[ ";
-			retString.append(m_strFuncName);
-			retString.append(" ");
-			retString.append(GetShortFileName());
-			retString.append(":");
-			retString.append(oss.str());
-			retString.append(" ]");
+	std::string CodeLocation::GetFuncName()
+	{
+		return m_strFuncName;
+	}
 
-			return retString;
-		}
+	std::string CodeLocation::ToString()
+	{
+		std::ostringstream oss;
+		oss << m_nLineNumber;
+		std::string retString = "[ ";
+		retString.append(m_strFuncName);
+		retString.append(" ");
+		retString.append(GetShortFileName());
+		retString.append(":");
+		retString.append(oss.str());
+		retString.append(" ]");
+
+		return retString;
 	}
 }

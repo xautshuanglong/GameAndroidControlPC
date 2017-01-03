@@ -150,6 +150,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringUtil.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TimeUtil.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CodeLocation.cpp" />
@@ -175,6 +176,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="StringUtil.cpp" />
+    <ClCompile Include="TimeUtil.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
