@@ -150,13 +150,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DirectoryTest.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Log.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DirectoryTest.h" />
     <ClInclude Include="Log.h" />
+    <ClInclude Include="ILog.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GenericUtils\GenericUtils.vcxproj">

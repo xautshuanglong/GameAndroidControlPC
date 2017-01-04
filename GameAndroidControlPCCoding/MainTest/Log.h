@@ -1,8 +1,10 @@
 #pragma once
 #include "CommonDefines.h"
+#include "ILog.h"
 
 #include <CodeLocation.h>
 #include <StringUtil.h>
+#include <TimeUtil.h>
 
 #include <iostream>
 #include <fstream>
@@ -13,7 +15,7 @@
 
 namespace ShuangLong
 {
-	class Log sealed
+	class Log sealed:public ILog
 	{
 	private:
 		Log();
@@ -28,10 +30,14 @@ namespace ShuangLong
 
 		static Log* GetInstance();
 
-		void Console(const char* msgFormat, ...);
-		void Console(CodeLocation location, char* msgFormat, ...);
-		void WriteFile(const char* msgFormat, ...);
-		void WriteFile(CodeLocation location, char* msgFormat, ...);
+		virtual void Console(const char* msgFormat, ...);
+		virtual void Console(CodeLocation location, char* msgFormat, ...);
+		virtual void WriteFile(const char* msgFormat, ...);
+		virtual void WriteFile(CodeLocation location, char* msgFormat, ...);
+
+	private:
+		void AddTimestamp(std::string& msgString);
+		void AddCodeLocation(std::string& msgString, CodeLocation& location);
 
 	private:
 		class Helpper

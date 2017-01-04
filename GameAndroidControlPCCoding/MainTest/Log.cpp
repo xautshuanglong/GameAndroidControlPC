@@ -49,6 +49,7 @@ namespace ShuangLong
 			va_start(argList, msgFormat);
 			std::string msgString = Utils::StringUtil::FormatArguments(msgFormat, argList);
 			va_end(argList);
+			AddTimestamp(msgString);
 			std::cout << msgString << std::endl;
 		}
 	}
@@ -61,8 +62,8 @@ namespace ShuangLong
 			va_start(argList, msgFormat);
 			std::string msgString = Utils::StringUtil::FormatArguments(msgFormat, argList);
 			va_end(argList);
-			msgString.append("    <-- ");
-			msgString.append(location.ToString());
+			AddTimestamp(msgString);
+			AddCodeLocation(msgString, location);
 			std::cout << msgString << std::endl;
 		}
 	}
@@ -75,7 +76,7 @@ namespace ShuangLong
 			va_start(argList, msgFormat);
 			std::string msgString = Utils::StringUtil::FormatArguments(msgFormat, argList);
 			va_end(argList);
-
+			AddTimestamp(msgString);
 			m_osFile << msgString << std::endl;
 		}
 	}
@@ -88,10 +89,22 @@ namespace ShuangLong
 			va_start(argList, msgFormat);
 			std::string msgString = Utils::StringUtil::FormatArguments(msgFormat, argList);
 			va_end(argList);
-			msgString.append("    <-- ");
-			msgString.append(location.ToString());
-
+			AddTimestamp(msgString);
+			AddCodeLocation(msgString, location);
 			m_osFile << msgString << std::endl;
 		}
+	}
+
+	void Log::AddTimestamp(std::string& msgString)
+	{
+		std::string timeString = Utils::TimeUtil::GetSimpleTimestampString();
+		timeString.append(" ");
+		msgString.insert(0, timeString);
+	}
+
+	void Log::AddCodeLocation(std::string& msgString, CodeLocation& location)
+	{
+		msgString.append("    <-- ");
+		msgString.append(location.ToString());
 	}
 }
