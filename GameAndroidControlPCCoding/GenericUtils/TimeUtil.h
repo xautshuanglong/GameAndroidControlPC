@@ -93,7 +93,9 @@ namespace ShuangLong
 			static SYSTEMTIME m_systemTime;
 
 		public:
-			TimeUtil();
+			TimeUtil() = delete;
+			TimeUtil(const TimeUtil& originalObj) = delete;
+			TimeUtil(TimeUtil&& originalObj) = delete;
 			~TimeUtil();
 
 			static std::string GetFullTimeString();

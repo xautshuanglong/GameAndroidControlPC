@@ -19,9 +19,10 @@ namespace ShuangLong
 	{
 	private:
 		Log();
-		static volatile bool m_bInitFlag;
+		//static volatile bool m_bInitFlag;
+		//static std::mutex m_mutex;
 		static Log* m_pInstance;
-		static std::mutex m_mutex;
+		static std::once_flag m_instanceFlag;
 
 		std::ofstream m_osFile;
 
@@ -36,6 +37,7 @@ namespace ShuangLong
 		virtual void WriteFile(CodeLocation location, char* msgFormat, ...);
 
 	private:
+		static void init();
 		void AddTimestamp(std::string& msgString);
 		void AddCodeLocation(std::string& msgString, CodeLocation& location);
 

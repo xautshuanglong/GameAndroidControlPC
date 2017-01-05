@@ -15,7 +15,7 @@ namespace ShuangLong
 		public:
 			StringUtil() = delete;
 			StringUtil(const StringUtil& originalObj) = delete;
-			StringUtil(const StringUtil&& originalObj) = delete;
+			StringUtil(StringUtil&& originalObj) = delete;
 
 		public:
 			std::string static FormatString(const char* format, ...);
