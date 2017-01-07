@@ -678,6 +678,14 @@
         Id="29c993df-6923-4ef0-8767-62672986ecb0"
         name="wstring" />
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5011fa74-b837-4eaa-93f0-33cc080e0bd2"
+        name="TimeUtil"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
