@@ -4,8 +4,187 @@
     <logicalClassDesignerModelHasTypes>
       <class Id="1d4bfd56-bacf-44dc-9e4a-60fa44147ad4" name="TimeUtil" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="5011fa74-b837-4eaa-93f0-33cc080e0bd2" />
+        <ownedAttributesInternal>
+          <property Id="af719cc9-260e-4386-a0b5-3e1dd1d346b3" name="m_tmCurTime" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="be0442d4-fb21-4f35-9bc2-1a4db308194a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a5a260b7-92e2-4f9a-bd73-73a26112661a" LastKnownName="tm" />
+            </type_NamedElement>
+          </property>
+          <property Id="e96dd8a2-29c9-4680-b103-44bc74f37b8c" name="m_tCurTime" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c4899c92-5efa-47fa-b0cf-bec36ccb8e5c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="f72d7524-0cb7-4b83-bc05-5bb4747c1d26" LastKnownName="time_t" />
+            </type_NamedElement>
+          </property>
+          <property Id="3ed1af89-8367-4c64-b097-4866ee51b11e" name="m_systemTime" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="315c90f6-d0f8-4a2f-97e2-d02e590634b9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a52cec74-b19f-43a5-bd7a-15d23e154f9c" LastKnownName="SYSTEMTIME" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="7091dff9-0455-492d-bea9-9461595a75bf" name="GetFullTimeString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d43e20f2-cdc2-413d-b40a-885a7fa79f29" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f9b7c839-d707-425c-a71a-279aba306d3a" direction="Return" isUnique="false">
+                  <elementDefinition Id="6f648949-6af0-4ae1-879b-008bcb4ef7e5" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6922b28c-bf36-404e-8010-abe25d63ac2b" LastKnownName="std::string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f8c3cedc-b60d-453c-913b-f23ad652eeab" name="GetSimpleTimeString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="28897fe8-4163-4413-8591-05dad8c160f4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="58eb75e3-441c-4304-844d-cbdefd02c061" direction="Return" isUnique="false">
+                  <elementDefinition Id="0bf1fa73-90fe-49a4-bf6b-3756bc3a5610" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6922b28c-bf36-404e-8010-abe25d63ac2b" LastKnownName="std::string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3ec330c5-f3b6-43f7-9043-ef230e932c8a" name="GetFormatTimeString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="143d8b41-1c89-4897-8396-f11eb4c2e999" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d4cd3097-7eeb-43df-8329-e012f30ad039" direction="Return" isUnique="false">
+                  <elementDefinition Id="fe9c29a4-a396-4a78-818c-2a71f5056604" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6922b28c-bf36-404e-8010-abe25d63ac2b" LastKnownName="std::string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ce0ea764-3c19-4bca-aa4f-354d178ff31e" name="const char *timeFormat" direction="In" isUnique="false">
+                  <elementDefinition Id="8582630e-c749-40ef-bca2-6eec27d4708a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6c0df16d-3685-40a2-8004-81edc02b67ab" name="GetCurrentTimestamp" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a25717fa-e36a-4e55-97a0-1ef43b82747a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="02c2d707-4fda-45e9-beb0-e8e98e15090e" direction="Return" isUnique="false">
+                  <elementDefinition Id="37c12be5-68da-4e9c-a6b9-eed586bd0b90" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="cd7ae52c-7965-4127-93c3-2bc5ab5f9c22" LastKnownName="INT64" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9680a517-5a86-49d9-9700-2dff537fb135" name="GetFullTimestampString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="27db0a49-009f-4254-803e-e2db68cbb9d6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1cc00349-fdae-4792-8e60-2b13128bf4b4" direction="Return" isUnique="false">
+                  <elementDefinition Id="a27e590f-c9a6-4dd3-b2a5-5b23ed4ff79b" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6922b28c-bf36-404e-8010-abe25d63ac2b" LastKnownName="std::string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0569d812-81bc-4dbd-bb47-a311df2fe0e1" name="GetSimpleTimestampString" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="992b2b2d-469b-48cd-a1bf-410d006a97d0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="10553a4a-b037-462e-b83c-3ad56a9cec95" direction="Return" isUnique="false">
+                  <elementDefinition Id="159ab84c-b5e5-4705-ad3e-5a4552b9b06a" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="6922b28c-bf36-404e-8010-abe25d63ac2b" LastKnownName="std::string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e831b475-da86-44eb-8b4c-c3781a0dbc62" name="GetCurrentTime" visibility="Private" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3c458265-3fb8-4181-ad16-74e2bfc1bc14" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="aad60c8d-2c75-42e8-8f98-fd58c7e233d4" direction="Return" isUnique="false">
+                  <elementDefinition Id="4bbe36aa-baab-4569-b2ba-ce38d81cc997" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4efbfe0f-814f-48e7-a8f5-b0d0f1250069" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d8dae1c0-751d-4fe1-b8bd-3d65ee821d52" name="QueryPerformanceFrequency" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a0201595-856a-4091-b248-c015b6b08ae0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2297edd7-b889-4102-9b77-e819b8a50841" direction="Return" isUnique="false">
+                  <elementDefinition Id="7bc8e4c2-0119-4353-8e52-502e097df8b3" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="878bef61-c452-4a9c-91cb-99dd7bdaa4ea" LastKnownName="LONGLONG" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="eecb26e8-9237-4bd9-9ebc-c8a1ef91418d" name="QueryPerformanceCounter" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9723da2f-60e3-45c7-906d-9888a0dcefbe" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="df89c3e4-1c24-4250-8e8d-4b1fa24972c9" direction="Return" isUnique="false">
+                  <elementDefinition Id="6a49c4c6-d85d-4a2f-bff2-4fc55ad36a54" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="878bef61-c452-4a9c-91cb-99dd7bdaa4ea" LastKnownName="LONGLONG" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="6922b28c-bf36-404e-8010-abe25d63ac2b" name="std::string" isAbstract="false" isLeaf="false" cachedFullName="std::string">
+        <elementDefinition Id="34f61c97-fb07-4f89-8b88-a04689ff9775" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="cd7ae52c-7965-4127-93c3-2bc5ab5f9c22" name="INT64" isAbstract="false" isLeaf="false" cachedFullName="INT64">
+        <elementDefinition Id="2f877f92-4c97-4840-b050-28259eedf45d" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="4efbfe0f-814f-48e7-a8f5-b0d0f1250069" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="54f69cf2-44c7-4869-9fbf-780fd7d4492f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="878bef61-c452-4a9c-91cb-99dd7bdaa4ea" name="LONGLONG" isAbstract="false" isLeaf="false" cachedFullName="LONGLONG">
+        <elementDefinition Id="239ab44a-937e-4004-aaa5-d7ab1501a452" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a5a260b7-92e2-4f9a-bd73-73a26112661a" name="tm" isAbstract="false" isLeaf="false" cachedFullName="tm">
+        <elementDefinition Id="461a6f80-b790-4080-bf6e-bfff7aab3430" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="f72d7524-0cb7-4b83-bc05-5bb4747c1d26" name="time_t" isAbstract="false" isLeaf="false" cachedFullName="time_t">
+        <elementDefinition Id="2ce31ea2-ac05-44b4-929e-581256110bae" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a52cec74-b19f-43a5-bd7a-15d23e154f9c" name="SYSTEMTIME" isAbstract="false" isLeaf="false" cachedFullName="SYSTEMTIME">
+        <elementDefinition Id="5d0dce07-c1c7-4cef-bc48-50abbc5645d1" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="0268e29c-b499-4ec0-854f-43f3392cb604" name="GenericUtils">
     <elementDefinition Id="b3af561a-c313-42fa-9ab1-8971ea106b82" />
