@@ -8,10 +8,6 @@ namespace ShuangLong
 		SYSTEMTIME TimeUtil::m_systemTime = { 0 };
 		tm TimeUtil::m_tmCurTime = { 0 };
 		time_t TimeUtil::m_tCurTime = 0;
-		
-		TimeUtil::TimeUtil()
-		{
-		}
 
 		TimeUtil::~TimeUtil()
 		{
@@ -24,7 +20,7 @@ namespace ShuangLong
 		std::string TimeUtil::GetFullTimeString()
 		{
 			char timeBuffer[64];
-			GetCurrentTime();
+			GetMyCurrentTime();
 			strftime(timeBuffer, 64, "%Y-%m-%d %H:%M:%S", &m_tmCurTime);
 			return std::string(timeBuffer);
 		}
@@ -36,7 +32,7 @@ namespace ShuangLong
 		std::string TimeUtil::GetSimpleTimeString()
 		{
 			char timeBuffer[64];
-			GetCurrentTime();
+			GetMyCurrentTime();
 			strftime(timeBuffer, 64, "%H:%M:%S", &m_tmCurTime);
 			return std::string(timeBuffer);
 		}
@@ -51,7 +47,7 @@ namespace ShuangLong
 		std::string TimeUtil::GetFormatTimeString(const char* timeFormat)
 		{
 			char timeBuffer[128];
-			GetCurrentTime();
+			GetMyCurrentTime();
 			strftime(timeBuffer, 128, timeFormat, &m_tmCurTime);
 			return std::string(timeBuffer);
 		}
@@ -62,7 +58,7 @@ namespace ShuangLong
 		\************************************************************************/
 		INT64 TimeUtil::GetCurrentTimestamp()
 		{
-			GetCurrentTime();
+			GetMyCurrentTime();
 			return m_tCurTime;
 		}
 
@@ -86,7 +82,7 @@ namespace ShuangLong
 		\************************************************************************/
 		std::string TimeUtil::GetSimpleTimestampString()
 		{
-			::GetLocalTime(&m_systemTime);
+			GetLocalTime(&m_systemTime);
 			char timeBuffer[64];
 			sprintf_s(timeBuffer, "%02d:%02d:%02d.%03d",
 				m_systemTime.wHour, m_systemTime.wMinute, m_systemTime.wSecond, m_systemTime.wMilliseconds);
@@ -107,10 +103,18 @@ namespace ShuangLong
 			return largeInt.QuadPart;
 		}
 
-		void TimeUtil::GetCurrentTime()
+		void TimeUtil::GetMyCurrentTime()
 		{
-			time(&m_tCurTime);
-			localtime_s(&m_tmCurTime, &m_tCurTime);
+			::time(&m_tCurTime);
+			::localtime_s(&m_tmCurTime, &m_tCurTime);
+
+			//long timeZoneOffset;
+			//time_t curTimeTest;
+			//::time(&curTimeTest);
+			//_tzset();
+			//_get_timezone(&timeZoneOffset);
+			//curTimeTest -= timeZoneOffset;
+			//::gmtime_s(&m_tmCurTime, &curTimeTest);// 标准时间，需要根据时区自行调整
 		}
 	}
 }

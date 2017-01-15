@@ -110,7 +110,7 @@ namespace ShuangLong
 			static LONGLONG QueryPerformanceFrequency();
 
 		private:
-			static void GetCurrentTime();
+			static void GetMyCurrentTime();
 		};
 	}
 }
