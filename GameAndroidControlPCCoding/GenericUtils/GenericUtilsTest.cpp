@@ -2,6 +2,7 @@
 #include "GenericUtilsTest.h"
 #include "TimeUtil.h"
 #include "CodeLocation.h"
+#include "StringUtil.h"
 
 #include <iostream>
 #include <iomanip>
@@ -13,8 +14,9 @@ void GenericUtilsTestEntry(ShuangLong::ILog *pLog)
 	g_pLog = pLog;
 	std::cout << "-------------------------------- Generic Utils Testing --------------------------------" << std::endl;
 
-	TimeUtilTest();// 时间相关测试
+	//TimeUtilTest();// 时间相关测试
 	//DirectoryUtilTest();// 文件目录相关操作测试
+	StringUtilTest();
 }
 
 void TimeUtilTest()
@@ -125,4 +127,15 @@ void DirectoryUtilTest()
 		g_pLog->Console("LargeTime: %I64u", largeTime.QuadPart);
 		g_pLog->Console("LargeTime: %llu", largeTime.QuadPart);
 	}
+}
+
+void StringUtilTest()
+{
+	std::string test = "\t sdfsdf  sdfsdf  \t";
+	std::cout << "BEGIN" << test << "END" << std::endl;
+	std::cout << "BEGIN:" << ShuangLong::Utils::StringUtil::Trim(test) << "END" << std::endl;
+
+	std::wstring wtest = L"\t sdfsdf  sdfsdf  \t";
+	std::wcout << "BEGIN" << wtest << "END" << std::endl;
+	std::wcout << "BEGIN:" << ShuangLong::Utils::StringUtil::WTrim(wtest) << "END" << std::endl;
 }

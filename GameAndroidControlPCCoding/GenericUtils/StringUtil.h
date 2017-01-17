@@ -23,6 +23,9 @@ namespace ShuangLong
 
 			std::string static FormatArguments(const char* format, va_list argList);
 			std::wstring static FormatArgumentsW(const wchar_t* wFormat, va_list argList);
+
+			std::string static Trim(const std::string& original);
+			std::wstring static WTrim(const std::wstring& original);
 		};
 	}
 }
