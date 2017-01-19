@@ -77,5 +77,25 @@ namespace ShuangLong
 			std::wstring::size_type end = original.find_last_not_of(whiteSpace);
 			return std::wstring(original, begin, end - begin + 1);
 		}
+
+		unsigned int StringUtil::Split(std::vector<std::string>& v, std::string s, char delimiter, unsigned int maxSegments /* = INT_MAX */)
+		{
+			unsigned int i = 0;
+			std::string::size_type left = 0, right = 0;
+			v.clear();
+			std::back_insert_iterator<std::vector<std::string>> it(v);
+			for (i=1; i<maxSegments; i++)
+			{
+				right = s.find(delimiter, left);
+				if (right==std::string::npos)
+				{
+					break;
+				}
+				*it++ = s.substr(left, right - left);
+				left = right + 1;
+			}
+			*it++ = s.substr(left);
+			return i;
+		}
 	}
 }

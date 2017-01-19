@@ -138,4 +138,20 @@ void StringUtilTest()
 	std::wstring wtest = L"\t sdfsdf  sdfsdf  \t";
 	std::wcout << "BEGIN" << wtest << "END" << std::endl;
 	std::wcout << "BEGIN:" << ShuangLong::Utils::StringUtil::WTrim(wtest) << "END" << std::endl;
+
+	std::vector<std::string> nameVector;
+	std::string nameString = "shuanglong,airu,yaru,longlong";
+	unsigned int count = ShuangLong::Utils::StringUtil::Split(nameVector, nameString, ',');
+	g_pLog->Console(SL_CODELOCATION, "count=%u", count);
+	for (int i=0;i<count;i++)
+	{
+		g_pLog->Console("name[%d] = %s", i, nameVector[i].c_str());
+	}
+
+	std::vector<std::string>::iterator it;
+	int index = 0;
+	for (it = nameVector.begin(); it != nameVector.end(); it++)
+	{
+		g_pLog->Console("name[%d] = %s", index++, it->c_str());
+	}
 }

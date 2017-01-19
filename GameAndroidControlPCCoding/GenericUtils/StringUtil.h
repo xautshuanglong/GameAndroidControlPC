@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <iterator>
+#include <vector>
 
 #define SL_STRINGUTIL_BUFFERLEN 1024
 
@@ -26,6 +28,8 @@ namespace ShuangLong
 
 			std::string static Trim(const std::string& original);
 			std::wstring static WTrim(const std::wstring& original);
+
+			unsigned int static Split(std::vector<std::string>& v, std::string s, char delimiter, unsigned int maxSegments = INT_MAX);
 		};
 	}
 }
