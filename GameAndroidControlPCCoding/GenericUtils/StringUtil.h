@@ -27,9 +27,13 @@ namespace ShuangLong
 			std::wstring static FormatArgumentsW(const wchar_t* wFormat, va_list argList);
 
 			std::string static Trim(const std::string& original);
-			std::wstring static WTrim(const std::wstring& original);
+			std::wstring static TrimW(const std::wstring& original);
 
 			unsigned int static Split(std::vector<std::string>& v, std::string s, char delimiter, unsigned int maxSegments = INT_MAX);
+			unsigned int static SplitW(std::vector<std::wstring>& v, std::wstring s, wchar_t delimiter, unsigned int maxSegments = INT_MAX);
+
+			std::wstring static StringToWStringAPI(const std::string& originalStr);
+			std::string static WStringToStringAPI(const std::wstring& originalStr);
 		};
 	}
 }
