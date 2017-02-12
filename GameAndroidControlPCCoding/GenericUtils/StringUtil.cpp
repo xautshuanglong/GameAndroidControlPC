@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "StringUtil.h"
 
+//#include <locale>
+#include <codecvt>
 
 namespace ShuangLong
 {
@@ -120,6 +122,7 @@ namespace ShuangLong
 
 		std::wstring StringUtil::StringToWStringAPI(const std::string& originalStr)
 		{
+			setlocale(LC_CTYPE, "");
 			wchar_t* pwChar = nullptr;
 			std::wstring retString = L"";
 			LPCSTR lpStr = originalStr.c_str();
@@ -147,6 +150,7 @@ namespace ShuangLong
 
 		std::string StringUtil::WStringToStringAPI(const std::wstring& originalStr)
 		{
+			setlocale(LC_CTYPE, "");
 			std::string retString = "";
 			char* pChar = nullptr;
 			LPCWSTR lpwStr = originalStr.c_str();
@@ -169,6 +173,21 @@ namespace ShuangLong
 			retString = pChar;
 			delete[] pChar;
 
+			return retString;
+		}
+
+		std::string StringUtil::WStringToString(const std::wstring& originalStr)
+		{
+			std::wstring_convert<std::codecvt_utf8<wchar_t>> convert;
+			std::wstring tempString = convert.from_bytes("\xe4\xb8\xad\xe6\x96\x87");
+			std::wcout << tempString << std::endl;
+
+			//std::locale utf8 = std::locale(std::locale("Chinese-simplified"), new std::codecvt_utf8<wchar_t>);
+			//std::cout.imbue(utf8);
+			//std::cout << retString << std::endl;
+
+			std::wstring_convert<std::codecvt<wchar_t, char, std::mbstate_t>> cvtAnsi(new std::codecvt<wchar_t, char, std::mbstate_t>("chs"));
+			std::string retString = cvtAnsi.to_bytes(originalStr);
 			return retString;
 		}
 	}

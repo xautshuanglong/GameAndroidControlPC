@@ -14,3 +14,4 @@ void StringUtilTest_Split();
 void StringUtilTest_SplitW();
 void StringUtilTest_StringToWStringAPI();
 void StringUtilTest_WStringToStringAPI();
+void StringUtilTest_WStringToString();

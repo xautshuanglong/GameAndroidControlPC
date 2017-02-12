@@ -139,12 +139,13 @@ void DirectoryUtilTest()
 \*****************************************************************************/
 void StringUtilTest()
 {
-	StringUtilTest_Trim();
-	StringUtilTest_TrimW();
-	StringUtilTest_Split();
-	StringUtilTest_SplitW();
+	//StringUtilTest_Trim();
+	//StringUtilTest_TrimW();
+	//StringUtilTest_Split();
+	//StringUtilTest_SplitW();
 	StringUtilTest_StringToWStringAPI();
 	StringUtilTest_WStringToStringAPI();
+	StringUtilTest_WStringToString();
 }
 
 void StringUtilTest_Trim()
@@ -192,28 +193,39 @@ void StringUtilTest_SplitW()
 	std::wstring nameString = L"zhangsan,lisi,wanger,mazi";
 	unsigned int count = ShuangLong::Utils::StringUtil::SplitW(nameVector, nameString, L',');
 
-	g_pLog->Console(SL_CODELOCATION, "count=%u  nameString=%s", count, std::string(nameString.begin(), nameString.end()).c_str());
-	//std::wcout << nameString << std::endl;
+	//g_pLog->Console(SL_CODELOCATION, "count=%u  nameString=%s", count, std::string(nameString.begin(), nameString.end()).c_str());
+	g_pLog->Console(SL_CODELOCATION, "count=%u  nameString=%s", count, ShuangLong::Utils::StringUtil::WStringToStringAPI(nameString).c_str());
 
 	std::vector<std::wstring>::iterator it;
 	int index = 0;
 	for (it = nameVector.begin(); it != nameVector.end(); it++)
 	{
-		g_pLog->Console("name[%d] = %s", index++, std::string(it->begin(), it->end()).c_str());
-		//std::wcout << "name[" << index++ << "] = " << it->c_str() << std::endl;
+		//g_pLog->Console("name[%d] = %s", index++, std::string(it->begin(), it->end()).c_str());
+		g_pLog->Console("name[%d] = %s", index++, ShuangLong::Utils::StringUtil::WStringToStringAPI(it->c_str()).c_str());
 	}
 }
 
 void StringUtilTest_StringToWStringAPI()
 {
 	std::cout << std::endl << "-------------------------------- StringUtilTest_StringToWStringAPI --------------------------------" << std::endl;
-	std::string testWStr = "wstring test";
-	std::wcout << ShuangLong::Utils::StringUtil::StringToWStringAPI(testWStr) << std::endl;
+	std::string testStr = "×ª»»²âÊÔ£ºConvert string to wstring";
+	std::cout << "String: " << testStr << std::endl;
+	std::wstring tempWString = ShuangLong::Utils::StringUtil::StringToWStringAPI(testStr);
+	std::wcout << L"WString: " << ShuangLong::Utils::StringUtil::StringToWStringAPI(testStr) << std::endl;
 }
 
 void StringUtilTest_WStringToStringAPI()
 {
 	std::cout << std::endl << "-------------------------------- StringUtilTest_WStringToStringAPI --------------------------------" << std::endl;
-	std::wstring testWStr = L"wstring test";
-	std::cout << ShuangLong::Utils::StringUtil::WStringToStringAPI(testWStr) << std::endl;
+	std::wstring testWStr = L"×ª»»²âÊÔ£ºConvert wstring to string";
+	std::wcout << L"WString: " << testWStr << std::endl;
+	std::cout << "String: " << ShuangLong::Utils::StringUtil::WStringToStringAPI(testWStr) << std::endl;
+}
+
+void StringUtilTest_WStringToString()
+{
+	std::cout << std::endl << "-------------------------------- StringUtilTest_WStringToString --------------------------------" << std::endl;
+	std::wstring testWStr = L"×ª»»²âÊÔ£ºConvert wstring to string";
+	std::wcout << L"WString: " << testWStr << std::endl;
+	std::cout << "String: " << ShuangLong::Utils::StringUtil::WStringToString(testWStr) << std::endl;
 }
