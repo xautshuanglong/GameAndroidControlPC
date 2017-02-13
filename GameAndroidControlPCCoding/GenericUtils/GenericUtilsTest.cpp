@@ -143,9 +143,13 @@ void StringUtilTest()
 	//StringUtilTest_TrimW();
 	//StringUtilTest_Split();
 	//StringUtilTest_SplitW();
+
+	std::wcout.imbue(std::locale("chs"));
+
 	StringUtilTest_StringToWStringAPI();
 	StringUtilTest_WStringToStringAPI();
 	StringUtilTest_WStringToString();
+	StringUtilTest_StringToWString();
 }
 
 void StringUtilTest_Trim()
@@ -210,7 +214,6 @@ void StringUtilTest_StringToWStringAPI()
 	std::cout << std::endl << "-------------------------------- StringUtilTest_StringToWStringAPI --------------------------------" << std::endl;
 	std::string testStr = "×ª»»²âÊÔ£ºConvert string to wstring";
 	std::cout << "String: " << testStr << std::endl;
-	std::wstring tempWString = ShuangLong::Utils::StringUtil::StringToWStringAPI(testStr);
 	std::wcout << L"WString: " << ShuangLong::Utils::StringUtil::StringToWStringAPI(testStr) << std::endl;
 }
 
@@ -228,4 +231,12 @@ void StringUtilTest_WStringToString()
 	std::wstring testWStr = L"×ª»»²âÊÔ£ºConvert wstring to string";
 	std::wcout << L"WString: " << testWStr << std::endl;
 	std::cout << "String: " << ShuangLong::Utils::StringUtil::WStringToString(testWStr) << std::endl;
+}
+
+void StringUtilTest_StringToWString()
+{
+	std::cout << std::endl << "-------------------------------- StringUtilTest_StringToWString --------------------------------" << std::endl;
+	std::string testStr = "×ª»»²âÊÔ£ºConvert wstring to string";
+	std::cout << "String: " << testStr << std::endl;
+	std::wcout << L"WString: " << ShuangLong::Utils::StringUtil::StringToWString(testStr) << std::endl;
 }

@@ -36,6 +36,7 @@ namespace ShuangLong
 			std::string static WStringToStringAPI(const std::wstring& originalStr);
 
 			std::string static WStringToString(const std::wstring& originalStr);
+			std::wstring static StringToWString(const std::string& originalStr);
 		};
 	}
 }
