@@ -16,7 +16,7 @@ void GenericUtilsTestEntry(ShuangLong::ILog *pLog)
 
 	//TimeUtilTest();// 时间相关测试
 	//DirectoryUtilTest();// 文件目录相关操作测试
-	StringUtilTest();
+	//StringUtilTest();// 字符串相关操作测试
 }
 
 void TimeUtilTest()
@@ -139,10 +139,10 @@ void DirectoryUtilTest()
 \*****************************************************************************/
 void StringUtilTest()
 {
-	//StringUtilTest_Trim();
-	//StringUtilTest_TrimW();
-	//StringUtilTest_Split();
-	//StringUtilTest_SplitW();
+	StringUtilTest_Trim();
+	StringUtilTest_TrimW();
+	StringUtilTest_Split();
+	StringUtilTest_SplitW();
 
 	std::wcout.imbue(std::locale("chs"));
 
