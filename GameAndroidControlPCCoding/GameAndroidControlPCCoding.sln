@@ -13,6 +13,109 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{DD3E6D63-7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "include", "include", "{C181FF6D-C14F-4B55-844E-6D5D67FEDCBA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "log4cpp", "log4cpp", "{6CFFADF3-429A-45DA-B970-9F4DA2EA597A}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\log4cpp\AbortAppender.hh = Libs\include\log4cpp\AbortAppender.hh
+		Libs\include\log4cpp\Appender.hh = Libs\include\log4cpp\Appender.hh
+		Libs\include\log4cpp\AppendersFactory.hh = Libs\include\log4cpp\AppendersFactory.hh
+		Libs\include\log4cpp\AppenderSkeleton.hh = Libs\include\log4cpp\AppenderSkeleton.hh
+		Libs\include\log4cpp\BasicConfigurator.hh = Libs\include\log4cpp\BasicConfigurator.hh
+		Libs\include\log4cpp\BasicLayout.hh = Libs\include\log4cpp\BasicLayout.hh
+		Libs\include\log4cpp\BoostThreads.hh = Libs\include\log4cpp\BoostThreads.hh
+		Libs\include\log4cpp\BufferingAppender.hh = Libs\include\log4cpp\BufferingAppender.hh
+		Libs\include\log4cpp\Category.hh = Libs\include\log4cpp\Category.hh
+		Libs\include\log4cpp\CategoryStream.hh = Libs\include\log4cpp\CategoryStream.hh
+		Libs\include\log4cpp\config-MinGW32.h = Libs\include\log4cpp\config-MinGW32.h
+		Libs\include\log4cpp\config-openvms.h = Libs\include\log4cpp\config-openvms.h
+		Libs\include\log4cpp\config-win32-stlport-boost.h = Libs\include\log4cpp\config-win32-stlport-boost.h
+		Libs\include\log4cpp\config-win32.h = Libs\include\log4cpp\config-win32.h
+		Libs\include\log4cpp\Configurator.hh = Libs\include\log4cpp\Configurator.hh
+		Libs\include\log4cpp\convenience.h = Libs\include\log4cpp\convenience.h
+		Libs\include\log4cpp\DailyRollingFileAppender.hh = Libs\include\log4cpp\DailyRollingFileAppender.hh
+		Libs\include\log4cpp\DummyThreads.hh = Libs\include\log4cpp\DummyThreads.hh
+		Libs\include\log4cpp\Export.hh = Libs\include\log4cpp\Export.hh
+		Libs\include\log4cpp\FactoryParams.hh = Libs\include\log4cpp\FactoryParams.hh
+		Libs\include\log4cpp\FileAppender.hh = Libs\include\log4cpp\FileAppender.hh
+		Libs\include\log4cpp\Filter.hh = Libs\include\log4cpp\Filter.hh
+		Libs\include\log4cpp\FixedContextCategory.hh = Libs\include\log4cpp\FixedContextCategory.hh
+		Libs\include\log4cpp\HierarchyMaintainer.hh = Libs\include\log4cpp\HierarchyMaintainer.hh
+		Libs\include\log4cpp\IdsaAppender.hh = Libs\include\log4cpp\IdsaAppender.hh
+		Libs\include\log4cpp\Layout.hh = Libs\include\log4cpp\Layout.hh
+		Libs\include\log4cpp\LayoutAppender.hh = Libs\include\log4cpp\LayoutAppender.hh
+		Libs\include\log4cpp\LayoutsFactory.hh = Libs\include\log4cpp\LayoutsFactory.hh
+		Libs\include\log4cpp\LevelEvaluator.hh = Libs\include\log4cpp\LevelEvaluator.hh
+		Libs\include\log4cpp\LoggingEvent.hh = Libs\include\log4cpp\LoggingEvent.hh
+		Libs\include\log4cpp\Manipulator.hh = Libs\include\log4cpp\Manipulator.hh
+		Libs\include\log4cpp\MSThreads.hh = Libs\include\log4cpp\MSThreads.hh
+		Libs\include\log4cpp\NDC.hh = Libs\include\log4cpp\NDC.hh
+		Libs\include\log4cpp\NTEventLogAppender.hh = Libs\include\log4cpp\NTEventLogAppender.hh
+		Libs\include\log4cpp\OmniThreads.hh = Libs\include\log4cpp\OmniThreads.hh
+		Libs\include\log4cpp\OstreamAppender.hh = Libs\include\log4cpp\OstreamAppender.hh
+		Libs\include\log4cpp\PassThroughLayout.hh = Libs\include\log4cpp\PassThroughLayout.hh
+		Libs\include\log4cpp\PatternLayout.hh = Libs\include\log4cpp\PatternLayout.hh
+		Libs\include\log4cpp\Portability.hh = Libs\include\log4cpp\Portability.hh
+		Libs\include\log4cpp\Priority.hh = Libs\include\log4cpp\Priority.hh
+		Libs\include\log4cpp\PropertyConfigurator.hh = Libs\include\log4cpp\PropertyConfigurator.hh
+		Libs\include\log4cpp\PThreads.hh = Libs\include\log4cpp\PThreads.hh
+		Libs\include\log4cpp\RemoteSyslogAppender.hh = Libs\include\log4cpp\RemoteSyslogAppender.hh
+		Libs\include\log4cpp\RollingFileAppender.hh = Libs\include\log4cpp\RollingFileAppender.hh
+		Libs\include\log4cpp\SimpleConfigurator.hh = Libs\include\log4cpp\SimpleConfigurator.hh
+		Libs\include\log4cpp\SimpleLayout.hh = Libs\include\log4cpp\SimpleLayout.hh
+		Libs\include\log4cpp\SmtpAppender.hh = Libs\include\log4cpp\SmtpAppender.hh
+		Libs\include\log4cpp\StringQueueAppender.hh = Libs\include\log4cpp\StringQueueAppender.hh
+		Libs\include\log4cpp\SyslogAppender.hh = Libs\include\log4cpp\SyslogAppender.hh
+		Libs\include\log4cpp\Threading.hh = Libs\include\log4cpp\Threading.hh
+		Libs\include\log4cpp\TimeStamp.hh = Libs\include\log4cpp\TimeStamp.hh
+		Libs\include\log4cpp\TriggeringEventEvaluator.hh = Libs\include\log4cpp\TriggeringEventEvaluator.hh
+		Libs\include\log4cpp\TriggeringEventEvaluatorFactory.hh = Libs\include\log4cpp\TriggeringEventEvaluatorFactory.hh
+		Libs\include\log4cpp\Win32DebugAppender.hh = Libs\include\log4cpp\Win32DebugAppender.hh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backup", "backup", "{853EB365-CDA4-491C-889B-F13A8E079DBD}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\backup\log4cpp.ini = Libs\backup\log4cpp.ini
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "log4cpp", "log4cpp", "{52C3310F-0C6C-4CFD-8D09-D5D588750A9A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x64", "x64", "{39678392-E6FB-4AEA-B914-8C4C46B54C0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x86", "x86", "{87A3AC27-F7B8-4E59-A2B0-BFAEC4B88C18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{29293174-C986-464F-8CE6-FBBBD55EBDD5}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\log4cpp\x64\Debug\log4cpp.dll = Libs\log4cpp\x64\Debug\log4cpp.dll
+		Libs\log4cpp\x64\Debug\log4cpp.lib = Libs\log4cpp\x64\Debug\log4cpp.lib
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{9C3FB211-2266-4A42-91F3-671519759DFD}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\log4cpp\x64\Release\log4cpp.dll = Libs\log4cpp\x64\Release\log4cpp.dll
+		Libs\log4cpp\x64\Release\log4cpp.lib = Libs\log4cpp\x64\Release\log4cpp.lib
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{AEF27E8A-BD5A-4836-B744-6226E0BFB2D0}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\log4cpp\x86\Debug\log4cpp.dll = Libs\log4cpp\x86\Debug\log4cpp.dll
+		Libs\log4cpp\x86\Debug\log4cpp.lib = Libs\log4cpp\x86\Debug\log4cpp.lib
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{A549841F-7485-4F1D-B3EA-B673B074C988}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\log4cpp\x86\Release\log4cpp.dll = Libs\log4cpp\x86\Release\log4cpp.dll
+		Libs\log4cpp\x86\Release\log4cpp.lib = Libs\log4cpp\x86\Release\log4cpp.lib
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "threading", "threading", "{646EEF72-3D0A-4B75-8546-B7045DC00E40}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\log4cpp\threading\BoostThreads.hh = Libs\include\log4cpp\threading\BoostThreads.hh
+		Libs\include\log4cpp\threading\DummyThreads.hh = Libs\include\log4cpp\threading\DummyThreads.hh
+		Libs\include\log4cpp\threading\MSThreads.hh = Libs\include\log4cpp\threading\MSThreads.hh
+		Libs\include\log4cpp\threading\OmniThreads.hh = Libs\include\log4cpp\threading\OmniThreads.hh
+		Libs\include\log4cpp\threading\PThreads.hh = Libs\include\log4cpp\threading\PThreads.hh
+		Libs\include\log4cpp\threading\Threading.hh = Libs\include\log4cpp\threading\Threading.hh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,5 +154,15 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C181FF6D-C14F-4B55-844E-6D5D67FEDCBA} = {DD3E6D63-7AED-48D1-8E04-4F914AF16F88}
+		{6CFFADF3-429A-45DA-B970-9F4DA2EA597A} = {C181FF6D-C14F-4B55-844E-6D5D67FEDCBA}
+		{853EB365-CDA4-491C-889B-F13A8E079DBD} = {DD3E6D63-7AED-48D1-8E04-4F914AF16F88}
+		{52C3310F-0C6C-4CFD-8D09-D5D588750A9A} = {DD3E6D63-7AED-48D1-8E04-4F914AF16F88}
+		{39678392-E6FB-4AEA-B914-8C4C46B54C0A} = {52C3310F-0C6C-4CFD-8D09-D5D588750A9A}
+		{87A3AC27-F7B8-4E59-A2B0-BFAEC4B88C18} = {52C3310F-0C6C-4CFD-8D09-D5D588750A9A}
+		{29293174-C986-464F-8CE6-FBBBD55EBDD5} = {39678392-E6FB-4AEA-B914-8C4C46B54C0A}
+		{9C3FB211-2266-4A42-91F3-671519759DFD} = {39678392-E6FB-4AEA-B914-8C4C46B54C0A}
+		{AEF27E8A-BD5A-4836-B744-6226E0BFB2D0} = {87A3AC27-F7B8-4E59-A2B0-BFAEC4B88C18}
+		{A549841F-7485-4F1D-B3EA-B673B074C988} = {87A3AC27-F7B8-4E59-A2B0-BFAEC4B88C18}
+		{646EEF72-3D0A-4B75-8546-B7045DC00E40} = {6CFFADF3-429A-45DA-B970-9F4DA2EA597A}
 	EndGlobalSection
 EndGlobal
