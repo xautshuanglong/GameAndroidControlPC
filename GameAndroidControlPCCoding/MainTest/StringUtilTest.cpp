@@ -25,6 +25,13 @@ namespace ShuangLong
 		mpInstance->StringUtilTest_TrimW();
 		mpInstance->StringUtilTest_Split();
 		mpInstance->StringUtilTest_SplitW();
+
+		std::wcout.imbue(std::locale("chs"));
+
+		mpInstance->StringUtilTest_StringToWStringAPI();
+		mpInstance->StringUtilTest_WStringToStringAPI();
+		mpInstance->StringUtilTest_WStringToString();
+		mpInstance->StringUtilTest_StringToWString();
 	}
 
 	void StringUtilTest::StringUtilTest_Trim()
