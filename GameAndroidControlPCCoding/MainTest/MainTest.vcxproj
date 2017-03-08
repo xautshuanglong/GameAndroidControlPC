@@ -89,7 +89,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,7 +104,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,7 +121,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,7 +140,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,14 +152,21 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Log.cpp" />
+    <ClCompile Include="StringUtilTest.cpp" />
+    <ClCompile Include="TimeUtilTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h" />
     <ClInclude Include="ILog.h" />
+    <ClInclude Include="StringUtilTest.h" />
+    <ClInclude Include="TimeUtilTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GenericUtils\GenericUtils.vcxproj">
       <Project>{6fc63e73-8090-49b0-bc0d-7e554fa41af1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TcpUdpCommunication\TcpUdpCommunication.vcxproj">
+      <Project>{530ca1ad-a17b-4dcd-b43b-f93f2563bfc1}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

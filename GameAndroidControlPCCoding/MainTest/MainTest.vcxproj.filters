@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="GenericUtilTest">
+      <UniqueIdentifier>{879ff119-b714-4e61-86e0-8a6b45cd7e12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -21,6 +24,12 @@
     <ClCompile Include="Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StringUtilTest.cpp">
+      <Filter>GenericUtilTest</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeUtilTest.cpp">
+      <Filter>GenericUtilTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -28,6 +37,12 @@
     </ClInclude>
     <ClInclude Include="ILog.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StringUtilTest.h">
+      <Filter>GenericUtilTest</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeUtilTest.h">
+      <Filter>GenericUtilTest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

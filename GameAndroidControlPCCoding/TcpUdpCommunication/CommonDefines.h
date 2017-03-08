@@ -9,7 +9,7 @@
  *  Description: Some general defines
 \**************************************************************************/
 
-#if GENERICUTILS_EXPORTS
+#if TCPUDPCOMMUNICATION_EXPORTS
 #define EXPORT_API __declspec(dllexport)
 #else
 #define EXPORT_API __declspec(dllimport)

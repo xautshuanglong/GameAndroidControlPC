@@ -27,15 +27,18 @@
     <ClInclude Include="CommonDefines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TcpSocketServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TcpUdpCommunication.cpp">
+    <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="TcpSocketServer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

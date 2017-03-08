@@ -21,7 +21,7 @@ namespace ShuangLong
 		Log();
 		//static volatile bool m_bInitFlag;
 		//static std::mutex m_mutex;
-		static Log* m_pInstance;
+		static Log* m_mpInstance;
 		static std::once_flag m_instanceFlag;
 
 		std::ofstream m_osFile;
@@ -48,9 +48,9 @@ namespace ShuangLong
 			Helpper() {}
 			~Helpper()
 			{
-				if (m_pInstance != nullptr)
+				if (m_mpInstance != nullptr)
 				{
-					delete m_pInstance;
+					delete m_mpInstance;
 				}
 			}
 		};
