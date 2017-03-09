@@ -113,7 +113,7 @@ namespace ShuangLong
 	void Log::AddCodeLocation(std::string& msgString, CodeLocation& location)
 	{
 		//msgString.append("    <-- ");
-		msgString.append("    [");
+		msgString.append("    [ ");
 		msgString.append(location.GetShortClassName());
 		msgString.append("::");
 		msgString.append(location.GetFuncName());
