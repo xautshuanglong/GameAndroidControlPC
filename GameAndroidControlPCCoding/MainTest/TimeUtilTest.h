@@ -13,8 +13,11 @@ namespace ShuangLong
 		~TimeUtilTest();
 
 		static TimeUtilTest *mpInstance;
-		void static Entry();
+		static void Entry();
 
-		void TimeUtilTestAll();
+		void TimeUtilTest_QueryPerformanceFrequency();
+		void TimeUtilTest_QueryPerformanceCounter();
+		void TimeUtilTest_FormatTimestamp();
+		void TimeUtilTest_TimeDiff();
 	};
 }

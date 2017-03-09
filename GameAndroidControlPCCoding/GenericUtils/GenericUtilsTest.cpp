@@ -14,9 +14,9 @@ void GenericUtilsTestEntry(ShuangLong::ILog *pLog)
 	g_pLog = pLog;
 	std::cout << "-------------------------------- Generic Utils Testing --------------------------------" << std::endl;
 
-	//TimeUtilTest();// 时间相关测试
-	//DirectoryUtilTest();// 文件目录相关操作测试
-	//StringUtilTest();// 字符串相关操作测试
+	TimeUtilTest();// 时间相关测试
+	DirectoryUtilTest();// 文件目录相关操作测试
+	StringUtilTest();// 字符串相关操作测试
 }
 
 void TimeUtilTest()

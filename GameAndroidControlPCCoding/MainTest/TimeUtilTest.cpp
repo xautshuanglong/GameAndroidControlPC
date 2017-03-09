@@ -18,18 +18,35 @@ namespace ShuangLong
 	{
 		mpInstance = new TimeUtilTest();
 		mpInstance->mpLog = Log::GetInstance();
+
+		std::cout << std::endl << "----------------------------------- Time Utils Testing -----------------------------------" << std::endl;
+		mpInstance->TimeUtilTest_QueryPerformanceFrequency();
+		mpInstance->TimeUtilTest_QueryPerformanceCounter();
+		mpInstance->TimeUtilTest_FormatTimestamp();
+		mpInstance->TimeUtilTest_TimeDiff();
 	}
 
-	void TimeUtilTest::TimeUtilTestAll()
+	void TimeUtilTest::TimeUtilTest_QueryPerformanceFrequency()
 	{
-		std::cout << std::endl << "---------------------------------- Time Utils Testing ----------------------------------" << std::endl;
 		long long frequency = ShuangLong::Utils::TimeUtil::QueryPerformanceFrequency();
 		std::cout << "frequency: " << frequency << std::endl;
+		mpLog->Console(SL_CODELOCATION, "Format test -- PerformanceCounter: %llu", frequency);
+	}
+
+	void TimeUtilTest::TimeUtilTest_QueryPerformanceCounter()
+	{
 		long long curWinTime = ShuangLong::Utils::TimeUtil::QueryPerformanceCounter();
 		std::cout << "curWinTime: " << curWinTime << std::endl;
-		mpLog->Console(SL_CODELOCATION, "PerformanceCounter: %llu", curWinTime);
-		mpLog->Console(SL_CODELOCATION, "Current Full Time String: %s", ShuangLong::Utils::TimeUtil::GetFullTimeString().c_str());
+		mpLog->Console(SL_CODELOCATION, "Format test -- PerformanceCounter: %llu", curWinTime);
+	}
 
+	void TimeUtilTest::TimeUtilTest_FormatTimestamp()
+	{
+		mpLog->Console(SL_CODELOCATION, "Current Full Time String: %s", ShuangLong::Utils::TimeUtil::GetFullTimeString().c_str());
+	}
+
+	void TimeUtilTest::TimeUtilTest_TimeDiff()
+	{
 		time_t timeTest;
 		tm tmStruct;
 		time(&timeTest);
@@ -60,10 +77,11 @@ namespace ShuangLong
 
 		mpLog->Console(SL_CODELOCATION, "dayLight=%d timeZone=%ld[%d] zoneName=%s", dayLight, timeZone, errorCode, timeZoneName);
 
+		long long frequency = ShuangLong::Utils::TimeUtil::QueryPerformanceFrequency();
 		DWORD tickCount = GetTickCount();
 		clock_t clock = ::clock();
 		LONGLONG counter = ShuangLong::Utils::TimeUtil::QueryPerformanceCounter();
-		Sleep(1000);
+		Sleep(3000);
 		DWORD tickCount2 = GetTickCount();
 		clock_t clock2 = ::clock();
 		LONGLONG counter2 = ShuangLong::Utils::TimeUtil::QueryPerformanceCounter();

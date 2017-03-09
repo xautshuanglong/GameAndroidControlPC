@@ -13,7 +13,7 @@ namespace ShuangLong
 		~StringUtilTest();
 
 		static StringUtilTest *mpInstance;
-		void static Entry();
+		static void Entry();
 
 		void StringUtilTest_Trim();
 		void StringUtilTest_TrimW();

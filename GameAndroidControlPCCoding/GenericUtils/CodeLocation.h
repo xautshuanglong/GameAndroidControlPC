@@ -24,7 +24,9 @@ namespace ShuangLong
 		int GetLineNumber();
 		std::string GetFileName();
 		std::string GetShortFileName();
+		std::string GetShortClassName();
 		std::string GetFuncName();
+		std::string GetFullFuncName();
 		std::string ToString();
 	};
 }

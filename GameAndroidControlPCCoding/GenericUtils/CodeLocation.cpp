@@ -45,7 +45,31 @@ namespace ShuangLong
 		return m_strShortFileName;
 	}
 
+	std::string CodeLocation::GetShortClassName()
+	{
+		std::string className("");
+		std::cout << m_strFuncName << std::endl;
+		size_t index = m_strFuncName.find_last_of(":");
+		std::cout << "index=" << index << std::endl;
+		if (index != std::string::npos)
+		{
+			className = m_strFuncName.substr(0, index-1);
+		}
+		index = className.find_last_of(":");
+		if (index != std::string::npos)
+		{
+			className.erase(0, index);
+		}
+
+		return className;
+	}
+
 	std::string CodeLocation::GetFuncName()
+	{
+		return m_strFuncName;
+	}
+
+	std::string CodeLocation::GetFullFuncName()
 	{
 		return m_strFuncName;
 	}

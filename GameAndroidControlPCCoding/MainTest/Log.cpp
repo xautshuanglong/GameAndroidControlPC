@@ -113,7 +113,17 @@ namespace ShuangLong
 	void Log::AddCodeLocation(std::string& msgString, CodeLocation& location)
 	{
 		//msgString.append("    <-- ");
-		msgString.append("    ");
-		msgString.append(location.ToString());
+		msgString.append("    [");
+		msgString.append(location.GetShortClassName());
+		msgString.append("::");
+		msgString.append(location.GetFuncName());
+		msgString.append(" ");
+		msgString.append(location.GetShortFileName());
+		msgString.append(":");
+		int lineNum = location.GetLineNumber();
+		std::ostringstream oss;
+		oss << lineNum;
+		msgString.append(oss.str());
+		msgString.append(" ]");
 	}
 }
