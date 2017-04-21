@@ -12,6 +12,13 @@ namespace ShuangLong
 {
 	namespace Utils
 	{
+		/************************************************************************\
+			Author     : JiangChuanbiao
+			Date       : 2017-4-21
+			Description: 字符串操作工具
+						（字符格式化, 剔除空字符" \t\r\n", 字符串分割,
+						  款字节与多字节互转）
+		\************************************************************************/
 		class EXPORT_API StringUtil
 		{
 		public:
