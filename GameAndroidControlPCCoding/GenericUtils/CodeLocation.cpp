@@ -48,9 +48,7 @@ namespace ShuangLong
 	std::string CodeLocation::GetShortClassName()
 	{
 		std::string className("");
-		std::cout << m_strFuncName << std::endl;
 		size_t index = m_strFuncName.find_last_of(":");
-		std::cout << "index=" << index << std::endl;
 		if (index != std::string::npos)
 		{
 			className = m_strFuncName.substr(0, index-1);
@@ -58,7 +56,7 @@ namespace ShuangLong
 		index = className.find_last_of(":");
 		if (index != std::string::npos)
 		{
-			className.erase(0, index);
+			className.erase(0, index+1);
 		}
 
 		return className;
@@ -66,7 +64,14 @@ namespace ShuangLong
 
 	std::string CodeLocation::GetFuncName()
 	{
-		return m_strFuncName;
+		std::string funcName = m_strFuncName;
+		size_t index = funcName.find_last_of(":");
+		if (index != std::string::npos)
+		{
+			funcName.erase(0, index + 1);
+		}
+
+		return funcName;
 	}
 
 	std::string CodeLocation::GetFullFuncName()
