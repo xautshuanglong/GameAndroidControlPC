@@ -30,6 +30,9 @@
     <ClCompile Include="TimeUtilTest.cpp">
       <Filter>GenericUtilTest</Filter>
     </ClCompile>
+    <ClCompile Include="DirectoryUtilTest.cpp">
+      <Filter>GenericUtilTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -42,6 +45,9 @@
       <Filter>GenericUtilTest</Filter>
     </ClInclude>
     <ClInclude Include="TimeUtilTest.h">
+      <Filter>GenericUtilTest</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryUtilTest.h">
       <Filter>GenericUtilTest</Filter>
     </ClInclude>
   </ItemGroup>

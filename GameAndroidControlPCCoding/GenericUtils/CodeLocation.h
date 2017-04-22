@@ -1,4 +1,6 @@
 #pragma once
+#pragma warning(disable:4251)// 屏蔽导出模板类引发的警告(简单粗暴)
+
 #include "CommonDefines.h"
 
 #include <sstream>

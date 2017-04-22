@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "StringUtil.h"
 
-//#include <locale>
 #include <codecvt>
 
 namespace ShuangLong
@@ -137,6 +136,7 @@ namespace ShuangLong
 			}
 			catch (const std::bad_alloc& e)
 			{
+				e.what();
 				return std::wstring(L"");
 			}
 
@@ -164,6 +164,7 @@ namespace ShuangLong
 			}
 			catch (const std::bad_alloc& e)
 			{
+				e.what();
 				return std::string("");
 			}
 

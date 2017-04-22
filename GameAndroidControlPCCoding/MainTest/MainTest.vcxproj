@@ -150,12 +150,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DirectoryUtilTest.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="StringUtilTest.cpp" />
     <ClCompile Include="TimeUtilTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DirectoryUtilTest.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="ILog.h" />
     <ClInclude Include="StringUtilTest.h" />

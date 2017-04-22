@@ -151,7 +151,6 @@
   <ItemGroup>
     <ClInclude Include="CodeLocation.h" />
     <ClInclude Include="CommonDefines.h" />
-    <ClInclude Include="GenericUtilsTest.h" />
     <ClInclude Include="RegistryUtil.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringUtil.h" />
@@ -174,7 +173,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="GenericUtilsTest.cpp" />
     <ClCompile Include="RegistryUtil.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

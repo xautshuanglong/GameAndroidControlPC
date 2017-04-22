@@ -36,9 +36,6 @@
     <ClInclude Include="TimeUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GenericUtilsTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RegistryUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -57,9 +54,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TimeUtil.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GenericUtilsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="RegistryUtil.cpp">
