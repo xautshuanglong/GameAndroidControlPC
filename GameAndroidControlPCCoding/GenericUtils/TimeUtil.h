@@ -98,8 +98,9 @@ namespace ShuangLong
 			TimeUtil(TimeUtil&& originalObj) = delete;
 			~TimeUtil();
 
-			static std::string GetFullTimeString();
-			static std::string GetSimpleTimeString();
+			static std::string GetDateString();
+			static std::string GetTimeString();
+			static std::string GetDateTimeString();
 			static std::string GetFormatTimeString(const char* timeFormat);
 
 			static INT64 GetCurrentTimestamp();

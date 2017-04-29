@@ -14,26 +14,38 @@ namespace ShuangLong
 		}
 
 		/************************************************************************\
-			Description: time string like YYYY-mm-dd HH:MM:SS
-			Arguments  : 
+		Description: time string like YYYY-mm-dd
+		Arguments  :
 		\************************************************************************/
-		std::string TimeUtil::GetFullTimeString()
+		std::string TimeUtil::GetDateString()
 		{
 			char timeBuffer[64];
 			GetMyCurrentTime();
-			strftime(timeBuffer, 64, "%Y-%m-%d %H:%M:%S", &m_tmCurTime);
+			strftime(timeBuffer, 64, "%Y-%m-%d", &m_tmCurTime);
 			return std::string(timeBuffer);
 		}
 
 		/************************************************************************\
-			Description: time string like HH:MM:SS
-			Arguments  :
+		Description: time string like HH:MM:SS
+		Arguments  :
 		\************************************************************************/
-		std::string TimeUtil::GetSimpleTimeString()
+		std::string TimeUtil::GetTimeString()
 		{
 			char timeBuffer[64];
 			GetMyCurrentTime();
 			strftime(timeBuffer, 64, "%H:%M:%S", &m_tmCurTime);
+			return std::string(timeBuffer);
+		}
+
+		/************************************************************************\
+			Description: time string like YYYY-mm-dd HH:MM:SS
+			Arguments  : 
+		\************************************************************************/
+		std::string TimeUtil::GetDateTimeString()
+		{
+			char timeBuffer[64];
+			GetMyCurrentTime();
+			strftime(timeBuffer, 64, "%Y-%m-%d %H:%M:%S", &m_tmCurTime);
 			return std::string(timeBuffer);
 		}
 
