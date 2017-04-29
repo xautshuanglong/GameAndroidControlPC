@@ -15,6 +15,10 @@ namespace ShuangLong
 		static StringUtilTest *mpInstance;
 		static void Entry();
 
+		void StringUtilTest_FormateString();
+		void StringUtilTest_FormateWString();
+		void StringUtilTest_FormatArguments(char *format, ...);
+		void StringUtilTest_FormatArgumentsW(wchar_t *format, ...);
 		void StringUtilTest_Trim();
 		void StringUtilTest_TrimW();
 		void StringUtilTest_Split();

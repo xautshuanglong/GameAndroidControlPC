@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 #include <StringUtil.h>
 
 #include "StringUtilTest.h"
@@ -21,6 +22,18 @@ namespace ShuangLong
 		mpInstance = new StringUtilTest();
 		mpInstance->mpLog = Log::GetInstance();
 
+		mpInstance->StringUtilTest_FormateString();
+		mpInstance->StringUtilTest_FormateWString();
+
+		char charString[] = "charString_test";
+		std::string stdString = "stdString_test";
+		int intNum = 110;
+		mpInstance->StringUtilTest_FormatArguments("charString=%s stdString=%s intNum=%d", charString, stdString.c_str(), intNum);
+
+		wchar_t wcharString[] = L"wcharString_test";
+		std::wstring stdWString = L"stdWString_test";
+		mpInstance->StringUtilTest_FormatArgumentsW(L"wcharString=%s stdWString=%s intNum=%d", wcharString, stdWString.c_str(), intNum);
+
 		mpInstance->StringUtilTest_Trim();
 		mpInstance->StringUtilTest_TrimW();
 		mpInstance->StringUtilTest_Split();
@@ -32,6 +45,47 @@ namespace ShuangLong
 		mpInstance->StringUtilTest_WStringToStringAPI();
 		mpInstance->StringUtilTest_WStringToString();
 		mpInstance->StringUtilTest_StringToWString();
+	}
+
+	void StringUtilTest::StringUtilTest_FormateString()
+	{
+		std::cout << std::endl << "-------------------------------- StringUtilTest_FormateString --------------------------------" << std::endl;
+		char charString[] = "charString_test";
+		std::string stdString = "stdString_test";
+		int intNum = 110;
+		std::string retString = Utils::StringUtil::FormatString("charString=%s stdString=%s intNum=%d", charString, stdString.c_str(), intNum);
+		mpLog->Console(SL_CODELOCATION, "StringUtil::FormatString: %s", retString.c_str());
+	}
+
+	void StringUtilTest::StringUtilTest_FormateWString()
+	{
+		std::cout << std::endl << "-------------------------------- StringUtilTest_FormateWString --------------------------------" << std::endl;
+		wchar_t wcharString[] = L"wcharString_test";
+		std::wstring stdWString = L"stdWString_test";
+		int intNum = 110;
+		std::wstring retString = Utils::StringUtil::FormatWString(L"wcharString=%s stdWString=%s intNum=%d", wcharString, stdWString.c_str(), intNum);
+		std::wcout << "StringUtil::FormatWString: " << retString.c_str() << std::endl;
+		mpLog->Console(SL_CODELOCATION, "StringUtil.FormatWString: %s", Utils::StringUtil::WStringToString(retString).c_str());
+	}
+
+	void StringUtilTest::StringUtilTest_FormatArguments(char *format, ...)
+	{
+		std::cout << std::endl << "-------------------------------- StringUtilTest_FormatArguments --------------------------------" << std::endl;
+		va_list argList;
+		va_start(argList, format);
+		std::string retString = Utils::StringUtil::FormatArguments(format, argList);
+		va_end(argList);
+		std::cout << "StringUtil::FormatArguments " << retString.c_str() << std::endl;
+	}
+
+	void StringUtilTest::StringUtilTest_FormatArgumentsW(wchar_t *format, ...)
+	{
+		std::cout << std::endl << "-------------------------------- StringUtilTest_FormatArgumentsW --------------------------------" << std::endl;
+		va_list argList;
+		va_start(argList, format);
+		std::wstring retString = Utils::StringUtil::FormatArgumentsW(format, argList);
+		va_end(argList);
+		std::wcout << "StringUtil::FormatArgumentsW " << retString.c_str() << std::endl;
 	}
 
 	void StringUtilTest::StringUtilTest_Trim()

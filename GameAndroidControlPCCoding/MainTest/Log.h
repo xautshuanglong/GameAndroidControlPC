@@ -15,7 +15,7 @@
 
 namespace ShuangLong
 {
-	class Log sealed:public ILog
+	class Log sealed: public ILog
 	{
 	private:
 		Log();
