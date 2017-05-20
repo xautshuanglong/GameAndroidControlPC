@@ -2,6 +2,7 @@
 #include "StringUtilTest.h"
 #include "TimeUtilTest.h"
 #include "DirectoryUtilTest.h"
+#include "TestClassTest.h"
 
 #include <iostream>
 
@@ -13,6 +14,7 @@ int main(int argc, char** argv)
 	//ShuangLong::StringUtilTest::Entry();
 	ShuangLong::TimeUtilTest::Entry();
 	//ShuangLong::DirectoryUtilTest::Entry();
+	ShuangLong::TestClassTest::Entry();
 
 	return 0;
 }

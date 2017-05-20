@@ -89,11 +89,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -104,7 +107,8 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,7 +125,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,7 +145,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -154,6 +160,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="StringUtilTest.cpp" />
+    <ClCompile Include="TestClassTest.cpp" />
     <ClCompile Include="TimeUtilTest.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -161,11 +168,15 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="ILog.h" />
     <ClInclude Include="StringUtilTest.h" />
+    <ClInclude Include="TestClassTest.h" />
     <ClInclude Include="TimeUtilTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GenericUtils\GenericUtils.vcxproj">
       <Project>{6fc63e73-8090-49b0-bc0d-7e554fa41af1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ProtocolBuffer\ProtocolBuffer.vcxproj">
+      <Project>{37d65815-8a9a-4d63-88e4-425ad0087b4d}</Project>
     </ProjectReference>
     <ProjectReference Include="..\TcpUdpCommunication\TcpUdpCommunication.vcxproj">
       <Project>{530ca1ad-a17b-4dcd-b43b-f93f2563bfc1}</Project>

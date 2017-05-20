@@ -16,6 +16,9 @@
     <Filter Include="GenericUtilTest">
       <UniqueIdentifier>{879ff119-b714-4e61-86e0-8a6b45cd7e12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ProtocolBufferTest">
+      <UniqueIdentifier>{01954f43-a20a-47dc-978d-c7a572dc2dfb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -33,6 +36,9 @@
     <ClCompile Include="DirectoryUtilTest.cpp">
       <Filter>GenericUtilTest</Filter>
     </ClCompile>
+    <ClCompile Include="TestClassTest.cpp">
+      <Filter>ProtocolBufferTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="DirectoryUtilTest.h">
       <Filter>GenericUtilTest</Filter>
+    </ClInclude>
+    <ClInclude Include="TestClassTest.h">
+      <Filter>ProtocolBufferTest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

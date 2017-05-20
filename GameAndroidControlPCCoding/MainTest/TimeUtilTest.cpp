@@ -117,8 +117,11 @@ namespace ShuangLong
 
 		_tzset();
 
-		int dayLight;
-		_get_daylight(&dayLight);
+		int dayLightHours;
+		_get_daylight(&dayLightHours);
+
+		long dayLightSeconds;
+		_get_dstbias(&dayLightSeconds);
 
 		long timeZone;
 		int errorCode = _get_timezone(&timeZone);
@@ -127,7 +130,7 @@ namespace ShuangLong
 		size_t t;
 		_get_tzname(&t, timeZoneName, sizeof(timeZoneName), 0);
 
-		mpLog->Console(SL_CODELOCATION, "dayLight=%d timeZone=%ld[%d] zoneName=%s", dayLight, timeZone, errorCode, timeZoneName);
+		mpLog->Console(SL_CODELOCATION, "dayLightHours=%d dayLightSeconds=%ld timeZone=%ld[%d] zoneName=%s", dayLightHours, dayLightSeconds, timeZone, errorCode, timeZoneName);
 
 		long long frequency = ShuangLong::Utils::TimeUtil::QueryPerformanceFrequency();
 		DWORD tickCount = GetTickCount();

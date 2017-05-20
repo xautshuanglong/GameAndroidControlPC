@@ -105,7 +105,8 @@ namespace ShuangLong
 
 	void Log::AddTimestamp(std::string& msgString)
 	{
-		std::string timeString = Utils::TimeUtil::GetSimpleTimestampString();
+		std::string timeString("");
+		timeString = Utils::TimeUtil::GetSimpleTimestampString();
 		timeString.append(" ");
 		msgString.insert(0, timeString);
 	}
