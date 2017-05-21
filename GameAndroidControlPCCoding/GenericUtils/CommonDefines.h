@@ -17,4 +17,3 @@
 #else
 #define EXPORT_API //__declspec(dllimport)// need not __declspec(dllimport) as static library
 #endif
-
