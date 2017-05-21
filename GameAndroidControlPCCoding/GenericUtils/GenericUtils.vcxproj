@@ -153,8 +153,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractAlgorithm.h" />
+    <ClInclude Include="AlgorithmUtil.h" />
     <ClInclude Include="CodeLocation.h" />
     <ClInclude Include="CommonDefines.h" />
+    <ClInclude Include="MD5.h" />
     <ClInclude Include="RegistryUtil.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringUtil.h" />
@@ -162,6 +165,7 @@
     <ClInclude Include="TimeUtil.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AlgorithmUtil.cpp" />
     <ClCompile Include="CodeLocation.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
@@ -177,6 +181,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="MD5.cpp" />
     <ClCompile Include="RegistryUtil.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
