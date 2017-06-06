@@ -120,6 +120,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormUI", "WinFormUI\WinF
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ProtocolBuffer", "ProtocolBuffer\ProtocolBuffer.vcxproj", "{37D65815-8A9A-4D63-88E4-425AD0087B4D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeUnitTest", "NativeUnitTest\NativeUnitTest.vcxproj", "{97526478-8C7A-44C4-B44E-7A32D9B82EF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -182,6 +184,16 @@ Global
 		{37D65815-8A9A-4D63-88E4-425AD0087B4D}.Release|x64.Build.0 = Release|x64
 		{37D65815-8A9A-4D63-88E4-425AD0087B4D}.Release|x86.ActiveCfg = Release|Win32
 		{37D65815-8A9A-4D63-88E4-425AD0087B4D}.Release|x86.Build.0 = Release|Win32
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Debug|x64.ActiveCfg = Debug|x64
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Debug|x64.Build.0 = Debug|x64
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Debug|x86.ActiveCfg = Debug|Win32
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Debug|x86.Build.0 = Debug|Win32
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Release|Any CPU.ActiveCfg = Release|Win32
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Release|x64.ActiveCfg = Release|x64
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Release|x64.Build.0 = Release|x64
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Release|x86.ActiveCfg = Release|Win32
+		{97526478-8C7A-44C4-B44E-7A32D9B82EF8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
