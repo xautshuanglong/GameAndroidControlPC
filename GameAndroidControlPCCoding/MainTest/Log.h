@@ -1,5 +1,4 @@
 #pragma once
-#include "CommonDefines.h"
 #include "ILog.h"
 
 #include <CodeLocation.h>

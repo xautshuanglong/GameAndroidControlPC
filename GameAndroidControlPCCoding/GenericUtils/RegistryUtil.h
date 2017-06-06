@@ -1,11 +1,11 @@
 #pragma once
-#include "CommonDefines.h"
+#include "GenericDefines.h"
 
 namespace ShuangLong
 {
 	namespace Utils
 	{
-		class EXPORT_API RegistryUtil sealed
+		class GENERIC_EXPORT RegistryUtil sealed
 		{
 		public:
 			RegistryUtil() = delete;

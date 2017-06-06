@@ -10,7 +10,7 @@
 \**************************************************************************/
 
 #if TCPUDPCOMMUNICATION_EXPORTS
-#define EXPORT_API __declspec(dllexport)
+#define TCPUDP_EXPORT __declspec(dllexport)
 #else
-#define EXPORT_API __declspec(dllimport)
+#define TCPUDP_EXPORT
 #endif

@@ -1,12 +1,12 @@
 #pragma once
 
-#include "CommonDefines.h"
+#include "TcpUdpDefines.h"
 
 namespace ShuangLong
 {
 	namespace Socket
 	{
-		class EXPORT_API TcpSocketServer
+		class TCPUDP_EXPORT TcpSocketServer
 		{
 		public:
 			TcpSocketServer();

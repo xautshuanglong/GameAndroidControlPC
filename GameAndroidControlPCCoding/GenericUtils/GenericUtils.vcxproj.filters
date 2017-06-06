@@ -24,9 +24,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CommonDefines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CodeLocation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -46,6 +43,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AbstractAlgorithm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericDefines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

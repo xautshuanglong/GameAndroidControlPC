@@ -11,10 +11,10 @@ int main(int argc, char** argv)
 	std::cout << "====================================== Main Testing ======================================" << std::endl;
 	ShuangLong::Log *pLog = ShuangLong::Log::GetInstance();
 
-	//ShuangLong::StringUtilTest::Entry();
-	//ShuangLong::TimeUtilTest::Entry();
-	//ShuangLong::DirectoryUtilTest::Entry();
-	//ShuangLong::TestClassTest::Entry();
+	ShuangLong::StringUtilTest::Entry();
+	ShuangLong::TimeUtilTest::Entry();
+	ShuangLong::DirectoryUtilTest::Entry();
+	ShuangLong::TestClassTest::Entry();
 
 	return 0;
 }

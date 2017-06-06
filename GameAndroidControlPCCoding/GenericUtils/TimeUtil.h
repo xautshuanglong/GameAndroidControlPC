@@ -70,7 +70,7 @@
  *	%% : Percent sign
 \**************************************************************************/
 
-#include "CommonDefines.h"
+#include "GenericDefines.h"
 
 #include <windows.h>
 #include <ctime>
@@ -85,7 +85,7 @@ namespace ShuangLong
 			Date       : 2017-1-4
 			Description: get timestamp and format date time string.
 		\************************************************************************/
-		class EXPORT_API TimeUtil sealed
+		class GENERIC_EXPORT TimeUtil sealed
 		{
 		private:
 			static tm m_tmCurTime;

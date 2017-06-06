@@ -24,10 +24,10 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CommonDefines.h">
+    <ClInclude Include="TcpSocketServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TcpSocketServer.h">
+    <ClInclude Include="TcpUdpDefines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

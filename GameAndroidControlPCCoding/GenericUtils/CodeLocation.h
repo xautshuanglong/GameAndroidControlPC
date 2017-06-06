@@ -1,7 +1,7 @@
 #pragma once
 #pragma warning(disable:4251)// 屏蔽导出模板类引发的警告(简单粗暴)
 
-#include "CommonDefines.h"
+#include "GenericDefines.h"
 
 #include <sstream>
 #include <string>
@@ -11,7 +11,7 @@
 
 namespace ShuangLong
 {
-	class EXPORT_API CodeLocation
+	class GENERIC_EXPORT CodeLocation
 	{
 	private:
 		std::string m_strFileName;// 源文件名(含绝对路径)

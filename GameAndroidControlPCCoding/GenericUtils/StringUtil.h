@@ -1,5 +1,5 @@
 #pragma once
-#include "CommonDefines.h"
+#include "GenericDefines.h"
 
 #include <iostream>
 #include <iterator>
@@ -18,7 +18,7 @@ namespace ShuangLong
 						（字符格式化, 剔除空字符" \t\r\n", 字符串分割,
 						  款字节与多字节互转）
 		\************************************************************************/
-		class EXPORT_API StringUtil
+		class GENERIC_EXPORT StringUtil
 		{
 		public:
 			StringUtil() = delete;

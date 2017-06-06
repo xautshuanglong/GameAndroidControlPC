@@ -156,7 +156,7 @@
     <ClInclude Include="AbstractAlgorithm.h" />
     <ClInclude Include="AlgorithmUtil.h" />
     <ClInclude Include="CodeLocation.h" />
-    <ClInclude Include="CommonDefines.h" />
+    <ClInclude Include="GenericDefines.h" />
     <ClInclude Include="MD5.h" />
     <ClInclude Include="RegistryUtil.h" />
     <ClInclude Include="stdafx.h" />

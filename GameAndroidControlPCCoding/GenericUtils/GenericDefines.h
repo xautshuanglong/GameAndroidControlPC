@@ -13,7 +13,7 @@
 #endif
 
 #if GENERICUTILS_EXPORTS
-#define EXPORT_API __declspec(dllexport)
+#define GENERIC_EXPORT __declspec(dllexport)
 #else
-#define EXPORT_API //__declspec(dllimport)// need not __declspec(dllimport) as static library
+#define GENERIC_EXPORT
 #endif
