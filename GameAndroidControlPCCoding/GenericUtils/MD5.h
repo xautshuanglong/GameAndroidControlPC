@@ -2,10 +2,13 @@
 
 namespace ShuangLong
 {
-	class MD5
+	namespace Utils
 	{
-	public:
-		MD5();
-		~MD5();
-	};
+		class MD5
+		{
+		public:
+			MD5();
+			~MD5();
+		};
+	}
 }

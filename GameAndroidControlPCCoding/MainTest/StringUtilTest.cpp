@@ -1,8 +1,10 @@
+#include "stdafx.h"
+#include "StringUtilTest.h"
+
 #include <iostream>
-#include <windows.h>
 #include <StringUtil.h>
 
-#include "StringUtilTest.h"
+//using namespace ShuangLong::Utils;
 
 namespace ShuangLong
 {

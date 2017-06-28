@@ -83,14 +83,14 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,6 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,6 +128,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -147,6 +149,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -159,17 +162,24 @@
     <ClCompile Include="DirectoryUtilTest.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Log.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="StringUtilTest.cpp" />
     <ClCompile Include="TestClassTest.cpp" />
     <ClCompile Include="TimeUtilTest.cpp" />
+    <ClCompile Include="UpPrivilegeTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectoryUtilTest.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="ILog.h" />
+    <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringUtilTest.h" />
     <ClInclude Include="TestClassTest.h" />
     <ClInclude Include="TimeUtilTest.h" />
+    <ClInclude Include="UpPrivilegeTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GenericUtils\GenericUtils.vcxproj">

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "AlgorithmUtil.h"
 
-namespace ShuangLong
+namespace ShuangLong::Utils
 {
 	AlgorithmUtil::AlgorithmUtil()
 	{

@@ -2,14 +2,15 @@
 
 namespace ShuangLong
 {
-	class AlgorithmUtil sealed
+	namespace Utils
 	{
-	private:
-		AlgorithmUtil();
+		class AlgorithmUtil sealed
+		{
+		private:
+			AlgorithmUtil();
 
-	public:
-		~AlgorithmUtil();
-
-
-	};
+		public:
+			~AlgorithmUtil();
+		};
+	}
 }

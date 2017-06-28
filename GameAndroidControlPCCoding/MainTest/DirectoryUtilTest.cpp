@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "DirectoryUtilTest.h"
 
 namespace ShuangLong

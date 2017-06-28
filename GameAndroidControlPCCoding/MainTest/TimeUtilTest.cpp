@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "TimeUtilTest.h"
 
 namespace ShuangLong
