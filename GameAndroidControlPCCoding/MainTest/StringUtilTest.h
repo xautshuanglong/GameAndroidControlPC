@@ -6,10 +6,10 @@ namespace ShuangLong
 	class StringUtilTest sealed
 	{
 	private:
+		StringUtilTest();
 		Log* mpLog = nullptr;
 
 	public:
-		StringUtilTest();
 		~StringUtilTest();
 
 		static StringUtilTest *mpInstance;

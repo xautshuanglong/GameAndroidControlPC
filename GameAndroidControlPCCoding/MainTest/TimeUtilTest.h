@@ -6,10 +6,10 @@ namespace ShuangLong
 	class TimeUtilTest sealed
 	{
 	private:
+		TimeUtilTest();
 		Log* mpLog = nullptr;
 
 	public:
-		TimeUtilTest();
 		~TimeUtilTest();
 
 		static TimeUtilTest *mpInstance;

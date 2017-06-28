@@ -7,10 +7,10 @@ namespace ShuangLong
 	class DirectoryUtilTest sealed
 	{
 	private:
+		DirectoryUtilTest();
 		Log* mpLog = nullptr;
 
 	public:
-		DirectoryUtilTest();
 		~DirectoryUtilTest();
 
 		static DirectoryUtilTest *mpInstance;
