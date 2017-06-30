@@ -15,10 +15,9 @@ int main(int argc, char** argv)
 
 	//ShuangLong::StringUtilTest::Entry();
 	//ShuangLong::TimeUtilTest::Entry();
-	//ShuangLong::DirectoryUtilTest::Entry();
+	ShuangLong::DirectoryUtilTest::Entry();
 	//ShuangLong::TestClassTest::Entry();
-	ShuangLong::Test::UpPrivilegeTest::Entry();
-	pLog->Console(SL_CODELOCATION, "after UpPrivilegeTest::Entry()");
+	//ShuangLong::Test::UpPrivilegeTest::Entry();
 
 	return 0;
 }

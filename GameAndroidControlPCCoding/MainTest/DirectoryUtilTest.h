@@ -17,5 +17,6 @@ namespace ShuangLong
 		static void Entry();
 
 		void DirectoryUtilTest_Try();
+		void DirectoryUtilTest_GetEnv();
 	};
 }

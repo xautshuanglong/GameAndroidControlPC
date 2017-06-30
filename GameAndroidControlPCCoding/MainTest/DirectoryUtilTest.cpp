@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "DirectoryUtilTest.h"
 
+#include <StringUtil.h>
+
 namespace ShuangLong
 {
 	DirectoryUtilTest* DirectoryUtilTest::mpInstance = nullptr;
@@ -22,6 +24,7 @@ namespace ShuangLong
 
 		std::cout << std::endl << "----------------------------------- Directory Utils Testing -----------------------------------" << std::endl;
 		mpInstance->DirectoryUtilTest_Try();
+		mpInstance->DirectoryUtilTest_GetEnv();
 	}
 
 	void DirectoryUtilTest::DirectoryUtilTest_Try()
@@ -29,6 +32,14 @@ namespace ShuangLong
 		char curDirBuffer[512];
 		GetCurrentDirectoryA(512, curDirBuffer);
 		mpLog->Console("Current Directory: %s", curDirBuffer);
+
+		char curModuleFileName[MAX_PATH];
+		DWORD res = GetModuleFileNameA(nullptr, curModuleFileName, MAX_PATH);
+		mpLog->Console(SL_CODELOCATION, "curModuleFileName=%s", curModuleFileName);
+
+		char *pOutFileName = new char[MAX_PATH];
+		_get_pgmptr(&pOutFileName);
+		mpLog->Console(SL_CODELOCATION, "pOutFileName = %s", pOutFileName);
 
 		char fullPathBuffer[512];
 		char *pFilePart = nullptr;
@@ -81,5 +92,43 @@ namespace ShuangLong
 			mpLog->Console("LargeTime: %I64u", largeTime.QuadPart);
 			mpLog->Console("LargeTime: %llu", largeTime.QuadPart);
 		}
+
+		BOOL existFlag = PathFileExists(L"E:\\TempLog.txt");// Shlwapi.h Shlwapi.lib
+		mpLog->Console(SL_CODELOCATION, "existFlag=%s", existFlag ? "true" : "false");
+	}
+
+	void DirectoryUtilTest::DirectoryUtilTest_GetEnv()
+	{
+		size_t     returnValue       = 0;
+		errno_t    errorCode         = 0;
+		BOOL       retBool           = FALSE;
+		char       buffer[MAX_PATH];
+
+		errorCode = getenv_s(&returnValue, buffer, MAX_PATH, "HomePath");
+		mpLog->Console(SL_CODELOCATION, "HomePath=%s ErrorCode=%d", buffer, errorCode);
+
+		errorCode = getenv_s(&returnValue, buffer, MAX_PATH, "UserProfile");
+		mpLog->Console(SL_CODELOCATION, "UserProfile=%s ErrorCode=%d", buffer, errorCode);
+
+		errorCode = _putenv_s("PUTENV_TEST", "PUTENV_TEST FROM GameAndroidControlPC");
+		mpLog->Console(SL_CODELOCATION, "After _putenv_s PUTENV_TEST ErrorCode=%d", errorCode);
+
+		errorCode = getenv_s(&returnValue, buffer, MAX_PATH, "PUTENV_TEST");
+		mpLog->Console(SL_CODELOCATION, "PUTENV_TEST=%s  ErrorCode=%d", buffer, errorCode);
+
+		LPITEMIDLIST pidl;
+		SHGetSpecialFolderLocation(NULL, CSIDL_LOCAL_APPDATA, &pidl);
+
+		retBool = SHGetSpecialFolderPathA(nullptr, buffer, CSIDL_LOCAL_APPDATA, false);
+		mpLog->Console(SL_CODELOCATION, "CSIDL_LOCAL_APPDATA=%s  ReturnBool=%s", buffer, retBool?"true":"false");
+
+		retBool = SHGetSpecialFolderPathA(nullptr, buffer, CSIDL_PROFILE, false);
+		mpLog->Console(SL_CODELOCATION, "CSIDL_PROFILE=%s  ReturnBool=%s", buffer, retBool ? "true" : "false");
+
+		WCHAR *wpBuffer = new WCHAR[MAX_PATH];
+		SHGetKnownFolderPath(FOLDERID_Downloads, 0, nullptr, &wpBuffer);
+		mpLog->Console(SL_CODELOCATION, "FOLDERID_Downloads=%s", Utils::StringUtil::WStringToString(wpBuffer).c_str());
+
+		CoTaskMemFree(wpBuffer);
 	}
 }

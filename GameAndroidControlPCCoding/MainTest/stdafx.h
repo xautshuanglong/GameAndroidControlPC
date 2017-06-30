@@ -12,6 +12,8 @@
 // Windows Header Files:
 #include <windows.h>
 #include <shellapi.h>
+#include <shlwapi.h>
 #include <VersionHelpers.h>
+#include <Shlobj.h>
 
 #include <string>
