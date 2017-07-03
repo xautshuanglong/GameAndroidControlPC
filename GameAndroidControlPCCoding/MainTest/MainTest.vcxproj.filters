@@ -45,6 +45,9 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VersionUtilTest.cpp">
+      <Filter>GenericUtilTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -70,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VersionUtilTest.h">
+      <Filter>GenericUtilTest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

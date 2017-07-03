@@ -5,6 +5,7 @@
 #include "DirectoryUtilTest.h"
 #include "TestClassTest.h"
 #include "UpPrivilegeTest.h"
+#include "VersionUtilTest.h"
 
 #include <iostream>
 
@@ -15,9 +16,10 @@ int main(int argc, char** argv)
 
 	//ShuangLong::StringUtilTest::Entry();
 	//ShuangLong::TimeUtilTest::Entry();
-	ShuangLong::DirectoryUtilTest::Entry();
+	//ShuangLong::DirectoryUtilTest::Entry();
 	//ShuangLong::TestClassTest::Entry();
 	//ShuangLong::Test::UpPrivilegeTest::Entry();
+	ShuangLong::Test::VersionUtilTest::Entry();
 
 	return 0;
 }
