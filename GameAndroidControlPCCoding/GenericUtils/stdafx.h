@@ -11,5 +11,8 @@
 
 // Windows Header Files:
 #include <windows.h>
-
+#include <iostream>
 #include <string>
+#include <vector>
+#include <iterator>
+#include <codecvt>

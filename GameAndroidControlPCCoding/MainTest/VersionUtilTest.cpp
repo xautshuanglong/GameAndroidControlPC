@@ -23,12 +23,11 @@ namespace ShuangLong::Test
 
 	void VersionUtilTest::GetFileVersionInfoTest()
 	{
-		VS_FIXEDFILEINFO *pvsFixedFileInfo;
 		UINT vsFixedLen = 0;
 		LPCSTR fileName = "E:\\sys_sdk_windows\\dlodlovr_sdk\\trunk\\wdvr_v0\\Dlodlo VR Rumtime Service\\x64\\Debug\\AutoUpdate.exe";
 		DWORD infoLen = 0;
 		char *pInfoBuff = nullptr;
-		bool resBool = false;
+		BOOL resBool = false;
 
 		infoLen = GetFileVersionInfoSizeA(fileName, nullptr);
 		pInfoBuff = new char[infoLen];

@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "StringUtil.h"
 
-#include <codecvt>
-
 namespace ShuangLong::Utils
 {
 	std::string StringUtil::FormatString(const char* format, ...)
