@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "TimeUtil.h"
 
+#include <bcrypt.h>
+
 namespace ShuangLong::Utils
 {
 	SYSTEMTIME TimeUtil::m_systemTime = { 0 };
@@ -111,6 +113,35 @@ namespace ShuangLong::Utils
 		LARGE_INTEGER largeInt;
 		::QueryPerformanceCounter(&largeInt);
 		return largeInt.QuadPart;
+	}
+
+
+	void TimeUtil::IncreaseTimerPrecision()
+	{
+		typedef NTSTATUS(CALLBACK * NTSETTIMERRESOLUTION)(IN ULONG DesiredTime, IN BOOLEAN SetResolution, OUT PULONG ActualTime);
+		typedef NTSTATUS(CALLBACK * NTQUERYTIMERRESOLUTION)(OUT PULONG MaximumTime, OUT PULONG MinimumTime, OUT PULONG CurrentTime);
+
+		HINSTANCE hNtDll = ::LoadLibrary(L"NTDLL.dll");
+		if (hNtDll!=NULL)
+		{
+			ULONG MinimumResolution = 0;
+			ULONG MaximumResolution = 0;
+			ULONG ActualResolution = 0;
+
+			NTQUERYTIMERRESOLUTION NtQueryTimerResolution = (NTQUERYTIMERRESOLUTION)GetProcAddress(hNtDll, "NtQueryTimerResolution");
+			NTSETTIMERRESOLUTION NtSetTimerResolution = (NTSETTIMERRESOLUTION)GetProcAddress(hNtDll, "NtSetTimerResolution");
+
+			if (NtQueryTimerResolution!=NULL && NtSetTimerResolution!=NULL)
+			{
+				NtQueryTimerResolution(&MinimumResolution, &MaximumResolution, &ActualResolution);
+				if (MaximumResolution!=0)
+				{
+					NtSetTimerResolution(MaximumResolution, TRUE, &ActualResolution);
+					NtQueryTimerResolution(&MinimumResolution, &MaximumResolution, &ActualResolution);
+				}
+			}
+			::FreeLibrary(hNtDll);
+		}
 	}
 
 	void TimeUtil::GetMyCurrentTime()

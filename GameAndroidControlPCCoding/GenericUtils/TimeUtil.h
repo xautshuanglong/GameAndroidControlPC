@@ -109,6 +109,7 @@ namespace ShuangLong
 
 			static LONGLONG QueryPerformanceCounter();
 			static LONGLONG QueryPerformanceFrequency();
+			static void IncreaseTimerPrecision();
 
 		private:
 			static void GetMyCurrentTime();
