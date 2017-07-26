@@ -23,6 +23,9 @@ namespace ShuangLong
 			StringUtil(const StringUtil& originalObj) = delete;
 			StringUtil(StringUtil&& originalObj) = delete;
 
+        private:
+            static char StringUtil::GetHexChar(const char charByte, bool bUpperCase);
+
 		public:
 			std::string static FormatString(const char* format, ...);
 			std::wstring static FormatWString(const wchar_t* wFormat, ...);
@@ -41,6 +44,10 @@ namespace ShuangLong
 
 			std::string static WStringToString(const std::wstring& originalStr);
 			std::wstring static StringToWString(const std::string& originalStr);
+
+            static std::string BoolToString(bool boolValue, bool bUppercase = false);
+            static std::string GetHexString(const char* inBuffer, size_t inLength, bool bUpperCase = true);
+            static std::string GetHexString(const char* inBuffer, size_t inLength, const char* prefix, const char* postfix, bool bUpperCase = true);
 		};
 	}
 }
