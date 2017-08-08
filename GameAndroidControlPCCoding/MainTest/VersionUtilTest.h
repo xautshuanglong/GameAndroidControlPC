@@ -10,12 +10,12 @@ namespace ShuangLong
 		{
 		private:
 			VersionUtilTest();
-			Log* mpLog;
+			Log*                     mpLog;
+			static VersionUtilTest  *mpInstance;
 
 		public:
 			~VersionUtilTest();
 
-			static VersionUtilTest *mpInstance;
 			static void Entry();
 
 			void GetFileVersionInfoTest();

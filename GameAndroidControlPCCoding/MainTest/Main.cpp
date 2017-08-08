@@ -7,6 +7,7 @@
 #include "UpPrivilegeTest.h"
 #include "VersionUtilTest.h"
 #include "ProcessUtilTest.h"
+#include "ThumbnailTest.h"
 
 #include <iostream>
 
@@ -21,7 +22,8 @@ int main(int argc, char** argv)
 	//ShuangLong::TestClassTest::Entry();
 	//ShuangLong::Test::UpPrivilegeTest::Entry();
 	//ShuangLong::Test::VersionUtilTest::Entry();
-    ShuangLong::ProcessUtilTest::Entry();
+    //ShuangLong::ProcessUtilTest::Entry();
+    ShuangLong::ThumbnailTest::Entry();
 
 	return 0;
 }

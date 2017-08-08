@@ -19,6 +19,9 @@
     <Filter Include="ProtocolBufferTest">
       <UniqueIdentifier>{01954f43-a20a-47dc-978d-c7a572dc2dfb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Attempt">
+      <UniqueIdentifier>{4ad5a09f-e6b9-48d8-a97c-6dd47824a557}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -51,6 +54,9 @@
     <ClCompile Include="ProcessUtilTest.cpp">
       <Filter>GenericUtilTest</Filter>
     </ClCompile>
+    <ClCompile Include="ThumbnailTest.cpp">
+      <Filter>Attempt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -82,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="ProcessUtilTest.h">
       <Filter>GenericUtilTest</Filter>
+    </ClInclude>
+    <ClInclude Include="ThumbnailTest.h">
+      <Filter>Attempt</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
