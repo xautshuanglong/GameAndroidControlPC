@@ -2,6 +2,7 @@
 #include "ThumbnailTest.h"
 
 #include <ShObjIdl.h>
+#include <thumbcache.h>
 
 namespace ShuangLong
 {
@@ -11,6 +12,7 @@ namespace ShuangLong
 
     ThumbnailTest::ThumbnailTest():mhWindow(nullptr)
         , mhInstance(nullptr)
+        , mhBitmap(nullptr)
     {}
 
     ThumbnailTest::~ThumbnailTest()
@@ -24,7 +26,11 @@ namespace ShuangLong
 
         mpInstance->mhInstance = (HINSTANCE)GetModuleHandle(NULL);
 
+#if 0
         mpInstance->IShellItemImageFactoryTest();
+#else
+        mpInstance->IThumbnailCacheTest();
+#endif
     }
 
     void ThumbnailTest::IShellItemImageFactoryTest()
@@ -63,16 +69,53 @@ namespace ShuangLong
             mpLog->Console(SL_CODELOCATION, "CoInitializeEx failed errorCode=%lu", res);
         }
 
-        MSG msg;
-        while (GetMessage(&msg, nullptr, 0, 0))
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
+        MessageLoop();
     }
 
     void ThumbnailTest::IThumbnailCacheTest()
     {
+        HRESULT res = S_FALSE;
+        IShellItem *pShellItem = nullptr;
+        IThumbnailProvider *pThumbProvider = nullptr;
+        WTS_ALPHATYPE wtsAlpha;
+
+        res = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+        if (SUCCEEDED(res))
+        {
+            res = SHCreateItemFromParsingName(TEXT("E:\\视频解码相关库\\恐怖11：57.mp4"), nullptr, IID_PPV_ARGS(&pShellItem));
+            if (SUCCEEDED(res))
+            {
+                res = pShellItem->BindToHandler(NULL, BHID_ThumbnailHandler, IID_PPV_ARGS(&pThumbProvider));
+                if (SUCCEEDED(res))
+                {
+                    res = pThumbProvider->GetThumbnail(THUMBNAIL_SIZE, &mhBitmap, &wtsAlpha);
+                    if (SUCCEEDED(res))
+                    {
+                        InitWindow();
+                    }
+                    else
+                    {
+                        mpLog->Console(SL_CODELOCATION, "GetThumbnail failed res=%ld", res);
+                    }
+                    pThumbProvider->Release();
+                }
+                else
+                {
+                    mpLog->Console(SL_CODELOCATION, "SHCreateItemFromParsingName failed res=%ld", res);
+                }
+                pShellItem->Release();
+            } 
+            else
+            {
+                mpLog->Console(SL_CODELOCATION, "BindToHandler failed res=%ld", res);
+            }
+            CoUninitialize();
+        } 
+        else
+        {
+            mpLog->Console(SL_CODELOCATION, "CoInitializeEx failed res=%ld", res);
+        }
+        MessageLoop();
     }
 
     void ThumbnailTest::InitWindow()
@@ -105,6 +148,16 @@ namespace ShuangLong
         ::UpdateWindow(mhWindow);
     }
 
+    void ThumbnailTest::MessageLoop()
+    {
+        MSG msg;
+        while (GetMessage(&msg, nullptr, 0, 0))
+        {
+            TranslateMessage(&msg);
+            DispatchMessage(&msg);
+        }
+    }
+
     LRESULT CALLBACK ThumbnailTest::MyDefWindowProcW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
     {
         switch (Msg)
@@ -127,14 +180,18 @@ namespace ShuangLong
     void ThumbnailTest::OnPaintHandler(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
     {
         PAINTSTRUCT ps;
+        HDC memDC = NULL;
         HDC hdc = BeginPaint(hWnd, &ps);
-        HDC memDC = CreateCompatibleDC(hdc);
-        SelectObject(memDC, mpInstance->mhBitmap);
 
         TextOutW(hdc, 10, 10, L"ThumbnailTest Window", wcsnlen(L"ThumbnailTest Window", 512));
 
-        StretchBlt(hdc, 10, 30, THUMBNAIL_SIZE, THUMBNAIL_SIZE, memDC, 0, 0, THUMBNAIL_SIZE, THUMBNAIL_SIZE, SRCCOPY);
-        //BitBlt(hdc, 10, 30, THUMBNAIL_SIZE, THUMBNAIL_SIZE, memDC, 0, 0, SRCCOPY);
+        if (mpInstance->mhBitmap)
+        {
+            memDC = CreateCompatibleDC(hdc);
+            SelectObject(memDC, mpInstance->mhBitmap);
+            StretchBlt(hdc, 10, 30, THUMBNAIL_SIZE, THUMBNAIL_SIZE, memDC, 0, 0, THUMBNAIL_SIZE, THUMBNAIL_SIZE, SRCCOPY);
+            //BitBlt(hdc, 10, 30, THUMBNAIL_SIZE, THUMBNAIL_SIZE, memDC, 0, 0, SRCCOPY);
+        }
 
         DeleteDC(memDC);
         EndPaint(hWnd, &ps);
@@ -143,6 +200,7 @@ namespace ShuangLong
     void ThumbnailTest::OnDestroyHandler(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam)
     {
         DeleteObject(mpInstance->mhBitmap);
+        mpInstance->mhBitmap = nullptr;
 
         PostQuitMessage(0);
     }

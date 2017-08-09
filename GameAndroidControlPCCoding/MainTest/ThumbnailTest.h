@@ -23,6 +23,7 @@ namespace ShuangLong
         void IShellItemImageFactoryTest();
         void IThumbnailCacheTest();
         void InitWindow();
+        void MessageLoop();
         static LRESULT CALLBACK MyDefWindowProcW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
 
         // Message handler

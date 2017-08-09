@@ -16,6 +16,9 @@ namespace ShuangLong
         static ProcessUtilTest *mpInstance;
         static void Entry();
 
-        void ProcessUtilTest_Try();
+        void ProcessUtilTest_EnumProcess();
+        void ProcessUtilTest_CreateSnapshot();
+        void ProcessUtilTest_GetPerformanceInfo();
     };
 }
+
