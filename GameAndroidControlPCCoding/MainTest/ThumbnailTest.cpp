@@ -5,6 +5,8 @@
 
 namespace ShuangLong
 {
+#define THUMBNAIL_SIZE 256
+
     ThumbnailTest* ThumbnailTest::mpInstance = nullptr;
 
     ThumbnailTest::ThumbnailTest():mhWindow(nullptr)
@@ -28,13 +30,13 @@ namespace ShuangLong
     void ThumbnailTest::IShellItemImageFactoryTest()
     {
         HRESULT                 res = S_FALSE;
-        SIZE                    bitMapSize = { 96,96 };
+        SIZE                    bitMapSize = { THUMBNAIL_SIZE,THUMBNAIL_SIZE };
         IShellItemImageFactory *pShImgFactory = nullptr;
 
         res = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
         if (SUCCEEDED(res))
         {
-            res = SHCreateItemFromParsingName(TEXT("E:\\JiangChuanbiaoSVN\\share\\images\\snipaste20170405_195313.png"), nullptr, IID_PPV_ARGS(&pShImgFactory));
+            res = SHCreateItemFromParsingName(TEXT("E:\\视频解码相关库\\F_5_Fly.mp4"), nullptr, IID_PPV_ARGS(&pShImgFactory));
             if (res == S_OK)
             {
                 //mpLog->Console(SL_CODELOCATION, "SHCreateItemFromParsingName successfully.");
@@ -75,7 +77,7 @@ namespace ShuangLong
 
     void ThumbnailTest::InitWindow()
     {
-        RECT winRect = { 0, 0, 200, 200 };
+        RECT winRect = { 0, 0, 300, 300 };
         WNDCLASSEX wcex = { 0 };
         wcex.cbSize = sizeof(WNDCLASSEX);
         wcex.style = CS_HREDRAW | CS_VREDRAW;// | CS_OWNDC;
@@ -131,8 +133,10 @@ namespace ShuangLong
 
         TextOutW(hdc, 10, 10, L"ThumbnailTest Window", wcsnlen(L"ThumbnailTest Window", 512));
 
-        StretchBlt(hdc, 10, 30, 96, 96, memDC, 0, 0, 96, 96, HALFTONE);
+        StretchBlt(hdc, 10, 30, THUMBNAIL_SIZE, THUMBNAIL_SIZE, memDC, 0, 0, THUMBNAIL_SIZE, THUMBNAIL_SIZE, SRCCOPY);
+        //BitBlt(hdc, 10, 30, THUMBNAIL_SIZE, THUMBNAIL_SIZE, memDC, 0, 0, SRCCOPY);
 
+        DeleteDC(memDC);
         EndPaint(hWnd, &ps);
     }
 
