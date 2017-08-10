@@ -20,9 +20,10 @@ namespace ShuangLong
         mpInstance->mpLog = Log::GetInstance();
 
         std::cout << std::endl << "----------------------------------- Process Utils Testing -----------------------------------" << std::endl;
-        mpInstance->ProcessUtilTest_EnumProcess();
+        //mpInstance->ProcessUtilTest_EnumProcess();
         mpInstance->ProcessUtilTest_CreateSnapshot();
-        mpInstance->ProcessUtilTest_GetPerformanceInfo();
+        //mpInstance->ProcessUtilTest_GetPerformanceInfo();
+        mpInstance->ProcessUtilTest_GetSystemInfo();
     }
 
     void ProcessUtilTest::ProcessUtilTest_EnumProcess()
@@ -31,7 +32,8 @@ namespace ShuangLong
         HANDLE hProcess = INVALID_HANDLE_VALUE;
         TCHAR processName[512] = { 0 };
         HMODULE hModule = 0;
-        DWORD processIDs[1024] = { 0 }, cbNeeded = 0, cProcesses = 0;
+        DWORD processIDs[1024] = { 0 }, cbNeeded = 0;
+        LONG cProcesses = 0;
         int succeesCount = 0, failedCount = 0;
 
         std::cout << std::endl << "----------------------------------- EnumProcesses -----------------------------------" << std::endl;
@@ -83,7 +85,8 @@ namespace ShuangLong
         int snapshotCount = 0;
         HANDLE hSnapshot = NULL;
         std::cout << std::endl << "----------------------------------- CreateToolhelp32Snapshot -----------------------------------" << std::endl;
-        hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPALL, 0);//创建快照  
+        //hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPALL, 0);//创建快照  
+        hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);//创建快照  
         if (hSnapshot != INVALID_HANDLE_VALUE)
         {
             //枚举进程  
@@ -115,17 +118,17 @@ namespace ShuangLong
         if (res)
         {
             printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.cb", performanceInfo.cb);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.CommitTotal", performanceInfo.CommitTotal);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.CommitLimit", performanceInfo.CommitLimit);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.CommitPeak ", performanceInfo.CommitPeak);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.PhysicalTotal", performanceInfo.PhysicalTotal);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.PhysicalAvailable", performanceInfo.PhysicalAvailable);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.SystemCache", performanceInfo.SystemCache);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.PhysicalTotal ", performanceInfo.PhysicalTotal);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.KernelTotal", performanceInfo.KernelTotal);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.KernelPaged", performanceInfo.KernelPaged);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.KernelNonpaged", performanceInfo.KernelNonpaged);
-            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.PageSize ", performanceInfo.PageSize);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.CommitTotal", performanceInfo.CommitTotal);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.CommitLimit", performanceInfo.CommitLimit);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.CommitPeak ", performanceInfo.CommitPeak);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.PhysicalTotal", performanceInfo.PhysicalTotal);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.PhysicalAvailable", performanceInfo.PhysicalAvailable);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.SystemCache", performanceInfo.SystemCache);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.PhysicalTotal ", performanceInfo.PhysicalTotal);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.KernelTotal", performanceInfo.KernelTotal);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.KernelPaged", performanceInfo.KernelPaged);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.KernelNonpaged", performanceInfo.KernelNonpaged);
+            printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.PageSize ", performanceInfo.PageSize);
             printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.HandleCount", performanceInfo.HandleCount);
             printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.ProcessCount", performanceInfo.ProcessCount);
             printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.ThreadCount", performanceInfo.ThreadCount);
@@ -135,5 +138,21 @@ namespace ShuangLong
             errorCode = GetLastError();
             printf_s("GetPerformanceInfo failed errorCode=%lu\n", errorCode);
         }
+    }
+
+    void ProcessUtilTest::ProcessUtilTest_GetSystemInfo()
+    {
+        std::cout << std::endl << "----------------------------------- GetSystemInfo Testing -----------------------------------" << std::endl;
+        SYSTEM_INFO siSysInfo;
+        GetSystemInfo(&siSysInfo);
+
+        printf("Hardware information: \n");
+        printf("  OEM ID: %u\n", siSysInfo.dwOemId);
+        printf("  Number of processors: %u\n", siSysInfo.dwNumberOfProcessors);
+        printf("  Page size: %u\n", siSysInfo.dwPageSize);
+        printf("  Processor type: %u\n", siSysInfo.dwProcessorType);
+        printf("  Minimum application address: 0x%p\n", siSysInfo.lpMinimumApplicationAddress);
+        printf("  Maximum application address: 0x%p\n", siSysInfo.lpMaximumApplicationAddress);
+        printf("  Active processor mask: %llu\n", siSysInfo.dwActiveProcessorMask);
     }
 }

@@ -19,6 +19,7 @@ namespace ShuangLong
         void ProcessUtilTest_EnumProcess();
         void ProcessUtilTest_CreateSnapshot();
         void ProcessUtilTest_GetPerformanceInfo();
+        void ProcessUtilTest_GetSystemInfo();
     };
 }
 
