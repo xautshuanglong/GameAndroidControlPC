@@ -14,3 +14,14 @@
 #else
 #define TCPUDP_EXPORT __declspec(dllimport)
 #endif
+
+
+//************************************************************************\
+//    Description: socket œ‡πÿ¥ÌŒÛ¬Î
+//************************************************************************/
+enum SocketError
+{
+    SOCKET_ERROR_SUCCESS,
+    SOCKET_ERROR_INVALID,
+};
+

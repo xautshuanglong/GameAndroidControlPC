@@ -4,16 +4,17 @@
 
 namespace ShuangLong
 {
-	namespace Socket
-	{
-		class TCPUDP_EXPORT TcpSocketServer
-		{
-		public:
-			TcpSocketServer();
-			~TcpSocketServer();
+    namespace Socket
+    {
+        class TCPUDP_EXPORT TcpSocketServer
+        {
+        public:
+            TcpSocketServer();
+            ~TcpSocketServer();
 
-		protected:
-		private:
-		};
-	}
+        protected:
+        private:
+        };
+    }
 }
+

@@ -11,6 +11,10 @@
 // Windows Header Files:
 #include <windows.h>
 
-
-
 // TODO: reference additional headers your program requires here
+#include <stdio.h>
+#include <string.h>
+#include <iostream>
+#include <string>
+#include <WinSock2.h>
+#include <WS2tcpip.h>
