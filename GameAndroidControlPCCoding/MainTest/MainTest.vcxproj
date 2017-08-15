@@ -171,6 +171,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="StringUtilTest.cpp" />
+    <ClCompile Include="TcpSocketServerTest.cpp" />
     <ClCompile Include="TestClassTest.cpp" />
     <ClCompile Include="ThumbnailTest.cpp" />
     <ClCompile Include="TimeUtilTest.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="ProcessUtilTest.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringUtilTest.h" />
+    <ClInclude Include="TcpSocketServerTest.h" />
     <ClInclude Include="TestClassTest.h" />
     <ClInclude Include="ThumbnailTest.h" />
     <ClInclude Include="TimeUtilTest.h" />

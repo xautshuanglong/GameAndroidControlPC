@@ -4,7 +4,7 @@
 #include <Psapi.h>
 #include <TlHelp32.h>
 
-namespace ShuangLong
+namespace ShuangLong::Test
 {
     ProcessUtilTest* ProcessUtilTest::mpInstance = nullptr;
 
@@ -117,6 +117,7 @@ namespace ShuangLong
         res = GetPerformanceInfo(&performanceInfo, sizeof(performanceInfo));
         if (res)
         {
+#if defined(_WIN64)
             printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.cb", performanceInfo.cb);
             printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.CommitTotal", performanceInfo.CommitTotal);
             printf_s("%-45s = %llu\n", "PERFORMANCE_INFORMATION.CommitLimit", performanceInfo.CommitLimit);
@@ -132,6 +133,23 @@ namespace ShuangLong
             printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.HandleCount", performanceInfo.HandleCount);
             printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.ProcessCount", performanceInfo.ProcessCount);
             printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.ThreadCount", performanceInfo.ThreadCount);
+#else
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.cb", performanceInfo.cb);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.CommitTotal", performanceInfo.CommitTotal);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.CommitLimit", performanceInfo.CommitLimit);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.CommitPeak ", performanceInfo.CommitPeak);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.PhysicalTotal", performanceInfo.PhysicalTotal);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.PhysicalAvailable", performanceInfo.PhysicalAvailable);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.SystemCache", performanceInfo.SystemCache);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.PhysicalTotal ", performanceInfo.PhysicalTotal);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.KernelTotal", performanceInfo.KernelTotal);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.KernelPaged", performanceInfo.KernelPaged);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.KernelNonpaged", performanceInfo.KernelNonpaged);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.PageSize ", performanceInfo.PageSize);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.HandleCount", performanceInfo.HandleCount);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.ProcessCount", performanceInfo.ProcessCount);
+            printf_s("%-45s = %lu\n", "PERFORMANCE_INFORMATION.ThreadCount", performanceInfo.ThreadCount);
+#endif
         }
         else
         {
@@ -153,6 +171,10 @@ namespace ShuangLong
         printf("  Processor type: %u\n", siSysInfo.dwProcessorType);
         printf("  Minimum application address: 0x%p\n", siSysInfo.lpMinimumApplicationAddress);
         printf("  Maximum application address: 0x%p\n", siSysInfo.lpMaximumApplicationAddress);
+#if defined(_WIN64)
         printf("  Active processor mask: %llu\n", siSysInfo.dwActiveProcessorMask);
+#else
+        printf("  Active processor mask: %lu\n", siSysInfo.dwActiveProcessorMask);
+#endif
     }
 }

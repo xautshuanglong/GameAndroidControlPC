@@ -176,7 +176,7 @@ namespace ShuangLong::Utils
         std::wstring_convert<std::codecvt<wchar_t, char, std::mbstate_t>> cvtAnsi(new std::codecvt<wchar_t, char, std::mbstate_t>("chs"));
         std::string retString = cvtAnsi.to_bytes(originalStr);
 
-        // UTF-8 ×ª UNICODE
+        // UTF-8 ? UNICODE
         //std::wstring_convert<std::codecvt_utf8<wchar_t>> convert;
         //std::wstring tempString = convert.from_bytes("\xe4\xb8\xad\xe6\x96\x87");
         //std::wcout << tempString << std::endl;
@@ -209,17 +209,17 @@ namespace ShuangLong::Utils
     }
 
     /************************************************************************\
-        Description: å°†ä¼ å…¥çš„å­—èŠ‚ä¸²ï¼ˆå¯èƒ½å«æœ‰ä¸å¯è§å­—ç¬¦ï¼‰
-        è½¬æ¢æˆåå…­è¿›åˆ¶è¡¨ç¤ºçš„å­—ç¬¦ä¸²ï¼ˆä¸æ’å…¥åˆ†éš”ç¬¦ï¼‰
+        Description: ½«´«ÈëµÄ×Ö½Ú´®£¨¿ÉÄÜº¬ÓÐ²»¿É¼û×Ö·û£©
+        ×ª»»³ÉÊ®Áù½øÖÆ±íÊ¾µÄ×Ö·û´®£¨²»²åÈë·Ö¸ô·û£©
         Arguments  :
-        inBuffer --> éœ€è¦è½¬æ¢çš„å­—èŠ‚ä¸²
-        inLength --> ä¼ å…¥å­—èŠ‚ä¸²çš„é•¿åº¦ï¼ˆä¸å«ç»ˆç»“ç¬¦ï¼‰
-        bUpperCase --> æŒ‡æ˜Žå­—æ¯ç”¨å¤§å°è¿˜æ˜¯å°å†™æ–¹å¼è¿”å›ž
+        inBuffer --> ÐèÒª×ª»»µÄ×Ö½Ú´®
+        inLength --> ´«Èë×Ö½Ú´®µÄ³¤¶È£¨²»º¬ÖÕ½á·û£©
+        bUpperCase --> Ö¸Ã÷×ÖÄ¸ÓÃ´óÐ¡»¹ÊÇÐ¡Ð´·½Ê½·µ»Ø
     \************************************************************************/
     std::string StringUtil::GetHexString(const char* inBuffer, size_t inLength, bool bUpperCase /* = true */)
     {
         std::string retString = "";
-        for (int i = 0; i < inLength; ++i)
+        for (size_t i = 0; i < inLength; ++i)
         {
             retString += GetHexChar(inBuffer[i] >> 4 & 0x0F, bUpperCase);
             retString += GetHexChar(inBuffer[i] & 0x0F, bUpperCase);
@@ -229,19 +229,19 @@ namespace ShuangLong::Utils
     }
 
     /************************************************************************\
-        Description: å°†ä¼ å…¥çš„å­—èŠ‚ä¸²ï¼ˆå¯èƒ½å«æœ‰ä¸å¯è§å­—ç¬¦ï¼‰
-        è½¬æ¢æˆåå…­è¿›åˆ¶è¡¨ç¤ºçš„å­—ç¬¦ä¸²ï¼ˆå¯æ’å…¥å‰ç¼€åŠåŽç¼€ï¼‰
+        Description: ½«´«ÈëµÄ×Ö½Ú´®£¨¿ÉÄÜº¬ÓÐ²»¿É¼û×Ö·û£©
+        ×ª»»³ÉÊ®Áù½øÖÆ±íÊ¾µÄ×Ö·û´®£¨¿É²åÈëÇ°×º¼°ºó×º£©
         Arguments  :
-        inBuffer   --> éœ€è¦è½¬æ¢çš„å­—èŠ‚ä¸²
-        inLength   --> ä¼ å…¥å­—èŠ‚ä¸²çš„é•¿åº¦ï¼ˆä¸å«ç»ˆç»“ç¬¦ï¼‰
-        prefix     --> æ¯ä¸ªåå…­è¿›åˆ¶å‰é¢çš„ç¬¦å·
-        postfix    --> æ¯ä¸ªåå…­è¿›åˆ¶åŽé¢çš„ç¬¦å·
-        bUpperCase --> æŒ‡æ˜Žå­—æ¯ç”¨å¤§å°è¿˜æ˜¯å°å†™æ–¹å¼è¿”å›ž
+        inBuffer   --> ÐèÒª×ª»»µÄ×Ö½Ú´®
+        inLength   --> ´«Èë×Ö½Ú´®µÄ³¤¶È£¨²»º¬ÖÕ½á·û£©
+        prefix     --> Ã¿¸öÊ®Áù½øÖÆÇ°ÃæµÄ·ûºÅ
+        postfix    --> Ã¿¸öÊ®Áù½øÖÆºóÃæµÄ·ûºÅ
+        bUpperCase --> Ö¸Ã÷×ÖÄ¸ÓÃ´óÐ¡»¹ÊÇÐ¡Ð´·½Ê½·µ»Ø
     \************************************************************************/
     std::string StringUtil::GetHexString(const char* inBuffer, size_t inLength, const char* prefix, const char* postfix, bool bUpperCase /* = true */)
     {
         std::string retString = "";
-        for (int i = 0; i < inLength; ++i)
+        for (size_t i = 0; i < inLength; ++i)
         {
             retString += prefix;
             retString += GetHexChar(inBuffer[i] >> 4 & 0x0F, bUpperCase);
@@ -253,10 +253,10 @@ namespace ShuangLong::Utils
     }
 
     /************************************************************************\
-        Description: å°†å•ä¸ªå­—èŠ‚è½¬æˆå­—ç¬¦
-        Arguments  :
-        charByte --> éœ€è¦è½¬åŒ–çš„å­—èŠ‚å€¼
-        bUpperCase --> æŒ‡æ˜Žå­—æ¯ç”¨å¤§å°è¿˜æ˜¯å°å†™æ–¹å¼è¿”å›ž
+    Description: ½«µ¥¸ö×Ö½Ú×ª³É×Ö·û
+    Arguments  :
+    charByte --> ÐèÒª×ª»¯µÄ×Ö½ÚÖµ
+    bUpperCase --> Ö¸Ã÷×ÖÄ¸ÓÃ´óÐ¡»¹ÊÇÐ¡Ð´·½Ê½·µ»Ø
     \************************************************************************/
     char StringUtil::GetHexChar(const char charByte, bool bUpperCase)
     {

@@ -4,7 +4,7 @@
 #include <ShObjIdl.h>
 #include <thumbcache.h>
 
-namespace ShuangLong
+namespace ShuangLong::Test
 {
 #define THUMBNAIL_SIZE 256
 
@@ -183,7 +183,7 @@ namespace ShuangLong
         HDC memDC = NULL;
         HDC hdc = BeginPaint(hWnd, &ps);
 
-        TextOutW(hdc, 10, 10, L"ThumbnailTest Window", wcsnlen(L"ThumbnailTest Window", 512));
+        TextOutW(hdc, 10, 10, L"ThumbnailTest Window", (int)wcsnlen(L"ThumbnailTest Window", 512));
 
         if (mpInstance->mhBitmap)
         {

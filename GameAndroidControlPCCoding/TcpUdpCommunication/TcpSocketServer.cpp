@@ -2,18 +2,15 @@
 
 #include "TcpSocketServer.h"
 
-namespace ShuangLong
+namespace ShuangLong::Socket
 {
-	namespace Socket
-	{
-		TcpSocketServer::TcpSocketServer()
-		{
-			;
-		}
+    TcpSocketServer::TcpSocketServer()
+    {
+        ;
+    }
 
-		TcpSocketServer::~TcpSocketServer()
-		{
-			;
-		}
-	}
+    TcpSocketServer::~TcpSocketServer()
+    {
+        ;
+    }
 }

@@ -22,6 +22,9 @@
     <Filter Include="Attempt">
       <UniqueIdentifier>{4ad5a09f-e6b9-48d8-a97c-6dd47824a557}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TcpUdpTest">
+      <UniqueIdentifier>{83e9d721-7ea8-4fb7-8a8d-52d71552cc57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -57,6 +60,9 @@
     <ClCompile Include="ThumbnailTest.cpp">
       <Filter>Attempt</Filter>
     </ClCompile>
+    <ClCompile Include="TcpSocketServerTest.cpp">
+      <Filter>TcpUdpTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -91,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="ThumbnailTest.h">
       <Filter>Attempt</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpSocketServerTest.h">
+      <Filter>TcpUdpTest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

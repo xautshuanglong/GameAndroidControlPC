@@ -12,5 +12,5 @@
 #if TCPUDPCOMMUNICATION_EXPORTS
 #define TCPUDP_EXPORT __declspec(dllexport)
 #else
-#define TCPUDP_EXPORT
+#define TCPUDP_EXPORT __declspec(dllimport)
 #endif

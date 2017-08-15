@@ -1,5 +1,10 @@
 #include "stdafx.h"
+
+#include <iostream>
+
 #include "Log.h"
+
+//-------------- GenericUtils --------------
 #include "StringUtilTest.h"
 #include "TimeUtilTest.h"
 #include "DirectoryUtilTest.h"
@@ -9,21 +14,28 @@
 #include "ProcessUtilTest.h"
 #include "ThumbnailTest.h"
 
-#include <iostream>
+//------------ TcpUdpCommunication -------------
+#include "TcpSocketServerTest.h"
 
 int main(int argc, char** argv)
 {
-	std::cout << "====================================== Main Testing ======================================" << std::endl;
-	ShuangLong::Log *pLog = ShuangLong::Log::GetInstance();
+    std::cout << "====================================== Main Testing ======================================" << std::endl;
+    ShuangLong::Log *pLog = ShuangLong::Log::GetInstance();
 
-	//ShuangLong::StringUtilTest::Entry();
-	//ShuangLong::TimeUtilTest::Entry();
-	//ShuangLong::DirectoryUtilTest::Entry();
-	//ShuangLong::TestClassTest::Entry();
-	//ShuangLong::Test::UpPrivilegeTest::Entry();
-	//ShuangLong::Test::VersionUtilTest::Entry();
-    ShuangLong::ProcessUtilTest::Entry();
-    //ShuangLong::ThumbnailTest::Entry();
+    //--------------------- GenericUtils Testing ---------------------
 
-	return 0;
+    //ShuangLong::TestClassTest::Entry();
+    //ShuangLong::Test::StringUtilTest::Entry();
+    //ShuangLong::Test::TimeUtilTest::Entry();
+    //ShuangLong::Test::DirectoryUtilTest::Entry();
+    //ShuangLong::Test::UpPrivilegeTest::Entry();
+    //ShuangLong::Test::VersionUtilTest::Entry();
+    //ShuangLong::Test::ProcessUtilTest::Entry();
+    //ShuangLong::Test::ThumbnailTest::Entry();
+
+    //--------------------- TcpUdpCommunication Testing ---------------------
+
+    ShuangLong::Test::TcpSocketServerTest::Entry();
+
+    return 0;
 }

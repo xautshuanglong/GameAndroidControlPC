@@ -15,5 +15,5 @@
 #if GENERICUTILS_EXPORTS
 #define GENERIC_EXPORT __declspec(dllexport)
 #else
-#define GENERIC_EXPORT
+#define GENERIC_EXPORT __declspec(dllimport)
 #endif

@@ -4,22 +4,25 @@
 
 namespace ShuangLong
 {
-    class ProcessUtilTest sealed
+    namespace Test
     {
-    private:
-        ProcessUtilTest();
-        Log* mpLog = nullptr;
+        class ProcessUtilTest sealed
+        {
+        private:
+            ProcessUtilTest();
+            Log* mpLog = nullptr;
 
-    public:
-        ~ProcessUtilTest();
+        public:
+            ~ProcessUtilTest();
 
-        static ProcessUtilTest *mpInstance;
-        static void Entry();
+            static ProcessUtilTest *mpInstance;
+            static void Entry();
 
-        void ProcessUtilTest_EnumProcess();
-        void ProcessUtilTest_CreateSnapshot();
-        void ProcessUtilTest_GetPerformanceInfo();
-        void ProcessUtilTest_GetSystemInfo();
-    };
+            void ProcessUtilTest_EnumProcess();
+            void ProcessUtilTest_CreateSnapshot();
+            void ProcessUtilTest_GetPerformanceInfo();
+            void ProcessUtilTest_GetSystemInfo();
+        };
+    }
 }
 

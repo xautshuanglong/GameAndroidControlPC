@@ -3,26 +3,25 @@
 
 namespace ShuangLong
 {
-	TestClassTest* TestClassTest::mpInstance = nullptr;
+    TestClassTest* TestClassTest::mpInstance = nullptr;
 
-	TestClassTest::TestClassTest()
-	{
-		mpTestClass = new TestClass();
-	}
+    TestClassTest::TestClassTest()
+    {
+        mpTestClass = new TestClass();
+    }
 
-	TestClassTest::~TestClassTest()
-	{
-	}
+    TestClassTest::~TestClassTest()
+    {}
 
-	void TestClassTest::Entry()
-	{
-		mpInstance = new TestClassTest();
+    void TestClassTest::Entry()
+    {
+        mpInstance = new TestClassTest();
 
-		mpInstance->TestMethodTest();
-	}
+        mpInstance->TestMethodTest();
+    }
 
-	void TestClassTest::TestMethodTest()
-	{
-		mpTestClass->TestMethod();
-	}
+    void TestClassTest::TestMethodTest()
+    {
+        mpTestClass->TestMethod();
+    }
 }

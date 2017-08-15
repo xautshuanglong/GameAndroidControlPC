@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "TimeUtilTest.h"
 
-namespace ShuangLong
+namespace ShuangLong::Test
 {
 	TimeUtilTest* TimeUtilTest::mpInstance = nullptr;
 

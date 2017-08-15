@@ -4,22 +4,22 @@
 
 namespace ShuangLong
 {
-	namespace Test
-	{
-		class VersionUtilTest sealed
-		{
-		private:
-			VersionUtilTest();
-			Log*                     mpLog;
-			static VersionUtilTest  *mpInstance;
+    namespace Test
+    {
+        class VersionUtilTest sealed
+        {
+        private:
+            Log                     *mpLog;
+            static VersionUtilTest  *mpInstance;
+            VersionUtilTest();
 
-		public:
-			~VersionUtilTest();
+        public:
+            ~VersionUtilTest();
 
-			static void Entry();
+            static void Entry();
 
-			void GetFileVersionInfoTest();
-		};
-	}
+            void GetFileVersionInfoTest();
+        };
+    }
 }
 
