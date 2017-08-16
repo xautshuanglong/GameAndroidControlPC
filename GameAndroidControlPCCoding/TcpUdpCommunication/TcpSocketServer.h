@@ -2,19 +2,16 @@
 
 #include "TcpUdpDefines.h"
 
-namespace ShuangLong
+namespace ShuangLong::Socket
 {
-    namespace Socket
+    class TCPUDP_EXPORT TcpSocketServer
     {
-        class TCPUDP_EXPORT TcpSocketServer
-        {
-        public:
-            TcpSocketServer();
-            ~TcpSocketServer();
+    public:
+        TcpSocketServer();
+        ~TcpSocketServer();
 
-        protected:
-        private:
-        };
-    }
+    protected:
+    private:
+    };
 }
 
