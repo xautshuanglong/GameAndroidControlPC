@@ -4,6 +4,7 @@
 namespace ShuangLong::Socket
 {
     SocketServer::SocketServer()
+        : mListenSocket(INVALID_SOCKET)
     {
         int res = 0;
         ULONG binAddress = 0;
@@ -19,13 +20,19 @@ namespace ShuangLong::Socket
             printf_s("SocketServer.cpp CreateSocket failed errorCode=%d\n", errorCode);
         }
 
+        ZeroMemory(&mServerAddress, sizeof(mServerAddress));
         mServerAddress.sin_family = AF_INET;
         mServerAddress.sin_addr.s_addr = binAddress;
-        mServerAddress.sin_port = htons(27016);
+        mServerAddress.sin_port = htons(7500);
     }
 
     SocketServer::~SocketServer()
     {
+        if (mListenSocket != INVALID_SOCKET)
+        {
+            ::closesocket(mListenSocket);
+            mListenSocket = INVALID_SOCKET;
+        }
     }
 
     void SocketServer::CreateSocket(_In_ int addressFamily, _In_ int socketType, _In_ int protocol)
@@ -74,6 +81,26 @@ namespace ShuangLong::Socket
         return retValue;
     }
 
+    int SocketServer::RecvFromSocket(_Out_ char *outBuffer,
+                                      _In_ int bufLen,
+                                      _In_ int flags,
+                                      _Out_ struct sockaddr *pAddress,
+                                      _Out_ int *pAddressLen)
+    {
+        int res = 0;
+        res = ::recvfrom(mListenSocket, outBuffer, bufLen, flags, pAddress, pAddressLen);
+        if (res == 0)
+        {// client gracefully closed
+        }
+        else if (res == SOCKET_ERROR)
+        {
+            int errorCode = WSAGetLastError();
+            printf_s("SocketServer.cpp RecvFromSocket failed errorCode=%d\n", errorCode);
+        }
+
+        return res;
+    }
+
     void SocketServer::CloseSocket()
     {
         int errorCode = 0;
@@ -81,6 +108,10 @@ namespace ShuangLong::Socket
         {
             errorCode = WSAGetLastError();
             printf_s("SocketServer.cpp CloseSocket failed errorCode=%d\n", errorCode);
+        }
+        else
+        {
+            mListenSocket = INVALID_SOCKET;
         }
     }
 
@@ -91,6 +122,10 @@ namespace ShuangLong::Socket
         {
             errorCode = WSAGetLastError();
             printf_s("SocketServer.cpp ShutdownSocket failed errorCode=%d\n", errorCode);
+        }
+        else
+        {
+            mListenSocket = INVALID_SOCKET;
         }
     }
 

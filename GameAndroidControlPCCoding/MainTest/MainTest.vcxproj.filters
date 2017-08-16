@@ -63,6 +63,9 @@
     <ClCompile Include="TcpSocketServerTest.cpp">
       <Filter>TcpUdpTest</Filter>
     </ClCompile>
+    <ClCompile Include="UdpSocketServerTest.cpp">
+      <Filter>TcpUdpTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -99,6 +102,9 @@
       <Filter>Attempt</Filter>
     </ClInclude>
     <ClInclude Include="TcpSocketServerTest.h">
+      <Filter>TcpUdpTest</Filter>
+    </ClInclude>
+    <ClInclude Include="UdpSocketServerTest.h">
       <Filter>TcpUdpTest</Filter>
     </ClInclude>
   </ItemGroup>
