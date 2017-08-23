@@ -5,30 +5,27 @@
 #include "Log.h"
 #include <SocketServer.h>
 
-namespace ShuangLong
+namespace ShuangLong::Test
 {
-    namespace Test
+    class UdpSocketServerTest
     {
-        class UdpSocketServerTest
-        {
-        private:
-            Log                             *mpLog;
-            Socket::SocketServer             mLogServer;
-            std::thread                     *mpListenThread;
-            volatile bool                    mListenRuningFlag;
-            static UdpSocketServerTest      *mpInstance;
+    private:
+        Log                             *mpLog;
+        Socket::SocketServer             mLogServer;
+        std::thread                     *mpListenThread;
+        volatile bool                    mListenRuningFlag;
+        static UdpSocketServerTest      *mpInstance;
 
-        public:
-            ~UdpSocketServerTest();
-            static void Entry();
-            static void Exit();
+    public:
+        ~UdpSocketServerTest();
+        static void Entry();
+        static void Exit();
 
-        private:
-            UdpSocketServerTest();
-            void StartListen();
-            void StopListen();
-            static void ListenThreadFunc(void *param);
-        };
-    }
+    private:
+        UdpSocketServerTest();
+        void StartListen();
+        void StopListen();
+        static void ListenThreadFunc(void *param);
+    };
 }
 

@@ -58,10 +58,16 @@ namespace ShuangLong::Test
         pServer->mListenRuningFlag = true;
         while (pServer->mListenRuningFlag)
         {
+            printf_s("Before RecvFromSocket -------\n");
             recvBytes = pServer->mLogServer.RecvFromSocket(msgBuff, 1024, 0, (SOCKADDR*)&remoteSockAddress, &addressLen);
+            printf_s("After RecvFromSocket -------\n");
             if (recvBytes > 0)
             {
                 printf_s("%s\n", msgBuff);
+            }
+            else
+            {
+                printf_s("receive null -------\n");
             }
 
             std::this_thread::sleep_for(std::chrono::milliseconds(3));
@@ -74,7 +80,7 @@ namespace ShuangLong::Test
     {
         if (mpListenThread != nullptr)
         {
-            mLogServer.ShutdownSocket(SD_BOTH);
+            mLogServer.CloseSocket();
             mpListenThread->detach();
             delete mpListenThread;
             mpListenThread = nullptr;
@@ -92,13 +98,20 @@ namespace ShuangLong::Test
         if (mpListenThread != nullptr)
         {
             mpLog->Console(SL_CODELOCATION, "Before ShutdownSocket ---- ");
-            mLogServer.ShutdownSocket(SD_BOTH);
-            mpLog->Console(SL_CODELOCATION, "After ShutdownSocket ---- ");
-            if (mpListenThread->joinable())
-            {
-                mpLog->Console(SL_CODELOCATION, "Joining ---- ");
-                mpListenThread->join();
-            }
+            //mLogServer.ShutdownSocket(SD_BOTH);
+            mLogServer.CloseSocket();
+
+            //std::this_thread::sleep_for(std::chrono::milliseconds(1));
+
+            //mpLog->Console(SL_CODELOCATION, "After ShutdownSocket ---- ");
+            //if (mpListenThread->joinable())
+            //{
+            //    mpLog->Console(SL_CODELOCATION, "Joining ---- ");
+            //    mpListenThread->join();
+            //    mpLog->Console(SL_CODELOCATION, "After joining ---- ");
+            //}
+
+            mpListenThread->detach();
 
             delete mpListenThread;
             mpListenThread = nullptr;

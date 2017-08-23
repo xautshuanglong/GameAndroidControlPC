@@ -1,16 +1,14 @@
 #pragma once
 
-namespace ShuangLong
+namespace ShuangLong::Utils
 {
-	namespace Utils
-	{
-		class AlgorithmUtil sealed
-		{
-		private:
-			AlgorithmUtil();
+    class AlgorithmUtil sealed
+    {
+    private:
+        AlgorithmUtil();
 
-		public:
-			~AlgorithmUtil();
-		};
-	}
+    public:
+        ~AlgorithmUtil();
+    };
 }
+

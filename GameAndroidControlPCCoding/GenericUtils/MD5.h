@@ -1,14 +1,11 @@
 #pragma once
 
-namespace ShuangLong
+namespace ShuangLong::Utils
 {
-	namespace Utils
-	{
-		class MD5
-		{
-		public:
-			MD5();
-			~MD5();
-		};
-	}
+    class MD5
+    {
+    public:
+        MD5();
+        ~MD5();
+    };
 }

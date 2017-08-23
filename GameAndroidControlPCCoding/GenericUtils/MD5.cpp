@@ -3,11 +3,11 @@
 
 namespace ShuangLong::Utils
 {
-	MD5::MD5()
-	{
-	}
+    MD5::MD5()
+    {
+    }
 
-	MD5::~MD5()
-	{
-	}
+    MD5::~MD5()
+    {
+    }
 }

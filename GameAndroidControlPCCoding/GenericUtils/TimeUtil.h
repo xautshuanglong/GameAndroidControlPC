@@ -76,43 +76,41 @@
 #include <ctime>
 #include <iostream>
 
-namespace ShuangLong
+namespace ShuangLong::Utils
 {
-	namespace Utils
-	{
-		/************************************************************************\
-			Author     : JiangChuanbiao
-			Date       : 2017-1-4
-			Description: get timestamp and format date time string.
-		\************************************************************************/
-		class GENERIC_EXPORT TimeUtil sealed
-		{
-		private:
-			static tm m_tmCurTime;
-			static time_t m_tCurTime;
-			static SYSTEMTIME m_systemTime;
+    /************************************************************************\
+        Author     : JiangChuanbiao
+        Date       : 2017-1-4
+        Description: get timestamp and format date time string.
+    \************************************************************************/
+    class GENERIC_EXPORT TimeUtil sealed
+    {
+    private:
+        static tm m_tmCurTime;
+        static time_t m_tCurTime;
+        static SYSTEMTIME m_systemTime;
 
-		public:
-			TimeUtil() = delete;
-			TimeUtil(const TimeUtil& originalObj) = delete;
-			TimeUtil(TimeUtil&& originalObj) = delete;
-			~TimeUtil();
+    public:
+        TimeUtil() = delete;
+        TimeUtil(const TimeUtil& originalObj) = delete;
+        TimeUtil(TimeUtil&& originalObj) = delete;
+        ~TimeUtil();
 
-			static std::string GetDateString();
-			static std::string GetTimeString();
-			static std::string GetDateTimeString();
-			static std::string GetFormatTimeString(const char* timeFormat);
+        static std::string GetDateString();
+        static std::string GetTimeString();
+        static std::string GetDateTimeString();
+        static std::string GetFormatTimeString(const char* timeFormat);
 
-			static INT64 GetCurrentTimestamp();
-			static std::string GetFullTimestampString();
-			static std::string GetSimpleTimestampString();
+        static INT64 GetCurrentTimestamp();
+        static std::string GetFullTimestampString();
+        static std::string GetSimpleTimestampString();
 
-			static LONGLONG QueryPerformanceCounter();
-			static LONGLONG QueryPerformanceFrequency();
-			static void IncreaseTimerPrecision();
+        static LONGLONG QueryPerformanceCounter();
+        static LONGLONG QueryPerformanceFrequency();
+        static void IncreaseTimerPrecision();
 
-		private:
-			static void GetMyCurrentTime();
-		};
-	}
+    private:
+        static void GetMyCurrentTime();
+    };
 }
+

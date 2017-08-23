@@ -3,11 +3,11 @@
 
 namespace ShuangLong::Utils
 {
-	AlgorithmUtil::AlgorithmUtil()
-	{
-	}
+    AlgorithmUtil::AlgorithmUtil()
+    {
+    }
 
-	AlgorithmUtil::~AlgorithmUtil()
-	{
-	}
+    AlgorithmUtil::~AlgorithmUtil()
+    {
+    }
 }

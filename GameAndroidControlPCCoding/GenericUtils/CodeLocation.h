@@ -9,29 +9,26 @@
 #define SL_CODELOCATION ShuangLong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__)
 #define SL_CODELOCATION_STRING ShuangLong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__).ToString()
 
-namespace ShuangLong
+namespace ShuangLong::Utils
 {
-	namespace Utils
-	{
-		class GENERIC_EXPORT CodeLocation
-		{
-		private:
-			std::string m_strFileName;// 源文件名(含绝对路径)
-			std::string m_strShortFileName;
-			std::string m_strFuncName;// 函数名
-			int m_nLineNumber;     // 行号
+    class GENERIC_EXPORT CodeLocation
+    {
+    private:
+        std::string m_strFileName;// 源文件名(含绝对路径)
+        std::string m_strShortFileName;
+        std::string m_strFuncName;// 函数名
+        int m_nLineNumber;     // 行号
 
-		public:
-			CodeLocation(char* fileName, char* funcName, int lineNumber);
-			~CodeLocation();
+    public:
+        CodeLocation(char* fileName, char* funcName, int lineNumber);
+        ~CodeLocation();
 
-			int GetLineNumber();
-			std::string GetFileName();
-			std::string GetShortFileName();
-			std::string GetShortClassName();
-			std::string GetFuncName();
-			std::string GetFullFuncName();
-			std::string ToString();
-		};
-	}
+        int GetLineNumber();
+        std::string GetFileName();
+        std::string GetShortFileName();
+        std::string GetShortClassName();
+        std::string GetFuncName();
+        std::string GetFullFuncName();
+        std::string ToString();
+    };
 }

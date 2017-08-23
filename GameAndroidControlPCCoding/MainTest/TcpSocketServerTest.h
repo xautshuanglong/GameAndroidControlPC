@@ -2,21 +2,17 @@
 
 #include "Log.h"
 
-namespace ShuangLong
+namespace ShuangLong::Test
 {
-    namespace Test
+    class TcpSocketServerTest
     {
-        class TcpSocketServerTest
-        {
-        private:
-            Log                         *mpLog;
-            static TcpSocketServerTest  *mpInstance;
-            TcpSocketServerTest();
+    private:
+        Log                         *mpLog;
+        static TcpSocketServerTest  *mpInstance;
+        TcpSocketServerTest();
 
-        public:
-            ~TcpSocketServerTest();
-            static void Entry();
-        };
-    }
+    public:
+        ~TcpSocketServerTest();
+        static void Entry();
+    };
 }
-
