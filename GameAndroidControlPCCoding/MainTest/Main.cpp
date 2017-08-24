@@ -13,6 +13,7 @@
 #include "VersionUtilTest.h"
 #include "ProcessUtilTest.h"
 #include "ThumbnailTest.h"
+#include "StdCppTest.h"
 
 //------------ TcpUdpCommunication -------------
 #include "TcpSocketServerTest.h"
@@ -35,7 +36,8 @@ int main(int argc, char** argv)
     //Shuanglong::Test::UpPrivilegeTest::Entry();
     //Shuanglong::Test::VersionUtilTest::Entry();
     //Shuanglong::Test::ProcessUtilTest::Entry();
-    Shuanglong::Test::ThumbnailTest::Entry();
+    //Shuanglong::Test::ThumbnailTest::Entry();
+    Shuanglong::Test::StdCppTest::Entry();
 
     //--------------------- TcpUdpCommunication Testing ---------------------
 

@@ -9,11 +9,15 @@ namespace Shuanglong::Test
     private:
         StdCppTest();
         Log*                    mpLog;
-        static StdCppTest   *mpInstance;
+        static StdCppTest      *mpInstance;
 
     public:
         ~StdCppTest();
         static void Entry();
+
+    private:
+        void SharedPointerTypedefTest();
+        void SharedPointerHelperFunc();
     };
 }
 
