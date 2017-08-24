@@ -32,16 +32,16 @@ namespace Shuanglong
     Log* Log::GetInstance()
     {
         // 存在条件竞争，后来线程未必看得到先前线程创建的实例(用 std::once_flag  std::call_once 代替)
-        //if (m_bInitFlag==false && m_mpInstance==nullptr)
+        //if (m_bInitFlag == false && m_mpInstance == nullptr)
         //{
-        //	//std::lock_guard<std::mutex> lock(m_mutex);
-        //	m_mutex.lock();
-        //	if (m_bInitFlag==false && m_mpInstance==nullptr)
-        //	{
-        //		m_mpInstance = new Log();
-        //		m_bInitFlag = true;
-        //	}
-        //	m_mutex.unlock();
+        //    //std::lock_guard<std::mutex> lock(m_mutex);
+        //    m_mutex.lock();
+        //    if (m_bInitFlag == false && m_mpInstance == nullptr)
+        //    {
+        //        m_mpInstance = new Log();
+        //        m_bInitFlag = true;
+        //    }
+        //    m_mutex.unlock();
         //}
         std::call_once(m_instanceFlag, init);
 
