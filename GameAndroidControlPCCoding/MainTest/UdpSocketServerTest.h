@@ -5,7 +5,7 @@
 #include "Log.h"
 #include <SocketServer.h>
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
     class UdpSocketServerTest
     {

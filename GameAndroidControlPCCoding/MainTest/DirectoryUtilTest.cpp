@@ -3,7 +3,7 @@
 
 #include <StringUtil.h>
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
 	DirectoryUtilTest* DirectoryUtilTest::mpInstance = nullptr;
 

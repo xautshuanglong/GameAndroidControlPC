@@ -2,7 +2,7 @@
 
 #include "Log.h"
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
     class TcpSocketServerTest
     {

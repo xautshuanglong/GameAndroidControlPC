@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "TcpSocketServerTest.h"
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
     TcpSocketServerTest* TcpSocketServerTest::mpInstance = nullptr;
 

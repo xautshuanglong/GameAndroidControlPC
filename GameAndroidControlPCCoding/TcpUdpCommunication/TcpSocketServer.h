@@ -2,7 +2,7 @@
 
 #include "TcpUdpDefines.h"
 
-namespace ShuangLong::Socket
+namespace Shuanglong::Socket
 {
     class TCPUDP_EXPORT TcpSocketServer
     {

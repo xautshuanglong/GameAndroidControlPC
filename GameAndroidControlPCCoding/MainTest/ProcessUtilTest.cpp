@@ -4,7 +4,7 @@
 #include <Psapi.h>
 #include <TlHelp32.h>
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
     ProcessUtilTest* ProcessUtilTest::mpInstance = nullptr;
 

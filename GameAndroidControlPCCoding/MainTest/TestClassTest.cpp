@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "TestClassTest.h"
 
-namespace ShuangLong
+namespace Shuanglong
 {
     TestClassTest* TestClassTest::mpInstance = nullptr;
 

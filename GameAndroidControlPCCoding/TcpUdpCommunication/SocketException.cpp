@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "SocketException.h"
 
-namespace ShuangLong::Socket
+namespace Shuanglong::Socket
 {
     SocketException::SocketException()
     {

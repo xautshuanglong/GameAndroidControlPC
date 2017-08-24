@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "MD5.h"
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     MD5::MD5()
     {

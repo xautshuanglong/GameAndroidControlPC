@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "SocketServer.h"
 
-namespace ShuangLong::Socket
+namespace Shuanglong::Socket
 {
     SocketServer::SocketServer()
         : mListenSocket(INVALID_SOCKET)

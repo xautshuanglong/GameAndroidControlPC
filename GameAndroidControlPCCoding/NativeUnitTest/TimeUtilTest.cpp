@@ -5,7 +5,7 @@
 #include <ctime>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-using namespace ShuangLong::Utils;
+using namespace Shuanglong::Utils;
 
 namespace NativeUnitTest
 {

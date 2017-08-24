@@ -6,10 +6,10 @@
 #include <sstream>
 #include <string>
 
-#define SL_CODELOCATION ShuangLong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__)
-#define SL_CODELOCATION_STRING ShuangLong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__).ToString()
+#define SL_CODELOCATION Shuanglong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__)
+#define SL_CODELOCATION_STRING Shuanglong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__).ToString()
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     class GENERIC_EXPORT CodeLocation
     {

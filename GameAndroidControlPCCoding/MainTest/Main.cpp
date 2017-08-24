@@ -24,23 +24,23 @@ int main(int argc, char** argv)
 {
     BOOL retValue = SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, TRUE);
     std::cout << "====================================== Main Testing ======================================" << std::endl;
-    ShuangLong::Log *pLog = ShuangLong::Log::GetInstance();
+    Shuanglong::Log *pLog = Shuanglong::Log::GetInstance();
 
     //--------------------- GenericUtils Testing ---------------------
 
-    //ShuangLong::TestClassTest::Entry();
-    //ShuangLong::Test::StringUtilTest::Entry();
-    //ShuangLong::Test::TimeUtilTest::Entry();
-    //ShuangLong::Test::DirectoryUtilTest::Entry();
-    //ShuangLong::Test::UpPrivilegeTest::Entry();
-    //ShuangLong::Test::VersionUtilTest::Entry();
-    //ShuangLong::Test::ProcessUtilTest::Entry();
-    ShuangLong::Test::ThumbnailTest::Entry();
+    //Shuanglong::TestClassTest::Entry();
+    //Shuanglong::Test::StringUtilTest::Entry();
+    //Shuanglong::Test::TimeUtilTest::Entry();
+    //Shuanglong::Test::DirectoryUtilTest::Entry();
+    //Shuanglong::Test::UpPrivilegeTest::Entry();
+    //Shuanglong::Test::VersionUtilTest::Entry();
+    //Shuanglong::Test::ProcessUtilTest::Entry();
+    Shuanglong::Test::ThumbnailTest::Entry();
 
     //--------------------- TcpUdpCommunication Testing ---------------------
 
-    //ShuangLong::Test::TcpSocketServerTest::Entry();
-    //ShuangLong::Test::UdpSocketServerTest::Entry();
+    //Shuanglong::Test::TcpSocketServerTest::Entry();
+    //Shuanglong::Test::UdpSocketServerTest::Entry();
 
     SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, FALSE);
 
@@ -59,7 +59,7 @@ BOOL ConsoleEventHandler(DWORD dwCtrlType)
         break;
     case CTRL_CLOSE_EVENT:
         printf_s("Close\n");
-        ShuangLong::Test::UdpSocketServerTest::Exit();
+        Shuanglong::Test::UdpSocketServerTest::Exit();
         break;
     case CTRL_LOGOFF_EVENT:
         printf_s("User is logging off\n");

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     CodeLocation::CodeLocation(char* fileName, char* funcName, int lineNumber)
     {

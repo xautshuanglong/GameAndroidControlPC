@@ -1,7 +1,7 @@
 #pragma once
 #include "GenericDefines.h"
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     class GENERIC_EXPORT RegistryUtil sealed
     {

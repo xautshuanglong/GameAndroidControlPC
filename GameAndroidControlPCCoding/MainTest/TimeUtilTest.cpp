@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "TimeUtilTest.h"
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
 	TimeUtilTest* TimeUtilTest::mpInstance = nullptr;
 
@@ -39,7 +39,7 @@ namespace ShuangLong::Test
 		std::cout << std::endl
 			<< "----------------------------------- TimeUtilTest_GetDateString -----------------------------------" << std::endl;
 		mpLog->Console(SL_CODELOCATION, "Current Date String: %s",
-			ShuangLong::Utils::TimeUtil::GetDateString().c_str());
+			Shuanglong::Utils::TimeUtil::GetDateString().c_str());
 	}
 
 	void TimeUtilTest::TimeUtilTest_GetTimeString()
@@ -47,7 +47,7 @@ namespace ShuangLong::Test
 		std::cout << std::endl
 			<< "----------------------------------- TimeUtilTest_GetTimeString -----------------------------------" << std::endl;
 		mpLog->Console(SL_CODELOCATION, "Current Time String: %s",
-			ShuangLong::Utils::TimeUtil::GetTimeString().c_str());
+			Shuanglong::Utils::TimeUtil::GetTimeString().c_str());
 	}
 
 	void TimeUtilTest::TimeUtilTest_GetDateTimeString()
@@ -55,7 +55,7 @@ namespace ShuangLong::Test
 		std::cout << std::endl
 			<< "----------------------------------- TimeUtilTest_GetDateTimeString -----------------------------------" << std::endl;
 		mpLog->Console(SL_CODELOCATION, "Current DateTime String: %s",
-			ShuangLong::Utils::TimeUtil::GetDateTimeString().c_str());
+			Shuanglong::Utils::TimeUtil::GetDateTimeString().c_str());
 	}
 
 	void TimeUtilTest::TimeUtilTest_GetFormatTimeString()
@@ -63,18 +63,18 @@ namespace ShuangLong::Test
 		std::cout << std::endl
 			<< "----------------------------------- TimeUtilTest_GetFormatTimeString -----------------------------------" << std::endl;
 		mpLog->Console(SL_CODELOCATION, "Current Date String: %s",
-			ShuangLong::Utils::TimeUtil::GetFormatTimeString("%Y-%m-%d").c_str());
+			Shuanglong::Utils::TimeUtil::GetFormatTimeString("%Y-%m-%d").c_str());
 		mpLog->Console(SL_CODELOCATION, "Current Time String: %s",
-			ShuangLong::Utils::TimeUtil::GetFormatTimeString("%H:%M:%S").c_str());
+			Shuanglong::Utils::TimeUtil::GetFormatTimeString("%H:%M:%S").c_str());
 		mpLog->Console(SL_CODELOCATION, "Current DateTime String: %s",
-			ShuangLong::Utils::TimeUtil::GetFormatTimeString("%Y-%m-%d %H:%M:%S").c_str());
+			Shuanglong::Utils::TimeUtil::GetFormatTimeString("%Y-%m-%d %H:%M:%S").c_str());
 	}
 
 	void TimeUtilTest::TimeUtilTest_GetCurrentTimestamp()
 	{
 		std::cout << std::endl
 			<< "----------------------------------- TimeUtilTest_GetCurrentTimestamp -----------------------------------" << std::endl;
-		mpLog->Console(SL_CODELOCATION, "Current Timestamp: %llu", ShuangLong::Utils::TimeUtil::GetCurrentTimestamp());
+		mpLog->Console(SL_CODELOCATION, "Current Timestamp: %llu", Shuanglong::Utils::TimeUtil::GetCurrentTimestamp());
 	}
 
 	void TimeUtilTest::TimeUtilTest_GetFullTimestampString()
@@ -82,7 +82,7 @@ namespace ShuangLong::Test
 		std::cout << std::endl
 			<< "----------------------------------- TimeUtilTest_GetFullTimestampString -----------------------------------" << std::endl;
 		mpLog->Console(SL_CODELOCATION, "Current Full Timestamp String: %s",
-			ShuangLong::Utils::TimeUtil::GetFullTimestampString().c_str());
+			Shuanglong::Utils::TimeUtil::GetFullTimestampString().c_str());
 	}
 
 	void TimeUtilTest::TimeUtilTest_GetSimpleTimestampString()
@@ -90,14 +90,14 @@ namespace ShuangLong::Test
 		std::cout << std::endl
 			<< "----------------------------------- TimeUtilTest_GetSimpleTimestampString -----------------------------------" << std::endl;
 		mpLog->Console(SL_CODELOCATION, "Current Simple Timestamp String: %s",
-			ShuangLong::Utils::TimeUtil::GetSimpleTimestampString().c_str());
+			Shuanglong::Utils::TimeUtil::GetSimpleTimestampString().c_str());
 	}
 
 	void TimeUtilTest::TimeUtilTest_QueryPerformanceFrequency()
 	{
 		std::cout << std::endl
 			<< "----------------------------------- TimeUtilTest_QueryPerformanceFrequency -----------------------------------" << std::endl;
-		long long frequency = ShuangLong::Utils::TimeUtil::QueryPerformanceFrequency();
+		long long frequency = Shuanglong::Utils::TimeUtil::QueryPerformanceFrequency();
 		std::cout << "frequency: " << frequency << std::endl;
 		mpLog->Console(SL_CODELOCATION, "TimeUtil::QueryPerformanceFrequency PerformanceFrequency: %llu", frequency);
 	}
@@ -106,7 +106,7 @@ namespace ShuangLong::Test
 	{
 		std::cout << std::endl
 			<< "----------------------------------- TimeUtilTest_QueryPerformanceCounter -----------------------------------" << std::endl;
-		long long curWinTime = ShuangLong::Utils::TimeUtil::QueryPerformanceCounter();
+		long long curWinTime = Shuanglong::Utils::TimeUtil::QueryPerformanceCounter();
 		std::cout << "curWinTime: " << curWinTime << std::endl;
 		mpLog->Console(SL_CODELOCATION, "TimeUtil::QueryPerformanceCounter PerformanceCounter: %llu", curWinTime);
 	}
@@ -211,14 +211,14 @@ namespace ShuangLong::Test
 			"WORD", "DaylightDate.wMilliseconds", timeZoneInfo.DaylightDate.wMilliseconds);
 
 		// timing precision test
-		long long frequency = ShuangLong::Utils::TimeUtil::QueryPerformanceFrequency();
+		long long frequency = Shuanglong::Utils::TimeUtil::QueryPerformanceFrequency();
 		DWORD tickCount = GetTickCount();
 		clock_t clock = ::clock();
-		LONGLONG counter = ShuangLong::Utils::TimeUtil::QueryPerformanceCounter();
+		LONGLONG counter = Shuanglong::Utils::TimeUtil::QueryPerformanceCounter();
 		Sleep(3000);
 		DWORD tickCount2 = GetTickCount();
 		clock_t clock2 = ::clock();
-		LONGLONG counter2 = ShuangLong::Utils::TimeUtil::QueryPerformanceCounter();
+		LONGLONG counter2 = Shuanglong::Utils::TimeUtil::QueryPerformanceCounter();
 		mpLog->Console("tickCount = %lu     clock = %ld     counter = %llu",
 			tickCount2 - tickCount, clock2 - clock, (counter2 - counter) * 1000 / frequency);
 	}

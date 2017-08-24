@@ -1,9 +1,9 @@
 #pragma once
 #include "CodeLocation.h"
 
-using namespace ShuangLong::Utils;
+using namespace Shuanglong::Utils;
 
-namespace ShuangLong
+namespace Shuanglong
 {
     class ILog
     {

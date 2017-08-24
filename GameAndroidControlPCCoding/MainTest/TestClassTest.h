@@ -2,20 +2,20 @@
 
 #include <TestClass.h>
 
-namespace ShuangLong
+namespace Shuanglong
 {
-	class TestClassTest sealed
-	{
-	private:
-		TestClassTest();
-		TestClass *mpTestClass;
-		static TestClassTest *mpInstance;
+    class TestClassTest sealed
+    {
+    private:
+        TestClassTest();
+        TestClass *mpTestClass;
+        static TestClassTest *mpInstance;
 
-	public:
-		~TestClassTest();
+    public:
+        ~TestClassTest();
 
-		static void Entry();
+        static void Entry();
 
-		void TestMethodTest();
-	};
+        void TestMethodTest();
+    };
 }

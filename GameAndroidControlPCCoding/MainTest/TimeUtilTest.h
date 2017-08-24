@@ -1,7 +1,7 @@
 #pragma once
 #include "Log.h"
 
-namespace ShuangLong
+namespace Shuanglong
 {
     namespace Test
     {

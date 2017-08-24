@@ -5,7 +5,7 @@
 
 #define SL_STRINGUTIL_BUFFERLEN 1024
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     /************************************************************************\
         Author     : JiangChuanbiao

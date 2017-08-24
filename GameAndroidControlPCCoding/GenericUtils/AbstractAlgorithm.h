@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     class AbstractAlgorithm
     {

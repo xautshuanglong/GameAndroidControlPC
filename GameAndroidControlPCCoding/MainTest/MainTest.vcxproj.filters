@@ -66,6 +66,9 @@
     <ClCompile Include="UdpSocketServerTest.cpp">
       <Filter>TcpUdpTest</Filter>
     </ClCompile>
+    <ClCompile Include="StdCppTest.cpp">
+      <Filter>Attempt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -106,6 +109,9 @@
     </ClInclude>
     <ClInclude Include="UdpSocketServerTest.h">
       <Filter>TcpUdpTest</Filter>
+    </ClInclude>
+    <ClInclude Include="StdCppTest.h">
+      <Filter>Attempt</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

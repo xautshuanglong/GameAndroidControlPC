@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "UdpSocketServerTest.h"
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
     UdpSocketServerTest* UdpSocketServerTest::mpInstance = nullptr;
 

@@ -4,7 +4,7 @@
 #include <ShObjIdl.h>
 #include <thumbcache.h>
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
 #define THUMBNAIL_SIZE 256
 

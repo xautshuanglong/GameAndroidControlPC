@@ -76,7 +76,7 @@
 #include <ctime>
 #include <iostream>
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     /************************************************************************\
         Author     : JiangChuanbiao

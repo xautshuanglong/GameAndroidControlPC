@@ -1,12 +1,12 @@
 #pragma once
 
-namespace ShuangLong
+namespace Shuanglong
 {
-	class TestClass
-	{
-	public:
-		TestClass();
-		~TestClass();
-		void TestMethod();
-	};
+    class TestClass
+    {
+    public:
+        TestClass();
+        ~TestClass();
+        void TestMethod();
+    };
 }

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "StringUtil.h"
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     std::string StringUtil::FormatString(const char* format, ...)
     {

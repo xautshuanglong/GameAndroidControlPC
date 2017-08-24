@@ -1,6 +1,6 @@
 #pragma once
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     class MD5
     {

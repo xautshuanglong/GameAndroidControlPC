@@ -4,7 +4,7 @@
 //#include <shellapi.h>
 //#include <tchar.h>
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
 	UpPrivilegeTest* UpPrivilegeTest::mpInstance = nullptr;
 

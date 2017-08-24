@@ -170,6 +170,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="StdCppTest.cpp" />
     <ClCompile Include="StringUtilTest.cpp" />
     <ClCompile Include="TcpSocketServerTest.cpp" />
     <ClCompile Include="TestClassTest.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="ILog.h" />
     <ClInclude Include="ProcessUtilTest.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StdCppTest.h" />
     <ClInclude Include="StringUtilTest.h" />
     <ClInclude Include="TcpSocketServerTest.h" />
     <ClInclude Include="TestClassTest.h" />

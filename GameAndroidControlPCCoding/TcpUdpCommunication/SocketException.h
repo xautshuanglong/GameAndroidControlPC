@@ -3,7 +3,7 @@
 #include <string>
 #include <exception>
 
-namespace ShuangLong
+namespace Shuanglong
 {
     namespace Socket
     {

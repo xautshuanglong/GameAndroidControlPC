@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "VersionUtilTest.h"
 
-namespace ShuangLong::Test
+namespace Shuanglong::Test
 {
     VersionUtilTest* VersionUtilTest::mpInstance = nullptr;
 

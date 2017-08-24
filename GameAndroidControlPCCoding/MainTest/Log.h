@@ -12,7 +12,7 @@
 #define SL_DEBUG_ENABLE true
 #define SL_DEFAULT_LOGFILE "E:\\TempLog.txt"
 
-namespace ShuangLong
+namespace Shuanglong
 {
     class Log sealed : public ILog
     {

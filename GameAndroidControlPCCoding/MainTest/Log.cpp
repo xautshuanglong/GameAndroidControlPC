@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Log.h"
 
-namespace ShuangLong
+namespace Shuanglong
 {
     //volatile bool Log::m_bInitFlag = false;
     //std::mutex Log::m_mutex;

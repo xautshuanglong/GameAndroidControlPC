@@ -3,7 +3,7 @@
 
 #include <bcrypt.h>
 
-namespace ShuangLong::Utils
+namespace Shuanglong::Utils
 {
     SYSTEMTIME TimeUtil::m_systemTime = { 0 };
     tm TimeUtil::m_tmCurTime = { 0 };

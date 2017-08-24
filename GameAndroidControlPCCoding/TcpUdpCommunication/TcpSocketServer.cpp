@@ -2,7 +2,7 @@
 
 #include "TcpSocketServer.h"
 
-namespace ShuangLong::Socket
+namespace Shuanglong::Socket
 {
     TcpSocketServer::TcpSocketServer()
     {
