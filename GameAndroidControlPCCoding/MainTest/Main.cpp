@@ -35,12 +35,12 @@ int main(int argc, char** argv)
     //ShuangLong::Test::UpPrivilegeTest::Entry();
     //ShuangLong::Test::VersionUtilTest::Entry();
     //ShuangLong::Test::ProcessUtilTest::Entry();
-    //ShuangLong::Test::ThumbnailTest::Entry();
+    ShuangLong::Test::ThumbnailTest::Entry();
 
     //--------------------- TcpUdpCommunication Testing ---------------------
 
     //ShuangLong::Test::TcpSocketServerTest::Entry();
-    ShuangLong::Test::UdpSocketServerTest::Entry();
+    //ShuangLong::Test::UdpSocketServerTest::Entry();
 
     SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, FALSE);
 

@@ -185,6 +185,11 @@ namespace ShuangLong::Test
 
         TextOutW(hdc, 10, 10, L"ThumbnailTest Window", (int)wcsnlen(L"ThumbnailTest Window", 512));
 
+        HPEN hPen = CreatePen(PS_SOLID, 1, RGB(255,0,0));
+        SelectObject(hdc, hPen);
+        Rectangle(hdc, 10, 30, THUMBNAIL_SIZE+10, THUMBNAIL_SIZE+30);
+        DeleteObject(hPen);
+
         if (mpInstance->mhBitmap)
         {
             memDC = CreateCompatibleDC(hdc);
@@ -192,6 +197,11 @@ namespace ShuangLong::Test
             StretchBlt(hdc, 10, 30, THUMBNAIL_SIZE, THUMBNAIL_SIZE, memDC, 0, 0, THUMBNAIL_SIZE, THUMBNAIL_SIZE, SRCCOPY);
             //BitBlt(hdc, 10, 30, THUMBNAIL_SIZE, THUMBNAIL_SIZE, memDC, 0, 0, SRCCOPY);
         }
+
+        BITMAP bitmapInfo = { 0 };
+        GetObject(mpInstance->mhBitmap, sizeof(BITMAP), &bitmapInfo);
+
+        printf_s("bitmapInfo = (%u, %u)\n", bitmapInfo.bmWidth, bitmapInfo.bmHeight);
 
         DeleteDC(memDC);
         EndPaint(hWnd, &ps);
