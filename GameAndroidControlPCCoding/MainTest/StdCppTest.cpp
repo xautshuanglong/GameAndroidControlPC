@@ -3,14 +3,23 @@
 
 namespace Shuanglong::Test
 {
-#define DECLARE_SHARED_POINTER(clsName) typedef std::shared_ptr<clsName> Ptr##clsName;
+    DECLARE_SHARED_POINTER(StdCppTest)
 
     StdCppTest* StdCppTest::mpInstance = nullptr;
+    StdCppTest::SingleHelpper StdCppTest::mHelpper;
 
     StdCppTest::StdCppTest()
         : mpLog(nullptr)
+        , mpName(nullptr)
     {
         printf_s("StdCppTest::StdCppTest() --\n");
+    }
+
+    StdCppTest::StdCppTest(const char* name)
+        : mpLog(nullptr)
+        , mpName(name)
+    {
+        printf_s("StdCppTest::StdCppTest(const char* name) --\n");
     }
 
     StdCppTest::~StdCppTest()
@@ -31,11 +40,10 @@ namespace Shuanglong::Test
     {
         std::cout << "----------------------------- StdCppTest::SharedPointerTypedefTest() -----------------------------" << std::endl;
 
-        std::shared_ptr<StdCppTest> ptrTest(new StdCppTest());
+        std::shared_ptr<StdCppTest> ptrTest(new StdCppTest("std::shared_ptr<StdCppTest>"));
         ptrTest->SharedPointerHelperFunc();
 
-        DECLARE_SHARED_POINTER(StdCppTest)
-        PtrStdCppTest typedefTest(new StdCppTest);
+        PtrStdCppTest typedefTest(new StdCppTest("PtrStdCppTest"));
         typedefTest->SharedPointerHelperFunc();
     }
 
@@ -45,6 +53,6 @@ namespace Shuanglong::Test
         {
             mpLog = Log::GetInstance();
         }
-        mpLog->Console(SL_CODELOCATION, "Enter function ----");
+        mpLog->Console(SL_CODELOCATION, "Enter function <---- ClassName:%s", mpName);
     }
 }

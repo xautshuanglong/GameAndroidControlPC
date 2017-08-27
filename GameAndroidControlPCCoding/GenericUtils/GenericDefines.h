@@ -17,3 +17,5 @@
 #else
 #define GENERIC_EXPORT __declspec(dllimport)
 #endif
+
+#define DECLARE_SHARED_POINTER(clsName) typedef std::shared_ptr<clsName> Ptr##clsName;
