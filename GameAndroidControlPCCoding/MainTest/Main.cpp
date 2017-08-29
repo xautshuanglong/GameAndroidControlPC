@@ -14,6 +14,8 @@
 #include "ProcessUtilTest.h"
 #include "ThumbnailTest.h"
 #include "StdCppTest.h"
+#include "UnhandlerExceptionTest.h"
+#include "WaitMultiEventTest.h"
 
 //------------ TcpUdpCommunication -------------
 #include "TcpSocketServerTest.h"
@@ -37,7 +39,11 @@ int main(int argc, char** argv)
     //Shuanglong::Test::VersionUtilTest::Entry();
     //Shuanglong::Test::ProcessUtilTest::Entry();
     //Shuanglong::Test::ThumbnailTest::Entry();
-    Shuanglong::Test::StdCppTest::Entry();
+    //Shuanglong::Test::StdCppTest::Entry();
+
+    //Shuanglong::Test::UnhandlerExceptionTest::GetInstance();
+    Shuanglong::Test::WaitMultiEventTest::GetInstance()->Entry();
+    Shuanglong::Test::WaitMultiEventTest::GetInstance()->Exit();
 
     //--------------------- TcpUdpCommunication Testing ---------------------
 
@@ -55,6 +61,7 @@ BOOL ConsoleEventHandler(DWORD dwCtrlType)
     {
     case CTRL_C_EVENT:
         printf_s("Control + C\n");
+        Shuanglong::Test::UdpSocketServerTest::Exit();
         break;
     case CTRL_BREAK_EVENT:
         printf_s("Control + Break\n");

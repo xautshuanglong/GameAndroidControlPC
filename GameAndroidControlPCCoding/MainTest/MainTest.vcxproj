@@ -177,8 +177,10 @@
     <ClCompile Include="ThumbnailTest.cpp" />
     <ClCompile Include="TimeUtilTest.cpp" />
     <ClCompile Include="UdpSocketServerTest.cpp" />
+    <ClCompile Include="UnhandlerExceptionTest.cpp" />
     <ClCompile Include="UpPrivilegeTest.cpp" />
     <ClCompile Include="VersionUtilTest.cpp" />
+    <ClCompile Include="WaitMultiEventTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectoryUtilTest.h" />
@@ -193,8 +195,10 @@
     <ClInclude Include="ThumbnailTest.h" />
     <ClInclude Include="TimeUtilTest.h" />
     <ClInclude Include="UdpSocketServerTest.h" />
+    <ClInclude Include="UnhandlerExceptionTest.h" />
     <ClInclude Include="UpPrivilegeTest.h" />
     <ClInclude Include="VersionUtilTest.h" />
+    <ClInclude Include="WaitMultiEventTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GenericUtils\GenericUtils.vcxproj">
