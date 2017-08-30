@@ -10,6 +10,21 @@ namespace Shuanglong::Test
     std::mutex                       WaitMultiEventTest::mMutexInstance;
     WaitMultiEventTest::DestructHellpper WaitMultiEventTest::mDestructHellper;
 
+    WaitMultiEventTest::DestructHellpper::DestructHellpper()
+    {
+    }
+
+    WaitMultiEventTest::DestructHellpper::~DestructHellpper()
+    {
+        WaitMultiEventTest *pTemp = mpInstance.load(std::memory_order_acquire);
+        if (pTemp != nullptr)
+        {
+            delete pTemp;
+            pTemp = nullptr;
+            mpInstance.store(pTemp, std::memory_order_release);
+        }
+    }
+
     WaitMultiEventTest::WaitMultiEventTest()
         : mpLog(nullptr)
         , mIsWaitingFlag(true)
@@ -28,6 +43,7 @@ namespace Shuanglong::Test
         if (pTemp == nullptr)
         {
             std::lock_guard<std::mutex> lock(mMutexInstance);
+            pTemp = mpInstance.load(std::memory_order_relaxed);
             if (pTemp == nullptr)
             {
                 pTemp = new WaitMultiEventTest();

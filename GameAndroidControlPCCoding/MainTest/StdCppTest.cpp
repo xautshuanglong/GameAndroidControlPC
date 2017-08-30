@@ -8,6 +8,19 @@ namespace Shuanglong::Test
     StdCppTest* StdCppTest::mpInstance = nullptr;
     StdCppTest::SingleHelpper StdCppTest::mHelpper;
 
+    StdCppTest::SingleHelpper::SingleHelpper()
+    {
+    }
+
+    StdCppTest::SingleHelpper::~SingleHelpper()
+    {
+        if (mpInstance != nullptr)
+        {
+            delete mpInstance;
+            mpInstance = nullptr;
+        }
+    }
+
     StdCppTest::StdCppTest()
         : mpLog(nullptr)
         , mpName(nullptr)

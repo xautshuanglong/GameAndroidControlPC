@@ -13,17 +13,8 @@ namespace Shuanglong::Test
         class DestructHellpper
         {
         public:
-            DestructHellpper(){}
-            ~DestructHellpper()
-            {
-                UnhandlerExceptionTest *pTemp = mpInstance.load(std::memory_order_acquire);
-                if (pTemp != nullptr)
-                {
-                    delete pTemp;
-                    pTemp = nullptr;
-                    mpInstance.store(pTemp, std::memory_order_release);
-                }
-            }
+            DestructHellpper();
+            ~DestructHellpper();
         };
         static DestructHellpper mDestructHellper;
 
