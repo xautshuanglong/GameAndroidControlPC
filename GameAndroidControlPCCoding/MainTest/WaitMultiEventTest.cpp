@@ -28,6 +28,7 @@ namespace Shuanglong::Test
         if (pTemp == nullptr)
         {
             std::lock_guard<std::mutex> lock(mMutexInstance);
+            pTemp = mpInstance.load(std::memory_order_relaxed);
             if (pTemp == nullptr)
             {
                 pTemp = new WaitMultiEventTest();
