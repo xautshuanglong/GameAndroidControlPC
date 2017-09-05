@@ -5,7 +5,6 @@ namespace DuiLib
 {
     CChildLayoutUI::CChildLayoutUI()
     {
-
     }
 
     void CChildLayoutUI::Init()

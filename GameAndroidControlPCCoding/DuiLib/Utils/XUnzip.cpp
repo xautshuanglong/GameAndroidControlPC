@@ -312,14 +312,7 @@ typedef struct unz_file_info_s
 #define UNZ_INTERNALERROR       (-104)
 #define UNZ_CRCERROR            (-105)
 
-
-
-
-
-
-
 #define ZLIB_VERSION "1.1.3"
-
 
 // Allowed flush values; see deflate() for details
 #define Z_NO_FLUSH      0
@@ -367,8 +360,6 @@ typedef struct unz_file_info_s
 #define Z_BUF_ERROR    (-5)
 #define Z_VERSION_ERROR (-6)
 
-
-
 // Basic data types
 typedef unsigned char  Byte;  // 8 bits
 typedef unsigned int   uInt;  // 16 bits or more
@@ -376,17 +367,6 @@ typedef unsigned long  uLong; // 32 bits or more
 typedef void *voidpf;
 typedef void     *voidp;
 typedef long z_off_t;
-
-
-
-
-
-
-
-
-
-
-
 
 typedef voidpf(*alloc_func) (voidpf opaque, uInt items, uInt size);
 typedef void(*free_func)  (voidpf opaque, voidpf address);
@@ -439,8 +419,6 @@ typedef z_stream *z_streamp;
 //   (particularly if the decompressor wants to decompress everything in
 //   a single step).
 //
-
-
 // basic functions
 
 const char *zlibVersion();
@@ -448,11 +426,6 @@ const char *zlibVersion();
 // If the first character differs, the library code actually used is
 // not compatible with the zlib.h header file used by the application.
 // This check is automatically made by inflateInit.
-
-
-
-
-
 
 int inflate(z_streamp strm, int flush);
 //
@@ -584,7 +557,6 @@ int inflateReset(z_streamp strm);
 //
 
 
-
 // checksum functions
 // These functions are not related to compression but are exported
 // anyway because they might be useful in applications using the
@@ -619,21 +591,15 @@ uLong ucrc32(uLong crc, const Byte *buf, uInt len);
 //     if (crc != original_crc) error();
 
 
-
-
 const char   *zError(int err);
 int           inflateSyncPoint(z_streamp z);
 const uLong *get_crc_table(void);
-
-
 
 typedef unsigned char  uch;
 typedef uch uchf;
 typedef unsigned short ush;
 typedef ush ushf;
 typedef unsigned long  ulg;
-
-
 
 const char * const z_errmsg[10] = { // indexed by 2-zlib_error
 "need dictionary",     // Z_NEED_DICT       2
@@ -647,15 +613,13 @@ const char * const z_errmsg[10] = { // indexed by 2-zlib_error
 "incompatible version",// Z_VERSION_ERROR (-6)
 "" };
 
-
 #define ERR_MSG(err) z_errmsg[Z_NEED_DICT-(err)]
 
 #define ERR_RETURN(strm,err) \
   return (strm->msg = (char*)ERR_MSG(err), (err))
 // To be used only when the state is known to be valid 
 
-        // common constants
-
+// common constants
 
 #define STORED_BLOCK 0
 #define STATIC_TREES 1
@@ -668,13 +632,11 @@ const char * const z_errmsg[10] = { // indexed by 2-zlib_error
 
 #define PRESET_DICT 0x20 // preset dictionary flag in zlib header 
 
-        // target dependencies 
+// target dependencies 
 
 #define OS_CODE  0x0b  // Window 95 & Windows NT
 
-
-
-         // functions 
+// functions 
 
 #define zmemzero(dest, len) memset(dest, 0, len)
 
@@ -718,7 +680,6 @@ void z_error(char *m)
 
 #endif
 
-
 typedef uLong(*check_func) (uLong check, const Byte *buf, uInt len);
 voidpf zcalloc(voidpf opaque, unsigned items, unsigned size);
 void   zcfree(voidpf opaque, voidpf ptr);
@@ -733,12 +694,8 @@ void   zcfree(voidpf opaque, voidpf ptr);
 
 #define TRY_FREE(s, p) {if (p) ZFREE(s, p);}
 
-
-
-
 // Huffman code lookup table entry--this entry is four bytes for machines
 // that have 16-bit pointers (e.g. PC's in the small or medium model).
-
 
 typedef struct inflate_huft_s inflate_huft;
 
@@ -751,9 +708,9 @@ struct inflate_huft_s
             Byte Exop;        // number of extra bits or operation
             Byte Bits;        // number of bits in this code or subcode
         } what;
-        uInt pad;           // pad structure to a power of 2 (4 bytes for
-    } word;               //  16-bit, 8 bytes for 32-bit int's)
-    uInt base;            // literal, length base, distance base, or table offset
+        uInt pad;             // pad structure to a power of 2 (4 bytes for
+    } word;                   //  16-bit, 8 bytes for 32-bit int's)
+    uInt base;                // literal, length base, distance base, or table offset
 };
 
 // Maximum size of dynamic tree.  The maximum found in a long but non-
@@ -766,31 +723,27 @@ struct inflate_huft_s
 int inflate_trees_bits(
     uInt *,                    // 19 code lengths
     uInt *,                    // bits tree desired/actual depth
-    inflate_huft * *,       // bits tree result
-    inflate_huft *,             // space for trees
+    inflate_huft * *,          // bits tree result
+    inflate_huft *,            // space for trees
     z_streamp);                // for messages
 
 int inflate_trees_dynamic(
     uInt,                       // number of literal/length codes
     uInt,                       // number of distance codes
-    uInt *,                    // that many (total) code lengths
-    uInt *,                    // literal desired/actual bit depth
-    uInt *,                    // distance desired/actual bit depth
-    inflate_huft * *,       // literal/length tree result
-    inflate_huft * *,       // distance tree result
+    uInt *,                     // that many (total) code lengths
+    uInt *,                     // literal desired/actual bit depth
+    uInt *,                     // distance desired/actual bit depth
+    inflate_huft * *,           // literal/length tree result
+    inflate_huft * *,           // distance tree result
     inflate_huft *,             // space for trees
-    z_streamp);                // for messages
+    z_streamp);                 // for messages
 
 int inflate_trees_fixed(
     uInt *,                    // literal desired/actual bit depth
     uInt *,                    // distance desired/actual bit depth
-    const inflate_huft * *,       // literal/length tree result
-    const inflate_huft * *,       // distance tree result
+    const inflate_huft * *,    // literal/length tree result
+    const inflate_huft * *,    // distance tree result
     z_streamp);                // for memory allocation
-
-
-
-
 
 struct inflate_blocks_state;
 typedef struct inflate_blocks_state inflate_blocks_statef;
@@ -798,7 +751,7 @@ typedef struct inflate_blocks_state inflate_blocks_statef;
 inflate_blocks_statef * inflate_blocks_new(
     z_streamp z,
     check_func c,               // check function
-    uInt w);                   // window size
+    uInt w);                    // window size
 
 int inflate_blocks(
     inflate_blocks_statef *,
@@ -822,9 +775,6 @@ void inflate_set_dictionary(
 int inflate_blocks_sync_point(
     inflate_blocks_statef *s);
 
-
-
-
 struct inflate_codes_state;
 typedef struct inflate_codes_state inflate_codes_statef;
 
@@ -841,9 +791,6 @@ int inflate_codes(
 void inflate_codes_free(
     inflate_codes_statef *,
     z_streamp);
-
-
-
 
 typedef enum
 {
@@ -870,15 +817,15 @@ struct inflate_blocks_state
     // mode dependent information 
     union
     {
-        uInt left;          // if STORED, bytes left to copy 
+        uInt left;                    // if STORED, bytes left to copy 
         struct
         {
             uInt table;               // table lengths (14 bits) 
             uInt index;               // index into blens (or border)
-            uInt *blens;             // bit lengths of codes
+            uInt *blens;              // bit lengths of codes
             uInt bb;                  // bit length tree depth 
             inflate_huft *tb;         // bit length decoding tree 
-        } trees;            // if DTREE, decoding info for trees 
+        } trees;                      // if DTREE, decoding info for trees 
         struct
         {
             inflate_codes_statef
@@ -891,10 +838,10 @@ struct inflate_blocks_state
     uInt bitk;            // bits in bit buffer 
     uLong bitb;           // bit buffer 
     inflate_huft *hufts;  // single malloc for tree space 
-    Byte *window;        // sliding window 
-    Byte *end;           // one byte after sliding window 
-    Byte *read;          // window read pointer 
-    Byte *write;         // window write pointer 
+    Byte *window;         // sliding window 
+    Byte *end;            // one byte after sliding window 
+    Byte *read;           // window read pointer 
+    Byte *write;          // window write pointer 
     check_func checkfn;   // check function 
     uLong check;          // check on output 
 
@@ -936,8 +883,6 @@ const uInt inflate_mask[17] = {
 int inflate_flush(inflate_blocks_statef *, z_streamp, int);
 
 int inflate_fast(uInt, uInt, const inflate_huft *, const inflate_huft *, inflate_blocks_statef *, z_streamp);
-
-
 
 const uInt fixed_bl = 9;
 const uInt fixed_bd = 5;
@@ -1083,11 +1028,6 @@ const inflate_huft fixed_td[] = {
 };
 
 
-
-
-
-
-
 // copy as much as possible from the sliding window to the output area
 int inflate_flush(inflate_blocks_statef *s, z_streamp z, int r)
 {
@@ -1155,11 +1095,6 @@ int inflate_flush(inflate_blocks_statef *s, z_streamp z, int r)
     return r;
 }
 
-
-
-
-
-
 // simplify the use of the inflate_huft type with some defines
 #define exop word.what.Exop
 #define bits word.what.Bits
@@ -1182,7 +1117,6 @@ inflate_codes_mode;
 // inflate codes private state
 struct inflate_codes_state
 {
-
     // mode 
     inflate_codes_mode mode;      // current inflate_codes mode 
 
@@ -1193,19 +1127,19 @@ struct inflate_codes_state
         struct
         {
             const inflate_huft *tree;       // pointer into tree 
-            uInt need;                // bits needed 
-        } code;             // if LEN or DIST, where in tree 
-        uInt lit;           // if LIT, literal 
+            uInt need;                      // bits needed 
+        } code;                             // if LEN or DIST, where in tree 
+        uInt lit;                           // if LIT, literal 
         struct
         {
-            uInt get;                 // bits to get for extra 
-            uInt dist;                // distance back to copy from 
-        } copy;             // if EXT or COPY, where and how much 
-    } sub;                // submode
+            uInt get;                      // bits to get for extra 
+            uInt dist;                     // distance back to copy from 
+        } copy;                            // if EXT or COPY, where and how much 
+    } sub;                                 // submode
 
     // mode independent information 
-    Byte lbits;           // ltree bits decoded per branch 
-    Byte dbits;           // dtree bits decoder per branch 
+    Byte lbits;                         // ltree bits decoded per branch 
+    Byte dbits;                         // dtree bits decoder per branch 
     const inflate_huft *ltree;          // literal/length/eob tree
     const inflate_huft *dtree;          // distance tree
 
@@ -1236,16 +1170,16 @@ inflate_codes_statef *inflate_codes_new(
 
 int inflate_codes(inflate_blocks_statef *s, z_streamp z, int r)
 {
-    uInt j;               // temporary storage
-    const inflate_huft *t;      // temporary pointer
-    uInt e;               // extra bits or operation
-    uLong b;              // bit buffer
-    uInt k;               // bits in bit buffer
-    Byte *p;             // input data pointer
-    uInt n;               // bytes available there
-    Byte *q;             // output window write pointer
-    uInt m;               // bytes to end of window or read pointer
-    Byte *f;             // pointer to copy strings from
+    uInt j;                  // temporary storage
+    const inflate_huft *t;   // temporary pointer
+    uInt e;                  // extra bits or operation
+    uLong b;                 // bit buffer
+    uInt k;                  // bits in bit buffer
+    Byte *p;                 // input data pointer
+    uInt n;                  // bytes available there
+    Byte *q;                 // output window write pointer
+    uInt m;                  // bytes to end of window or read pointer
+    Byte *f;                 // pointer to copy strings from
     inflate_codes_statef *c = s->sub.decode.codes;  // codes state
 
     // copy input/output information to locals (UPDATE macro restores)
@@ -1398,8 +1332,6 @@ void inflate_codes_free(inflate_codes_statef *c, z_streamp z)
     Tracev((stderr, "inflate:       codes free\n"));
 }
 
-
-
 // infblock.c -- interpret and process block types to last block
 // Copyright (C) 1995-1998 Mark Adler
 // For conditions of distribution and use, see copyright notice in zlib.h
@@ -1507,9 +1439,9 @@ int inflate_blocks(inflate_blocks_statef *s, z_streamp z, int r)
     uInt t;               // temporary storage
     uLong b;              // bit buffer
     uInt k;               // bits in bit buffer
-    Byte *p;             // input data pointer
+    Byte *p;              // input data pointer
     uInt n;               // bytes available there
-    Byte *q;             // output window write pointer
+    Byte *q;              // output window write pointer
     uInt m;               // bytes to end of window or read pointer 
 
     // copy input/output information to locals (UPDATE macro restores) 
@@ -1746,7 +1678,6 @@ int inflate_blocks(inflate_blocks_statef *s, z_streamp z, int r)
         }
 }
 
-
 int inflate_blocks_free(inflate_blocks_statef *s, z_streamp z)
 {
     inflate_blocks_reset(s, z, Z_NULL);
@@ -1757,14 +1688,10 @@ int inflate_blocks_free(inflate_blocks_statef *s, z_streamp z)
     return Z_OK;
 }
 
-
-
 // inftrees.c -- generate Huffman trees for efficient decoding
 // Copyright (C) 1995-1998 Mark Adler
 // For conditions of distribution and use, see copyright notice in zlib.h
 //
-
-
 
 extern const char inflate_copyright[] =
 " ";//inflate 1.1.3 Copyright 1995-1998 Mark Adler ";
@@ -1773,19 +1700,17 @@ extern const char inflate_copyright[] =
 // include such an acknowledgment, I would appreciate that you keep this
 // copyright string in the executable of your product.
 
-
-
 int huft_build(
-    uInt *,            // code lengths in bits
+    uInt *,             // code lengths in bits
     uInt,               // number of codes
     uInt,               // number of "simple" codes
-    const uInt *,      // list of base values for non-simple codes
-    const uInt *,      // list of extra bits for non-simple codes
-    inflate_huft **,// result: starting table
-    uInt *,            // maximum lookup bits (returns actual) 
+    const uInt *,       // list of base values for non-simple codes
+    const uInt *,       // list of extra bits for non-simple codes
+    inflate_huft **,    // result: starting table
+    uInt *,             // maximum lookup bits (returns actual) 
     inflate_huft *,     // space for trees 
     uInt *,             // hufts used in space 
-    uInt *);         // space for values 
+    uInt *);            // space for values 
 
 // Tables for deflate from PKZIP's appnote.txt. 
 const uInt cplens[31] = { // Copy lengths for literal codes 257..285
@@ -1836,21 +1761,20 @@ const uInt cpdext[30] = { // Extra bits for distance codes
 //   possibly even between compilers.  Your mileage may vary.
 //
 
-
 // If BMAX needs to be larger than 16, then h and x[] should be uLong. 
 #define BMAX 15         // maximum bit length of any code
 
 int huft_build(
-    uInt *b,               // code lengths in bits (all assumed <= BMAX)
+    uInt *b,                // code lengths in bits (all assumed <= BMAX)
     uInt n,                 // number of codes (assumed <= 288)
     uInt s,                 // number of simple-valued codes (0..s-1)
-    const uInt *d,         // list of base values for non-simple codes
-    const uInt *e,         // list of extra bits for non-simple codes
-    inflate_huft * *t,  // result: starting table
-    uInt *m,               // maximum lookup bits, returns actual
+    const uInt *d,          // list of base values for non-simple codes
+    const uInt *e,          // list of extra bits for non-simple codes
+    inflate_huft * *t,      // result: starting table
+    uInt *m,                // maximum lookup bits, returns actual
     inflate_huft *hp,       // space for trees
     uInt *hn,               // hufts used in space
-    uInt *v)               // working area: values in order of bit length
+    uInt *v)                // working area: values in order of bit length
     // Given a list of code lengths and a maximum table size, make a set of
     // tables to decode that set of codes.  Return Z_OK on success, Z_BUF_ERROR
     // if the given code set is incomplete (the tables are still built in this
@@ -1859,7 +1783,7 @@ int huft_build(
 {
 
     uInt a;                       // counter for codes of length k
-    uInt c[BMAX + 1];               // bit length count table
+    uInt c[BMAX + 1];             // bit length count table
     uInt f;                       // i repeats in table every f entries 
     int g;                        // maximum code length 
     int h;                        // table level 
@@ -1868,13 +1792,13 @@ int huft_build(
     register int k;               // number of bits in current code 
     int l;                        // bits per table (returned in m) 
     uInt mask;                    // (1 << w) - 1, to avoid cc -O bug on HP 
-    register uInt *p;            // pointer into c[], b[], or v[]
+    register uInt *p;             // pointer into c[], b[], or v[]
     inflate_huft *q;              // points to current table 
     struct inflate_huft_s r;      // table entry for structure assignment 
     inflate_huft *u[BMAX];        // table stack 
     register int w;               // bits before this table == (l * h) 
-    uInt x[BMAX + 1];               // bit offsets, then code stack 
-    uInt *xp;                    // pointer into x 
+    uInt x[BMAX + 1];             // bit offsets, then code stack 
+    uInt *xp;                     // pointer into x 
     int y;                        // number of dummy codes added 
     uInt z;                       // number of entries in current table 
 
@@ -1890,7 +1814,7 @@ int huft_build(
     {
         c[*p++]++;                  // assume all entries <= BMAX 
     } while (--i);
-    if (c[0] == n)                // null input--all zero length codes 
+    if (c[0] == n)                  // null input--all zero length codes 
     {
         *t = (inflate_huft *)Z_NULL;
         *m = 0;
@@ -1948,7 +1872,7 @@ int huft_build(
     p = v;                        // grab values in bit order 
     h = -1;                       // no tables yet--level -1 
     w = -l;                       // bits decoded == (l * h) 
-    u[0] = (inflate_huft *)Z_NULL;        // just to keep compilers happy 
+    u[0] = (inflate_huft *)Z_NULL;// just to keep compilers happy 
     q = (inflate_huft *)Z_NULL;   // ditto 
     z = 0;                        // ditto 
 
@@ -2130,10 +2054,6 @@ int inflate_trees_dynamic(
     return Z_OK;
 }
 
-
-
-
-
 int inflate_trees_fixed(
     uInt *bl,               // literal desired/actual bit depth
     uInt *bd,               // distance desired/actual bit depth
@@ -2153,10 +2073,7 @@ int inflate_trees_fixed(
 // Copyright (C) 1995-1998 Mark Adler
 // For conditions of distribution and use, see copyright notice in zlib.h
 //
-
-
 //struct inflate_codes_state {int dummy;}; // for buggy compilers 
-
 
 // macros for bit input with no checking and for returning unused bytes 
 #define GRABBITS(j) {while(k<(j)){b|=((uLong)NEXTBYTE)<<k;k+=8;}}
@@ -2316,21 +2233,11 @@ int inflate_fast(
         return Z_OK;
 }
 
-
-
-
-
-
 // crc32.c -- compute the CRC-32 of a data stream
 // Copyright (C) 1995-1998 Mark Adler
 // For conditions of distribution and use, see copyright notice in zlib.h
 
 // @(#) $Id$
-
-
-
-
-
 
 // Table of CRC-32's of all single-byte values (made by make_crc_table)
 const uLong crc_table[256] = {
@@ -2461,17 +2368,10 @@ uLong adler32(uLong adler, const Byte *buf, uInt len)
     return (s2 << 16) | s1;
 }
 
-
-
 // zutil.c -- target dependent utility functions for the compression library
 // Copyright (C) 1995-1998 Jean-loup Gailly.
 // For conditions of distribution and use, see copyright notice in zlib.h
 // @(#) $Id$
-
-
-
-
-
 
 const char * zlibVersion()
 {
@@ -2485,9 +2385,6 @@ const char * zError(int err)
     return ERR_MSG(err);
 }
 
-
-
-
 voidpf zcalloc(voidpf opaque, unsigned items, unsigned size)
 {
     if (opaque) items += size - size; // make compiler happy
@@ -2499,8 +2396,6 @@ void  zcfree(voidpf opaque, voidpf ptr)
     zfree(ptr);
     if (opaque) return; // make compiler happy
 }
-
-
 
 // inflate.c -- zlib interface to inflate modules
 // Copyright (C) 1995-1998 Mark Adler
@@ -2643,8 +2538,6 @@ int inflateInit2(z_streamp z)
     return Z_OK;
 }
 
-
-
 #define IM_NEEDBYTE {if(z->avail_in==0)return r;r=f;}
 #define IM_NEXTBYTE (z->avail_in--,z->total_in++,*z->next_in++)
 
@@ -2770,22 +2663,20 @@ int inflate(z_streamp z, int f)
     }
 }
 
-
-
 #ifdef _UNICODE
 
 static int GetAnsiFileName(LPCWSTR name, char * buf, int nBufSize)
 {
     memset(buf, 0, nBufSize);
 
-    int n = WideCharToMultiByte(CP_ACP,	// code page
-                                0,						// performance and mapping flags
-                                name,					// wide-character string
-                                -1,						// number of chars in string
-                                buf,					// buffer for new string
-                                nBufSize,				// size of buffer
-                                NULL,					// default for unmappable chars
-                                NULL);					// set when default char used
+    int n = WideCharToMultiByte(CP_ACP,       // code page
+                                0,            // performance and mapping flags
+                                name,         // wide-character string
+                                -1,           // number of chars in string
+                                buf,          // buffer for new string
+                                nBufSize,     // size of buffer
+                                NULL,         // default for unmappable chars
+                                NULL);        // set when default char used
     return n;
 }
 
@@ -2793,12 +2684,12 @@ static int GetUnicodeFileName(const char * name, LPWSTR buf, int nBufSize)
 {
     memset(buf, 0, nBufSize * sizeof(TCHAR));
 
-    int n = MultiByteToWideChar(CP_ACP,		// code page
-                                0,			// character-type options
-                                name,		// string to map
-                                -1,			// number of bytes in string
-                                buf,		// wide-character buffer
-                                nBufSize);	// size of buffer
+    int n = MultiByteToWideChar(CP_ACP,     // code page
+                                0,          // character-type options
+                                name,       // string to map
+                                -1,         // number of bytes in string
+                                buf,        // wide-character buffer
+                                nBufSize);  // size of buffer
 
     return n;
 }
@@ -2810,16 +2701,10 @@ static int GetUnicodeFileName(const char * name, LPWSTR buf, int nBufSize)
 // Version 0.15 beta, Mar 19th, 1998,
 // Read unzip.h for more info
 
-
-
-
 #define UNZ_BUFSIZE (16384)
 #define UNZ_MAXFILENAMEINZIP (256)
 #define SIZECENTRALDIRITEM (0x2e)
 #define SIZEZIPLOCALHEADER (0x1e)
-
-
-
 
 const char unz_copyright[] = " ";//unzip 0.15 Copyright 1998 Gilles Vollant ";
 
@@ -2959,9 +2844,6 @@ size_t lufread(void *ptr, size_t size, size_t n, LUFILE *stream)
     return red / size;
 }
 
-
-
-
 // file_in_zip_read_info_s contain internal information about a file in zipfile,
 //  when reading and decompress it
 typedef struct
@@ -3027,8 +2909,6 @@ int unzGetLocalExtrafield(unzFile file, voidp buf, unsigned len);
 //  the return value is the number of bytes copied in buf, or (if <0)
 //	the error code
 
-
-
 // ===========================================================================
 //   Read a byte from a gz_stream; update next_in and avail_in. Return EOF
 // for end of file.
@@ -3049,7 +2929,6 @@ int unzlocal_getByte(LUFILE *fin, int *pi)
         else return UNZ_EOF;
     }
 }
-
 
 // ===========================================================================
 // Reads a long in LSB order from the given gz_stream. Sets
@@ -3123,9 +3002,6 @@ int strcmpcasenosensitive_internal(const char* fileName1, const char *fileName2)
             return 1;
     }
 }
-
-
-
 
 //
 // Compare two filename (fileName1,fileName2).
@@ -3244,7 +3120,6 @@ unzFile unzOpenInternal(LUFILE *fin)
 }
 
 
-
 //  Close a ZipFile opened with unzipOpen.
 //  If there is files inside the .Zip opened with unzipOpenCurrentFile (see later),
 //    these files MUST be closed with unzipCloseCurrentFile before call unzipClose.
@@ -3277,7 +3152,6 @@ int unzGetGlobalInfo(unzFile file, unz_global_info *pglobal_info)
     *pglobal_info = s->gi;
     return UNZ_OK;
 }
-
 
 //   Translate date/time from Dos format to tm_unz (readable more easilty)
 void unzlocal_DosDateToTmuDate(uLong ulDosDate, tm_unz* ptm)
@@ -3512,7 +3386,6 @@ int unzGoToNextFile(unzFile file)
     return err;
 }
 
-
 //  Try locate the file szFileName in the zipfile.
 //  For the iCaseSensitivity signification, see unzStringFileNameCompare
 //  return value :
@@ -3574,7 +3447,6 @@ int unzLocateFile(unzFile file, const TCHAR *szFileName, int iCaseSensitivity)
     s->pos_in_central_dir = pos_in_central_dirSaved;
     return err;
 }
-
 
 //  Read the local header of the current zipfile
 //  Check the coherency of the local header and info in the end of central
@@ -3658,9 +3530,6 @@ int unzlocal_CheckCurrentFileCoherencyHeader(unz_s *s, uInt *piSizeVar,
 
     return err;
 }
-
-
-
 
 
 //  Open for reading data the current file in the zipfile.
@@ -3884,7 +3753,6 @@ int unzeof(unzFile file)
 }
 
 
-
 //  Read extra field from the current file (opened by unzOpenCurrentFile)
 //  This is the local-header version of the extra field (sometimes, there is
 //    more info in the local-header version than in the central-header)
@@ -3992,10 +3860,6 @@ int unzGetGlobalComment(unzFile file, char *szComment, uLong uSizeBuf)
     if ((szComment != NULL) && (uSizeBuf > s->gi.size_comment)) *(szComment + s->gi.size_comment) = '\0';
     return (int)uReadThis;
 }
-
-
-
-
 
 int unzOpenCurrentFile(unzFile file);
 int unzReadCurrentFile(unzFile file, void *buf, unsigned len);
@@ -4357,10 +4221,6 @@ ZRESULT TUnzip::Close()
     return ZR_OK;
 }
 
-
-
-
-
 ZRESULT lasterrorU = ZR_OK;
 
 unsigned int FormatZipMessageU(ZRESULT code, char *buf, unsigned int len)
@@ -4567,5 +4427,3 @@ bool IsZipHandleU(HZIP hz)
     TUnzipHandleData *han = (TUnzipHandleData*)hz;
     return (han->flag == 1);
 }
-
-

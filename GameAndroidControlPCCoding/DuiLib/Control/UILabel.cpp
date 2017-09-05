@@ -4,7 +4,6 @@
 #include <atlconv.h>
 namespace DuiLib
 {
-
     Color _MakeRGB(int a, Color cl)
     {
         return Color(a, cl.GetR(), cl.GetG(), cl.GetB());

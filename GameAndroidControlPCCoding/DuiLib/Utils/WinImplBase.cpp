@@ -2,9 +2,6 @@
 
 namespace DuiLib
 {
-
-    //////////////////////////////////////////////////////////////////////////
-
     LPBYTE WindowImplBase::m_lpResourceZIPBuffer = NULL;
 
     DUI_BEGIN_MESSAGE_MAP(WindowImplBase, CNotifyPump)

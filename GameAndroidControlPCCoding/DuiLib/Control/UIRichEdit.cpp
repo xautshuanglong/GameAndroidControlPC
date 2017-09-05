@@ -1,11 +1,11 @@
 #include "../stdafx.h"
+#include <textserv.h>
 
 // These constants are for backward compatibility. They are the 
 // sizes used for initialization and reset in RichEdit 1.0
 
 namespace DuiLib
 {
-
     const LONG cInitTextMax = (32 * 1024) - 1;
 
     EXTERN_C const IID IID_ITextServices = { // 8d33f740-cf58-11ce-a89d-00aa006cadc5
@@ -29,8 +29,6 @@ namespace DuiLib
 #ifndef HIMETRIC_PER_INCH
 #define HIMETRIC_PER_INCH 2540
 #endif
-
-#include <textserv.h>
 
     class CTxtWinHost : public ITextHost
     {
@@ -1055,7 +1053,8 @@ namespace DuiLib
     CRichEditUI::CRichEditUI() : m_pTwh(NULL), m_bVScrollBarFixing(false), m_bWantTab(true), m_bWantReturn(true),
         m_bWantCtrlReturn(true), m_bRich(true), m_bReadOnly(false), m_bWordWrap(false), m_dwTextColor(0), m_iFont(-1),
         m_iLimitText(cInitTextMax), m_lTwhStyle(ES_MULTILINE), m_bInited(false)
-    {}
+    {
+    }
 
     CRichEditUI::~CRichEditUI()
     {

@@ -3,11 +3,6 @@
 
 namespace DuiLib
 {
-
-    /////////////////////////////////////////////////////////////////////////////////////
-    //
-    //
-
     CPoint::CPoint()
     {
         x = y = 0;
@@ -31,11 +26,6 @@ namespace DuiLib
         y = GET_Y_LPARAM(lParam);
     }
 
-
-    /////////////////////////////////////////////////////////////////////////////////////
-    //
-    //
-
     CSize::CSize()
     {
         cx = cy = 0;
@@ -58,11 +48,6 @@ namespace DuiLib
         cx = _cx;
         cy = _cy;
     }
-
-
-    /////////////////////////////////////////////////////////////////////////////////////
-    //
-    //
 
     CDuiRect::CDuiRect()
     {
@@ -149,11 +134,6 @@ namespace DuiLib
     {
         ::UnionRect(this, this, &rc);
     }
-
-
-    /////////////////////////////////////////////////////////////////////////////////////
-    //
-    //
 
     CStdPtrArray::CStdPtrArray(int iPreallocSize) : m_ppVoid(NULL), m_nCount(0), m_nAllocated(iPreallocSize)
     {

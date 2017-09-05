@@ -9,12 +9,8 @@ typedef DWORD ZRESULT;
 extern HZIP OpenZipU(void *z, unsigned int len, DWORD flags);
 extern ZRESULT CloseZipU(HZIP hz);
 
-namespace DuiLib {
-
-    /////////////////////////////////////////////////////////////////////////////////////
-    //
-    //
-
+namespace DuiLib
+{
     static UINT MapKeyState()
     {
         UINT uState = 0;
