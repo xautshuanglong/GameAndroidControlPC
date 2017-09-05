@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "../stdafx.h"
 
 #ifndef TRACE
 #define TRACE

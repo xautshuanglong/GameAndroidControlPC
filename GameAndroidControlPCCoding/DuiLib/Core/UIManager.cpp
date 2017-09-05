@@ -1,5 +1,6 @@
-#include "StdAfx.h"
+#include "../stdafx.h"
 #include <zmouse.h>
+#include <stdlib.h>
 
 DECLARE_HANDLE(HZIP);	// An HZIP identifies a zip file that has been opened
 typedef DWORD ZRESULT;
