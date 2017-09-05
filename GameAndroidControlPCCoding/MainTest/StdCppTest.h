@@ -16,15 +16,8 @@ namespace Shuanglong::Test
         class SingleHelpper
         {
         public:
-            SingleHelpper() {}
-            ~SingleHelpper()
-            {
-                if (mpInstance != nullptr)
-                {
-                    delete mpInstance;
-                    mpInstance = nullptr;
-                }
-            }
+            SingleHelpper();
+            ~SingleHelpper();
         };
         static SingleHelpper    mHelpper;
 

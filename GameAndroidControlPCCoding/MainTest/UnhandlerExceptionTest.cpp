@@ -7,6 +7,21 @@ namespace Shuanglong::Test
     std::mutex                               UnhandlerExceptionTest::mMutexInstance;
     UnhandlerExceptionTest::DestructHellpper UnhandlerExceptionTest::mDestructHellper;
 
+    UnhandlerExceptionTest::DestructHellpper::DestructHellpper()
+    {
+    }
+
+    UnhandlerExceptionTest::DestructHellpper::~DestructHellpper()
+    {
+        UnhandlerExceptionTest *pTemp = mpInstance.load(std::memory_order_acquire);
+        if (pTemp != nullptr)
+        {
+            delete pTemp;
+            pTemp = nullptr;
+            mpInstance.store(pTemp, std::memory_order_release);
+        }
+    }
+
     UnhandlerExceptionTest::UnhandlerExceptionTest()
     {
         std::cout << "UnhandlerExceptionTest::UnhandlerExceptionTest()" << std::endl;

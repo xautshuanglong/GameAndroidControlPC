@@ -38,12 +38,13 @@ int main(int argc, char** argv)
     //Shuanglong::Test::UpPrivilegeTest::Entry();
     //Shuanglong::Test::VersionUtilTest::Entry();
     //Shuanglong::Test::ProcessUtilTest::Entry();
-    //Shuanglong::Test::ThumbnailTest::Entry();
+    Shuanglong::Test::ThumbnailTest::Entry();
     //Shuanglong::Test::StdCppTest::Entry();
 
     //Shuanglong::Test::UnhandlerExceptionTest::GetInstance();
-    Shuanglong::Test::WaitMultiEventTest::GetInstance()->Entry();
-    Shuanglong::Test::WaitMultiEventTest::GetInstance()->Exit();
+
+    //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Entry();
+    //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Exit();
 
     //--------------------- TcpUdpCommunication Testing ---------------------
 
