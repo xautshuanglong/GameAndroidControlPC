@@ -1537,7 +1537,7 @@ namespace DuiLib
                 rcSeparator.right += 4;
             if (IsEnabled() && m_bDragable && ::PtInRect(&rcSeparator, event.ptMouse))
             {
-                ::SetCursor(::LoadCursor(NULL, MAKEINTRESOURCE(IDC_SIZEWE)));
+                ::SetCursor(::LoadCursor(NULL, IDC_SIZEWE));
                 return;
             }
         }
@@ -2129,7 +2129,7 @@ namespace DuiLib
             {
                 if (::PtInRect(&m_rcLinks[i], event.ptMouse))
                 {
-                    ::SetCursor(::LoadCursor(NULL, MAKEINTRESOURCE(IDC_HAND)));
+                    ::SetCursor(::LoadCursor(NULL, IDC_HAND));
                     return;
                 }
             }

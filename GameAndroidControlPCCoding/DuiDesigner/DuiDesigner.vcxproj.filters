@@ -16,6 +16,15 @@
     <Filter Include="tinyxml">
       <UniqueIdentifier>{89bd5207-ace3-4ba4-a124-3b0a2cdacefa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="duilib">
+      <UniqueIdentifier>{556eb699-f57d-4c9b-be50-14495b04cbfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="duilib\Debug">
+      <UniqueIdentifier>{7f10a984-3e26-4602-8117-3fe6874c51f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="duilib\Release">
+      <UniqueIdentifier>{687bfa44-c25f-4a14-83bd-aa596407f80f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChildFrm.cpp">
@@ -432,8 +441,22 @@
       <Filter>资源文件</Filter>
     </None>
     <None Include="DuiDesigner.reg" />
+    <None Include="third_party\duilib\Debug\DuiLib.dll">
+      <Filter>duilib\Debug</Filter>
+    </None>
+    <None Include="third_party\duilib\Release\DuiLib.dll">
+      <Filter>duilib\Release</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="third_party\duilib\Debug\DuiLib.lib">
+      <Filter>duilib\Debug</Filter>
+    </Library>
+    <Library Include="third_party\duilib\Release\DuiLib.lib">
+      <Filter>duilib\Release</Filter>
+    </Library>
   </ItemGroup>
 </Project>

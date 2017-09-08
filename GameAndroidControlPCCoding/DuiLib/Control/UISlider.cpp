@@ -185,7 +185,7 @@ namespace DuiLib
             RECT rcThumb = GetThumbRect();
             if (IsEnabled() && ::PtInRect(&rcThumb, event.ptMouse))
             {
-                ::SetCursor(::LoadCursor(NULL, MAKEINTRESOURCE(IDC_HAND)));
+                ::SetCursor(::LoadCursor(NULL, IDC_HAND));
                 return;
             }
         }

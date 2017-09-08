@@ -687,7 +687,7 @@ namespace DuiLib
     {
         if (event.Type == UIEVENT_SETCURSOR)
         {
-            ::SetCursor(::LoadCursor(NULL, MAKEINTRESOURCE(IDC_ARROW)));
+            ::SetCursor(::LoadCursor(NULL, IDC_ARROW));
             return;
         }
         if (event.Type == UIEVENT_SETFOCUS)
