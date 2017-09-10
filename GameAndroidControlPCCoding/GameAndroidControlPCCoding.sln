@@ -130,6 +130,43 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DuiLib", "DuiLib\DuiLib.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DuiDesigner", "DuiDesigner\DuiDesigner.vcxproj", "{8CC28A8B-CD88-44A7-8994-066CCD8938CB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "glog", "glog", "{2B83F7E8-C652-451E-95E3-A5A16B57D05F}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\glog\log_severity.h = Libs\include\glog\log_severity.h
+		Libs\include\glog\logging.h = Libs\include\glog\logging.h
+		Libs\include\glog\raw_logging.h = Libs\include\glog\raw_logging.h
+		Libs\include\glog\stl_logging.h = Libs\include\glog\stl_logging.h
+		Libs\include\glog\vlog_is_on.h = Libs\include\glog\vlog_is_on.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "glog", "glog", "{14DE1697-9484-44B1-9954-B593965643E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x86", "x86", "{90DB863D-482D-45E3-AF9C-AB28635F5E61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x64", "x64", "{D1A90CEA-CAF1-47E5-8FF8-43F779F00273}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{85ECA2AC-0B0C-438B-9FD2-EC8F6176B807}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\glog\x64\Debug\libglog_static.lib = Libs\glog\x64\Debug\libglog_static.lib
+		Libs\glog\x64\Debug\libglog_static.pdb = Libs\glog\x64\Debug\libglog_static.pdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{9CC1DF26-9807-4E50-803D-B030C4961BB1}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\glog\x64\Release\libglog_static.lib = Libs\glog\x64\Release\libglog_static.lib
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{33891A0D-9F1A-4ECA-8229-52BA8E4D5413}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\glog\x86\Debug\libglog_static.lib = Libs\glog\x86\Debug\libglog_static.lib
+		Libs\glog\x86\Debug\libglog_static.pdb = Libs\glog\x86\Debug\libglog_static.pdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{41B6694D-F7F2-4C52-A30B-40E171087193}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\glog\x86\Release\libglog_static.lib = Libs\glog\x86\Release\libglog_static.lib
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -233,5 +270,13 @@ Global
 		{AEF27E8A-BD5A-4836-B744-6226E0BFB2D0} = {87A3AC27-F7B8-4E59-A2B0-BFAEC4B88C18}
 		{A549841F-7485-4F1D-B3EA-B673B074C988} = {87A3AC27-F7B8-4E59-A2B0-BFAEC4B88C18}
 		{646EEF72-3D0A-4B75-8546-B7045DC00E40} = {6CFFADF3-429A-45DA-B970-9F4DA2EA597A}
+		{2B83F7E8-C652-451E-95E3-A5A16B57D05F} = {C181FF6D-C14F-4B55-844E-6D5D67FEDCBA}
+		{14DE1697-9484-44B1-9954-B593965643E1} = {DD3E6D63-7AED-48D1-8E04-4F914AF16F88}
+		{90DB863D-482D-45E3-AF9C-AB28635F5E61} = {14DE1697-9484-44B1-9954-B593965643E1}
+		{D1A90CEA-CAF1-47E5-8FF8-43F779F00273} = {14DE1697-9484-44B1-9954-B593965643E1}
+		{85ECA2AC-0B0C-438B-9FD2-EC8F6176B807} = {D1A90CEA-CAF1-47E5-8FF8-43F779F00273}
+		{9CC1DF26-9807-4E50-803D-B030C4961BB1} = {D1A90CEA-CAF1-47E5-8FF8-43F779F00273}
+		{33891A0D-9F1A-4ECA-8229-52BA8E4D5413} = {90DB863D-482D-45E3-AF9C-AB28635F5E61}
+		{41B6694D-F7F2-4C52-A30B-40E171087193} = {90DB863D-482D-45E3-AF9C-AB28635F5E61}
 	EndGlobalSection
 EndGlobal
