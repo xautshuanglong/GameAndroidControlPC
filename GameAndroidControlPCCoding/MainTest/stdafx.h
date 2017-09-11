@@ -9,6 +9,10 @@
 
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 
+// glog defines
+#define GOOGLE_GLOG_DLL_DECL
+#define GLOG_NO_ABBREVIATED_SEVERITIES
+
 // Windows Header Files:
 #include <windows.h>
 #include <strsafe.h>
