@@ -31,11 +31,19 @@ int main(int argc, char** argv)
     Shuanglong::Log *pLog = Shuanglong::Log::GetInstance();
 
     //---------------------- Google Log Testing ----------------------
-    google::InitGoogleLogging("ShuanglongTool");
-    google::SetLogDestination(google::GLOG_INFO, "E:\\");
+    FLAGS_log_dir = "E:\\ShuanglongLogs";
+    FLAGS_colorlogtostderr = true;
+    FLAGS_stop_logging_if_full_disk = true;
+    FLAGS_max_log_size = 1024*1024;
+    FLAGS_logbufsecs = 1;
+    google::InitGoogleLogging(argv[0]);
+    //google::SetLogDestination(google::GLOG_INFO, "E:\\ShuanglongLogs\\MainTest_Glog.");
+    google::SetLogFilenameExtension("txt");
+    google::SetStderrLogging(google::GLOG_INFO);
 
-    LOG(INFO) << "Hello Gtest";
-    LOG(ERROR) << "Hello Gtest";
+    LOG(INFO) << "Glog Info test";
+    LOG(WARNING) << "Glog Warning test";
+    LOG(ERROR) << "Glog error test";
 
     //--------------------- GenericUtils Testing ---------------------
 
