@@ -57,14 +57,7 @@ namespace DuiLib
     //************************************
     CLabelUI::~CLabelUI()
     {
-        try
-        {
-            GdiplusShutdown(m_gdiplusToken);
-        }
-        catch (...)
-        {
-            throw "CLabelUI::~CLabelUI";
-        }
+        GdiplusShutdown(m_gdiplusToken);
     }
 
     LPCTSTR CLabelUI::GetClass() const

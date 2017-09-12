@@ -1,6 +1,7 @@
 #include "stdafx.h"
 
 #include <iostream>
+#include <glog/logging.h>
 
 #include "Log.h"
 
@@ -29,6 +30,13 @@ int main(int argc, char** argv)
     std::cout << "====================================== Main Testing ======================================" << std::endl;
     Shuanglong::Log *pLog = Shuanglong::Log::GetInstance();
 
+    //---------------------- Google Log Testing ----------------------
+    google::InitGoogleLogging("ShuanglongTool");
+    google::SetLogDestination(google::GLOG_INFO, "E:\\");
+
+    LOG(INFO) << "Hello Gtest";
+    LOG(ERROR) << "Hello Gtest";
+
     //--------------------- GenericUtils Testing ---------------------
 
     //Shuanglong::TestClassTest::Entry();
@@ -38,7 +46,7 @@ int main(int argc, char** argv)
     //Shuanglong::Test::UpPrivilegeTest::Entry();
     //Shuanglong::Test::VersionUtilTest::Entry();
     //Shuanglong::Test::ProcessUtilTest::Entry();
-    Shuanglong::Test::ThumbnailTest::Entry();
+    //Shuanglong::Test::ThumbnailTest::Entry();
     //Shuanglong::Test::StdCppTest::Entry();
 
     //Shuanglong::Test::UnhandlerExceptionTest::GetInstance();
@@ -51,6 +59,7 @@ int main(int argc, char** argv)
     //Shuanglong::Test::TcpSocketServerTest::Entry();
     //Shuanglong::Test::UdpSocketServerTest::Entry();
 
+    google::ShutdownGoogleLogging();
     SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, FALSE);
 
     return 0;

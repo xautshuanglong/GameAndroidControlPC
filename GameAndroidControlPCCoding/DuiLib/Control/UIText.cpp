@@ -52,7 +52,7 @@ namespace DuiLib
             {
                 if (::PtInRect(&m_rcLinks[i], event.ptMouse))
                 {
-                    ::SetCursor(::LoadCursor(NULL, MAKEINTRESOURCE(IDC_HAND)));
+                    ::SetCursor(::LoadCursor(NULL, IDC_HAND));
                     return;
                 }
             }
