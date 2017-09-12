@@ -58,12 +58,10 @@ namespace Shuanglong::Test
         pServer->mListenRuningFlag = true;
         while (pServer->mListenRuningFlag)
         {
-            printf_s("Before RecvFromSocket -------\n");
             recvBytes = pServer->mLogServer.RecvFromSocket(msgBuff, 1024, 0, (SOCKADDR*)&remoteSockAddress, &addressLen);
-            printf_s("After RecvFromSocket -------\n");
             if (recvBytes > 0)
             {
-                printf_s("%s\n", msgBuff);
+                printf_s("%s", msgBuff);
             }
             else
             {
