@@ -51,8 +51,5 @@
     <Image Include="ShuanglongTools.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Test.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
 </Project>
