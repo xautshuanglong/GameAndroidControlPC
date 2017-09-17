@@ -43,7 +43,7 @@ int main(int argc, char** argv)
 
     LOG(INFO) << "Glog Info test";
     LOG(WARNING) << "Glog Warning test";
-    LOG(ERROR) << "Glog error test";
+    LOG(ERROR) << "Glog Error test";
 
     //--------------------- GenericUtils Testing ---------------------
 

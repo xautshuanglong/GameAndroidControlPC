@@ -105,7 +105,7 @@
 #include <string.h>
 #include <tchar.h>
 
-#pragma warning(disable : 4996)	// disable bogus deprecation warning
+#pragma warning(disable : 4996) // disable bogus deprecation warning
 
 // THIS FILE is almost entirely based upon code by Jean-loup Gailly
 // and Mark Adler. It has been modified by Lucian Wischik.
@@ -201,7 +201,7 @@ void zfree(void *buf)
 }
 */
 
-DECLARE_HANDLE(HZIP);	// An HZIP identifies a zip file that has been opened
+DECLARE_HANDLE(HZIP);          // An HZIP identifies a zip file that has been opened
 
 typedef DWORD ZRESULT;
 // return codes from any of the zip functions. Listed later.
