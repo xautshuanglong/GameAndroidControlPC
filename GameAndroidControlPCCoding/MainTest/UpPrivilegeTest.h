@@ -4,23 +4,23 @@
 
 namespace Shuanglong
 {
-	namespace Test
-	{
-		class UpPrivilegeTest sealed
-		{
-		private:
-			UpPrivilegeTest();
-			Log* mpLog;
+    namespace Test
+    {
+        class UpPrivilegeTest sealed
+        {
+        private:
+            UpPrivilegeTest();
+            Log* mpLog;
 
-		public:
-			~UpPrivilegeTest();
+        public:
+            ~UpPrivilegeTest();
 
-			static UpPrivilegeTest *mpInstance;
-			static void Entry();
+            static UpPrivilegeTest *mpInstance;
+            static void Entry();
 
-			bool IsOsVersionVistaOrGreater();
-			void ShellExecuteExOpen(LPWSTR appName, LPWSTR appPath);
-		};
-	}
+            bool IsOsVersionVistaOrGreater();
+            void ShellExecuteExOpen(LPWSTR appName, LPWSTR appPath);
+        };
+    }
 }
 
