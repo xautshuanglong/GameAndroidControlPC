@@ -1,14 +1,12 @@
 #pragma once
 
-#include "stdafx.h"
-
 namespace Shuanglong::Utils
 {
     class AbstractAlgorithm
     {
     public:
-        AbstractAlgorithm() {};
-        virtual ~AbstractAlgorithm() {};
+        AbstractAlgorithm();
+        virtual ~AbstractAlgorithm();
 
         virtual std::string Compute(std::string inString) = 0;
         virtual std::string Compute(const char* inBuffer, int inLength) = 0;

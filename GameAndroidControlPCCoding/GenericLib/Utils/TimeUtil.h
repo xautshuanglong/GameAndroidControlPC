@@ -70,7 +70,7 @@
  *	%% : Percent sign
 \**************************************************************************/
 
-#include "GenericDefines.h"
+#include "../GenericDefines.h"
 
 #include <windows.h>
 #include <ctime>

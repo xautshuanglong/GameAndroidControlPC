@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Json">
+      <UniqueIdentifier>{7e8d6288-d23c-418b-b006-c8712ef1c852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithm">
+      <UniqueIdentifier>{c12794ea-3b5a-4555-bbe8-6551671f4b8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{2159f909-21b5-4ddd-8ef4-7c1bb7fd56d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -24,29 +33,29 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CodeLocation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="StringUtil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TimeUtil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RegistryUtil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MD5.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AlgorithmUtil.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AbstractAlgorithm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GenericDefines.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\CodeLocation.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\RegistryUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\StringUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\TimeUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\AbstractAlgorithm.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\AlgorithmUtil.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\MD5.h">
+      <Filter>Algorithm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -56,23 +65,26 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CodeLocation.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Utils\CodeLocation.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="TimeUtil.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Utils\RegistryUtil.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="RegistryUtil.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Utils\StringUtil.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="MD5.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Utils\TimeUtil.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="AlgorithmUtil.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Algorithm\AbstractAlgorithm.cpp">
+      <Filter>Algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="StringUtil.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Algorithm\AlgorithmUtil.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm\MD5.cpp">
+      <Filter>Algorithm</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

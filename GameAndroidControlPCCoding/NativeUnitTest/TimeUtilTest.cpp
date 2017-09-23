@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include <TimeUtil.h>
+#include <Utils/TimeUtil.h>
 #include <ctime>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;

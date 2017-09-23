@@ -1,5 +1,5 @@
 #pragma once
-#include "GenericDefines.h"
+#include "../GenericDefines.h"
 
 #include <vector>
 

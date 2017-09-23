@@ -2,7 +2,7 @@
 #include "StringUtilTest.h"
 
 #include <iostream>
-#include <StringUtil.h>
+#include <Utils/StringUtil.h>
 
 //using namespace Shuanglong::Utils;
 

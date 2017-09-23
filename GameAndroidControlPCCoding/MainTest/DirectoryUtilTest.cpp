@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "DirectoryUtilTest.h"
 
-#include <StringUtil.h>
+#include <Utils/StringUtil.h>
 
 namespace Shuanglong::Test
 {

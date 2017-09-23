@@ -1,13 +1,12 @@
 #pragma once
 #include "ILog.h"
 
-#include <CodeLocation.h>
-#include <StringUtil.h>
-#include <TimeUtil.h>
-
 #include <iostream>
 #include <fstream>
 #include <mutex>
+
+#include <Utils/StringUtil.h>
+#include <Utils/TimeUtil.h>
 
 #define SL_DEBUG_ENABLE true
 #define SL_DEFAULT_LOGFILE "E:\\TempLog.txt"

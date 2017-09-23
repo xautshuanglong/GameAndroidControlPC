@@ -88,7 +88,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)Libs\include;$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libs\include;$(SolutionDir)GenericLib;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -107,7 +107,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)Libs\include;$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libs\include;$(SolutionDir)GenericLib;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -128,7 +128,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)Libs\include;$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libs\include;$(SolutionDir)GenericLib;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -151,7 +151,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)Libs\include;$(SolutionDir)GenericUtils;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libs\include;$(SolutionDir)GenericLib;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -193,6 +193,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StdCppTest.h" />
     <ClInclude Include="StringUtilTest.h" />
+    <ClInclude Include="targetver.h" />
     <ClInclude Include="TcpSocketServerTest.h" />
     <ClInclude Include="TestClassTest.h" />
     <ClInclude Include="ThumbnailTest.h" />
@@ -204,7 +205,7 @@
     <ClInclude Include="WaitMultiEventTest.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GenericUtils\GenericUtils.vcxproj">
+    <ProjectReference Include="..\GenericLib\GenericLib.vcxproj">
       <Project>{6fc63e73-8090-49b0-bc0d-7e554fa41af1}</Project>
     </ProjectReference>
     <ProjectReference Include="..\ProtocolBuffer\ProtocolBuffer.vcxproj">
