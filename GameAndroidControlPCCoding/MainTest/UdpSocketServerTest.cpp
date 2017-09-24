@@ -23,6 +23,19 @@ namespace Shuanglong::Test
 
         mpInstance->mpLog->Console(SL_CODELOCATION, "Enter function ------------");
 
+        //mpInstance->Initialize();
+    }
+
+    void UdpSocketServerTest::Exit()
+    {
+        if (mpInstance != nullptr)
+        {
+            mpInstance->StopListen();
+        }
+    }
+
+    void UdpSocketServerTest::Initialize()
+    {
         WSADATA wsaData;
 
         Socket::SocketServer::WSAStartup(MAKEWORD(2, 2), &wsaData);
@@ -36,14 +49,6 @@ namespace Shuanglong::Test
         }
 
         Socket::SocketServer::WSACleanup();
-    }
-
-    void UdpSocketServerTest::Exit()
-    {
-        if (mpInstance != nullptr)
-        {
-            mpInstance->StopListen();
-        }
     }
 
     void UdpSocketServerTest::ListenThreadFunc(void *param)

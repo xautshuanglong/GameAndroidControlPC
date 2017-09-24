@@ -21,6 +21,11 @@
 
 #define JSON_ASSERT_UNREACHABLE assert(false)
 
+#if defined(JSONCPP_DISABLE_DLL_INTERFACE_WARNING)
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#endif // if defined(JSONCPP_DISABLE_DLL_INTERFACE_WARNING)
+
 namespace Json
 {
 
@@ -1301,7 +1306,6 @@ namespace Json
     }
 
     // JSONCPP_DEPRECATED(message) __declspec(deprecated(message))
-    /*
     Value Value::removeMember(const char* key)
     {
         JSON_ASSERT_MESSAGE(type_ == nullValue || type_ == objectValue,
@@ -1313,15 +1317,12 @@ namespace Json
         removeMember(key, key + strlen(key), &removed);
         return removed; // still null if removeMember() did nothing
     }
-    */
 
     // JSONCPP_DEPRECATED(message) __declspec(deprecated(message))
-    /*
     Value Value::removeMember(const JSONCPP_STRING& key)
     {
         return removeMember(key.c_str());
     }
-    */
 
     bool Value::removeIndex(ArrayIndex index, Value* removed)
     {

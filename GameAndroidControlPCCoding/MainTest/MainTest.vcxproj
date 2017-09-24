@@ -166,6 +166,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DirectoryUtilTest.cpp" />
+    <ClCompile Include="GoogleLogTest.cpp" />
+    <ClCompile Include="JsonTest.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="ProcessUtilTest.cpp" />
@@ -187,6 +189,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectoryUtilTest.h" />
+    <ClInclude Include="GoogleLogTest.h" />
+    <ClInclude Include="JsonTest.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="ILog.h" />
     <ClInclude Include="ProcessUtilTest.h" />

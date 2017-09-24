@@ -40,6 +40,8 @@
 #if defined(JSONCPP_DISABLE_DLL_INTERFACE_WARNING)
 #pragma warning(push)
 #pragma warning(disable : 4251)
+#pragma warning(disable : 4275)
+#pragma warning(disable : 4996)
 #endif // if defined(JSONCPP_DISABLE_DLL_INTERFACE_WARNING)
 
 #pragma pack(push, 8)
@@ -48,7 +50,6 @@
  */
 namespace Json
 {
-
     /** Base class for all exceptions we throw.
      *
      * We use nothing but these internally. Of course, STL can throw others.

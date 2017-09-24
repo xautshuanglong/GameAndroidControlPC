@@ -1,10 +1,8 @@
 #include "stdafx.h"
 
 #include <iostream>
-#include <glog/logging.h>
 
 #include "Log.h"
-
 //-------------- GenericUtils --------------
 #include "StringUtilTest.h"
 #include "TimeUtilTest.h"
@@ -17,7 +15,8 @@
 #include "StdCppTest.h"
 #include "UnhandlerExceptionTest.h"
 #include "WaitMultiEventTest.h"
-
+#include "GoogleLogTest.h"
+#include "JsonTest.h"
 //------------ TcpUdpCommunication -------------
 #include "TcpSocketServerTest.h"
 #include "UdpSocketServerTest.h"
@@ -31,22 +30,14 @@ int main(int argc, char** argv)
     Shuanglong::Log *pLog = Shuanglong::Log::GetInstance();
 
     //---------------------- Google Log Testing ----------------------
-    FLAGS_log_dir = "E:\\ShuanglongLogs";
-    FLAGS_colorlogtostderr = true;
-    FLAGS_stop_logging_if_full_disk = true;
-    FLAGS_max_log_size = 1024*1024;
-    FLAGS_logbufsecs = 1;
-    google::InitGoogleLogging(argv[0]);
-    //google::SetLogDestination(google::GLOG_INFO, "E:\\ShuanglongLogs\\MainTest_Glog.");
-    google::SetLogFilenameExtension("txt");
-    google::SetStderrLogging(google::GLOG_INFO);
+    Shuanglong::Test::GoogleLogTest::Entry(argv[0]);
+    Shuanglong::Test::GoogleLogTest::Exit();
 
-    LOG(INFO) << "Glog Info test";
-    LOG(WARNING) << "Glog Warning test";
-    LOG(ERROR) << "Glog Error test";
+    //---------------------- Json Testing ----------------------
+    Shuanglong::Test::JsonTest::Entry();
+    Shuanglong::Test::JsonTest::Exit();
 
     //--------------------- GenericUtils Testing ---------------------
-
     //Shuanglong::TestClassTest::Entry();
     //Shuanglong::Test::StringUtilTest::Entry();
     //Shuanglong::Test::TimeUtilTest::Entry();
@@ -56,18 +47,14 @@ int main(int argc, char** argv)
     //Shuanglong::Test::ProcessUtilTest::Entry();
     //Shuanglong::Test::ThumbnailTest::Entry();
     //Shuanglong::Test::StdCppTest::Entry();
-
     //Shuanglong::Test::UnhandlerExceptionTest::GetInstance();
-
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Entry();
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Exit();
 
     //--------------------- TcpUdpCommunication Testing ---------------------
+    Shuanglong::Test::TcpSocketServerTest::Entry();
+    Shuanglong::Test::UdpSocketServerTest::Entry();
 
-    //Shuanglong::Test::TcpSocketServerTest::Entry();
-    //Shuanglong::Test::UdpSocketServerTest::Entry();
-
-    google::ShutdownGoogleLogging();
     SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, FALSE);
 
     return 0;

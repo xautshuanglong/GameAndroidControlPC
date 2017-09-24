@@ -23,6 +23,7 @@ namespace Shuanglong::Test
 
     private:
         UdpSocketServerTest();
+        void Initialize();
         void StartListen();
         void StopListen();
         static void ListenThreadFunc(void *param);
