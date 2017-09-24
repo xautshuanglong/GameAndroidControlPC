@@ -22,6 +22,9 @@
     <Filter Include="Utils">
       <UniqueIdentifier>{2159f909-21b5-4ddd-8ef4-7c1bb7fd56d7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TinyXML2">
+      <UniqueIdentifier>{84efd53b-f638-4b70-a7b3-0fb90423b8d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -93,6 +96,9 @@
     <ClInclude Include="Json\writer.h">
       <Filter>Json</Filter>
     </ClInclude>
+    <ClInclude Include="TinyXML2\TinyXML2.h">
+      <Filter>TinyXML2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -130,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="Json\writer.cpp">
       <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyXML2\TinyXML2.cpp">
+      <Filter>TinyXML2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
