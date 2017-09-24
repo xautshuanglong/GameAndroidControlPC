@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="GenericUtilTest">
-      <UniqueIdentifier>{879ff119-b714-4e61-86e0-8a6b45cd7e12}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ProtocolBufferTest">
       <UniqueIdentifier>{01954f43-a20a-47dc-978d-c7a572dc2dfb}</UniqueIdentifier>
     </Filter>
@@ -24,6 +21,9 @@
     </Filter>
     <Filter Include="TcpUdpTest">
       <UniqueIdentifier>{83e9d721-7ea8-4fb7-8a8d-52d71552cc57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GenericLibTest">
+      <UniqueIdentifier>{879ff119-b714-4e61-86e0-8a6b45cd7e12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,28 +34,28 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StringUtilTest.cpp">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClCompile>
     <ClCompile Include="TimeUtilTest.cpp">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClCompile>
     <ClCompile Include="DirectoryUtilTest.cpp">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClCompile>
     <ClCompile Include="TestClassTest.cpp">
       <Filter>ProtocolBufferTest</Filter>
     </ClCompile>
     <ClCompile Include="UpPrivilegeTest.cpp">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VersionUtilTest.cpp">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClCompile>
     <ClCompile Include="ProcessUtilTest.cpp">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClCompile>
     <ClCompile Include="ThumbnailTest.cpp">
       <Filter>Attempt</Filter>
@@ -84,28 +84,28 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StringUtilTest.h">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="TimeUtilTest.h">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="DirectoryUtilTest.h">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="TestClassTest.h">
       <Filter>ProtocolBufferTest</Filter>
     </ClInclude>
     <ClInclude Include="UpPrivilegeTest.h">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="VersionUtilTest.h">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="ProcessUtilTest.h">
-      <Filter>GenericUtilTest</Filter>
+      <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="ThumbnailTest.h">
       <Filter>Attempt</Filter>

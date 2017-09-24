@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "MD5.h"
 
 namespace Shuanglong::Utils

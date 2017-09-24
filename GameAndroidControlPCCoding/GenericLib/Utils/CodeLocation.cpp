@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "CodeLocation.h"
 
 #include <iostream>

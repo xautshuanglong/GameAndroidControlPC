@@ -1,5 +1,9 @@
-#include "stdafx.h"
 #include "StringUtil.h"
+
+#include <Windows.h>
+#include <iterator>
+#include <codecvt>
+#include <algorithm>
 
 namespace Shuanglong::Utils
 {

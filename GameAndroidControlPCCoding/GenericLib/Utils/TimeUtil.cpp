@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "TimeUtil.h"
 
 #include <bcrypt.h>

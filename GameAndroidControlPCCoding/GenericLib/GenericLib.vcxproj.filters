@@ -51,11 +51,47 @@
     <ClInclude Include="Algorithm\AbstractAlgorithm.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="Algorithm\AlgorithmUtil.h">
-      <Filter>Algorithm</Filter>
-    </ClInclude>
     <ClInclude Include="Algorithm\MD5.h">
       <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\AlgorithmFactory.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\allocator.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\assertions.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\autolink.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\config.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\features.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\forwards.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\json.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\json_tool.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\reader.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\value.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\version.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="Json\writer.h">
+      <Filter>Json</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -80,11 +116,25 @@
     <ClCompile Include="Algorithm\AbstractAlgorithm.cpp">
       <Filter>Algorithm</Filter>
     </ClCompile>
-    <ClCompile Include="Algorithm\AlgorithmUtil.cpp">
-      <Filter>Algorithm</Filter>
-    </ClCompile>
     <ClCompile Include="Algorithm\MD5.cpp">
       <Filter>Algorithm</Filter>
     </ClCompile>
+    <ClCompile Include="Algorithm\AlgorithmFactory.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\reader.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\value.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="Json\writer.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Json\json_valueiterator.inl">
+      <Filter>Json</Filter>
+    </None>
   </ItemGroup>
 </Project>

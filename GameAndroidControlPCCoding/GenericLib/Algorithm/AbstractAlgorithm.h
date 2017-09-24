@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 namespace Shuanglong::Utils
 {
     class AbstractAlgorithm
