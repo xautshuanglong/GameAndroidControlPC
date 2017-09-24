@@ -181,6 +181,7 @@
     <ClCompile Include="TestClassTest.cpp" />
     <ClCompile Include="ThumbnailTest.cpp" />
     <ClCompile Include="TimeUtilTest.cpp" />
+    <ClCompile Include="TinyXml2Test.cpp" />
     <ClCompile Include="UdpSocketServerTest.cpp" />
     <ClCompile Include="UnhandlerExceptionTest.cpp" />
     <ClCompile Include="UpPrivilegeTest.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="TestClassTest.h" />
     <ClInclude Include="ThumbnailTest.h" />
     <ClInclude Include="TimeUtilTest.h" />
+    <ClInclude Include="TinyXml2Test.h" />
     <ClInclude Include="UdpSocketServerTest.h" />
     <ClInclude Include="UnhandlerExceptionTest.h" />
     <ClInclude Include="UpPrivilegeTest.h" />

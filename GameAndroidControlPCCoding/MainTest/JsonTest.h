@@ -6,7 +6,7 @@ namespace Shuanglong::Test
     {
     private:
         JsonTest();
-        static JsonTest * GetInstance();
+        static JsonTest* GetInstance();
 
     public:
         ~JsonTest();

@@ -17,6 +17,7 @@
 #include "WaitMultiEventTest.h"
 #include "GoogleLogTest.h"
 #include "JsonTest.h"
+#include "TinyXml2Test.h"
 //------------ TcpUdpCommunication -------------
 #include "TcpSocketServerTest.h"
 #include "UdpSocketServerTest.h"
@@ -36,6 +37,10 @@ int main(int argc, char** argv)
     //---------------------- Json Testing ----------------------
     Shuanglong::Test::JsonTest::Entry();
     Shuanglong::Test::JsonTest::Exit();
+
+    //---------------------- TinyXml2 Testing ----------------------
+    Shuanglong::Test::TinyXml2Test::Entry();
+    Shuanglong::Test::TinyXml2Test::Exit();
 
     //--------------------- GenericUtils Testing ---------------------
     //Shuanglong::TestClassTest::Entry();

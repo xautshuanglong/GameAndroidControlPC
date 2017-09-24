@@ -81,6 +81,9 @@
     <ClCompile Include="GoogleLogTest.cpp">
       <Filter>GenericLibTest</Filter>
     </ClCompile>
+    <ClCompile Include="TinyXml2Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -139,6 +142,9 @@
     </ClInclude>
     <ClInclude Include="GoogleLogTest.h">
       <Filter>GenericLibTest</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyXml2Test.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
