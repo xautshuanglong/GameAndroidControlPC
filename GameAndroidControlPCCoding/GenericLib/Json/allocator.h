@@ -89,7 +89,6 @@ namespace Json
         template<typename U> struct rebind { using other = SecureAllocator<U>; };
     };
 
-
     template<typename T, typename U>
     bool operator==(const SecureAllocator<T>&, const SecureAllocator<U>&)
     {

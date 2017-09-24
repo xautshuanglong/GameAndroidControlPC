@@ -75,7 +75,6 @@
 
 namespace Json
 {
-
 #if __cplusplus >= 201103L || (defined(_CPPLIB_VER) && _CPPLIB_VER >= 520)
     typedef std::unique_ptr<StreamWriter> StreamWriterPtr;
 #else
@@ -445,7 +444,6 @@ namespace Json
 
     // Class StyledWriter
     // //////////////////////////////////////////////////////////////////
-
     StyledWriter::StyledWriter()
         : rightMargin_(74), indentSize_(3), addChildValues_()
     {
@@ -688,7 +686,6 @@ namespace Json
 
     // Class StyledStreamWriter
     // //////////////////////////////////////////////////////////////////
-
     StyledStreamWriter::StyledStreamWriter(JSONCPP_STRING indentation)
         : document_(NULL), rightMargin_(74), indentation_(indentation),
         addChildValues_()
@@ -1250,7 +1247,6 @@ namespace Json
 
     ///////////////
     // StreamWriter
-
     StreamWriter::StreamWriter()
         : sout_(NULL)
     {
@@ -1370,5 +1366,4 @@ namespace Json
         writer->write(root, &sout);
         return sout;
     }
-
 } // namespace Json

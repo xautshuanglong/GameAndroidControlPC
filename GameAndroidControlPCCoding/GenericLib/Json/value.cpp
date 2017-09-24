@@ -28,7 +28,6 @@
 
 namespace Json
 {
-
     // This is a walkaround to avoid the static initialization of Value::null.
     // kNull must be word-aligned to avoid crashing on ARM.  We use an alignment of
     // 8 (instead of 4) as a bit of future-proofing.
@@ -209,7 +208,6 @@ namespace Json
 
 namespace Json
 {
-
     Exception::Exception(JSONCPP_STRING const& msg)
         : msg_(msg)
     {

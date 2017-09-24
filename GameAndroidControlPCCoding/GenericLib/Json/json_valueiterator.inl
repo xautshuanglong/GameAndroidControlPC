@@ -4,6 +4,7 @@
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
 // included by json_value.cpp
+#include "value.h"
 
 namespace Json
 {

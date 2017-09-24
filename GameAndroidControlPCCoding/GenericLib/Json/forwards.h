@@ -12,17 +12,13 @@
 
 namespace Json
 {
-
     // writer.h
     class FastWriter;
     class StyledWriter;
-
     // reader.h
     class Reader;
-
     // features.h
     class Features;
-
     // value.h
     typedef unsigned int ArrayIndex;
     class StaticString;
@@ -32,7 +28,6 @@ namespace Json
     class ValueIteratorBase;
     class ValueIterator;
     class ValueConstIterator;
-
 } // namespace Json
 
 #endif // JSON_FORWARDS_H_INCLUDED
