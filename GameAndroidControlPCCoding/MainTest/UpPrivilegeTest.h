@@ -2,25 +2,21 @@
 
 #include "Log.h"
 
-namespace Shuanglong
+namespace Shuanglong::Test
 {
-    namespace Test
+    class UpPrivilegeTest sealed
     {
-        class UpPrivilegeTest sealed
-        {
-        private:
-            UpPrivilegeTest();
-            Log* mpLog;
+    private:
+        UpPrivilegeTest();
+        Log* mpLog;
 
-        public:
-            ~UpPrivilegeTest();
+    public:
+        ~UpPrivilegeTest();
 
-            static UpPrivilegeTest *mpInstance;
-            static void Entry();
+        static UpPrivilegeTest *mpInstance;
+        static void Entry();
 
-            bool IsOsVersionVistaOrGreater();
-            void ShellExecuteExOpen(LPWSTR appName, LPWSTR appPath);
-        };
-    }
+        bool IsOsVersionVistaOrGreater();
+        void ShellExecuteExOpen(LPWSTR appName, LPWSTR appPath);
+    };
 }
-

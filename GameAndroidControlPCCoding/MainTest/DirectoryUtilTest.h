@@ -2,24 +2,21 @@
 
 #include "Log.h"
 
-namespace Shuanglong
+namespace Shuanglong::Test
 {
-    namespace Test
+    class DirectoryUtilTest sealed
     {
-        class DirectoryUtilTest sealed
-        {
-        private:
-            DirectoryUtilTest();
-            Log* mpLog = nullptr;
+    private:
+        DirectoryUtilTest();
+        Log* mpLog = nullptr;
 
-        public:
-            ~DirectoryUtilTest();
+    public:
+        ~DirectoryUtilTest();
 
-            static DirectoryUtilTest *mpInstance;
-            static void Entry();
+        static DirectoryUtilTest *mpInstance;
+        static void Entry();
 
-            void DirectoryUtilTest_Try();
-            void DirectoryUtilTest_GetEnv();
-        };
-    }
+        void DirectoryUtilTest_Try();
+        void DirectoryUtilTest_GetEnv();
+    };
 }

@@ -2,24 +2,21 @@
 
 #include "Log.h"
 
-namespace Shuanglong
+namespace Shuanglong::Test
 {
-    namespace Test
+    class VersionUtilTest sealed
     {
-        class VersionUtilTest sealed
-        {
-        private:
-            Log                     *mpLog;
-            static VersionUtilTest  *mpInstance;
-            VersionUtilTest();
+    private:
+        Log                     *mpLog;
+        static VersionUtilTest  *mpInstance;
+        VersionUtilTest();
 
-        public:
-            ~VersionUtilTest();
+    public:
+        ~VersionUtilTest();
 
-            static void Entry();
+        static void Entry();
 
-            void GetFileVersionInfoTest();
-        };
-    }
+        void GetFileVersionInfoTest();
+    };
 }
 
