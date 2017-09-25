@@ -28,7 +28,6 @@
 
 namespace Json
 {
-
     /** \brief Unserialize a <a HREF="http://www.json.org">JSON</a> document into a
      *Value.
      *
@@ -253,7 +252,10 @@ namespace Json
         Features features_;
         bool collectComments_;
     };  // Reader
+}
 
+namespace Json
+{
     /** Interface for reading JSON from a char array.
      */
     class JSON_API CharReader

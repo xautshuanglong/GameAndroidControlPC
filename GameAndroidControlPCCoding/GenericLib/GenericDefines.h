@@ -19,3 +19,17 @@
 #endif
 
 #define DECLARE_SHARED_POINTER(clsName) typedef std::shared_ptr<clsName> Ptr##clsName;
+
+namespace Shuanglong
+{
+    namespace Utils
+    {
+    }
+}
+
+namespace Shuanglong
+{
+    namespace Algorithm
+    {
+    }
+}

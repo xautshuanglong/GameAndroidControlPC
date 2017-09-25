@@ -1,6 +1,6 @@
 #include "AbstractAlgorithm.h"
 
-namespace Shuanglong::Utils
+namespace Shuanglong::Algorithm
 {
     AbstractAlgorithm::AbstractAlgorithm()
     {

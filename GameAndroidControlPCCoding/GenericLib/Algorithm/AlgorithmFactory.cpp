@@ -1,6 +1,6 @@
 #include "AlgorithmFactory.h"
 
-namespace Shuanglong::Utils
+namespace Shuanglong::Algorithm
 {
     AlgorithmFactory::AlgorithmFactory()
     {

@@ -2,7 +2,7 @@
 
 #include <string>
 
-namespace Shuanglong::Utils
+namespace Shuanglong::Algorithm
 {
     class AbstractAlgorithm
     {

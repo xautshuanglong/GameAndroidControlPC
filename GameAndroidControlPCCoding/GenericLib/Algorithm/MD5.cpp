@@ -1,6 +1,6 @@
 #include "MD5.h"
 
-namespace Shuanglong::Utils
+namespace Shuanglong::Algorithm
 {
     MD5::MD5()
     {
