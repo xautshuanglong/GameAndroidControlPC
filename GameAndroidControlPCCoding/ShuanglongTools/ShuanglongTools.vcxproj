@@ -163,6 +163,8 @@
     <ResourceCompile Include="ShuanglongTools.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="horse.ico" />
+    <Image Include="Shuanglong.ico" />
     <Image Include="ShuanglongTools.ico" />
     <Image Include="small.ico" />
   </ItemGroup>
