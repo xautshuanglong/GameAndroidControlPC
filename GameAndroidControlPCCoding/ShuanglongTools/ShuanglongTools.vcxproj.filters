@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{7bf25132-b1a5-4386-8220-a55867ef82bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\skin">
+      <UniqueIdentifier>{aad5526f-c0a3-4f87-8ebe-002ae3c60333}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -30,6 +36,9 @@
     <ClInclude Include="ShuanglongTools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MainWindow.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -37,6 +46,9 @@
     </ClCompile>
     <ClCompile Include="ShuanglongTools.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -54,5 +66,49 @@
     <Image Include="ShuanglongTools.ico">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="skin\bg0.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\border.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_close_down.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_close_highlight.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_close_normal.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_hot.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_max_down.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_max_highlight.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_max_normal.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_mini_down.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_mini_highlight.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\btn_mini_normal.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+    <Image Include="skin\scrollbar.png">
+      <Filter>Resource Files\skin</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="skin\MainWindow.xml">
+      <Filter>Resource Files\skin</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

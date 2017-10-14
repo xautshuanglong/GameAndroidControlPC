@@ -36,12 +36,12 @@ namespace Shuanglong::Test
         FLAGS_colorlogtostderr = true;
         FLAGS_stop_logging_if_full_disk = true;
         FLAGS_max_log_size = 1024 * 1024;
-        FLAGS_logbufsecs = 1;
+        FLAGS_logbufsecs = 5;
+        FLAGS_minloglevel = google::GLOG_INFO;
+        FLAGS_stderrthreshold = google::GLOG_INFO;
         google::InitGoogleLogging(moduleName);
         //google::SetLogDestination(google::GLOG_INFO, "E:\\ShuanglongLogs\\MainTest_Glog.");
         google::SetLogFilenameExtension("txt");
-        google::SetStderrLogging(google::GLOG_INFO);
-
     }
 
     void GoogleLogTest::Uninitialize()

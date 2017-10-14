@@ -3,7 +3,6 @@
 
 namespace DuiLib
 {
-
     enum UILIB_RESOURCETYPE
     {
         UILIB_FILE = 1,       // 来自磁盘文件
@@ -25,9 +24,8 @@ namespace DuiLib
         virtual void InitWindow() {};
         virtual void OnFinalMessage(HWND hWnd);
         virtual void Notify(TNotifyUI& msg);
-
+        virtual void OnClick(TNotifyUI& msg);
         DUI_DECLARE_MESSAGE_MAP()
-            virtual void OnClick(TNotifyUI& msg);
 
     protected:
         virtual CDuiString GetSkinFolder() = 0;
