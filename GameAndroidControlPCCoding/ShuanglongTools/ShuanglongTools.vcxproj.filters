@@ -48,13 +48,10 @@
     <Image Include="small.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="ShuanglongTools.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Shuanglong.ico">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="horse.ico">
+    <Image Include="ShuanglongTools.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
