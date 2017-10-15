@@ -2,11 +2,11 @@
 
 namespace DuiLib
 {
-    LPBYTE WindowImplBase::m_lpResourceZIPBuffer = NULL;
-
     DUI_BEGIN_MESSAGE_MAP(WindowImplBase, CNotifyPump)
         DUI_ON_MSGTYPE(DUI_MSGTYPE_CLICK, OnClick)
     DUI_END_MESSAGE_MAP()
+
+    LPBYTE WindowImplBase::m_lpResourceZIPBuffer = NULL;
 
     void WindowImplBase::OnFinalMessage(HWND hWnd)
     {

@@ -83,7 +83,7 @@ namespace DuiLib
     }
 
     DUI_BASE_BEGIN_MESSAGE_MAP(CNotifyPump)
-        DUI_END_MESSAGE_MAP()
+    DUI_END_MESSAGE_MAP()
 
     static const DUI_MSGMAP_ENTRY* DuiFindMessageEntry(const DUI_MSGMAP_ENTRY* lpEntry, TNotifyUI& msg)
     {
