@@ -24,7 +24,6 @@ namespace Shuanglong
             virtual LRESULT OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 
         protected:
-            //void Notify(DuiLib::TNotifyUI& msg);
             void OnPrepare(DuiLib::TNotifyUI& msg);
             void OnClick(DuiLib::TNotifyUI& msg);
             void OnTimer(DuiLib::TNotifyUI& msg);

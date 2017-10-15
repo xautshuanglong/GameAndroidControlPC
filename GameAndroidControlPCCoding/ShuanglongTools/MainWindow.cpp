@@ -4,10 +4,13 @@
 namespace Shuanglong::UI
 {
     const TCHAR* const kMainBtnCtrlClose = _T("closebtn");
+    const TCHAR* const kMainBtnCtrlMin = _T("minbtn");
+    const TCHAR* const kMainBtnCtrlMax = _T("maxbtn");
+    const TCHAR* const kMainBtnCtrlRestore = _T("restorebtn");
 
     using namespace DuiLib;
     DUI_BEGIN_MESSAGE_MAP(MainWindow, WindowImplBase)
-    //DUI_ON_MSGTYPE(DUI_MSGTYPE_CLICK, OnClick)
+    DUI_ON_MSGTYPE(DUI_MSGTYPE_CLICK, OnClick)
     DUI_END_MESSAGE_MAP()
 
     MainWindow::MainWindow()
@@ -62,24 +65,32 @@ namespace Shuanglong::UI
     void MainWindow::OnClick(DuiLib::TNotifyUI& msg)
     {
         DuiLib::CDuiString sCtrlName = msg.pSender->GetName();
-        if (sCtrlName == _T("closebtn"))
+        if (sCtrlName == kMainBtnCtrlClose)
         {
             Close();
             return;
         }
-        else if (sCtrlName == _T("minbtn"))
+        else if (sCtrlName == kMainBtnCtrlMin)
         {
             SendMessage(WM_SYSCOMMAND, SC_MINIMIZE, 0);
             return;
         }
-        else if (sCtrlName == _T("maxbtn"))
+        else if (sCtrlName == kMainBtnCtrlMax)
         {
             SendMessage(WM_SYSCOMMAND, SC_MAXIMIZE, 0);
+            CControlUI* pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kMainBtnCtrlMax));
+            if (pControl) pControl->SetVisible(false);
+            pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kMainBtnCtrlRestore));
+            if (pControl) pControl->SetVisible(true);
             return;
         }
-        else if (sCtrlName == _T("restorebtn"))
+        else if (sCtrlName == kMainBtnCtrlRestore)
         {
             SendMessage(WM_SYSCOMMAND, SC_RESTORE, 0);
+            CControlUI* pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kMainBtnCtrlMax));
+            if (pControl) pControl->SetVisible(true);
+            pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kMainBtnCtrlRestore));
+            if (pControl) pControl->SetVisible(false);
             return;
         }
         return;
@@ -87,33 +98,5 @@ namespace Shuanglong::UI
 
     void MainWindow::OnTimer(DuiLib::TNotifyUI& msg)
     {
-    }
-
-    //void MainWindow::Notify(DuiLib::TNotifyUI& msg)
-    //{
-    //    if (_tcsicmp(msg.sType, DUI_MSGTYPE_WINDOWINIT) == 0)
-    //    {
-    //        OnPrepare(msg);
-    //    }
-    //    else if (_tcsicmp(msg.sType, DUI_MSGTYPE_KILLFOCUS) == 0)
-    //    {
-    //    }
-    //    else if (_tcsicmp(msg.sType, DUI_MSGTYPE_CLICK) == 0)
-    //    {
-    //        DuiLib::CDuiString controlName = msg.pSender->GetName();
-    //        if (controlName == kMainBtnCtrlClose)
-    //        {
-    //            OnExit(msg);
-    //        }
-    //    }
-    //    else if (_tcsicmp(msg.sType, DUI_MSGTYPE_TIMER) == 0)
-    //    {
-    //        return OnTimer(msg);
-    //    }
-    //}
-
-    void MainWindow::OnExit(DuiLib::TNotifyUI& mag)
-    {
-        Close();
     }
 }
