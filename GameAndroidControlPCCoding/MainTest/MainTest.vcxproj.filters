@@ -82,7 +82,10 @@
       <Filter>GenericLibTest</Filter>
     </ClCompile>
     <ClCompile Include="TinyXml2Test.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>GenericLibTest</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiThreadTest.cpp">
+      <Filter>Attempt</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -144,7 +147,10 @@
       <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="TinyXml2Test.h">
-      <Filter>Header Files</Filter>
+      <Filter>GenericLibTest</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiThreadTest.h">
+      <Filter>Attempt</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -21,7 +21,7 @@ namespace Shuanglong::Test
         mpInstance = new UdpSocketServerTest();
         mpInstance->mpLog = Log::GetInstance();
 
-        mpInstance->mpLog->Console(SL_CODELOCATION, "Enter function ------------");
+        std::cout << "---------------------------------- UdpSocketServerTest ----------------------------------" << std::endl;
 
         //mpInstance->Initialize();
     }

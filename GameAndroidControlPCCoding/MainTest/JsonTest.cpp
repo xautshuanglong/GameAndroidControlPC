@@ -22,7 +22,8 @@ namespace Shuanglong::Test
 
     void JsonTest::Entry()
     {
-        GetInstance()->ReaderTest();
+        std::cout << "---------------------------------- JsonTest ----------------------------------" << std::endl;
+        //GetInstance()->ReaderTest();
     }
 
     void JsonTest::Exit()

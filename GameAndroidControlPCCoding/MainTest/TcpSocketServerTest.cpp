@@ -18,7 +18,7 @@ namespace Shuanglong::Test
         mpInstance = new TcpSocketServerTest();
         mpInstance->mpLog = Log::GetInstance();
 
-        mpInstance->mpLog->Console(SL_CODELOCATION, "Enter function ------------");
+        std::cout << "---------------------------------- TcpSocketServerTest ----------------------------------" << std::endl;
     }
 }
 

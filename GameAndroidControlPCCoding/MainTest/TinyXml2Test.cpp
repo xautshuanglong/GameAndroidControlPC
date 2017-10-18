@@ -21,6 +21,7 @@ namespace Shuanglong::Test
 
     void TinyXml2Test::Entry()
     {
+        std::cout << "---------------------------------- TinyXml2Test ----------------------------------" << std::endl;
         //GetInstance()->XmlParseTest();
     }
 
