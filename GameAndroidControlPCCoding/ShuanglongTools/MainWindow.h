@@ -27,7 +27,7 @@ namespace Shuanglong
             void OnPrepare(DuiLib::TNotifyUI& msg);
             void OnClick(DuiLib::TNotifyUI& msg);
             void OnTimer(DuiLib::TNotifyUI& msg);
-            void OnExit(DuiLib::TNotifyUI& mag);
+            //void OnExit(DuiLib::TNotifyUI& mag);
         };
     }
 }
