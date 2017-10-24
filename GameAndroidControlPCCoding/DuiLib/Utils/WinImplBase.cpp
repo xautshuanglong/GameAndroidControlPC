@@ -209,7 +209,8 @@ namespace DuiLib
     {
         SIZE szRoundCorner = m_PaintManager.GetRoundCorner();
 #if defined(WIN32) && !defined(UNDER_CE)
-        if (!::IsIconic(*this) && (szRoundCorner.cx != 0 || szRoundCorner.cy != 0)) {
+        if (!::IsIconic(*this) && (szRoundCorner.cx != 0 || szRoundCorner.cy != 0))
+        {
             CDuiRect rcWnd;
             ::GetWindowRect(*this, &rcWnd);
             rcWnd.Offset(-rcWnd.left, -rcWnd.top);
