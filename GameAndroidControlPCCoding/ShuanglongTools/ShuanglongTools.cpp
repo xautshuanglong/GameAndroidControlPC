@@ -20,7 +20,7 @@ int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
     }
 
     MainWindow *pMainWin = new MainWindow();
-    pMainWin->Create(NULL, TEXT("ShuanglongTools"), UI_WNDSTYLE_FRAME, WS_EX_STATICEDGE | WS_EX_APPWINDOW, 0, 0, 600, 800);
+    pMainWin->CreateDuiWindow(NULL, TEXT("ShuanglongTools"), UI_WNDSTYLE_FRAME, WS_EX_STATICEDGE | WS_EX_APPWINDOW);
     pMainWin->CenterWindow();
     pMainWin->ShowWindow(true);
 
