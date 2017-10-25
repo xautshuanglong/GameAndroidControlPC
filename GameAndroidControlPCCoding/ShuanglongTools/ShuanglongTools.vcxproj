@@ -189,6 +189,7 @@ xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
     <ResourceCompile Include="ShuanglongTools.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="HorseWord.ico" />
     <Image Include="Shuanglong.ico" />
     <Image Include="ShuanglongTools.ico" />
     <Image Include="skin\bg0.png" />
