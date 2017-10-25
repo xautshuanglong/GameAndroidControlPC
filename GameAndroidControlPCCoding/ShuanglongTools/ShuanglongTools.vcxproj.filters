@@ -105,6 +105,9 @@
     <Image Include="skin\scrollbar.png">
       <Filter>Resource Files\skin</Filter>
     </Image>
+    <Image Include="QDemo.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="skin\MainWindow.xml">
