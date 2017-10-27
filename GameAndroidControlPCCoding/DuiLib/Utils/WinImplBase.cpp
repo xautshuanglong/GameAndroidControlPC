@@ -310,7 +310,9 @@ namespace DuiLib
             pRoot = builder.Create(xml, _T("xml"), this, &m_PaintManager);
         }
         else
+        {
             pRoot = builder.Create(GetSkinFile().GetData(), (UINT)0, this, &m_PaintManager);
+        }
         ASSERT(pRoot);
         if (pRoot == NULL)
         {
