@@ -1,27 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Window mininfo="200,360" size="360,600">
-	<Font name="幼圆" size="16" default="true" />
-	<Font name="微软雅黑" size="18" />
-	<Include source="scrollbar.xml" />
-	<Default name="Button" value="normalimage=&quot;file='button_nor.bmp' corner='4,2,4,2' fade='200' hsl='true'&quot; hotimage=&quot;file='button_over.bmp' corner='4,2,4,2' fade='200' hsl='true'&quot; pushedimage=&quot;file='button_down.bmp' corner='4,2,4,2' fade='200' hsl='true' &quot; " />
-	<Default name="Slider" value="thumbsize=&quot;10,10&quot; bkimage=&quot;file='bg.bmp' corner='6,0,6,0' mask='#FFFF00FF'&quot; fgimage=&quot;file='fg.bmp' corner='6,0,6,0' mask='#FFFF00FF'&quot; thumbimage=&quot;file='thumb.bmp' source='30,0,40,10' mask='#FFDAEBF9'&quot; thumbhotimage=&quot;file='thumb.bmp' source='10,0,20,10' mask='#FFDAEBF9'&quot; " />
-	<VerticalLayout inset="10,6,10,6" bkcolor="#FFEA679F" colorhsl="true" borderround="18,18">
-		<!--如果richedit在窗口内是第一个获得焦点的，会出现一个光标刷新bug，暂无解决办法-->
-		<Slider name="alpha_controlor" min="20" max="255" value="255"/>
-		<Control height="4"/>
-		<Slider name="h_controlor" max="360" value="180"/>
-		<Control height="4"/>
-		<Slider name="s_controlor" max="200" value="100"/>
-		<Control height="4"/>
-		<Slider name="l_controlor" max="200" value="100"/>
-		<Button name="changeskinbtn" height="20" text="换肤" maxwidth="120" />
-		<RichEdit name="testrichedit" bordercolor="#FF0000" bordersize="0" borderround="18,18" inset="4,2,4,2" bkcolor="#A0F2F5FA" bkcolor2="#A0FF0000" bkcolor3="#A0F2F5FA" font="1" multiline="true" vscrollbar="true" autovscroll="true" enabled="true" rich="true" readonly="false" text="1爱3">
-			<Control bkcolor="#FFF22E2E" float="true" pos="80,40,260,220" bkimage="winbk.bmp" />
-			<Button name="insertimagebtn" float="true" pos="80,10,160,30" text="删除自己" />
-		</RichEdit>
-		<Control height="26"/>
-		<Edit name="testedit" text="{a www.baidu.com}ddd{/a}" showhtml="true" maxwidth="280" bkcolor="#FF00E000" nativebkcolor="#FF00E000"/>
-		<RichEdit name="testrichedit1" bordercolor="#FF0000" bordersize="2" borderround="8,8" inset="4,2,4,2" bkcolor="#FFE2E5EA" bkcolor2="#FF00F5DA" bkcolor3="#FFF2F5FA" font="1" multiline="false" rich="false"/>
-		<Control />
-	</VerticalLayout>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<Window size="600,400" sizebox="5,5,5,5" caption="0,0,0,30" mininfo="200,360">
+    <Font name="幼圆" size="16" bold="false" italic="false" default="true" />
+    <Font name="微软雅黑" size="16" bold="false" italic="false" />
+    <Default name="Button" value="normalimage=&quot;file=&apos;button_nor.bmp&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos; hsl=&apos;true&apos;&quot; hotimage=&quot;file=&apos;button_over.bmp&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos; hsl=&apos;true&apos;&quot; pushedimage=&quot;file=&apos;button_down.bmp&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos; hsl=&apos;true&apos; &quot; " />
+    <Default name="Slider" value="thumbsize=&quot;10,10&quot; bkimage=&quot;file=&apos;bg.bmp&apos; corner=&apos;6,0,6,0&apos; mask=&apos;#FFFF00FF&apos;&quot; fgimage=&quot;file=&apos;fg.bmp&apos; corner=&apos;6,0,6,0&apos; mask=&apos;#FFFF00FF&apos;&quot; thumbimage=&quot;file=&apos;thumb.bmp&apos; source=&apos;30,0,40,10&apos; mask=&apos;#FFDAEBF9&apos;&quot; thumbhotimage=&quot;file=&apos;thumb.bmp&apos; source=&apos;10,0,20,10&apos; mask=&apos;#FFDAEBF9&apos;&quot; " />
+    <VerticalLayout name="VerticalLayout_Background" height="30" bkcolor="#FFEA679F" bordercolor="#000000FF">
+        <HorizontalLayout name="HorizontalLayout_Caption" height="30" bkcolor="#FF26A6F2" bordercolor="#000000FF">
+            <VerticalLayout name="VerticalLayout_Title" width="160" height="30">
+                <Label name="Label_Title" text="ShuanglongTools" float="true" pos="10,0,0,0" width="150" height="30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" />
+            </VerticalLayout>
+            <VerticalLayout name="VerticalLayout_Empty" height="30" />
+            <VerticalLayout name="VerticalLayout_SystemBtn" width="115" height="30">
+                <Button name="minbtn" float="true" pos="0,0,0,0" width="28" height="19" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;btn_mini_normal.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" hotimage="file=&apos;btn_mini_highlight.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" pushedimage="file=&apos;btn_mini_down.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" />
+                <Button name="maxbtn" float="true" pos="30,0,0,0" width="28" height="19" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;btn_max_normal.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" hotimage="file=&apos;btn_max_highlight.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" pushedimage="file=&apos;btn_max_down.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" />
+                <Button name="restorebtn" visible="false" float="true" pos="30,0,0,0" width="28" height="19" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="btn_restore_normal.png" hotimage="file=&apos;btn_restore_highlight.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" pushedimage="file=&apos;btn_restore_down.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" />
+                <Button name="closebtn" float="true" pos="60,0,0,0" width="39" height="19" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;btn_close_normal.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" hotimage="file=&apos;btn_close_highlight.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" pushedimage="file=&apos;btn_close_down.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" />
+            </VerticalLayout>
+        </HorizontalLayout>
+        <VerticalLayout />
+    </VerticalLayout>
 </Window>

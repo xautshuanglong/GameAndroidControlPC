@@ -7,9 +7,6 @@ namespace Shuanglong
         using namespace DuiLib;
         class MainWindow : public DuiLib::WindowImplBase
         {
-        private:
-            DUI_DECLARE_MESSAGE_MAP()
-
         public:
             MainWindow();
             ~MainWindow();
@@ -22,6 +19,7 @@ namespace Shuanglong
             //virtual LRESULT ResponseDefaultKeyEvent(WPARAM wParam);
             virtual LRESULT OnClose(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
             virtual LRESULT OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
+            virtual LRESULT OnNcPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 
         protected:
             void OnPrepare(DuiLib::TNotifyUI& msg);

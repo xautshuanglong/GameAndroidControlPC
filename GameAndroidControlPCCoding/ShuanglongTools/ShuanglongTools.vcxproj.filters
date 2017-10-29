@@ -113,5 +113,8 @@
     <Xml Include="skin\MainWindow.xml">
       <Filter>Resource Files\skin</Filter>
     </Xml>
+    <Xml Include="skin\ShuanglongTools.xml">
+      <Filter>Resource Files\skin</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

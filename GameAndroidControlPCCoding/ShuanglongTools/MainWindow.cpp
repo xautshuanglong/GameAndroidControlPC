@@ -9,12 +9,10 @@ namespace Shuanglong::UI
     const TCHAR* const kMainBtnCtrlRestore = _T("restorebtn");
 
     using namespace DuiLib;
-    DUI_BEGIN_MESSAGE_MAP(MainWindow, WindowImplBase)
-    DUI_ON_MSGTYPE(DUI_MSGTYPE_CLICK, OnClick)
-    DUI_END_MESSAGE_MAP()
 
     MainWindow::MainWindow()
-    {}
+    {
+    }
 
     MainWindow::~MainWindow()
     {
@@ -33,7 +31,8 @@ namespace Shuanglong::UI
 
     DuiLib::CDuiString MainWindow::GetSkinFile()
     {
-        return TEXT("MainWindow.xml");
+        //return TEXT("MainWindow.xml");
+        return TEXT("ShuanglongTools.xml");
     }
 
     void MainWindow::OnFinalMessage(HWND hWnd)
@@ -54,6 +53,26 @@ namespace Shuanglong::UI
 
     LRESULT MainWindow::OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
     {
+        bHandled = FALSE;
+        return 0;
+    }
+
+    LRESULT MainWindow::OnNcPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
+    {
+        CDuiString formatStr;
+        formatStr.Format(TEXT("MainWindow::OnNcPaint uMsg=%u wParam=%u lParam=%u bHandled=%d\n"),
+                         uMsg, wParam, lParam, bHandled);
+        OutputDebugString(formatStr.GetData());
+        //if (wParam == 1)
+        //{
+        //    HWND paintWnd = m_PaintManager.GetPaintWindow();
+        //    PAINTSTRUCT ps = { 0 };
+        //    ::BeginPaint(paintWnd, &ps);
+        //    ::Rectangle(ps.hdc, ps.rcPaint.left, ps.rcPaint.top, ps.rcPaint.right, ps.rcPaint.bottom);
+        //    ::EndPaint(paintWnd, &ps);
+        //    bHandled = FALSE;
+        //}
+
         bHandled = FALSE;
         return 0;
     }
