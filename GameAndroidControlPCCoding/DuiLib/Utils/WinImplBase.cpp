@@ -30,6 +30,12 @@ namespace DuiLib
         return FALSE;
     }
 
+    void WindowImplBase::CleanUp()
+    {
+        delete[]m_lpResourceZIPBuffer;
+        m_lpResourceZIPBuffer = nullptr;
+    }
+
     UINT WindowImplBase::GetClassStyle() const
     {
         return CS_DBLCLKS;

@@ -16,7 +16,6 @@ namespace Shuanglong::UI
 
     MainWindow::~MainWindow()
     {
-        ::PostQuitMessage(0);
     }
 
     LPCTSTR MainWindow::GetWindowClassName() const
@@ -38,7 +37,7 @@ namespace Shuanglong::UI
     void MainWindow::OnFinalMessage(HWND hWnd)
     {
         WindowImplBase::OnFinalMessage(hWnd);
-        delete this;
+        ::PostQuitMessage(0);
     }
 
     void MainWindow::InitWindow()

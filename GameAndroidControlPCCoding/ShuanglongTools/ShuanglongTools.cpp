@@ -20,13 +20,19 @@ int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
     }
 
     MainWindow *pMainWin = new MainWindow();
-    pMainWin->CreateDuiWindow(NULL, TEXT("ShuanglongTools"), UI_WNDSTYLE_FRAME&~WS_SYSMENU, WS_EX_STATICEDGE | WS_EX_APPWINDOW);
-    pMainWin->SetIcon(IDI_HORSEWORD);
-    pMainWin->CenterWindow();
-    pMainWin->ShowWindow(true);
+    if (pMainWin != nullptr)
+    {
+        pMainWin->CreateDuiWindow(NULL, TEXT("ShuanglongTools"), UI_WNDSTYLE_FRAME&~WS_SYSMENU, WS_EX_STATICEDGE | WS_EX_APPWINDOW);
+        pMainWin->SetIcon(IDI_HORSEWORD);
+        pMainWin->CenterWindow();
+        pMainWin->ShowWindow(true);
+        DuiLib::CPaintManagerUI::MessageLoop();
+        delete pMainWin;
+        pMainWin = nullptr;
+    }
 
-    DuiLib::CPaintManagerUI::MessageLoop();
     DuiLib::CPaintManagerUI::Term();
+    MainWindow::CleanUp();
 
     ::CoUninitialize();
 
