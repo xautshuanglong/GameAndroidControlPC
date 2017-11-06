@@ -28,3 +28,4 @@
 
 #include <mutex>
 #include <atomic>
+#include <future>

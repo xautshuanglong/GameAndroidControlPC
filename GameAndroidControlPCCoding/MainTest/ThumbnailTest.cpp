@@ -81,7 +81,7 @@ namespace Shuanglong::Test
 
         res = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
         if (SUCCEEDED(res))
-        {
+        { 
             res = SHCreateItemFromParsingName(TEXT("E:\\视频解码相关库\\恐怖11：57.mp4"), nullptr, IID_PPV_ARGS(&pShellItem));
             if (SUCCEEDED(res))
             {

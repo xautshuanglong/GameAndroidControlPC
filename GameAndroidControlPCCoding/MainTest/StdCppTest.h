@@ -28,6 +28,6 @@ namespace Shuanglong::Test
     private:
         void SharedPointerTypedefTest();
         void SharedPointerHelperFunc();
+        void StdAsyncFuturePromiseTest();
     };
 }
-
