@@ -7,10 +7,9 @@ namespace Shuanglong::Test
     class StdCppTest sealed
     {
     private:
-        StdCppTest();
-        StdCppTest(const char* name);
         Log*                    mpLog;
         const char             *mpName;
+        static std::future<int>        mRetFuture;
         static StdCppTest      *mpInstance;
 
         class SingleHelpper
@@ -26,8 +25,10 @@ namespace Shuanglong::Test
         static void Entry();
 
     private:
+        StdCppTest();
+        StdCppTest(const char* name);
         void SharedPointerTypedefTest();
         void SharedPointerHelperFunc();
-        void StdAsyncFuturePromiseTest();
+        void StdAsyncFuturePromiseTest(std::future<int>& futureRes);
     };
 }

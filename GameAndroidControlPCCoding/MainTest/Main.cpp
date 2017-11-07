@@ -60,6 +60,8 @@ int main(int argc, char** argv)
     Shuanglong::Test::TcpSocketServerTest::Entry();
     Shuanglong::Test::UdpSocketServerTest::Entry();
 
+    getchar();
+
     SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, FALSE);
 
     return 0;
