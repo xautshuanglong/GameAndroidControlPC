@@ -82,36 +82,7 @@ namespace Shuanglong::UI
 
     void MainWindow::OnClick(DuiLib::TNotifyUI& msg)
     {
-        DuiLib::CDuiString sCtrlName = msg.pSender->GetName();
-        if (sCtrlName == kMainBtnCtrlClose)
-        {
-            Close();
-            return;
-        }
-        else if (sCtrlName == kMainBtnCtrlMin)
-        {
-            SendMessage(WM_SYSCOMMAND, SC_MINIMIZE, 0);
-            return;
-        }
-        else if (sCtrlName == kMainBtnCtrlMax)
-        {
-            SendMessage(WM_SYSCOMMAND, SC_MAXIMIZE, 0);
-            CControlUI* pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kMainBtnCtrlMax));
-            if (pControl) pControl->SetVisible(false);
-            pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kMainBtnCtrlRestore));
-            if (pControl) pControl->SetVisible(true);
-            return;
-        }
-        else if (sCtrlName == kMainBtnCtrlRestore)
-        {
-            SendMessage(WM_SYSCOMMAND, SC_RESTORE, 0);
-            CControlUI* pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kMainBtnCtrlMax));
-            if (pControl) pControl->SetVisible(true);
-            pControl = static_cast<CControlUI*>(m_PaintManager.FindControl(kMainBtnCtrlRestore));
-            if (pControl) pControl->SetVisible(false);
-            return;
-        }
-        return;
+        WindowImplBase::OnClick(msg);
     }
 
     void MainWindow::OnTimer(DuiLib::TNotifyUI& msg)

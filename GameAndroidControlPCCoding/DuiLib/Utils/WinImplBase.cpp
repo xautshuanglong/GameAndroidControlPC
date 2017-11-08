@@ -249,6 +249,20 @@ namespace DuiLib
         LRESULT lRes = CWindowWnd::HandleMessage(uMsg, wParam, lParam);
         if (::IsZoomed(*this) != bZoomed)
         {
+            CControlUI* pMaxBtn = static_cast<CControlUI*>(m_PaintManager.FindControl(_T("maxbtn")));
+            CControlUI* pRestoreBtn = static_cast<CControlUI*>(m_PaintManager.FindControl(_T("restorebtn")));
+            if (!bZoomed)
+            {
+                // 原来不是最大化，现在与之不同。 
+                if (pRestoreBtn) pRestoreBtn->SetVisible(true);
+                if (pMaxBtn) pMaxBtn->SetVisible(false);
+            } 
+            else
+            {
+                // 原来已最大化，现在与之不同。
+                if (pMaxBtn) pMaxBtn->SetVisible(true);
+                if (pRestoreBtn) pRestoreBtn->SetVisible(false);
+            }
         }
 #else
         LRESULT lRes = CWindowWnd::HandleMessage(uMsg, wParam, lParam);
@@ -453,5 +467,4 @@ namespace DuiLib
     {
         return CNotifyPump::NotifyPump(msg);
     }
-
 }
