@@ -87,6 +87,9 @@
     <ClCompile Include="MultiThreadTest.cpp">
       <Filter>Attempt</Filter>
     </ClCompile>
+    <ClCompile Include="StdStlTest.cpp">
+      <Filter>Attempt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -150,6 +153,9 @@
       <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="MultiThreadTest.h">
+      <Filter>Attempt</Filter>
+    </ClInclude>
+    <ClInclude Include="StdStlTest.h">
       <Filter>Attempt</Filter>
     </ClInclude>
   </ItemGroup>

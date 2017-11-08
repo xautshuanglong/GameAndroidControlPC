@@ -13,6 +13,7 @@
 #include "ProcessUtilTest.h"
 #include "ThumbnailTest.h"
 #include "StdCppTest.h"
+#include "StdStlTest.h"
 #include "UnhandlerExceptionTest.h"
 #include "WaitMultiEventTest.h"
 #include "GoogleLogTest.h"
@@ -52,6 +53,7 @@ int main(int argc, char** argv)
     //Shuanglong::Test::ProcessUtilTest::Entry();
     //Shuanglong::Test::ThumbnailTest::Entry();
     Shuanglong::Test::StdCppTest::Entry();
+    Shuanglong::Test::StdStlTest::Entry();
     //Shuanglong::Test::UnhandlerExceptionTest::GetInstance();
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Entry();
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Exit();

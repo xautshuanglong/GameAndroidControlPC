@@ -48,8 +48,9 @@ namespace Shuanglong::Test
         mpInstance->mpLog = Log::GetInstance();
 
         //mpInstance->SharedPointerTypedefTest();
-        mpInstance->StdAsyncFuturePromiseTest(mRetFuture);
-        mpInstance->mpLog->Console(SL_CODELOCATION, "After StdAsyncFuturePromiseTest finished");
+
+        //mpInstance->StdAsyncFuturePromiseTest(mRetFuture);
+        //mpInstance->mpLog->Console(SL_CODELOCATION, "After StdAsyncFuturePromiseTest finished");
     }
 
     void StdCppTest::SharedPointerTypedefTest()

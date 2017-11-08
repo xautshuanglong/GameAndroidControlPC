@@ -23,9 +23,14 @@
 #include <WinSock2.h>
 #include <WS2tcpip.h>
 
-#include <iostream>
 #include <string>
+#include <iostream>
+#include <sstream>
 
 #include <mutex>
 #include <atomic>
 #include <future>
+
+#include <vector>
+#include <list>
+#include <map>
