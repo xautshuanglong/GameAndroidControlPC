@@ -25,6 +25,9 @@
     <Filter Include="GenericLibTest">
       <UniqueIdentifier>{879ff119-b714-4e61-86e0-8a6b45cd7e12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SteamShared">
+      <UniqueIdentifier>{ccdfe3c6-7f3d-4b5d-84cc-ef2f7a9ab837}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -89,6 +92,18 @@
     </ClCompile>
     <ClCompile Include="StdStlTest.cpp">
       <Filter>Attempt</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamShared\DataUtil.cpp">
+      <Filter>SteamShared</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamShared\lodepng.cpp">
+      <Filter>SteamShared</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamShared\Matrices.cpp">
+      <Filter>SteamShared</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamShared\pathtools.cpp">
+      <Filter>SteamShared</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +172,24 @@
     </ClInclude>
     <ClInclude Include="StdStlTest.h">
       <Filter>Attempt</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\compat.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\DataUtil.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\lodepng.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\Matrices.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\pathtools.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\Vectors.h">
+      <Filter>SteamShared</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
