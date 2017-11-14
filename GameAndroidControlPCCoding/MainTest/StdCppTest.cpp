@@ -26,19 +26,19 @@ namespace Shuanglong::Test
         : mpLog(nullptr)
         , mpName(nullptr)
     {
-        printf_s("StdCppTest::StdCppTest() --\n");
+        //printf_s("StdCppTest::StdCppTest() --\n");
     }
 
     StdCppTest::StdCppTest(const char* name)
         : mpLog(nullptr)
         , mpName(name)
     {
-        printf_s("StdCppTest::StdCppTest(const char* name) --\n");
+        //printf_s("StdCppTest::StdCppTest(const char* name) --\n");
     }
 
     StdCppTest::~StdCppTest()
     {
-        printf_s("StdCppTest::~StdCppTest() --\n");
+        //printf_s("StdCppTest::~StdCppTest() --\n");
     }
 
     void StdCppTest::Entry()
@@ -49,8 +49,23 @@ namespace Shuanglong::Test
 
         //mpInstance->SharedPointerTypedefTest();
 
+        mpInstance->StdStringFormatTest();
         //mpInstance->StdAsyncFuturePromiseTest(mRetFuture);
         //mpInstance->mpLog->Console(SL_CODELOCATION, "After StdAsyncFuturePromiseTest finished");
+    }
+
+    void StdCppTest::StdStringFormatTest()
+    {
+        std::cout << "----------------------------- StdCppTest::StdStringFormatTest() -----------------------------" << std::endl;
+        float floatX = 1.0 / 3;
+        double doubleX = 1.0 / 3;
+        std::cout << "floatX:" << floatX << "  doubleX:" << doubleX << std::endl;
+        printf_s("floatX:%.8f  doubleX:%.8f\n", floatX, doubleX);
+
+        double pi = 3.1415926535898;
+        std::cout << "std::cout << pi:" << pi << std::endl;
+        std::cout << std::fixed << std::setprecision(15) << "cout << pi:" << pi << std::endl;
+        printf_s("printf pi:%.15f\n", pi);
     }
 
     void StdCppTest::SharedPointerTypedefTest()

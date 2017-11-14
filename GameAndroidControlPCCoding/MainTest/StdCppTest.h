@@ -27,6 +27,7 @@ namespace Shuanglong::Test
     private:
         StdCppTest();
         StdCppTest(const char* name);
+        void StdStringFormatTest();
         void SharedPointerTypedefTest();
         void SharedPointerHelperFunc();
         void StdAsyncFuturePromiseTest(std::future<int>& futureRes);

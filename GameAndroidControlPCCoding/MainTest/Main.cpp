@@ -47,7 +47,7 @@ int main(int argc, char** argv)
     //Shuanglong::TestClassTest::Entry();
     //Shuanglong::Test::StringUtilTest::Entry();
     //Shuanglong::Test::TimeUtilTest::Entry();
-    //Shuanglong::Test::DirectoryUtilTest::Entry();
+    Shuanglong::Test::DirectoryUtilTest::Entry();
     //Shuanglong::Test::UpPrivilegeTest::Entry();
     //Shuanglong::Test::VersionUtilTest::Entry();
     //Shuanglong::Test::ProcessUtilTest::Entry();
@@ -57,6 +57,10 @@ int main(int argc, char** argv)
     //Shuanglong::Test::UnhandlerExceptionTest::GetInstance();
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Entry();
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Exit();
+
+    //Shell_NotifyIcon
+    //FindFirstFile
+    //FindFirstFile
 
     //--------------------- TcpUdpCommunication Testing ---------------------
     Shuanglong::Test::TcpSocketServerTest::Entry();

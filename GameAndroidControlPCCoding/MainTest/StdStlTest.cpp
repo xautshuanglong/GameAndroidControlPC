@@ -31,8 +31,8 @@ namespace Shuanglong::Test
         std::cout << "----------------------------- StdStl Testing -----------------------------" << std::endl;
         mpInstance->mpLog = Log::GetInstance();
 
-        mpInstance->StdListTestUnique();
-        mpInstance->StdListTestFind();
+        //mpInstance->StdListTestUnique();
+        //mpInstance->StdListTestFind();
     }
 
     void StdStlTest::StdListTestUnique()

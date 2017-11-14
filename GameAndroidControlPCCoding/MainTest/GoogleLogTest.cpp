@@ -35,7 +35,7 @@ namespace Shuanglong::Test
         FLAGS_log_dir = "E:\\ShuanglongLogs";
         FLAGS_colorlogtostderr = true;
         FLAGS_stop_logging_if_full_disk = true;
-        FLAGS_max_log_size = 1024 * 1024;
+        FLAGS_max_log_size = 10;
         FLAGS_logbufsecs = 5;
         FLAGS_minloglevel = google::GLOG_INFO;
         FLAGS_stderrthreshold = google::GLOG_INFO;
