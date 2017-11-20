@@ -24,7 +24,7 @@ namespace Shuanglong::Test
 
         std::cout << std::endl << "----------------------------------- Directory Utils Testing -----------------------------------" << std::endl;
         //mpInstance->DirectoryUtilTest_Try();
-        //mpInstance->DirectoryUtilTest_GetEnv();
+        mpInstance->DirectoryUtilTest_GetEnv();
     }
 
     void DirectoryUtilTest::DirectoryUtilTest_Try()
@@ -117,7 +117,12 @@ namespace Shuanglong::Test
         mpLog->Console(SL_CODELOCATION, "PUTENV_TEST=%s  ErrorCode=%d", buffer, errorCode);
 
         LPITEMIDLIST pidl;
+        LPMALLOC     pShellMalloc;
+        TCHAR szDir[MAX_PATH] = { 0 };
+        SHGetMalloc(&pShellMalloc);
         SHGetSpecialFolderLocation(NULL, CSIDL_LOCAL_APPDATA, &pidl);
+        SHGetPathFromIDList(pidl, szDir);
+        pShellMalloc->Free(pidl);
 
         retBool = SHGetSpecialFolderPathA(nullptr, buffer, CSIDL_LOCAL_APPDATA, false);
         mpLog->Console(SL_CODELOCATION, "CSIDL_LOCAL_APPDATA=%s  ReturnBool=%s", buffer, retBool ? "true" : "false");
