@@ -24,7 +24,7 @@ namespace Shuanglong::Test
 
         std::cout << std::endl << "----------------------------------- Directory Utils Testing -----------------------------------" << std::endl;
         //mpInstance->DirectoryUtilTest_Try();
-        mpInstance->DirectoryUtilTest_GetEnv();
+        //mpInstance->DirectoryUtilTest_GetEnv();
     }
 
     void DirectoryUtilTest::DirectoryUtilTest_Try()
