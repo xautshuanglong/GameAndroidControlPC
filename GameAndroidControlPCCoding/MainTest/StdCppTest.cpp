@@ -49,7 +49,7 @@ namespace Shuanglong::Test
 
         //mpInstance->SharedPointerTypedefTest();
 
-        mpInstance->StdStringFormatTest();
+        //mpInstance->StdStringFormatTest();
         //mpInstance->StdAsyncFuturePromiseTest(mRetFuture);
         //mpInstance->mpLog->Console(SL_CODELOCATION, "After StdAsyncFuturePromiseTest finished");
     }
@@ -57,7 +57,7 @@ namespace Shuanglong::Test
     void StdCppTest::StdStringFormatTest()
     {
         std::cout << "----------------------------- StdCppTest::StdStringFormatTest() -----------------------------" << std::endl;
-        float floatX = 1.0 / 3;
+        float floatX = (float)(1.0 / 3);
         double doubleX = 1.0 / 3;
         std::cout << "floatX:" << floatX << "  doubleX:" << doubleX << std::endl;
         printf_s("floatX:%.8f  doubleX:%.8f\n", floatX, doubleX);
