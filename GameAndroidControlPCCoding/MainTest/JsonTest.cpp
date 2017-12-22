@@ -23,8 +23,9 @@ namespace Shuanglong::Test
     void JsonTest::Entry()
     {
         std::cout << "---------------------------------- JsonTest ----------------------------------" << std::endl;
-        GetInstance()->ReaderTest();
-        GetInstance()->WriterTest();
+
+        //GetInstance()->ReaderTest();
+        //GetInstance()->WriterTest();
     }
 
     void JsonTest::Exit()
@@ -88,10 +89,12 @@ namespace Shuanglong::Test
         JSONCPP_STRING binary("hi", 3);
         {
             Json::Value root;
-            root = binary;
-            std::cout << "root.asString() = " << root.asString();
+            root["top"] = binary;
+            //std::cout << "root.asString() = " << root.asString();
             JSONCPP_STRING out = Json::writeString(b, root);
             std::cout << "write out string --> " << out << std::endl;
+
+            std::cout << root << std::endl;
         }
         {
             Json::Value root;
