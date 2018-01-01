@@ -1411,7 +1411,8 @@ namespace DuiLib
 
         POINT pt = { rc.left, rc.top };
         int iLinkIndex = 0;
-        int cyLine = pTm->tmHeight + pTm->tmExternalLeading + *(int*)(aPIndentArray.GetAt(aPIndentArray.GetSize() - 1));
+        LPVOID pAarrayEle = aPIndentArray.GetAt(aPIndentArray.GetSize() - 1);
+        int cyLine = pTm->tmHeight + pTm->tmExternalLeading + (pAarrayEle == NULL ? 0 : *(int*)(pAarrayEle));
         int cyMinHeight = 0;
         int cxMaxWidth = 0;
         POINT ptLinkStart = { 0 };
@@ -1468,7 +1469,8 @@ namespace DuiLib
                 if (!bLineDraw) pt.y += cyLine;
                 if (pt.y > rc.bottom && bDraw) break;
                 ptLinkStart = pt;
-                cyLine = pTm->tmHeight + pTm->tmExternalLeading + *(int*)(aPIndentArray.GetAt(aPIndentArray.GetSize() - 1));
+                LPVOID pAarrayEle = aPIndentArray.GetAt(aPIndentArray.GetSize() - 1);
+                cyLine = pTm->tmHeight + pTm->tmExternalLeading + (pAarrayEle == NULL ? 0 : *(int*)(pAarrayEle));
                 if (pt.x >= rc.right) break;
             }
             else if (!bInRaw && (*pstrText == _T('<') || *pstrText == _T('{'))
@@ -1523,7 +1525,8 @@ namespace DuiLib
                         aFontArray.Add(pFontInfo);
                         pTm = &pFontInfo->tm;
                         ::SelectObject(hDC, pFontInfo->hFont);
-                        cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + *(int*)(aPIndentArray.GetAt(aPIndentArray.GetSize() - 1)));
+                        LPVOID pAarrayEle = aPIndentArray.GetAt(aPIndentArray.GetSize() - 1);
+                        cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + (pAarrayEle == NULL ? 0 : *(int*)(pAarrayEle)));
                     }
                     ptLinkStart = pt;
                     bInLink = true;
@@ -1542,7 +1545,8 @@ namespace DuiLib
                         aFontArray.Add(pFontInfo);
                         pTm = &pFontInfo->tm;
                         ::SelectObject(hDC, pFontInfo->hFont);
-                        cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + *(int*)(aPIndentArray.GetAt(aPIndentArray.GetSize() - 1)));
+                        LPVOID pAarrayEle = aPIndentArray.GetAt(aPIndentArray.GetSize() - 1);
+                        cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + (pAarrayEle == NULL ? 0 : *(int*)(pAarrayEle)));
                     }
                 }
                 break;
@@ -1615,7 +1619,9 @@ namespace DuiLib
                         pTm = &pFontInfo->tm;
                         ::SelectObject(hDC, pFontInfo->hFont);
                     }
-                    cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + *(int*)(aPIndentArray.GetAt(aPIndentArray.GetSize() - 1)));
+
+                    LPVOID pAarrayEle = aPIndentArray.GetAt(aPIndentArray.GetSize() - 1);
+                    cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + (pAarrayEle == NULL ? 0 : *(int*)(pAarrayEle)));
                 }
                 break;
                 case _T('i'):  // Italic or Image
@@ -1649,7 +1655,8 @@ namespace DuiLib
                             aFontArray.Add(pFontInfo);
                             pTm = &pFontInfo->tm;
                             ::SelectObject(hDC, pFontInfo->hFont);
-                            cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + *(int*)(aPIndentArray.GetAt(aPIndentArray.GetSize() - 1)));
+                            LPVOID pAarrayEle = aPIndentArray.GetAt(aPIndentArray.GetSize() - 1);
+                            cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + (pAarrayEle == NULL ? 0 : *(int*)(pAarrayEle)));
                         }
                     }
                     else
@@ -1803,7 +1810,8 @@ namespace DuiLib
                         aFontArray.Add(pFontInfo);
                         pTm = &pFontInfo->tm;
                         ::SelectObject(hDC, pFontInfo->hFont);
-                        cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + *(int*)(aPIndentArray.GetAt(aPIndentArray.GetSize() - 1)));
+                        LPVOID pAarrayEle = aPIndentArray.GetAt(aPIndentArray.GetSize() - 1);
+                        cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + (pAarrayEle == NULL ? 0 : *(int*)(pAarrayEle)));
                     }
                 }
                 break;
@@ -1847,11 +1855,14 @@ namespace DuiLib
                 }
                 break;
                 case _T('p'):
+                {
                     pstrText++;
                     if (pt.x > rc.left) bLineEnd = true;
                     aPIndentArray.Remove(aPIndentArray.GetSize() - 1);
-                    cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + *(int*)(aPIndentArray.GetAt(aPIndentArray.GetSize() - 1)));
-                    break;
+                    LPVOID pAarrayEle = aPIndentArray.GetAt(aPIndentArray.GetSize() - 1);
+                    cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + (pAarrayEle == NULL ? 0 : *(int*)(pAarrayEle)));
+                }
+                break;
                 case _T('s'):
                 {
                     pstrText++;
@@ -1893,7 +1904,8 @@ namespace DuiLib
                     }
                     pTm = &pFontInfo->tm;
                     ::SelectObject(hDC, pFontInfo->hFont);
-                    cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + *(int*)(aPIndentArray.GetAt(aPIndentArray.GetSize() - 1)));
+                    LPVOID pAarrayEle = aPIndentArray.GetAt(aPIndentArray.GetSize() - 1);
+                    cyLine = MAX(cyLine, pTm->tmHeight + pTm->tmExternalLeading + (pAarrayEle == NULL ? 0 : *(int*)(pAarrayEle)));
                 }
                 break;
                 }
