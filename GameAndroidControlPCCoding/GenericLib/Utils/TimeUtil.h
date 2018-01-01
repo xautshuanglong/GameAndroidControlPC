@@ -78,11 +78,18 @@
 
 namespace Shuanglong::Utils
 {
-    /************************************************************************\
-        Author     : JiangChuanbiao
-        Date       : 2017-1-4
-        Description: get timestamp and format date time string.
-    \************************************************************************/
+    enum FileTimeType
+    {
+        FILETIME_TYPE_CREATION,
+        FILETIME_TYPE_LASTACCESS,
+        FILETIME_TYPE_LASTWRITE
+    };
+
+    //************************************************************************
+    //    Author     : JiangChuanbiao
+    //    Date       : 2017-1-4
+    //    Description: get timestamp and format date time string.
+    //************************************************************************
     class GENERIC_EXPORT TimeUtil sealed
     {
     private:
@@ -101,13 +108,16 @@ namespace Shuanglong::Utils
         static std::string GetDateTimeString();
         static std::string GetFormatTimeString(const char* timeFormat);
 
-        static INT64 GetCurrentTimestamp();
         static std::string GetFullTimestampString();
         static std::string GetSimpleTimestampString();
+        static LONGLONG GetCurrentTimestamp();
 
         static LONGLONG QueryPerformanceCounter();
         static LONGLONG QueryPerformanceFrequency();
         static void IncreaseTimerPrecision();
+
+        // 关于文件时间
+        static LONGLONG GetFileTimeByType(std::string fullFilename, FileTimeType timeType);
 
     private:
         static void GetMyCurrentTime();

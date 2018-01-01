@@ -4,6 +4,9 @@
 
 namespace Shuanglong::Utils
 {
+#define WINDOWS_TICK       10000000      // 转换秒 100ns=10^-7s
+#define SEC_TO_UNIX_EPOCH  11644473600LL // 1601-01-01 00:00:00 与 1970-01-01 00:00:00 间隔的秒数
+
     SYSTEMTIME TimeUtil::m_systemTime = { 0 };
     tm TimeUtil::m_tmCurTime = { 0 };
     time_t TimeUtil::m_tCurTime = 0;
@@ -12,10 +15,10 @@ namespace Shuanglong::Utils
     {
     }
 
-    /************************************************************************\
-    Description: time string like YYYY-mm-dd
-    Arguments  :
-    \************************************************************************/
+    //************************************************************************
+    //    Description: time string like YYYY-mm-dd
+    //    Arguments  :
+    //************************************************************************
     std::string TimeUtil::GetDateString()
     {
         char timeBuffer[64];
@@ -24,10 +27,10 @@ namespace Shuanglong::Utils
         return std::string(timeBuffer);
     }
 
-    /************************************************************************\
-    Description: time string like HH:MM:SS
-    Arguments  :
-    \************************************************************************/
+    //************************************************************************
+    //    Description: time string like HH:MM:SS
+    //    Arguments  : 
+    //************************************************************************
     std::string TimeUtil::GetTimeString()
     {
         char timeBuffer[64];
@@ -36,10 +39,10 @@ namespace Shuanglong::Utils
         return std::string(timeBuffer);
     }
 
-    /************************************************************************\
-        Description: time string like YYYY-mm-dd HH:MM:SS
-        Arguments  :
-    \************************************************************************/
+    //************************************************************************
+    //    Description: time string like YYYY-mm-dd HH:MM:SS
+    //    Arguments  : 
+    //************************************************************************
     std::string TimeUtil::GetDateTimeString()
     {
         char timeBuffer[64];
@@ -48,13 +51,13 @@ namespace Shuanglong::Utils
         return std::string(timeBuffer);
     }
 
-    /************************************************************************\
-        Description: time string formated by specified pattern string
-        Arguments  :
-        const char* timeFormat
-            pattern string combined with charactor supplied at
-            the begin of header file.
-    \************************************************************************/
+    //************************************************************************
+    //    Description: time string formated by specified pattern string
+    //    Arguments  : 
+    //        const char* timeFormat -->
+    //              pattern string combined with charactor supplied at
+    //              the begin of header file.
+    //************************************************************************
     std::string TimeUtil::GetFormatTimeString(const char* timeFormat)
     {
         char timeBuffer[128];
@@ -63,20 +66,20 @@ namespace Shuanglong::Utils
         return std::string(timeBuffer);
     }
 
-    /************************************************************************\
-        Description: retrieve timestamp int64
-        Arguments  :
-    \************************************************************************/
+    //************************************************************************
+    //    Description: retrieve timestamp int64
+    //    Arguments  : 
+    //************************************************************************
     INT64 TimeUtil::GetCurrentTimestamp()
     {
         GetMyCurrentTime();
         return m_tCurTime;
     }
 
-    /************************************************************************\
-        Description: timestamp like YYYY-mm-dd HH:MM:SS.sss
-        Arguments  :
-    \************************************************************************/
+    //************************************************************************
+    //    Description: timestamp like YYYY-mm-dd HH:MM:SS.sss
+    //    Arguments  : 
+    //************************************************************************
     std::string TimeUtil::GetFullTimestampString()
     {
         ::GetLocalTime(&m_systemTime);
@@ -87,10 +90,10 @@ namespace Shuanglong::Utils
         return std::string(timeBuffer);
     }
 
-    /************************************************************************\
-        Description: timestamp like HH:MM:SS.sss
-        Arguments  :
-    \************************************************************************/
+    //************************************************************************
+    //    Description: timestamp like HH:MM:SS.sss
+    //    Arguments  : 
+    //************************************************************************
     std::string TimeUtil::GetSimpleTimestampString()
     {
         GetLocalTime(&m_systemTime);
@@ -155,5 +158,52 @@ namespace Shuanglong::Utils
         //_get_timezone(&timeZoneOffset);
         //curTimeTest -= timeZoneOffset;
         //::gmtime_s(&m_tmCurTime, &curTimeTest);// 标准时间，需要根据时区自行调整
+    }
+
+    //************************************************************************
+    //    Description: 获取指定文件的相关时间。
+    //    Arguments  : 
+    //        fullFilename --> 指定文件的路经（最好是全路经）
+    //        timeType     --> 时间类型：创建时间、最后访问时间、最后修改时间。
+    //************************************************************************
+    LONGLONG TimeUtil::GetFileTimeByType(std::string fullFilename, FileTimeType timeType)
+    {
+        BOOL res = FALSE;
+        LONGLONG retValue = 0;
+        WIN32_FILE_ATTRIBUTE_DATA fileAttributeData;
+
+        if (!fullFilename.empty())
+        {
+            res = ::GetFileAttributesExA(fullFilename.c_str(), GetFileExInfoStandard, &fileAttributeData);
+        }
+
+        if (res)
+        {
+            ULARGE_INTEGER localTimestamp = { 0 };
+            FILETIME fileTime = { 0 };
+            switch (timeType)
+            {
+            case Shuanglong::Utils::FILETIME_TYPE_CREATION:
+                fileTime = fileAttributeData.ftCreationTime;
+                break;
+            case Shuanglong::Utils::FILETIME_TYPE_LASTACCESS:
+                fileTime = fileAttributeData.ftLastAccessTime;
+                break;
+            case Shuanglong::Utils::FILETIME_TYPE_LASTWRITE:
+                fileTime = fileAttributeData.ftLastWriteTime;
+                break;
+            default:
+                break;
+            }
+            
+            if (res)
+            {
+                localTimestamp.HighPart = fileTime.dwHighDateTime;
+                localTimestamp.LowPart = fileTime.dwLowDateTime;
+                retValue = localTimestamp.QuadPart / WINDOWS_TICK - SEC_TO_UNIX_EPOCH;
+            }
+        }
+
+        return retValue;
     }
 }

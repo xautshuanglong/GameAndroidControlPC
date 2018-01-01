@@ -11,6 +11,7 @@ namespace Shuanglong::Test
     public:
         ~JsonTest();
         void ReaderTest();
+        void WriterTest();
         static void Entry();
         static void Exit();
     };

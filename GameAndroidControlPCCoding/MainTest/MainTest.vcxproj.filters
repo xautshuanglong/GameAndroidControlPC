@@ -105,6 +105,9 @@
     <ClCompile Include="SteamShared\pathtools.cpp">
       <Filter>SteamShared</Filter>
     </ClCompile>
+    <ClCompile Include="MD5Test.cpp">
+      <Filter>GenericLibTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -190,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="SteamShared\Vectors.h">
       <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="MD5Test.h">
+      <Filter>GenericLibTest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
