@@ -1,5 +1,8 @@
 #include "stdafx.h"
 #include "MD5Test.h"
+#include <Algorithm/MD5.h>
+
+using namespace Shuanglong::Algorithm;
 
 namespace Shuanglong::Test
 {
@@ -29,10 +32,6 @@ namespace Shuanglong::Test
 
     void MD5Test::CaculateMD5Test()
     {
-        int x = 0x80000002;
-        int bitCnt = 1;
-        int res = x >> (bitCnt);
-
-        printf_s("0x%08X >> 0x%08X(%d) = 0x%08X\n", x, bitCnt, bitCnt, res);
+        MD5 md5Test;
     }
 }
