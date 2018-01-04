@@ -100,13 +100,63 @@ namespace Shuanglong::Algorithm
 
         int tempF = 0, tempG = 0;
 
+        //MD5("The quick brown fox jumps over the lazy cog") = 1055d3e698d289f2af8663725127bd4b
+
         byte message[64] = { 0 };
         unsigned int k[64] = { 0 };
-        message[0] = 0x80;
-        message[1] = 0;
-        message[2] = 0;
-        message[3] = 0;
-        long long len = 0;
+        message[0] = 'T';
+        message[1] = 'h';
+        message[2] = 'e';
+        message[3] = ' ';
+        message[4] = 'q';
+        message[5] = 'u';
+        message[6] = 'i';
+        message[7] = 'c';
+        message[8] = 'k';
+        message[9] = ' ';
+        message[10] = 'b';
+        message[11] = 'r';
+        message[12] = 'o';
+        message[13] = 'w';
+        message[14] = 'n';
+        message[15] = ' ';
+        message[16] = 'f';
+        message[17] = 'o';
+        message[18] = 'x';
+        message[19] = ' ';
+        message[20] = 'j';
+        message[21] = 'u';
+        message[22] = 'm';
+        message[23] = 'p';
+        message[24] = 's';
+        message[25] = ' ';
+        message[26] = 'o';
+        message[27] = 'v';
+        message[28] = 'e';
+        message[29] = 'r';
+        message[30] = ' ';
+        message[31] = 't';
+        message[32] = 'h';
+        message[33] = 'e';
+        message[34] = ' ';
+        message[35] = 'l';
+        message[36] = 'a';
+        message[37] = 'z';
+        message[38] = 'y';
+        message[39] = ' ';
+        message[40] = 'd';
+        message[41] = 'o';
+        message[42] = 'g';
+        message[43] = 0x80;
+        //message[56] = 0x58;
+        //message[57] = 0x01;
+        //message[58] = 0x00;
+        //message[59] = 0x00;
+        //message[60] = 0x00;
+        //message[61] = 0x00;
+        //message[62] = 0x00;
+        //message[63] = 0x00;
+        long long len = 344;
         int w[16] = { 0 };
         memcpy_s(&message[56], 8, &len, 8);
 

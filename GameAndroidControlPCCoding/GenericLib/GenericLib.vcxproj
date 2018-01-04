@@ -158,8 +158,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Algorithm\AbstractAlgorithm.h" />
-    <ClInclude Include="Algorithm\AlgorithmFactory.h" />
+    <ClInclude Include="Algorithm\MessageDigestAbstract.h" />
+    <ClInclude Include="Algorithm\MessageDigestFactory.h" />
     <ClInclude Include="Algorithm\MD5.h" />
     <ClInclude Include="GenericDefines.h" />
     <ClInclude Include="Json\allocator.h" />
@@ -183,8 +183,8 @@
     <ClInclude Include="Utils\TimeUtil.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Algorithm\AbstractAlgorithm.cpp" />
-    <ClCompile Include="Algorithm\AlgorithmFactory.cpp" />
+    <ClCompile Include="Algorithm\MessageDigestAbstract.cpp" />
+    <ClCompile Include="Algorithm\MessageDigestFactory.cpp" />
     <ClCompile Include="Algorithm\MD5.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>

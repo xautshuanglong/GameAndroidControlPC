@@ -51,13 +51,7 @@
     <ClInclude Include="Utils\TimeUtil.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Algorithm\AbstractAlgorithm.h">
-      <Filter>Algorithm</Filter>
-    </ClInclude>
     <ClInclude Include="Algorithm\MD5.h">
-      <Filter>Algorithm</Filter>
-    </ClInclude>
-    <ClInclude Include="Algorithm\AlgorithmFactory.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
     <ClInclude Include="Json\allocator.h">
@@ -99,6 +93,12 @@
     <ClInclude Include="TinyXML2\TinyXML2.h">
       <Filter>TinyXML2</Filter>
     </ClInclude>
+    <ClInclude Include="Algorithm\MessageDigestAbstract.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\MessageDigestFactory.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -119,13 +119,7 @@
     <ClCompile Include="Utils\TimeUtil.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Algorithm\AbstractAlgorithm.cpp">
-      <Filter>Algorithm</Filter>
-    </ClCompile>
     <ClCompile Include="Algorithm\MD5.cpp">
-      <Filter>Algorithm</Filter>
-    </ClCompile>
-    <ClCompile Include="Algorithm\AlgorithmFactory.cpp">
       <Filter>Algorithm</Filter>
     </ClCompile>
     <ClCompile Include="Json\reader.cpp">
@@ -139,6 +133,12 @@
     </ClCompile>
     <ClCompile Include="TinyXML2\TinyXML2.cpp">
       <Filter>TinyXML2</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm\MessageDigestAbstract.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm\MessageDigestFactory.cpp">
+      <Filter>Algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
