@@ -100,6 +100,7 @@ namespace Shuanglong::Algorithm
 
         int tempF = 0, tempG = 0;
 
+        //MD5("The quick brown fox jumps over the lazy dog") = 9e107d9d372bb6826bd81d3542a419d6
         //MD5("The quick brown fox jumps over the lazy cog") = 1055d3e698d289f2af8663725127bd4b
 
         byte message[64] = { 0 };
@@ -144,10 +145,11 @@ namespace Shuanglong::Algorithm
         message[37] = 'z';
         message[38] = 'y';
         message[39] = ' ';
-        message[40] = 'd';
+        message[40] = 'c';
         message[41] = 'o';
         message[42] = 'g';
         message[43] = 0x80;
+        
         //message[56] = 0x58;
         //message[57] = 0x01;
         //message[58] = 0x00;
@@ -158,7 +160,11 @@ namespace Shuanglong::Algorithm
         //message[63] = 0x00;
         long long len = 344;
         int w[16] = { 0 };
-        memcpy_s(&message[56], 8, &len, 8);
+        if (IsLittleEndian())
+        {
+            printf_s("Is little endian\n");
+            memcpy_s(&message[56], 8, &len, 8);
+        }
 
         for (int i = 0; i < 64; ++i)
         {
@@ -213,6 +219,39 @@ namespace Shuanglong::Algorithm
 
     MD5::~MD5()
     {
+    }
+
+    void MD5::Update(std::string &inString)
+    {}
+
+    void MD5::Update(std::ifstream &inFileStream)
+    {}
+
+    void MD5::Update(const char* inBuffer, int inLength)
+    {}
+
+    std::string MD5::FinalDigest()
+    {
+        std::string retString = "";
+        return retString;
+    }
+
+    bool MD5::IsLittleEndian()
+    {
+        bool retFlag = false;
+        union EndianTest
+        {
+            int intVaule;
+            char bytes[4];
+        };
+
+        EndianTest endian = { 0 };
+        endian.intVaule = 0x12345678;
+        if (endian.bytes[0] == 0x78)
+        {
+            retFlag = true;
+        }
+        return retFlag;
     }
 
     std::string MD5::DDChangeHex(int a)

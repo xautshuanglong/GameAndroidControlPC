@@ -99,6 +99,9 @@
     <ClInclude Include="Algorithm\MessageDigestFactory.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
+    <ClInclude Include="Utils\EnvUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -139,6 +142,9 @@
     </ClCompile>
     <ClCompile Include="Algorithm\MessageDigestFactory.cpp">
       <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\EnvUtil.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

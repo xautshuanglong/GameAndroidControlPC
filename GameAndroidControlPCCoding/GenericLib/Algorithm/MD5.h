@@ -1,13 +1,14 @@
 #pragma once
 
 #include "../GenericDefines.h"
+#include "MessageDigestAbstract.h"
 
 namespace Shuanglong::Algorithm
 {
     typedef unsigned char byte;
     typedef unsigned long ulong;
 
-    class GENERIC_EXPORT MD5
+    class GENERIC_EXPORT MD5 : public MessageDigestAbstract
     {
     private:
         static const byte PADDING[64];
@@ -18,6 +19,13 @@ namespace Shuanglong::Algorithm
         MD5();
         ~MD5();
 
+        virtual void Update(std::string &inString);
+        virtual void Update(std::ifstream &inFileStream);
+        virtual void Update(const char* inBuffer, int inLength);
+        virtual std::string FinalDigest();
+
+    private:
+        virtual bool IsLittleEndian();
         std::string DDChangeHex(int a);
     };
 }

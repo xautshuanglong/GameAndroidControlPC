@@ -178,6 +178,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TinyXML2\TinyXML2.h" />
     <ClInclude Include="Utils\CodeLocation.h" />
+    <ClInclude Include="Utils\EnvUtil.h" />
     <ClInclude Include="Utils\RegistryUtil.h" />
     <ClInclude Include="Utils\StringUtil.h" />
     <ClInclude Include="Utils\TimeUtil.h" />
@@ -231,6 +232,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Utils\EnvUtil.cpp" />
     <ClCompile Include="Utils\RegistryUtil.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
