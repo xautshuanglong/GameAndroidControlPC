@@ -19,6 +19,20 @@ int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
         return 0;
     }
 
+    HRSRC findRes = ::FindResource(NULL, MAKEINTRESOURCE(IDR_XML_CONFIG), L"XML");
+    if (findRes != NULL)
+    {
+        DWORD resSize = ::SizeofResource(NULL, findRes);
+        HGLOBAL resGlobal = ::LoadResource(NULL, findRes);
+        LPVOID pBuffer = ::LockResource(resGlobal);
+
+        char xml[2560] = { 0 };
+        memcpy_s(xml, 2560, pBuffer, resSize);
+        OutputDebugStringA(xml);
+
+        ::FreeResource(resGlobal);
+    }
+
     MainWindow *pMainWin = new MainWindow();
     if (pMainWin != nullptr)
     {

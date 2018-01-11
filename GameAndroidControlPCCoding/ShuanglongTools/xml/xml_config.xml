@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+    <CurrentConfig MapID="1" />
+    
+    <Maps>
+        
+        <Map ID="1" Name="map_1">
+        </Map>
+        
+        <Map ID="2" Name="map_2">
+        </Map>
+        
+        <Map ID="3" Name="map_3">
+        </Map>
+        
+    </Maps>
+    
+</Root>

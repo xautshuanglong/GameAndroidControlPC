@@ -19,6 +19,9 @@
     <Filter Include="Resource Files\skin">
       <UniqueIdentifier>{aad5526f-c0a3-4f87-8ebe-002ae3c60333}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\xml">
+      <UniqueIdentifier>{63cf56ca-c6a0-4f9e-b452-7fdac374b569}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -115,6 +118,9 @@
     </Xml>
     <Xml Include="skin\ShuanglongTools.xml">
       <Filter>Resource Files\skin</Filter>
+    </Xml>
+    <Xml Include="xml\xml_config.xml">
+      <Filter>Resource Files\xml</Filter>
     </Xml>
   </ItemGroup>
 </Project>

@@ -217,6 +217,7 @@ xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
       <SubType>Designer</SubType>
     </Xml>
     <Xml Include="skin\ShuanglongTools.xml" />
+    <Xml Include="xml\xml_config.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
