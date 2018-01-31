@@ -211,6 +211,9 @@ xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
     <ProjectReference Include="..\DuiLib\DuiLib.vcxproj">
       <Project>{83344e5f-fb53-43a8-ba2f-4b2740854b9d}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\GenericLib\GenericLib.vcxproj">
+      <Project>{6fc63e73-8090-49b0-bc0d-7e554fa41af1}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="skin\MainWindow.xml">

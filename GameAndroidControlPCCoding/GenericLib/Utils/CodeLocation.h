@@ -14,10 +14,10 @@ namespace Shuanglong::Utils
     class GENERIC_EXPORT CodeLocation
     {
     private:
-        std::string m_strFileName;// 源文件名(含绝对路径)
-        std::string m_strShortFileName;
-        std::string m_strFuncName;// 函数名
-        int m_nLineNumber;     // 行号
+        std::string m_strFileName;       // 源文件名(含绝对路径)
+        std::string m_strShortFileName;  // 短文件名(无绝对路径)
+        std::string m_strFuncName;       // 函数名（全名  namespace::class::MemberFunction）
+        int m_nLineNumber;               // 行号
 
     public:
         CodeLocation(char* fileName, char* funcName, int lineNumber);
