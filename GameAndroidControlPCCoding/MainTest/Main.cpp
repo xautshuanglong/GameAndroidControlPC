@@ -16,7 +16,6 @@
 #include "StdStlTest.h"
 #include "UnhandlerExceptionTest.h"
 #include "WaitMultiEventTest.h"
-#include "GoogleLogTest.h"
 #include "JsonTest.h"
 #include "TinyXml2Test.h"
 #include "MD5Test.h"
@@ -31,10 +30,6 @@ int main(int argc, char** argv)
     BOOL retValue = SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, TRUE);
     std::cout << "====================================== Main Testing ======================================" << std::endl;
     Shuanglong::Log *pLog = Shuanglong::Log::GetInstance();
-
-    //---------------------- Google Log Testing ----------------------
-    Shuanglong::Test::GoogleLogTest::Entry(argv[0]);
-    Shuanglong::Test::GoogleLogTest::Exit();
 
     //---------------------- Json Testing ----------------------
     Shuanglong::Test::JsonTest::Entry();

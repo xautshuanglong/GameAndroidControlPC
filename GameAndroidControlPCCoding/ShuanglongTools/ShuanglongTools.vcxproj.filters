@@ -22,6 +22,9 @@
     <Filter Include="Resource Files\xml">
       <UniqueIdentifier>{63cf56ca-c6a0-4f9e-b452-7fdac374b569}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{69751eda-65b6-43f6-b722-71bfe534d4cf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -42,6 +45,9 @@
     <ClInclude Include="MainWindow.h">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="LogUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -52,6 +58,9 @@
     </ClCompile>
     <ClCompile Include="MainWindow.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="LogUtil.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

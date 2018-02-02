@@ -169,6 +169,7 @@ xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LogUtil.h" />
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ShuanglongTools.h" />
@@ -176,6 +177,7 @@ xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="LogUtil.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="ShuanglongTools.cpp" />
     <ClCompile Include="stdafx.cpp">

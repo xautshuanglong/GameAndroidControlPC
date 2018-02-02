@@ -81,9 +81,6 @@
     <ClCompile Include="JsonTest.cpp">
       <Filter>GenericLibTest</Filter>
     </ClCompile>
-    <ClCompile Include="GoogleLogTest.cpp">
-      <Filter>GenericLibTest</Filter>
-    </ClCompile>
     <ClCompile Include="TinyXml2Test.cpp">
       <Filter>GenericLibTest</Filter>
     </ClCompile>
@@ -162,9 +159,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="JsonTest.h">
-      <Filter>GenericLibTest</Filter>
-    </ClInclude>
-    <ClInclude Include="GoogleLogTest.h">
       <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="TinyXml2Test.h">
