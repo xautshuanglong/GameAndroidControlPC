@@ -22,7 +22,7 @@
     <Filter Include="Resource Files\xml">
       <UniqueIdentifier>{63cf56ca-c6a0-4f9e-b452-7fdac374b569}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utils">
+    <Filter Include="Logger">
       <UniqueIdentifier>{69751eda-65b6-43f6-b722-71bfe534d4cf}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -45,8 +45,8 @@
     <ClInclude Include="MainWindow.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="LogUtil.h">
-      <Filter>Utils</Filter>
+    <ClInclude Include="Logger.h">
+      <Filter>Logger</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -59,8 +59,8 @@
     <ClCompile Include="MainWindow.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="LogUtil.cpp">
-      <Filter>Utils</Filter>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Logger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

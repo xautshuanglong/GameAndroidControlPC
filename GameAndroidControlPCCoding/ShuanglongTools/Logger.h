@@ -10,10 +10,10 @@ va_start(vaList, fmt);\
 vsnprintf(buffer, DEAFAULT_LOG_BUFFER_LENGTH - 1, fmt, vaList);\
 va_end(vaList);
 
-#define CODE_LOCATION        Shuanglong::Utils::CodeLocation(__FUNCSIG__,__FILE__,__LINE__)
-#define CODE_LOCATION_STRING Shuanglong::Utils::CodeLocation(__FUNCTION__,__FILE__,__LINE__).ToString().c_str()
+#define CODE_LOCATION        Shuanglong::Logger::CodeLocation(__FUNCSIG__,__FILE__,__LINE__)
+#define CODE_LOCATION_STRING Shuanglong::Logger::CodeLocation(__FUNCTION__,__FILE__,__LINE__).ToString().c_str()
 
-namespace Shuanglong::Utils
+namespace Shuanglong::Logger
 {
     enum LogLevelType
     {
@@ -27,21 +27,21 @@ namespace Shuanglong::Utils
 
     class CodeLocation;
 
-    typedef void(*LogUtilCallback)(const char *);
-    typedef void(*LogUtilCallbackExt)(LogLevelType level, CodeLocation *pLocation, std::string& msg);
+    typedef void(*LoggerCallback)(const char *);
+    typedef void(*LoggerCallbackExt)(LogLevelType level, CodeLocation *pLocation, std::string& msg);
 
     //************************************************************************\
     //    Author     : JiangChuanbiao
     //    Date       : 2017-1-9
     //    Description: 
     //************************************************************************/
-    class LogUtil sealed
+    class Logger sealed
     {
     private:
         static LogLevelType                         mLevel;
 
     public:
-        ~LogUtil();
+        ~Logger();
 
         static void Console(char *fmt, ...);
         static void Console(CodeLocation location, char *fmt, ...);
@@ -50,8 +50,8 @@ namespace Shuanglong::Utils
         static void OutputDebug(CodeLocation location, char *fmt, ...);
 
         static void Init(LogLevelType level);
-        static void InitLogCallback(LogUtilCallback logCallback);
-        static void InitLogCallback(LogUtilCallbackExt logCallback);
+        static void InitLogCallback(LoggerCallback logCallback);
+        static void InitLogCallback(LoggerCallbackExt logCallback);
 
         static void Debug(char *fmt, ...);
         static void Debug(CodeLocation location, char *fmt, ...);
@@ -71,13 +71,13 @@ namespace Shuanglong::Utils
         static std::string ConvertToString(std::wstring wstring);
 
     private:
-        LogUtil();
+        Logger();
         static std::string GetSystemTimeString();
-        static std::string LogUtil::GetLevelString(LogLevelType logLevel);
+        static std::string Logger::GetLevelString(LogLevelType logLevel);
         static void Log(LogLevelType level, std::string timestamp, std::string message);
         static void Log(LogLevelType level, std::string timestamp, CodeLocation location, std::string message);
-        static LogUtilCallback mpLogCallback;
-        static LogUtilCallbackExt mpLogCallbackExt;
+        static LoggerCallback mpLogCallback;
+        static LoggerCallbackExt mpLogCallbackExt;
     };
 
     class CodeLocation

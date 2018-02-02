@@ -1,27 +1,27 @@
 #include "stdafx.h"
-#include "LogUtil.h"
+#include "Logger.h"
 
 #include <windows.h>
 #include <iostream>
 #include <sstream>
 #include <codecvt>
 
-namespace Shuanglong::Utils
+namespace Shuanglong::Logger
 {
-    LogUtilCallback    LogUtil::mpLogCallback = nullptr;
-    LogUtilCallbackExt LogUtil::mpLogCallbackExt = nullptr;
-    LogLevelType LogUtil::mLevel = LOG_LEVEL_NONE;
+    LoggerCallback    Logger::mpLogCallback = nullptr;
+    LoggerCallbackExt Logger::mpLogCallbackExt = nullptr;
+    LogLevelType Logger::mLevel = LOG_LEVEL_NONE;
 
-    LogUtil::LogUtil()
+    Logger::Logger()
     {
         ;
     }
 
-    LogUtil::~LogUtil()
+    Logger::~Logger()
     {
     }
 
-    void LogUtil::Console(char *fmt, ...)
+    void Logger::Console(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -33,7 +33,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Console(CodeLocation location, char *fmt, ...)
+    void Logger::Console(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -45,7 +45,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::OutputDebug(char *fmt, ...)
+    void Logger::OutputDebug(char *fmt, ...)
     {
         if (mLevel > LOG_LEVEL_DEBUG)
         {
@@ -61,7 +61,7 @@ namespace Shuanglong::Utils
         OutputDebugStringA(strMsg.c_str());
     }
 
-    void LogUtil::OutputDebug(CodeLocation location, char *fmt, ...)
+    void Logger::OutputDebug(CodeLocation location, char *fmt, ...)
     {
         if (mLevel > LOG_LEVEL_DEBUG)
         {
@@ -77,22 +77,22 @@ namespace Shuanglong::Utils
         OutputDebugStringA(strMessage.c_str());
     }
 
-    void LogUtil::Init(LogLevelType level)
+    void Logger::Init(LogLevelType level)
     {
         mLevel = level;
     }
 
-    void LogUtil::InitLogCallback(LogUtilCallback logCallback)
+    void Logger::InitLogCallback(LoggerCallback logCallback)
     {
         mpLogCallback = logCallback;
     }
 
-    void LogUtil::InitLogCallback(LogUtilCallbackExt logCallback)
+    void Logger::InitLogCallback(LoggerCallbackExt logCallback)
     {
         mpLogCallbackExt = logCallback;
     }
 
-    void LogUtil::Debug(char *fmt, ...)
+    void Logger::Debug(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -103,7 +103,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Debug(CodeLocation location, char *fmt, ...)
+    void Logger::Debug(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -114,7 +114,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Warn(char *fmt, ...)
+    void Logger::Warn(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_WARN)
         {
@@ -125,7 +125,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Warn(CodeLocation location, char *fmt, ...)
+    void Logger::Warn(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_WARN)
         {
@@ -136,7 +136,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Info(char *fmt, ...)
+    void Logger::Info(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_INFO)
         {
@@ -147,7 +147,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Info(CodeLocation location, char *fmt, ...)
+    void Logger::Info(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_INFO)
         {
@@ -158,7 +158,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Error(char *fmt, ...)
+    void Logger::Error(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_ERROR)
         {
@@ -169,7 +169,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Error(CodeLocation location, char *fmt, ...)
+    void Logger::Error(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_ERROR)
         {
@@ -180,7 +180,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Fatal(char *fmt, ...)
+    void Logger::Fatal(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_FATAL)
         {
@@ -191,7 +191,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Fatal(CodeLocation location, char *fmt, ...)
+    void Logger::Fatal(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_FATAL)
         {
@@ -202,7 +202,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Log(LogLevelType level, std::string timestamp, std::string message)
+    void Logger::Log(LogLevelType level, std::string timestamp, std::string message)
     {
         if (mpLogCallback != nullptr)
         {
@@ -221,7 +221,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Log(LogLevelType level, std::string timestamp, CodeLocation location, std::string message)
+    void Logger::Log(LogLevelType level, std::string timestamp, CodeLocation location, std::string message)
     {
         if (mpLogCallback != nullptr)
         {
@@ -240,7 +240,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    std::string LogUtil::GetSystemTimeString()
+    std::string Logger::GetSystemTimeString()
     {
         SYSTEMTIME curTime;
         GetLocalTime(&curTime);
@@ -252,7 +252,7 @@ namespace Shuanglong::Utils
         return std::string(timeBuffer);
     }
 
-    std::string LogUtil::GetLevelString(LogLevelType logLevel)
+    std::string Logger::GetLevelString(LogLevelType logLevel)
     {
         std::string retValue = "UNKNOW";
         switch (logLevel)
@@ -279,7 +279,7 @@ namespace Shuanglong::Utils
         return retValue;
     }
 
-    std::string LogUtil::ConvertToString(std::wstring wstring)
+    std::string Logger::ConvertToString(std::wstring wstring)
     {
         std::wstring_convert<std::codecvt<wchar_t, char, std::mbstate_t>> cvtAnsi(new std::codecvt<wchar_t, char, std::mbstate_t>("chs"));
         std::string retString = cvtAnsi.to_bytes(wstring);
