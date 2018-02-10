@@ -4,9 +4,20 @@
 #include "stdafx.h"
 #include "ShuanglongTools.h"
 
+#include <breakpad/exception_handler.h>
 #include "MainWindow.h"
 
 using namespace Shuanglong::UI;
+using namespace google_breakpad;
+
+static ExceptionHandler* gpExecptinHandler = nullptr;
+
+bool OnMinidumpGenerated(const wchar_t* dump_path,
+                         const wchar_t* minidump_id,
+                         void* context,
+                         EXCEPTION_POINTERS* exinfo,
+                         MDRawAssertionInfo* assertion,
+                         bool succeeded);
 
 int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance, __in LPSTR lpCmdLine, __in int nShowCmd)
 {
@@ -18,6 +29,14 @@ int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
     {
         return 0;
     }
+
+    // This is needed for CRT to not show dialog for invalid param
+    // failures and instead let the code handle it.
+    _CrtSetReportMode(_CRT_ASSERT, _CRTDBG_REPORT_MODE);
+    gpExecptinHandler = new ExceptionHandler(L".\\", NULL,
+                                             OnMinidumpGenerated, NULL,
+                                             ExceptionHandler::HANDLER_ALL,
+                                             MiniDumpNormal, L"", NULL);
 
     HRSRC findRes = ::FindResource(NULL, MAKEINTRESOURCE(IDR_XML_CONFIG), L"XML");
     if (findRes != NULL)
@@ -51,4 +70,16 @@ int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
     ::CoUninitialize();
 
     return 0;
+}
+
+bool OnMinidumpGenerated(const wchar_t* dump_path,
+                         const wchar_t* minidump_id,
+                         void* context,
+                         EXCEPTION_POINTERS* exinfo,
+                         MDRawAssertionInfo* assertion,
+                         bool succeeded)
+{
+    ::MessageBox(NULL, L"Crashed!", L"Error", MB_OK);
+
+    return succeeded;
 }

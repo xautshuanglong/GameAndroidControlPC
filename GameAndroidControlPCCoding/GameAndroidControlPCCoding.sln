@@ -76,24 +76,40 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "x86", "x86", "{87A3AC27-F7B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{29293174-C986-464F-8CE6-FBBBD55EBDD5}"
 	ProjectSection(SolutionItems) = preProject
+		Libs\x64\Debug\common.lib = Libs\x64\Debug\common.lib
+		Libs\x64\Debug\crash_generation_client.lib = Libs\x64\Debug\crash_generation_client.lib
+		Libs\x64\Debug\crash_generation_server.lib = Libs\x64\Debug\crash_generation_server.lib
+		Libs\x64\Debug\exception_handler.lib = Libs\x64\Debug\exception_handler.lib
 		Libs\x64\Debug\log4cpp.dll = Libs\x64\Debug\log4cpp.dll
 		Libs\x64\Debug\log4cpp.lib = Libs\x64\Debug\log4cpp.lib
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{9C3FB211-2266-4A42-91F3-671519759DFD}"
 	ProjectSection(SolutionItems) = preProject
+		Libs\x64\Release\common.lib = Libs\x64\Release\common.lib
+		Libs\x64\Release\crash_generation_client.lib = Libs\x64\Release\crash_generation_client.lib
+		Libs\x64\Release\crash_generation_server.lib = Libs\x64\Release\crash_generation_server.lib
+		Libs\x64\Release\exception_handler.lib = Libs\x64\Release\exception_handler.lib
 		Libs\x64\Release\log4cpp.dll = Libs\x64\Release\log4cpp.dll
 		Libs\x64\Release\log4cpp.lib = Libs\x64\Release\log4cpp.lib
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{AEF27E8A-BD5A-4836-B744-6226E0BFB2D0}"
 	ProjectSection(SolutionItems) = preProject
+		Libs\x86\Debug\common.lib = Libs\x86\Debug\common.lib
+		Libs\x86\Debug\crash_generation_client.lib = Libs\x86\Debug\crash_generation_client.lib
+		Libs\x86\Debug\crash_generation_server.lib = Libs\x86\Debug\crash_generation_server.lib
+		Libs\x86\Debug\exception_handler.lib = Libs\x86\Debug\exception_handler.lib
 		Libs\x86\Debug\log4cpp.dll = Libs\x86\Debug\log4cpp.dll
 		Libs\x86\Debug\log4cpp.lib = Libs\x86\Debug\log4cpp.lib
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{A549841F-7485-4F1D-B3EA-B673B074C988}"
 	ProjectSection(SolutionItems) = preProject
+		Libs\x86\Release\common.lib = Libs\x86\Release\common.lib
+		Libs\x86\Release\crash_generation_client.lib = Libs\x86\Release\crash_generation_client.lib
+		Libs\x86\Release\crash_generation_server.lib = Libs\x86\Release\crash_generation_server.lib
+		Libs\x86\Release\exception_handler.lib = Libs\x86\Release\exception_handler.lib
 		Libs\x86\Release\log4cpp.dll = Libs\x86\Release\log4cpp.dll
 		Libs\x86\Release\log4cpp.lib = Libs\x86\Release\log4cpp.lib
 	EndProjectSection
@@ -125,6 +141,77 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShuanglongTools", "ShuanglongTools\ShuanglongTools.vcxproj", "{1D42ACE1-8ED4-4D80-9FAB-C0689F5098BC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GenericLib", "GenericLib\GenericLib.vcxproj", "{6FC63E73-8090-49B0-BC0D-7E554FA41AF1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "breakpad", "breakpad", "{EA50AC94-3DB4-435E-A0D0-316AD6BC8BA8}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\breakpad\client_info.h = Libs\include\breakpad\client_info.h
+		Libs\include\breakpad\crash_generation_client.h = Libs\include\breakpad\crash_generation_client.h
+		Libs\include\breakpad\crash_generation_server.h = Libs\include\breakpad\crash_generation_server.h
+		Libs\include\breakpad\crash_report_sender.h = Libs\include\breakpad\crash_report_sender.h
+		Libs\include\breakpad\exception_handler.h = Libs\include\breakpad\exception_handler.h
+		Libs\include\breakpad\minidump_exception_mac.h = Libs\include\breakpad\minidump_exception_mac.h
+		Libs\include\breakpad\minidump_file_writer-inl.h = Libs\include\breakpad\minidump_file_writer-inl.h
+		Libs\include\breakpad\minidump_file_writer.h = Libs\include\breakpad\minidump_file_writer.h
+		Libs\include\breakpad\minidump_generator.h = Libs\include\breakpad\minidump_generator.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{33B40596-1C5E-41A7-BD34-6D7880F55A06}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\breakpad\common\auto_critical_section.h = Libs\include\breakpad\common\auto_critical_section.h
+		Libs\include\breakpad\common\breakpad_types.h = Libs\include\breakpad\common\breakpad_types.h
+		Libs\include\breakpad\common\dia_util.h = Libs\include\breakpad\common\dia_util.h
+		Libs\include\breakpad\common\guid_string.h = Libs\include\breakpad\common\guid_string.h
+		Libs\include\breakpad\common\http_upload.h = Libs\include\breakpad\common\http_upload.h
+		Libs\include\breakpad\common\ipc_protocol.h = Libs\include\breakpad\common\ipc_protocol.h
+		Libs\include\breakpad\common\minidump_cpu_amd64.h = Libs\include\breakpad\common\minidump_cpu_amd64.h
+		Libs\include\breakpad\common\minidump_cpu_arm.h = Libs\include\breakpad\common\minidump_cpu_arm.h
+		Libs\include\breakpad\common\minidump_cpu_arm64.h = Libs\include\breakpad\common\minidump_cpu_arm64.h
+		Libs\include\breakpad\common\minidump_cpu_mips.h = Libs\include\breakpad\common\minidump_cpu_mips.h
+		Libs\include\breakpad\common\minidump_cpu_ppc.h = Libs\include\breakpad\common\minidump_cpu_ppc.h
+		Libs\include\breakpad\common\minidump_cpu_ppc64.h = Libs\include\breakpad\common\minidump_cpu_ppc64.h
+		Libs\include\breakpad\common\minidump_cpu_sparc.h = Libs\include\breakpad\common\minidump_cpu_sparc.h
+		Libs\include\breakpad\common\minidump_cpu_x86.h = Libs\include\breakpad\common\minidump_cpu_x86.h
+		Libs\include\breakpad\common\minidump_exception_linux.h = Libs\include\breakpad\common\minidump_exception_linux.h
+		Libs\include\breakpad\common\minidump_exception_mac.h = Libs\include\breakpad\common\minidump_exception_mac.h
+		Libs\include\breakpad\common\minidump_exception_ps3.h = Libs\include\breakpad\common\minidump_exception_ps3.h
+		Libs\include\breakpad\common\minidump_exception_solaris.h = Libs\include\breakpad\common\minidump_exception_solaris.h
+		Libs\include\breakpad\common\minidump_exception_win32.h = Libs\include\breakpad\common\minidump_exception_win32.h
+		Libs\include\breakpad\common\minidump_format.h = Libs\include\breakpad\common\minidump_format.h
+		Libs\include\breakpad\common\minidump_size.h = Libs\include\breakpad\common\minidump_size.h
+		Libs\include\breakpad\common\omap.h = Libs\include\breakpad\common\omap.h
+		Libs\include\breakpad\common\omap_internal.h = Libs\include\breakpad\common\omap_internal.h
+		Libs\include\breakpad\common\pdb_source_line_writer.h = Libs\include\breakpad\common\pdb_source_line_writer.h
+		Libs\include\breakpad\common\scoped_ptr.h = Libs\include\breakpad\common\scoped_ptr.h
+		Libs\include\breakpad\common\string_utils-inl.h = Libs\include\breakpad\common\string_utils-inl.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "processor", "processor", "{C0E93C29-3093-4F4F-840B-145AE3854619}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\breakpad\processor\basic_source_line_resolver.h = Libs\include\breakpad\processor\basic_source_line_resolver.h
+		Libs\include\breakpad\processor\call_stack.h = Libs\include\breakpad\processor\call_stack.h
+		Libs\include\breakpad\processor\code_module.h = Libs\include\breakpad\processor\code_module.h
+		Libs\include\breakpad\processor\code_modules.h = Libs\include\breakpad\processor\code_modules.h
+		Libs\include\breakpad\processor\dump_context.h = Libs\include\breakpad\processor\dump_context.h
+		Libs\include\breakpad\processor\dump_object.h = Libs\include\breakpad\processor\dump_object.h
+		Libs\include\breakpad\processor\exploitability.h = Libs\include\breakpad\processor\exploitability.h
+		Libs\include\breakpad\processor\fast_source_line_resolver.h = Libs\include\breakpad\processor\fast_source_line_resolver.h
+		Libs\include\breakpad\processor\memory_region.h = Libs\include\breakpad\processor\memory_region.h
+		Libs\include\breakpad\processor\microdump.h = Libs\include\breakpad\processor\microdump.h
+		Libs\include\breakpad\processor\microdump_processor.h = Libs\include\breakpad\processor\microdump_processor.h
+		Libs\include\breakpad\processor\minidump.h = Libs\include\breakpad\processor\minidump.h
+		Libs\include\breakpad\processor\minidump_processor.h = Libs\include\breakpad\processor\minidump_processor.h
+		Libs\include\breakpad\processor\proc_maps_linux.h = Libs\include\breakpad\processor\proc_maps_linux.h
+		Libs\include\breakpad\processor\process_result.h = Libs\include\breakpad\processor\process_result.h
+		Libs\include\breakpad\processor\process_state.h = Libs\include\breakpad\processor\process_state.h
+		Libs\include\breakpad\processor\source_line_resolver_base.h = Libs\include\breakpad\processor\source_line_resolver_base.h
+		Libs\include\breakpad\processor\source_line_resolver_interface.h = Libs\include\breakpad\processor\source_line_resolver_interface.h
+		Libs\include\breakpad\processor\stack_frame.h = Libs\include\breakpad\processor\stack_frame.h
+		Libs\include\breakpad\processor\stack_frame_cpu.h = Libs\include\breakpad\processor\stack_frame_cpu.h
+		Libs\include\breakpad\processor\stack_frame_symbolizer.h = Libs\include\breakpad\processor\stack_frame_symbolizer.h
+		Libs\include\breakpad\processor\stackwalker.h = Libs\include\breakpad\processor\stackwalker.h
+		Libs\include\breakpad\processor\symbol_supplier.h = Libs\include\breakpad\processor\symbol_supplier.h
+		Libs\include\breakpad\processor\system_info.h = Libs\include\breakpad\processor\system_info.h
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -236,5 +323,8 @@ Global
 		{AEF27E8A-BD5A-4836-B744-6226E0BFB2D0} = {87A3AC27-F7B8-4E59-A2B0-BFAEC4B88C18}
 		{A549841F-7485-4F1D-B3EA-B673B074C988} = {87A3AC27-F7B8-4E59-A2B0-BFAEC4B88C18}
 		{646EEF72-3D0A-4B75-8546-B7045DC00E40} = {6CFFADF3-429A-45DA-B970-9F4DA2EA597A}
+		{EA50AC94-3DB4-435E-A0D0-316AD6BC8BA8} = {C181FF6D-C14F-4B55-844E-6D5D67FEDCBA}
+		{33B40596-1C5E-41A7-BD34-6D7880F55A06} = {EA50AC94-3DB4-435E-A0D0-316AD6BC8BA8}
+		{C0E93C29-3093-4F4F-840B-145AE3854619} = {EA50AC94-3DB4-435E-A0D0-316AD6BC8BA8}
 	EndGlobalSection
 EndGlobal
