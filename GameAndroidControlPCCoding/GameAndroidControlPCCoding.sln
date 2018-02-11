@@ -213,6 +213,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "processor", "processor", "{
 		Libs\include\breakpad\processor\system_info.h = Libs\include\breakpad\processor\system_info.h
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShuanglongService", "ShuanglongService\ShuanglongService.vcxproj", "{3073BB05-BE4B-4B30-8FF8-315E2E6D951B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -308,6 +310,14 @@ Global
 		{6FC63E73-8090-49B0-BC0D-7E554FA41AF1}.Release|x64.Build.0 = Release|x64
 		{6FC63E73-8090-49B0-BC0D-7E554FA41AF1}.Release|x86.ActiveCfg = Release|Win32
 		{6FC63E73-8090-49B0-BC0D-7E554FA41AF1}.Release|x86.Build.0 = Release|Win32
+		{3073BB05-BE4B-4B30-8FF8-315E2E6D951B}.Debug|x64.ActiveCfg = Debug|x64
+		{3073BB05-BE4B-4B30-8FF8-315E2E6D951B}.Debug|x64.Build.0 = Debug|x64
+		{3073BB05-BE4B-4B30-8FF8-315E2E6D951B}.Debug|x86.ActiveCfg = Debug|Win32
+		{3073BB05-BE4B-4B30-8FF8-315E2E6D951B}.Debug|x86.Build.0 = Debug|Win32
+		{3073BB05-BE4B-4B30-8FF8-315E2E6D951B}.Release|x64.ActiveCfg = Release|x64
+		{3073BB05-BE4B-4B30-8FF8-315E2E6D951B}.Release|x64.Build.0 = Release|x64
+		{3073BB05-BE4B-4B30-8FF8-315E2E6D951B}.Release|x86.ActiveCfg = Release|Win32
+		{3073BB05-BE4B-4B30-8FF8-315E2E6D951B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
