@@ -48,11 +48,11 @@
     <ClInclude Include="MainWindow.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Logger</Filter>
-    </ClInclude>
     <ClInclude Include="ResourceUtil.h">
       <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="LogManager.h">
+      <Filter>Logger</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -65,11 +65,11 @@
     <ClCompile Include="MainWindow.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="Logger.cpp">
-      <Filter>Logger</Filter>
-    </ClCompile>
     <ClCompile Include="ResourceUtil.cpp">
       <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="LogManager.cpp">
+      <Filter>Logger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,27 +1,26 @@
-#include "stdafx.h"
-#include "Logger.h"
+#include "LogUtil.h"
 
 #include <windows.h>
 #include <iostream>
 #include <sstream>
 #include <codecvt>
 
-namespace Shuanglong::Logger
+namespace Shuanglong::Utils
 {
-    LoggerCallback    Logger::mpLogCallback = nullptr;
-    LoggerCallbackExt Logger::mpLogCallbackExt = nullptr;
-    LogLevelType Logger::mLevel = LOG_LEVEL_NONE;
+    LogUtilCallback    LogUtil::mpLogCallback = nullptr;
+    LogUtilCallbackExt LogUtil::mpLogCallbackExt = nullptr;
+    LogLevelType LogUtil::mLevel = LOG_LEVEL_NONE;
 
-    Logger::Logger()
+    LogUtil::LogUtil()
     {
         ;
     }
 
-    Logger::~Logger()
+    LogUtil::~LogUtil()
     {
     }
 
-    void Logger::Console(char *fmt, ...)
+    void LogUtil::Console(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -33,7 +32,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Console(CodeLocation location, char *fmt, ...)
+    void LogUtil::Console(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -45,7 +44,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::OutputDebug(char *fmt, ...)
+    void LogUtil::OutputDebug(char *fmt, ...)
     {
         if (mLevel > LOG_LEVEL_DEBUG)
         {
@@ -61,7 +60,7 @@ namespace Shuanglong::Logger
         OutputDebugStringA(strMsg.c_str());
     }
 
-    void Logger::OutputDebug(CodeLocation location, char *fmt, ...)
+    void LogUtil::OutputDebug(CodeLocation location, char *fmt, ...)
     {
         if (mLevel > LOG_LEVEL_DEBUG)
         {
@@ -77,22 +76,22 @@ namespace Shuanglong::Logger
         OutputDebugStringA(strMessage.c_str());
     }
 
-    void Logger::Init(LogLevelType level)
+    void LogUtil::Init(LogLevelType level)
     {
         mLevel = level;
     }
 
-    void Logger::InitLogCallback(LoggerCallback logCallback)
+    void LogUtil::InitLogCallback(LogUtilCallback logCallback)
     {
         mpLogCallback = logCallback;
     }
 
-    void Logger::InitLogCallback(LoggerCallbackExt logCallback)
+    void LogUtil::InitLogCallback(LogUtilCallbackExt logCallback)
     {
         mpLogCallbackExt = logCallback;
     }
 
-    void Logger::Debug(char *fmt, ...)
+    void LogUtil::Debug(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -103,7 +102,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Debug(CodeLocation location, char *fmt, ...)
+    void LogUtil::Debug(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -114,7 +113,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Warn(char *fmt, ...)
+    void LogUtil::Warn(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_WARN)
         {
@@ -125,7 +124,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Warn(CodeLocation location, char *fmt, ...)
+    void LogUtil::Warn(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_WARN)
         {
@@ -136,7 +135,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Info(char *fmt, ...)
+    void LogUtil::Info(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_INFO)
         {
@@ -147,7 +146,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Info(CodeLocation location, char *fmt, ...)
+    void LogUtil::Info(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_INFO)
         {
@@ -158,7 +157,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Error(char *fmt, ...)
+    void LogUtil::Error(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_ERROR)
         {
@@ -169,7 +168,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Error(CodeLocation location, char *fmt, ...)
+    void LogUtil::Error(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_ERROR)
         {
@@ -180,7 +179,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Fatal(char *fmt, ...)
+    void LogUtil::Fatal(char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_FATAL)
         {
@@ -191,7 +190,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Fatal(CodeLocation location, char *fmt, ...)
+    void LogUtil::Fatal(CodeLocation location, char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_FATAL)
         {
@@ -202,7 +201,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Log(LogLevelType level, std::string timestamp, std::string message)
+    void LogUtil::Log(LogLevelType level, std::string timestamp, std::string message)
     {
         if (mpLogCallback != nullptr)
         {
@@ -221,7 +220,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    void Logger::Log(LogLevelType level, std::string timestamp, CodeLocation location, std::string message)
+    void LogUtil::Log(LogLevelType level, std::string timestamp, CodeLocation location, std::string message)
     {
         if (mpLogCallback != nullptr)
         {
@@ -240,7 +239,7 @@ namespace Shuanglong::Logger
         }
     }
 
-    std::string Logger::GetSystemTimeString()
+    std::string LogUtil::GetSystemTimeString()
     {
         SYSTEMTIME curTime;
         GetLocalTime(&curTime);
@@ -252,7 +251,7 @@ namespace Shuanglong::Logger
         return std::string(timeBuffer);
     }
 
-    std::string Logger::GetLevelString(LogLevelType logLevel)
+    std::string LogUtil::GetLevelString(LogLevelType logLevel)
     {
         std::string retValue = "UNKNOW";
         switch (logLevel)
@@ -279,98 +278,11 @@ namespace Shuanglong::Logger
         return retValue;
     }
 
-    std::string Logger::ConvertToString(std::wstring wstring)
+    std::string LogUtil::ConvertToString(std::wstring wstring)
     {
         std::wstring_convert<std::codecvt<wchar_t, char, std::mbstate_t>> cvtAnsi(new std::codecvt<wchar_t, char, std::mbstate_t>("chs"));
         std::string retString = cvtAnsi.to_bytes(wstring);
 
         return retString;
-    }
-
-    /*
-    *  CodeLocation 实现部分
-    */
-
-    CodeLocation::CodeLocation()
-    {
-        m_lineNumber = 0;
-        m_strFileName = "*";
-        m_strFuncName = "*";
-    }
-
-    CodeLocation::CodeLocation(char *funcname, char *fileName, int lineNumber)
-    {
-        m_lineNumber = lineNumber;
-        m_strFileName = fileName;
-        m_strFuncName = funcname;
-
-        size_t index = m_strFuncName.find_last_of('(');
-        if (index != std::string::npos)
-        {
-            m_strFuncName.erase(index);
-        }
-
-        index = m_strFuncName.find_last_of(' ');
-        if (index != std::string::npos)
-        {
-            m_strFuncName.erase(0, index + 1);
-        }
-
-        SubShortFileName();
-    }
-
-    CodeLocation::~CodeLocation()
-    {}
-
-    std::string CodeLocation::GetFunctionName()
-    {
-        std::string tempFuncName = "";
-        size_t index = m_strFuncName.find_last_of("::");
-        tempFuncName = m_strFuncName.substr(0, index - 1);
-        index = tempFuncName.find_last_of("::");
-        return m_strFuncName.substr(index + 1);
-    }
-
-    std::string CodeLocation::GetFileName()
-    {
-        return m_strShortFileName;
-    }
-
-    std::string CodeLocation::GetFullFileName()
-    {
-        return m_strFileName;
-    }
-
-    std::string CodeLocation::ToString()
-    {
-        std::string retString = "[  ]";
-        std::string lineNumber;
-
-        std::stringstream sstring;
-        sstring << m_lineNumber;
-        lineNumber = sstring.str();
-        //sstring.clear();
-        //sstring.str("");
-
-        retString.insert(2, GetFunctionName() + " " + m_strShortFileName + ":" + lineNumber);
-
-        return retString;
-    }
-
-    void CodeLocation::SubShortFileName()
-    {
-        size_t index = std::string::npos;
-        m_strShortFileName = m_strFileName;
-
-        index = m_strFileName.find_last_of('\\');
-        if (index != std::string::npos)
-        {
-            m_strShortFileName.erase(0, index + 1);
-        }
-    }
-
-    int CodeLocation::GetLineNumber()
-    {
-        return m_lineNumber;
     }
 }

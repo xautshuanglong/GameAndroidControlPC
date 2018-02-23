@@ -5,9 +5,14 @@
 #include "ShuanglongTools.h"
 
 #include <breakpad/exception_handler.h>
+#include <Utils/LogUtil.h>
+
+#include "LogManager.h"
 #include "MainWindow.h"
 
 using namespace Shuanglong::UI;
+using namespace Shuanglong::Utils;
+using namespace Shuanglong::Logger;
 using namespace google_breakpad;
 
 static ExceptionHandler* gpExecptinHandler = nullptr;
@@ -21,6 +26,8 @@ bool OnMinidumpGenerated(const wchar_t* dump_path,
 
 int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance, __in LPSTR lpCmdLine, __in int nShowCmd)
 {
+    LogManager::Initialize();
+
     DuiLib::CPaintManagerUI::SetInstance(hInstance);
     DuiLib::CPaintManagerUI::SetResourcePath(DuiLib::CPaintManagerUI::GetInstancePath());
 
@@ -68,6 +75,7 @@ int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
     MainWindow::CleanUp();
 
     ::CoUninitialize();
+    LogManager::Uninitialize();
 
     return 0;
 }
