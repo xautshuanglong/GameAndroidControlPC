@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "MD5.h"
 
 namespace Shuanglong::Algorithm
@@ -145,7 +144,7 @@ namespace Shuanglong::Algorithm
         message[37] = 'z';
         message[38] = 'y';
         message[39] = ' ';
-        message[40] = 'c';
+        message[40] = 'd';
         message[41] = 'o';
         message[42] = 'g';
         message[43] = 0x80;
@@ -168,7 +167,7 @@ namespace Shuanglong::Algorithm
 
         for (int i = 0; i < 64; ++i)
         {
-            k[i] = abs(sin(i + 1)) * pow(2, 32);
+            k[i] = (unsigned int)(abs(sin(i + 1)) * pow(2, 32));
         }
 
         for (int i = 0; i < 16; ++i)
@@ -214,7 +213,7 @@ namespace Shuanglong::Algorithm
         h2 += c;
         h3 += d;
 
-        printf_s("%s:%d md5=%s\n", __FILE__, __LINE__, (DDChangeHex(h0).append(DDChangeHex(h1)).append(DDChangeHex(h2)).append(DDChangeHex(h3))).c_str());
+        printf_s("%s:%d md5=%s\n", __FILE__, __LINE__, (ChangeToHex(h0).append(ChangeToHex(h1)).append(ChangeToHex(h2)).append(ChangeToHex(h3))).c_str());
     }
 
     MD5::~MD5()
@@ -254,7 +253,7 @@ namespace Shuanglong::Algorithm
         return retFlag;
     }
 
-    std::string MD5::DDChangeHex(int a)
+    std::string MD5::ChangeToHex(int a)
     {
         int b;
         std::string StrA = "";

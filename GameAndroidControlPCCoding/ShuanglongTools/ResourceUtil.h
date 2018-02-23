@@ -6,8 +6,10 @@ namespace Shuanglong
     {
         class ResourceUtil
         {
-        public:
+        private:
             ResourceUtil();
+
+        public:
             ~ResourceUtil();
         };
     }

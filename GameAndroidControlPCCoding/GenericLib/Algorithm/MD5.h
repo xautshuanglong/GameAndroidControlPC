@@ -26,6 +26,6 @@ namespace Shuanglong::Algorithm
 
     private:
         virtual bool IsLittleEndian();
-        std::string DDChangeHex(int a);
+        std::string ChangeToHex(int a);
     };
 }
