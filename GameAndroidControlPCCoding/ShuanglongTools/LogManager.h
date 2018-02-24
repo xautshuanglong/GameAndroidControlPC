@@ -2,6 +2,12 @@
 
 #include <Utils/LogUtil.h>
 
+namespace log4cpp
+{
+    class PatternLayout;
+    class FileAppender;
+}
+
 namespace Shuanglong::Logger
 {
     using namespace Shuanglong::Utils;
@@ -13,7 +19,10 @@ namespace Shuanglong::Logger
     class LogManager sealed
     {
     private:
-        LogManager();
+        static log4cpp::PatternLayout* mpLayoutTempFile;
+        static log4cpp::PatternLayout* mpLayoutRollingFile;
+        static log4cpp::FileAppender*  mpAppenderTempFile;
+        static log4cpp::FileAppender*  mpAppenderRollingFile;
 
     public:
         ~LogManager();
@@ -22,6 +31,7 @@ namespace Shuanglong::Logger
         static void Uninitialize();
 
     private:
+        LogManager();
         static void Log4cppCallbackHandler(LogLevelType level, CodeLocation *pLocation, std::string& msg);
     };
 }

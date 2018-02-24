@@ -94,11 +94,12 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>common.lib;exception_handler.lib;crash_generation_client.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>log4cpp.lib;common.lib;exception_handler.lib;crash_generation_client.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\$(PlatformShortName)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(ProjectDir)skin\*.png $(OutDir)\skin\ /Y /F /D
+      <Command>xcopy $(SolutionDir)Libs\$(PlatformShortName)\$(Configuration)\*.dll $(OutDir)\ /Y /F /D
+xcopy $(ProjectDir)skin\*.png $(OutDir)\skin\ /Y /F /D
 xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -115,11 +116,12 @@ xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>common.lib;exception_handler.lib;crash_generation_client.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>log4cpp.lib;common.lib;exception_handler.lib;crash_generation_client.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\$(PlatformShortName)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(ProjectDir)skin\*.png $(OutDir)\skin\ /Y /F /D
+      <Command>xcopy $(SolutionDir)Libs\$(PlatformShortName)\$(Configuration)\*.dll $(OutDir)\ /Y /F /D
+xcopy $(ProjectDir)skin\*.png $(OutDir)\skin\ /Y /F /D
 xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -140,11 +142,12 @@ xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>common.lib;exception_handler.lib;crash_generation_client.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>log4cpp.lib;common.lib;exception_handler.lib;crash_generation_client.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\$(PlatformShortName)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(ProjectDir)skin\*.png $(OutDir)\skin\ /Y /F /D
+      <Command>xcopy $(SolutionDir)Libs\$(PlatformShortName)\$(Configuration)\*.dll $(OutDir)\ /Y /F /D
+xcopy $(ProjectDir)skin\*.png $(OutDir)\skin\ /Y /F /D
 xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -165,11 +168,12 @@ xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>common.lib;exception_handler.lib;crash_generation_client.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>log4cpp.lib;common.lib;exception_handler.lib;crash_generation_client.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\$(PlatformShortName)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(ProjectDir)skin\*.png $(OutDir)\skin\ /Y /F /D
+      <Command>xcopy $(SolutionDir)Libs\$(PlatformShortName)\$(Configuration)\*.dll $(OutDir)\ /Y /F /D
+xcopy $(ProjectDir)skin\*.png $(OutDir)\skin\ /Y /F /D
 xcopy $(ProjectDir)skin\*.xml $(OutDir)\skin\ /Y /F /D</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>

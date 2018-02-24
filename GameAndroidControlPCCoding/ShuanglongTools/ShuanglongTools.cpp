@@ -28,6 +28,8 @@ int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
 {
     LogManager::Initialize();
 
+    LogUtil::Error(CODE_LOCATION, "-- Testing");
+
     DuiLib::CPaintManagerUI::SetInstance(hInstance);
     DuiLib::CPaintManagerUI::SetResourcePath(DuiLib::CPaintManagerUI::GetInstancePath());
 
