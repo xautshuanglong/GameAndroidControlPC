@@ -105,6 +105,9 @@
     <ClInclude Include="Utils\LogUtil.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Utils\DirectoryUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -150,6 +153,9 @@
       <Filter>Utils</Filter>
     </ClCompile>
     <ClCompile Include="Utils\LogUtil.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\DirectoryUtil.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
   </ItemGroup>

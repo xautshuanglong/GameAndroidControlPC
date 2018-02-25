@@ -23,7 +23,7 @@ namespace Shuanglong::Test
         mpInstance->mpLog = Log::GetInstance();
 
         std::cout << std::endl << "----------------------------------- Directory Utils Testing -----------------------------------" << std::endl;
-        //mpInstance->DirectoryUtilTest_Try();
+        mpInstance->DirectoryUtilTest_Try();
         //mpInstance->DirectoryUtilTest_GetEnv();
     }
 
@@ -95,6 +95,9 @@ namespace Shuanglong::Test
 
         BOOL existFlag = PathFileExists(L"E:\\TempLog.txt");// Shlwapi.h Shlwapi.lib
         mpLog->Console(SL_CODELOCATION, "existFlag=%s", existFlag ? "true" : "false");
+
+        // 创建文件夹
+
     }
 
     void DirectoryUtilTest::DirectoryUtilTest_GetEnv()

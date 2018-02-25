@@ -6,6 +6,8 @@
 #include <log4cpp/FileAppender.hh>
 #include <log4cpp/RollingFileAppender.hh>
 
+#include <Utils/DirectoryUtil.h>
+
 namespace Shuanglong::Logger
 {
     log4cpp::PatternLayout* LogManager::mpLayoutTempFile = nullptr;
@@ -24,6 +26,11 @@ namespace Shuanglong::Logger
     void LogManager::Initialize()
     {
         log4cpp::Category& root = log4cpp::Category::getRoot();
+        std::string logDir = DirectoryUtil::GetModuleDirectoryString() + "\\logs";
+
+        bool retCode  = DirectoryUtil::IsDirectoryExist(logDir);
+        bool retCode1 = DirectoryUtil::IsFileExist(logDir);
+
         if (mpLayoutTempFile == nullptr)
         {
             mpLayoutTempFile = new log4cpp::PatternLayout();
