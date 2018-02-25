@@ -21,5 +21,8 @@ namespace Shuanglong::Utils
 
         static bool CreateDirectoryByPath(std::string dirPath);
         static bool CreateFileByName(std::string filename);
+
+        static bool RemoveDirectoryByPath(std::string dirPath);
+        static bool RemoveFileByName(std::string filename);
     };
 }

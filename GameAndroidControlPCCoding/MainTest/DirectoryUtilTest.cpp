@@ -97,7 +97,24 @@ namespace Shuanglong::Test
         mpLog->Console(SL_CODELOCATION, "existFlag=%s", existFlag ? "true" : "false");
 
         // 创建文件夹
-
+        bool retValue = false;
+        BOOL retFlag = ::CreateDirectoryA(".\\TestDir", NULL);
+        if (retFlag)
+        {
+            mpLog->Console(SL_CODELOCATION, "Create dir successfully!");
+        }
+        else
+        {
+            DWORD errorCode = ::GetLastError();
+            if (errorCode == ERROR_ALREADY_EXISTS)
+            {
+                mpLog->Console(SL_CODELOCATION, "errorCode == ERROR_ALREADY_EXISTS");
+            }
+            else
+            {
+                mpLog->Console(SL_CODELOCATION, "errorCode == %lu", errorCode);
+            }
+        }
     }
 
     void DirectoryUtilTest::DirectoryUtilTest_GetEnv()

@@ -28,8 +28,10 @@ namespace Shuanglong::Logger
         log4cpp::Category& root = log4cpp::Category::getRoot();
         std::string logDir = DirectoryUtil::GetModuleDirectoryString() + "\\logs";
 
-        bool retCode  = DirectoryUtil::IsDirectoryExist(logDir);
-        bool retCode1 = DirectoryUtil::IsFileExist(logDir);
+        if (!DirectoryUtil::IsDirectoryExist(logDir))
+        {
+            DirectoryUtil::CreateDirectoryByPath(logDir);
+        }
 
         if (mpLayoutTempFile == nullptr)
         {
@@ -38,7 +40,7 @@ namespace Shuanglong::Logger
         mpLayoutTempFile->setConversionPattern("%d{%Y-%m-%d %H:%M:%S.%l} [%-5p] [%t] %c %m%n");
         if (mpAppenderTempFile == nullptr)
         {
-            mpAppenderTempFile = new log4cpp::FileAppender("fileAppender", ".//TempDebug.log", false);
+            mpAppenderTempFile = new log4cpp::FileAppender("fileAppender", logDir+"\\TempDebug.log", false);
         }
         mpAppenderTempFile->setLayout(mpLayoutTempFile);
         root.addAppender(mpAppenderTempFile);
@@ -50,7 +52,7 @@ namespace Shuanglong::Logger
         mpLayoutRollingFile->setConversionPattern("%d{%Y-%m-%d %H:%M:%S.%l} [%-5p] [%t] %c %m%n");
         if (mpAppenderRollingFile == nullptr)
         {
-            mpAppenderRollingFile = new log4cpp::RollingFileAppender("rollingAppender", ".//RollingFile.log", 1024 * 1024, 10);
+            mpAppenderRollingFile = new log4cpp::RollingFileAppender("rollingAppender", logDir+"\\RollingFile.log", 1024 * 1024, 10);
         }
         mpAppenderRollingFile->setLayout(mpLayoutRollingFile);
         root.addAppender(mpAppenderRollingFile);

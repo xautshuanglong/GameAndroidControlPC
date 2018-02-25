@@ -21,7 +21,7 @@ namespace Shuanglong::Utils
     std::string DirectoryUtil::GetModuleFileNameString()
     {
         char curModuleFileName[MAX_PATH];
-        DWORD res = GetModuleFileNameA(nullptr, curModuleFileName, MAX_PATH);
+        DWORD res = ::GetModuleFileNameA(nullptr, curModuleFileName, MAX_PATH);
         return std::string(curModuleFileName);
     }
 
@@ -30,7 +30,7 @@ namespace Shuanglong::Utils
         bool retValue = false;
 
         WIN32_FILE_ATTRIBUTE_DATA fileAttributeData;
-        BOOL success = GetFileAttributesExA(dirPath.c_str(), GetFileExInfoStandard, &fileAttributeData);
+        BOOL success = ::GetFileAttributesExA(dirPath.c_str(), GetFileExInfoStandard, &fileAttributeData);
         if (success != 0 && (fileAttributeData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY))
         {
             retValue = true;
@@ -47,7 +47,7 @@ namespace Shuanglong::Utils
     {
         bool retValue = false;
         WIN32_FILE_ATTRIBUTE_DATA fileAttributeData;
-        BOOL success = GetFileAttributesExA(filename.c_str(), GetFileExInfoStandard, &fileAttributeData);
+        BOOL success = ::GetFileAttributesExA(filename.c_str(), GetFileExInfoStandard, &fileAttributeData);
         if (success != 0 && (fileAttributeData.dwFileAttributes & FILE_ATTRIBUTE_ARCHIVE))
         {
             retValue = true;
@@ -58,10 +58,55 @@ namespace Shuanglong::Utils
     bool DirectoryUtil::CreateDirectoryByPath(std::string dirPath)
     {
         bool retValue = false;
+        BOOL retFlag = ::CreateDirectoryA(dirPath.c_str(), NULL);
+        if (retFlag)
+        {
+            retValue = true;
+        }
+        else
+        {
+            DWORD errorCode = ::GetLastError();
+            if (errorCode == ERROR_ALREADY_EXISTS)
+            {
+                retValue = true;
+            }
+        }
         return retValue;
     }
 
     bool DirectoryUtil::CreateFileByName(std::string filename)
+    {
+        bool retValue = false;
+        HANDLE hTempFile = ::CreateFileA(filename.c_str(),
+                                         GENERIC_READ | GENERIC_WRITE,
+                                         FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE,
+                                         NULL,
+                                         CREATE_NEW,
+                                         FILE_ATTRIBUTE_NORMAL,
+                                         NULL);
+        if (hTempFile != INVALID_HANDLE_VALUE)
+        {
+            retValue = true;
+            ::CloseHandle(hTempFile);
+        }
+        else
+        {
+            DWORD errorCode = GetLastError();
+            if (errorCode == ERROR_FILE_EXISTS)
+            {
+                retValue = true;
+            }
+        }
+        return retValue;
+    }
+
+    bool DirectoryUtil::RemoveDirectoryByPath(std::string dirPath)
+    {
+        bool retValue = false;
+        return retValue;
+    }
+
+    bool DirectoryUtil::RemoveFileByName(std::string filename)
     {
         bool retValue = false;
         return retValue;
