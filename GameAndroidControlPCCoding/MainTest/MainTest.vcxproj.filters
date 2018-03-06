@@ -105,6 +105,9 @@
     <ClCompile Include="MD5Test.cpp">
       <Filter>GenericLibTest</Filter>
     </ClCompile>
+    <ClCompile Include="WindowsInfoLookerTest.cpp">
+      <Filter>Attempt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -190,6 +193,9 @@
     </ClInclude>
     <ClInclude Include="MD5Test.h">
       <Filter>GenericLibTest</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsInfoLookerTest.h">
+      <Filter>Attempt</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

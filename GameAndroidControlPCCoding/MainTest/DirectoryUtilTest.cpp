@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "DirectoryUtilTest.h"
 
+#include <AclAPI.h>
+
 #include <Utils/StringUtil.h>
 
 namespace Shuanglong::Test
@@ -95,6 +97,96 @@ namespace Shuanglong::Test
 
         BOOL existFlag = PathFileExists(L"E:\\TempLog.txt");// Shlwapi.h Shlwapi.lib
         mpLog->Console(SL_CODELOCATION, "existFlag=%s", existFlag ? "true" : "false");
+
+        // 测试文件夹权限
+        PACL pOldDACL = NULL, pNewDACL = NULL;
+        PSID pOwnerSID = NULL, pGroupSID = NULL;
+        PSECURITY_DESCRIPTOR pSD = NULL;
+        DWORD dwRes = ::GetNamedSecurityInfoA(".\\", SE_FILE_OBJECT,
+                                     DACL_SECURITY_INFORMATION | OWNER_SECURITY_INFORMATION | GROUP_SECURITY_INFORMATION,
+                                     &pOwnerSID, &pGroupSID, &pOldDACL, NULL, &pSD);
+        if (ERROR_SUCCESS != dwRes)
+        {
+            printf("GetNamedSecurityInfo Error %u\n", dwRes);
+        }
+        else
+        {
+            SECURITY_DESCRIPTOR secDes = *(PISECURITY_DESCRIPTOR)(pSD);
+            BOOL daclPresent = FALSE;
+            BOOL daclDefaulted = FALSE;
+            PACL pOutAcl;
+            BOOL testFlag = ::GetSecurityDescriptorDacl(pSD, &daclPresent, &pOutAcl, &daclDefaulted);
+
+            //ACL_SIZE_INFORMATION aclSizeInfo;
+            //::GetAclInformation(pOldDACL, &aclSizeInfo, sizeof(ACL_SIZE_INFORMATION), AclSizeInformation);
+
+            LPVOID pAce = nullptr;
+            for (int i = 0; i < pOldDACL->AceCount; ++i)
+            {
+                BOOL testFlag1 = ::GetAce(pOldDACL, i, &pAce);
+                PACCESS_ALLOWED_ACE pTempAce = (PACCESS_ALLOWED_ACE)pAce;
+                printf("AceType:0x%02x AceFlags:0x%02x\n",
+                       pTempAce->Header.AceType,
+                       pTempAce->Header.AceFlags); // CONTAINER_INHERIT_ACE
+                int pause = 0;
+            }
+
+            //LogonUserA()
+
+            PSID pOwnerSID1 = NULL;
+            BOOL ownerDefaulted = FALSE;
+            BOOL testFlag2 = ::GetSecurityDescriptorOwner(pSD, &pOwnerSID1, &ownerDefaulted);
+            
+            PTOKEN_GROUPS pTokenGroup = NULL;
+            PTOKEN_OWNER pTokenOwner = NULL;
+            DWORD dwLength = 0;
+            HANDLE tokenHandle = NULL;
+            HANDLE tokenHandleDup = NULL;
+            HANDLE hCurProcess = ::GetCurrentProcess();
+            BOOL bSuccess = ::OpenProcessToken(hCurProcess, TOKEN_ALL_ACCESS, &tokenHandle);
+            if (bSuccess)
+            {
+                bSuccess = ::DuplicateTokenEx(tokenHandle, TOKEN_ALL_ACCESS, NULL, SecurityIdentification, TokenPrimary, &tokenHandleDup);
+                //BOOL test1 = GetTokenInformation(tokenHandleDup, TokenGroups, (LPVOID)pTokenGroup, 0, &dwLength);
+                //DWORD errorCode = 0;
+                //if (!test1)
+                //{
+                //    errorCode = GetLastError();
+                //}
+                //pTokenGroup = (PTOKEN_GROUPS)new BYTE[dwLength];
+                //memset(pTokenGroup, 0, dwLength);
+                //BOOL test2 = GetTokenInformation(tokenHandleDup, TokenGroups, (LPVOID)pTokenGroup, dwLength, &dwLength);
+                //if (!test2)
+                //{
+                //    errorCode = GetLastError();
+                //}
+                BOOL test1 = GetTokenInformation(tokenHandleDup, TokenOwner, (LPVOID)pTokenOwner, 0, &dwLength);
+                DWORD errorCode = 0;
+                if (!test1)
+                {
+                    errorCode = GetLastError();
+                }
+                pTokenOwner = (PTOKEN_OWNER)new BYTE[dwLength];
+                memset(pTokenOwner, 0, dwLength);
+                BOOL test2 = GetTokenInformation(tokenHandleDup, TokenOwner, (LPVOID)pTokenOwner, dwLength, &dwLength);
+                if (!test2)
+                {
+                    errorCode = GetLastError();
+                }
+                int i = 0;
+            }
+
+            //SetEntriesInAcl
+            int aclSize = sizeof(ACL);
+            int aceSize = sizeof(ACCESS_ALLOWED_OBJECT_ACE);
+            int i = 0;
+        }
+
+        if (pSD != NULL)
+            LocalFree((HLOCAL)pSD);
+        if (pNewDACL != NULL)
+            LocalFree((HLOCAL)pNewDACL);
+
 
         // 创建文件夹
         bool retValue = false;

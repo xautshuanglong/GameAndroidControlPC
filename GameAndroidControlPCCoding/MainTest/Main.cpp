@@ -19,6 +19,7 @@
 #include "JsonTest.h"
 #include "TinyXml2Test.h"
 #include "MD5Test.h"
+#include "WindowsInfoLookerTest.h"
 //------------ TcpUdpCommunication -------------
 #include "TcpSocketServerTest.h"
 #include "UdpSocketServerTest.h"
@@ -57,6 +58,8 @@ int main(int argc, char** argv)
     //Shuanglong::Test::UnhandlerExceptionTest::GetInstance();
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Entry();
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Exit();
+
+    Shuanglong::Test::WindowsInfoLookerTest::GetInstance()->Entry();
 
     //Shell_NotifyIcon
     //FindFirstFile
