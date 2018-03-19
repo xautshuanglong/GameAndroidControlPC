@@ -8,7 +8,7 @@ do                                                                              
 {                                                                                 \
     if (inputX == macroX)                                                         \
     {                                                                             \
-        printf_s("SHOW_MACRO_NAME [%5ld=0x%08X] %s\n", inputX, inputX, #macroX);   \
+        printf_s("SHOW_MACRO_NAME [%5ld=0x%08X] %s\n", inputX, inputX, #macroX);  \
     }                                                                             \
 } while (0);
 
