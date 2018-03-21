@@ -21,6 +21,8 @@
 #include "TinyXml2Test.h"
 #include "MD5Test.h"
 #include "WindowsInfoLookerTest.h"
+//------------ LibCurl -------------
+#include "LibcurlHttpTest.h"
 //------------ TcpUdpCommunication -------------
 #include "TcpSocketServerTest.h"
 #include "UdpSocketServerTest.h"
@@ -66,6 +68,11 @@ int main(int argc, char** argv)
     //Shell_NotifyIcon
     //FindFirstFile
     //FindFirstFile
+
+    //--------------------- LibCurl Testing --------------------
+    Shuanglong::Test::LibcurlHttpTest::GetInstance()->Entry();
+    Shuanglong::Test::LibcurlHttpTest::GetInstance()->Exit();
+
 
     //--------------------- TcpUdpCommunication Testing ---------------------
     Shuanglong::Test::TcpSocketServerTest::Entry();

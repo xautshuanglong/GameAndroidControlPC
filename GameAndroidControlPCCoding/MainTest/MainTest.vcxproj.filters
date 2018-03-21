@@ -28,6 +28,9 @@
     <Filter Include="SteamShared">
       <UniqueIdentifier>{ccdfe3c6-7f3d-4b5d-84cc-ef2f7a9ab837}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CurlTest">
+      <UniqueIdentifier>{731e3894-6d78-4476-96be-4ea210e428f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -107,6 +110,9 @@
     </ClCompile>
     <ClCompile Include="WindowsInfoLookerTest.cpp">
       <Filter>Attempt</Filter>
+    </ClCompile>
+    <ClCompile Include="LibcurlHttpTest.cpp">
+      <Filter>CurlTest</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +202,9 @@
     </ClInclude>
     <ClInclude Include="WindowsInfoLookerTest.h">
       <Filter>Attempt</Filter>
+    </ClInclude>
+    <ClInclude Include="LibcurlHttpTest.h">
+      <Filter>CurlTest</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

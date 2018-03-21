@@ -17,10 +17,9 @@ namespace Shuanglong
             void Entry();
             void Exit();
 
-            void GetSystemInfoTest();
-
         private:
             WindowsInfoLookerTest();
+            void GetSystemInfoTest();
         };
     }
 }
