@@ -45,7 +45,7 @@ namespace Shuanglong::Test
             res = SHCreateItemFromParsingName(TEXT("E:\\视频解码相关库\\F_5_Fly.mp4"), nullptr, IID_PPV_ARGS(&pShImgFactory));
             if (res == S_OK)
             {
-                //mpLog->Console(SL_CODELOCATION, "SHCreateItemFromParsingName successfully.");
+                //mpLog->Console(SL_CODE_LOCATION, "SHCreateItemFromParsingName successfully.");
                 res = pShImgFactory->GetImage(bitMapSize, SIIGBF_BIGGERSIZEOK, &mhBitmap);
                 if (SUCCEEDED(res))
                 {
@@ -53,20 +53,20 @@ namespace Shuanglong::Test
                 }
                 else
                 {
-                    mpLog->Console(SL_CODELOCATION, "GetImage failed errorCode=%lu", res);
+                    mpLog->Console(SL_CODE_LOCATION, "GetImage failed errorCode=%lu", res);
                 }
                 pShImgFactory->Release();
             }
             else
             {
-                mpLog->Console(SL_CODELOCATION, "SHCreateItemFromParsingName failed errorCode=%lu", res);
+                mpLog->Console(SL_CODE_LOCATION, "SHCreateItemFromParsingName failed errorCode=%lu", res);
             }
 
             CoUninitialize();
         }
         else
         {
-            mpLog->Console(SL_CODELOCATION, "CoInitializeEx failed errorCode=%lu", res);
+            mpLog->Console(SL_CODE_LOCATION, "CoInitializeEx failed errorCode=%lu", res);
         }
 
         MessageLoop();
@@ -95,25 +95,25 @@ namespace Shuanglong::Test
                     }
                     else
                     {
-                        mpLog->Console(SL_CODELOCATION, "GetThumbnail failed res=%ld", res);
+                        mpLog->Console(SL_CODE_LOCATION, "GetThumbnail failed res=%ld", res);
                     }
                     pThumbProvider->Release();
                 }
                 else
                 {
-                    mpLog->Console(SL_CODELOCATION, "SHCreateItemFromParsingName failed res=%ld", res);
+                    mpLog->Console(SL_CODE_LOCATION, "SHCreateItemFromParsingName failed res=%ld", res);
                 }
                 pShellItem->Release();
             } 
             else
             {
-                mpLog->Console(SL_CODELOCATION, "BindToHandler failed res=%ld", res);
+                mpLog->Console(SL_CODE_LOCATION, "BindToHandler failed res=%ld", res);
             }
             CoUninitialize();
         } 
         else
         {
-            mpLog->Console(SL_CODELOCATION, "CoInitializeEx failed res=%ld", res);
+            mpLog->Console(SL_CODE_LOCATION, "CoInitializeEx failed res=%ld", res);
         }
         MessageLoop();
     }
@@ -141,7 +141,7 @@ namespace Shuanglong::Test
                                 NULL, NULL, mhInstance, NULL);
         if (mhWindow == nullptr)
         {
-            mpLog->Console(SL_CODELOCATION, "CreateWindow failed!");
+            mpLog->Console(SL_CODE_LOCATION, "CreateWindow failed!");
         }
 
         ::ShowWindow(mhWindow, SW_NORMAL);

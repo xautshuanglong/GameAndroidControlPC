@@ -51,7 +51,7 @@ namespace Shuanglong::Test
 
         //mpInstance->StdStringFormatTest();
         //mpInstance->StdAsyncFuturePromiseTest(mRetFuture);
-        //mpInstance->mpLog->Console(SL_CODELOCATION, "After StdAsyncFuturePromiseTest finished");
+        //mpInstance->mpLog->Console(SL_CODE_LOCATION, "After StdAsyncFuturePromiseTest finished");
     }
 
     void StdCppTest::StdStringFormatTest()
@@ -85,7 +85,7 @@ namespace Shuanglong::Test
         {
             mpLog = Log::GetInstance();
         }
-        mpLog->Console(SL_CODELOCATION, "Enter function <---- ClassName:%s", mpName);
+        mpLog->Console(SL_CODE_LOCATION, "Enter function <---- ClassName:%s", mpName);
     }
 
     void StdCppTest::StdAsyncFuturePromiseTest(std::future<int>& futureRes)
@@ -96,7 +96,7 @@ namespace Shuanglong::Test
             while (loopCount > 0)
             {
                 --loopCount;
-                mpLog->Console(SL_CODELOCATION, "loopCount=%d tid=%d", loopCount, std::this_thread::get_id());
+                mpLog->Console(SL_CODE_LOCATION, "loopCount=%d tid=%d", loopCount, std::this_thread::get_id());
                 std::this_thread::sleep_for(std::chrono::milliseconds(50));
             }
             return 666;
@@ -104,27 +104,27 @@ namespace Shuanglong::Test
 
         //// will block current thread
         //std::future_status status = std::future_status::timeout;
-        //mpLog->Console(SL_CODELOCATION, "before async call...");
+        //mpLog->Console(SL_CODE_LOCATION, "before async call...");
         //futureRes = std::async(std::launch::deferred, asyncTestFunc);
-        //mpLog->Console(SL_CODELOCATION, "after async call...");
+        //mpLog->Console(SL_CODE_LOCATION, "after async call...");
         //do
         //{
-        //    //mpLog->Console(SL_CODELOCATION, "before futureRes.wait_for() valid=%s", StringUtil::BoolToString(futureRes.valid()).c_str());
+        //    //mpLog->Console(SL_CODE_LOCATION, "before futureRes.wait_for() valid=%s", StringUtil::BoolToString(futureRes.valid()).c_str());
         //    status = futureRes.wait_for(std::chrono::milliseconds(10));
         //    switch (status)
         //    {
         //    case std::future_status::ready:
-        //        mpLog->Console(SL_CODELOCATION, "std::future_status::ready");
+        //        mpLog->Console(SL_CODE_LOCATION, "std::future_status::ready");
         //        break;
         //    case std::future_status::timeout:
-        //        mpLog->Console(SL_CODELOCATION, "std::future_status::timeout");
+        //        mpLog->Console(SL_CODE_LOCATION, "std::future_status::timeout");
         //        break;
         //    case std::future_status::deferred:
-        //        mpLog->Console(SL_CODELOCATION, "std::future_status::deferred");
+        //        mpLog->Console(SL_CODE_LOCATION, "std::future_status::deferred");
         //        //futureRes.get();  // 阻塞当前线程，返回异步执行结果，将导致 std::future 无效。
-        //        //mpLog->Console(SL_CODELOCATION, "after futureRes.get()");
+        //        //mpLog->Console(SL_CODE_LOCATION, "after futureRes.get()");
         //        futureRes.wait(); // 阻塞当前线程，等待异步完成。// Blocks the current thread until the associated asynchronous state is ready.
-        //        mpLog->Console(SL_CODELOCATION, "after futureRes.wait()");
+        //        mpLog->Console(SL_CODE_LOCATION, "after futureRes.wait()");
         //        break;
         //    default:
         //        break;

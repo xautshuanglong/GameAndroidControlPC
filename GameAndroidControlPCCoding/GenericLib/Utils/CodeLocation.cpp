@@ -28,17 +28,13 @@ namespace Shuanglong::Utils
 
     std::string CodeLocation::GetShortFileName()
     {
-        if (m_strShortFileName.empty())
+        size_t index = std::string::npos;
+        m_strShortFileName = m_strFileName;
+
+        index = m_strFileName.find_last_of('\\');
+        if (index != std::string::npos)
         {
-            size_t index = m_strFileName.find_last_of('\\');
-            if (index != std::string::npos)
-            {
-                m_strShortFileName = m_strFileName.substr(index + 1);
-            }
-            else
-            {
-                m_strShortFileName = m_strFileName;
-            }
+            m_strShortFileName.erase(0, index + 1);
         }
 
         return m_strShortFileName;
@@ -61,7 +57,7 @@ namespace Shuanglong::Utils
         return className;
     }
 
-    std::string CodeLocation::GetFuncName()
+    std::string CodeLocation::GetFunctionName()
     {
         std::string funcName = m_strFuncName;
         size_t index = funcName.find_last_of(":");
@@ -73,7 +69,7 @@ namespace Shuanglong::Utils
         return funcName;
     }
 
-    std::string CodeLocation::GetFullFuncName()
+    std::string CodeLocation::GetFunctionNameFull()
     {
         return m_strFuncName;
     }

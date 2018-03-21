@@ -13,9 +13,6 @@ va_start(vaList, fmt);\
 vsnprintf(buffer, DEAFAULT_LOG_BUFFER_LENGTH - 1, fmt, vaList);\
 va_end(vaList);
 
-#define CODE_LOCATION        Shuanglong::Utils::CodeLocation(__FUNCSIG__,__FILE__,__LINE__)
-#define CODE_LOCATION_STRING Shuanglong::Utils::CodeLocation(__FUNCTION__,__FILE__,__LINE__).ToString().c_str()
-
 namespace Shuanglong
 {
     namespace Utils

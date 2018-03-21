@@ -76,7 +76,7 @@ namespace Shuanglong::Test
             std::this_thread::sleep_for(std::chrono::milliseconds(3));
         }
 
-        mpInstance->mpLog->Console(SL_CODELOCATION, "Exit recv thread ---- ");
+        mpInstance->mpLog->Console(SL_CODE_LOCATION, "Exit recv thread ---- ");
     }
 
     void UdpSocketServerTest::StartListen()
@@ -100,18 +100,18 @@ namespace Shuanglong::Test
         mListenRuningFlag = false;
         if (mpListenThread != nullptr)
         {
-            mpLog->Console(SL_CODELOCATION, "Before ShutdownSocket ---- ");
+            mpLog->Console(SL_CODE_LOCATION, "Before ShutdownSocket ---- ");
             //mLogServer.ShutdownSocket(SD_BOTH);
             mLogServer.CloseSocket();
 
             //std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
-            //mpLog->Console(SL_CODELOCATION, "After ShutdownSocket ---- ");
+            //mpLog->Console(SL_CODE_LOCATION, "After ShutdownSocket ---- ");
             //if (mpListenThread->joinable())
             //{
-            //    mpLog->Console(SL_CODELOCATION, "Joining ---- ");
+            //    mpLog->Console(SL_CODE_LOCATION, "Joining ---- ");
             //    mpListenThread->join();
-            //    mpLog->Console(SL_CODELOCATION, "After joining ---- ");
+            //    mpLog->Console(SL_CODE_LOCATION, "After joining ---- ");
             //}
 
             mpListenThread->detach();
@@ -119,7 +119,7 @@ namespace Shuanglong::Test
             delete mpListenThread;
             mpListenThread = nullptr;
 
-            mpLog->Console(SL_CODELOCATION, "Delete Over ---- ");
+            mpLog->Console(SL_CODE_LOCATION, "Delete Over ---- ");
         }
     }
 }

@@ -37,11 +37,11 @@ namespace Shuanglong::Test
 
         char curModuleFileName[MAX_PATH];
         DWORD res = GetModuleFileNameA(nullptr, curModuleFileName, MAX_PATH);
-        mpLog->Console(SL_CODELOCATION, "curModuleFileName=%s", curModuleFileName);
+        mpLog->Console(SL_CODE_LOCATION, "curModuleFileName=%s", curModuleFileName);
 
         char *pOutFileName = new char[MAX_PATH];
         _get_pgmptr(&pOutFileName);
-        mpLog->Console(SL_CODELOCATION, "pOutFileName = %s", pOutFileName);
+        mpLog->Console(SL_CODE_LOCATION, "pOutFileName = %s", pOutFileName);
 
         char fullPathBuffer[512];
         char *pFilePart = nullptr;
@@ -56,7 +56,7 @@ namespace Shuanglong::Test
         BOOL success = GetFileAttributesExA("Log.h", GetFileExInfoStandard, &fileAttributeData);
         if (success == 0)
         {
-            mpLog->Console(SL_CODELOCATION, "Get file attributes faild %d", GetLastError());
+            mpLog->Console(SL_CODE_LOCATION, "Get file attributes faild %d", GetLastError());
         }
         else
         {
@@ -96,7 +96,7 @@ namespace Shuanglong::Test
         }
 
         BOOL existFlag = PathFileExists(L"E:\\TempLog.txt");// Shlwapi.h Shlwapi.lib
-        mpLog->Console(SL_CODELOCATION, "existFlag=%s", existFlag ? "true" : "false");
+        mpLog->Console(SL_CODE_LOCATION, "existFlag=%s", existFlag ? "true" : "false");
 
         // 测试文件夹权限
         PACL pOldDACL = NULL, pNewDACL = NULL;
@@ -193,18 +193,18 @@ namespace Shuanglong::Test
         BOOL retFlag = ::CreateDirectoryA(".\\TestDir", NULL);
         if (retFlag)
         {
-            mpLog->Console(SL_CODELOCATION, "Create dir successfully!");
+            mpLog->Console(SL_CODE_LOCATION, "Create dir successfully!");
         }
         else
         {
             DWORD errorCode = ::GetLastError();
             if (errorCode == ERROR_ALREADY_EXISTS)
             {
-                mpLog->Console(SL_CODELOCATION, "errorCode == ERROR_ALREADY_EXISTS");
+                mpLog->Console(SL_CODE_LOCATION, "errorCode == ERROR_ALREADY_EXISTS");
             }
             else
             {
-                mpLog->Console(SL_CODELOCATION, "errorCode == %lu", errorCode);
+                mpLog->Console(SL_CODE_LOCATION, "errorCode == %lu", errorCode);
             }
         }
     }
@@ -217,16 +217,16 @@ namespace Shuanglong::Test
         char       buffer[MAX_PATH];
 
         errorCode = getenv_s(&returnValue, buffer, MAX_PATH, "HomePath");
-        mpLog->Console(SL_CODELOCATION, "HomePath=%s ErrorCode=%d", buffer, errorCode);
+        mpLog->Console(SL_CODE_LOCATION, "HomePath=%s ErrorCode=%d", buffer, errorCode);
 
         errorCode = getenv_s(&returnValue, buffer, MAX_PATH, "UserProfile");
-        mpLog->Console(SL_CODELOCATION, "UserProfile=%s ErrorCode=%d", buffer, errorCode);
+        mpLog->Console(SL_CODE_LOCATION, "UserProfile=%s ErrorCode=%d", buffer, errorCode);
 
         errorCode = _putenv_s("PUTENV_TEST", "PUTENV_TEST FROM GameAndroidControlPC");
-        mpLog->Console(SL_CODELOCATION, "After _putenv_s PUTENV_TEST ErrorCode=%d", errorCode);
+        mpLog->Console(SL_CODE_LOCATION, "After _putenv_s PUTENV_TEST ErrorCode=%d", errorCode);
 
         errorCode = getenv_s(&returnValue, buffer, MAX_PATH, "PUTENV_TEST");
-        mpLog->Console(SL_CODELOCATION, "PUTENV_TEST=%s  ErrorCode=%d", buffer, errorCode);
+        mpLog->Console(SL_CODE_LOCATION, "PUTENV_TEST=%s  ErrorCode=%d", buffer, errorCode);
 
         LPITEMIDLIST pidl;
         LPMALLOC     pShellMalloc;
@@ -237,14 +237,14 @@ namespace Shuanglong::Test
         pShellMalloc->Free(pidl);
 
         retBool = SHGetSpecialFolderPathA(nullptr, buffer, CSIDL_LOCAL_APPDATA, false);
-        mpLog->Console(SL_CODELOCATION, "CSIDL_LOCAL_APPDATA=%s  ReturnBool=%s", buffer, retBool ? "true" : "false");
+        mpLog->Console(SL_CODE_LOCATION, "CSIDL_LOCAL_APPDATA=%s  ReturnBool=%s", buffer, retBool ? "true" : "false");
 
         retBool = SHGetSpecialFolderPathA(nullptr, buffer, CSIDL_PROFILE, false);
-        mpLog->Console(SL_CODELOCATION, "CSIDL_PROFILE=%s  ReturnBool=%s", buffer, retBool ? "true" : "false");
+        mpLog->Console(SL_CODE_LOCATION, "CSIDL_PROFILE=%s  ReturnBool=%s", buffer, retBool ? "true" : "false");
 
         WCHAR *wpBuffer = new WCHAR[MAX_PATH];
         SHGetKnownFolderPath(FOLDERID_Downloads, 0, nullptr, &wpBuffer);
-        mpLog->Console(SL_CODELOCATION, "FOLDERID_Downloads=%s", Utils::StringUtil::WStringToString(wpBuffer).c_str());
+        mpLog->Console(SL_CODE_LOCATION, "FOLDERID_Downloads=%s", Utils::StringUtil::WStringToString(wpBuffer).c_str());
 
         CoTaskMemFree(wpBuffer);
     }

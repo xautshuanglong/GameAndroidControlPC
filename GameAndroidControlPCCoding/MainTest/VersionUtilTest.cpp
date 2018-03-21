@@ -58,7 +58,7 @@ namespace Shuanglong::Test
             }
         }
 
-        mpLog->Console(SL_CODELOCATION, "resBool=%s", resBool ? "true" : "false");
-        mpLog->Console(SL_CODELOCATION, "fileName=%s", fileName);
+        mpLog->Console(SL_CODE_LOCATION, "resBool=%s", resBool ? "true" : "false");
+        mpLog->Console(SL_CODE_LOCATION, "fileName=%s", fileName);
     }
 }

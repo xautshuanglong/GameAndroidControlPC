@@ -60,17 +60,17 @@ namespace Shuanglong::Test
         WaitMultiEventTest *pInstance = GetInstance();
         pInstance->mpLog = Log::GetInstance();
 
-        pInstance->mpLog->Console(SL_CODELOCATION, "----- Entry");
+        pInstance->mpLog->Console(SL_CODE_LOCATION, "----- Entry");
         mhEventConnected = OpenEvent(SYNCHRONIZE, FALSE, EVENT_CONNECTED);
         if (mhEventConnected == NULL)
         {
-            mpLog->Console(SL_CODELOCATION, "Before CreatEvent mhEventConnected");
+            mpLog->Console(SL_CODE_LOCATION, "Before CreatEvent mhEventConnected");
             mhEventConnected = CreateEvent(NULL, FALSE, FALSE, EVENT_CONNECTED);
         }
         mhEventDisconnected = OpenEvent(SYNCHRONIZE, FALSE, EVENT_DISCONNECTED);
         if (mhEventDisconnected == NULL)
         {
-            mpLog->Console(SL_CODELOCATION, "Before CreatEvent mhEventDisconnected");
+            mpLog->Console(SL_CODE_LOCATION, "Before CreatEvent mhEventDisconnected");
             mhEventDisconnected = CreateEvent(NULL, FALSE, FALSE, EVENT_DISCONNECTED);
         }
         pInstance->WaitForMultiObjectsTest();
@@ -88,7 +88,7 @@ namespace Shuanglong::Test
             CloseHandle(mhEventDisconnected);
             mhEventDisconnected = INVALID_HANDLE_VALUE;
         }
-        (*mpInstance).mpLog->Console(SL_CODELOCATION, "----- Exit");
+        (*mpInstance).mpLog->Console(SL_CODE_LOCATION, "----- Exit");
     }
 
     void WaitMultiEventTest::WaitForMultiObjectsTest()
@@ -109,16 +109,16 @@ namespace Shuanglong::Test
                     switch (dwEvent)
                     {
                     case WAIT_OBJECT_0:
-                        mpLog->Console(SL_CODELOCATION, "WAIT_OBJECT_0 connected signaled");
+                        mpLog->Console(SL_CODE_LOCATION, "WAIT_OBJECT_0 connected signaled");
                         break;
                     case WAIT_OBJECT_0 + 1:
-                        mpLog->Console(SL_CODELOCATION, "WAIT_OBJECT_1 disconnected signaled");
+                        mpLog->Console(SL_CODE_LOCATION, "WAIT_OBJECT_1 disconnected signaled");
                         break;
                     case WAIT_TIMEOUT:
-                        mpLog->Console(SL_CODELOCATION, "WAIT_TIMEOUT ------ ");
+                        mpLog->Console(SL_CODE_LOCATION, "WAIT_TIMEOUT ------ ");
                         break;
                     default:
-                        mpLog->Console(SL_CODELOCATION, "ErrorCOde = %u", GetLastError());
+                        mpLog->Console(SL_CODE_LOCATION, "ErrorCOde = %u", GetLastError());
                         break;
                     }
                 }
@@ -132,7 +132,7 @@ namespace Shuanglong::Test
         }
         else
         {
-            mpLog->Console(SL_CODELOCATION, "mhEvent == INVALID_HANDLE_VALUE");
+            mpLog->Console(SL_CODE_LOCATION, "mhEvent == INVALID_HANDLE_VALUE");
         }
     }
 }

@@ -54,7 +54,7 @@ namespace Shuanglong::Test
         std::string stdString = "stdString_test";
         int intNum = 110;
         std::string retString = Utils::StringUtil::FormatString("charString=%s stdString=%s intNum=%d", charString, stdString.c_str(), intNum);
-        mpLog->Console(SL_CODELOCATION, "StringUtil::FormatString: %s", retString.c_str());
+        mpLog->Console(SL_CODE_LOCATION, "StringUtil::FormatString: %s", retString.c_str());
     }
 
     void StringUtilTest::StringUtilTest_FormateWString()
@@ -65,7 +65,7 @@ namespace Shuanglong::Test
         int intNum = 110;
         std::wstring retString = Utils::StringUtil::FormatWString(L"wcharString=%s stdWString=%s intNum=%d", wcharString, stdWString.c_str(), intNum);
         std::wcout << "StringUtil::FormatWString: " << retString.c_str() << std::endl;
-        mpLog->Console(SL_CODELOCATION, "StringUtil.FormatWString: %s", Utils::StringUtil::WStringToString(retString).c_str());
+        mpLog->Console(SL_CODE_LOCATION, "StringUtil.FormatWString: %s", Utils::StringUtil::WStringToString(retString).c_str());
     }
 
     void StringUtilTest::StringUtilTest_FormatArguments(char *format, ...)
@@ -111,7 +111,7 @@ namespace Shuanglong::Test
         std::string nameString = "zhangsan,lisi,wanger,mazi";
         unsigned int count = Shuanglong::Utils::StringUtil::Split(nameVector, nameString, ',');
 
-        mpLog->Console(SL_CODELOCATION, "count=%u  nameString=%s", count, nameString.c_str());
+        mpLog->Console(SL_CODE_LOCATION, "count=%u  nameString=%s", count, nameString.c_str());
 
         //for (int i = 0; i < count; i++)
         //{
@@ -133,8 +133,8 @@ namespace Shuanglong::Test
         std::wstring nameString = L"zhangsan,lisi,wanger,mazi";
         unsigned int count = Shuanglong::Utils::StringUtil::SplitW(nameVector, nameString, L',');
 
-        //mpLog->Console(SL_CODELOCATION, "count=%u  nameString=%s", count, std::string(nameString.begin(), nameString.end()).c_str());
-        mpLog->Console(SL_CODELOCATION, "count=%u  nameString=%s", count, Shuanglong::Utils::StringUtil::WStringToStringAPI(nameString).c_str());
+        //mpLog->Console(SL_CODE_LOCATION, "count=%u  nameString=%s", count, std::string(nameString.begin(), nameString.end()).c_str());
+        mpLog->Console(SL_CODE_LOCATION, "count=%u  nameString=%s", count, Shuanglong::Utils::StringUtil::WStringToStringAPI(nameString).c_str());
 
         std::vector<std::wstring>::iterator it;
         int index = 0;

@@ -113,10 +113,14 @@ namespace Shuanglong
     void Log::AddCodeLocation(std::string& msgString, CodeLocation& location)
     {
         //msgString.append("    <-- ");
+        std::string tempClassName = location.GetShortClassName();
         msgString.append("    [ ");
-        msgString.append(location.GetShortClassName());
-        msgString.append("::");
-        msgString.append(location.GetFuncName());
+        if (!tempClassName.empty())
+        {
+            msgString.append(tempClassName);
+            msgString.append("::");
+        }
+        msgString.append(location.GetFunctionName());
         msgString.append(" ");
         msgString.append(location.GetShortFileName());
         msgString.append(":");

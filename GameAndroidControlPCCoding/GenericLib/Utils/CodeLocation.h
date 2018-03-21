@@ -6,8 +6,8 @@
 #include <sstream>
 #include <string>
 
-#define SL_CODELOCATION Shuanglong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__)
-#define SL_CODELOCATION_STRING Shuanglong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__).ToString()
+#define SL_CODE_LOCATION Shuanglong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__)
+#define SL_CODE_LOCATION_STRING Shuanglong::Utils::CodeLocation(__FILE__,__FUNCTION__,__LINE__).ToString()
 
 namespace Shuanglong
 {
@@ -29,8 +29,8 @@ namespace Shuanglong
             std::string GetFileName();
             std::string GetShortFileName();
             std::string GetShortClassName();
-            std::string GetFuncName();
-            std::string GetFullFuncName();
+            std::string GetFunctionName();
+            std::string GetFunctionNameFull();
             std::string ToString();
         };
     }

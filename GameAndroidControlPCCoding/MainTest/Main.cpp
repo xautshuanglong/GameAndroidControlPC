@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "Log.h"
+#include <Utils/CodeLocation.h>
 //-------------- GenericUtils --------------
 #include "StringUtilTest.h"
 #include "TimeUtilTest.h"
@@ -31,6 +32,7 @@ int main(int argc, char** argv)
     BOOL retValue = SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, TRUE);
     std::cout << "====================================== Main Testing ======================================" << std::endl;
     Shuanglong::Log *pLog = Shuanglong::Log::GetInstance();
+    pLog->Console(SL_CODE_LOCATION, "LogTest");
 
     //---------------------- Json Testing ----------------------
     Shuanglong::Test::JsonTest::Entry();

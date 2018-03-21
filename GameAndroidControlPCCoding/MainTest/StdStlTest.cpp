@@ -46,7 +46,7 @@ namespace Shuanglong::Test
         {
             ss << " " << val;
         }
-        mpLog->Console(SL_CODELOCATION, "Initialized data: %s", ss.str().c_str());
+        mpLog->Console(SL_CODE_LOCATION, "Initialized data: %s", ss.str().c_str());
 
         ss.clear();       // 仅清除错误标记
         ss.str("");       // 清空字符串
@@ -55,7 +55,7 @@ namespace Shuanglong::Test
         {
             ss << " " << val;
         }
-        mpLog->Console(SL_CODELOCATION, "After unique data: %s", ss.str().c_str());
+        mpLog->Console(SL_CODE_LOCATION, "After unique data: %s", ss.str().c_str());
     }
 
     void StdStlTest::StdListTestFind()
@@ -69,16 +69,16 @@ namespace Shuanglong::Test
         {
             ss << " " << val;
         }
-        mpLog->Console(SL_CODELOCATION, "Initialized data: %s", ss.str().c_str());
+        mpLog->Console(SL_CODE_LOCATION, "Initialized data: %s", ss.str().c_str());
 
         std::list<int>::iterator targetInt = std::find(intList.begin(), intList.end(), 99);
         if (targetInt != intList.end())
         {
-            mpLog->Console(SL_CODELOCATION, "tagetInt=%d", *targetInt);
+            mpLog->Console(SL_CODE_LOCATION, "tagetInt=%d", *targetInt);
         }
         else
         {
-            mpLog->Console(SL_CODELOCATION, "Not found.");
+            mpLog->Console(SL_CODE_LOCATION, "Not found.");
         }
 
         int index = 0;
@@ -86,13 +86,13 @@ namespace Shuanglong::Test
         {
             if (temp == targetInt)
             {
-                mpLog->Console(SL_CODELOCATION, "bingo at index: %d", index);
+                mpLog->Console(SL_CODE_LOCATION, "bingo at index: %d", index);
                 break;
             }
             ++index;
             if (index == intList.size())
             {
-                mpLog->Console(SL_CODELOCATION, "target is not exist.");
+                mpLog->Console(SL_CODE_LOCATION, "target is not exist.");
             }
         }
     }

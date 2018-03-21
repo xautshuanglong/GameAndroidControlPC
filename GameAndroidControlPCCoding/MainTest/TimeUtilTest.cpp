@@ -38,7 +38,7 @@ namespace Shuanglong::Test
     {
         std::cout << std::endl
             << "----------------------------------- TimeUtilTest_GetDateString -----------------------------------" << std::endl;
-        mpLog->Console(SL_CODELOCATION, "Current Date String: %s",
+        mpLog->Console(SL_CODE_LOCATION, "Current Date String: %s",
                        Shuanglong::Utils::TimeUtil::GetDateString().c_str());
     }
 
@@ -46,7 +46,7 @@ namespace Shuanglong::Test
     {
         std::cout << std::endl
             << "----------------------------------- TimeUtilTest_GetTimeString -----------------------------------" << std::endl;
-        mpLog->Console(SL_CODELOCATION, "Current Time String: %s",
+        mpLog->Console(SL_CODE_LOCATION, "Current Time String: %s",
                        Shuanglong::Utils::TimeUtil::GetTimeString().c_str());
     }
 
@@ -54,7 +54,7 @@ namespace Shuanglong::Test
     {
         std::cout << std::endl
             << "----------------------------------- TimeUtilTest_GetDateTimeString -----------------------------------" << std::endl;
-        mpLog->Console(SL_CODELOCATION, "Current DateTime String: %s",
+        mpLog->Console(SL_CODE_LOCATION, "Current DateTime String: %s",
                        Shuanglong::Utils::TimeUtil::GetDateTimeString().c_str());
     }
 
@@ -62,11 +62,11 @@ namespace Shuanglong::Test
     {
         std::cout << std::endl
             << "----------------------------------- TimeUtilTest_GetFormatTimeString -----------------------------------" << std::endl;
-        mpLog->Console(SL_CODELOCATION, "Current Date String: %s",
+        mpLog->Console(SL_CODE_LOCATION, "Current Date String: %s",
                        Shuanglong::Utils::TimeUtil::GetFormatTimeString("%Y-%m-%d").c_str());
-        mpLog->Console(SL_CODELOCATION, "Current Time String: %s",
+        mpLog->Console(SL_CODE_LOCATION, "Current Time String: %s",
                        Shuanglong::Utils::TimeUtil::GetFormatTimeString("%H:%M:%S").c_str());
-        mpLog->Console(SL_CODELOCATION, "Current DateTime String: %s",
+        mpLog->Console(SL_CODE_LOCATION, "Current DateTime String: %s",
                        Shuanglong::Utils::TimeUtil::GetFormatTimeString("%Y-%m-%d %H:%M:%S").c_str());
     }
 
@@ -74,14 +74,14 @@ namespace Shuanglong::Test
     {
         std::cout << std::endl
             << "----------------------------------- TimeUtilTest_GetCurrentTimestamp -----------------------------------" << std::endl;
-        mpLog->Console(SL_CODELOCATION, "Current Timestamp: %llu", Shuanglong::Utils::TimeUtil::GetCurrentTimestamp());
+        mpLog->Console(SL_CODE_LOCATION, "Current Timestamp: %llu", Shuanglong::Utils::TimeUtil::GetCurrentTimestamp());
     }
 
     void TimeUtilTest::TimeUtilTest_GetFullTimestampString()
     {
         std::cout << std::endl
             << "----------------------------------- TimeUtilTest_GetFullTimestampString -----------------------------------" << std::endl;
-        mpLog->Console(SL_CODELOCATION, "Current Full Timestamp String: %s",
+        mpLog->Console(SL_CODE_LOCATION, "Current Full Timestamp String: %s",
                        Shuanglong::Utils::TimeUtil::GetFullTimestampString().c_str());
     }
 
@@ -89,7 +89,7 @@ namespace Shuanglong::Test
     {
         std::cout << std::endl
             << "----------------------------------- TimeUtilTest_GetSimpleTimestampString -----------------------------------" << std::endl;
-        mpLog->Console(SL_CODELOCATION, "Current Simple Timestamp String: %s",
+        mpLog->Console(SL_CODE_LOCATION, "Current Simple Timestamp String: %s",
                        Shuanglong::Utils::TimeUtil::GetSimpleTimestampString().c_str());
     }
 
@@ -99,7 +99,7 @@ namespace Shuanglong::Test
             << "----------------------------------- TimeUtilTest_QueryPerformanceFrequency -----------------------------------" << std::endl;
         long long frequency = Shuanglong::Utils::TimeUtil::QueryPerformanceFrequency();
         std::cout << "frequency: " << frequency << std::endl;
-        mpLog->Console(SL_CODELOCATION, "TimeUtil::QueryPerformanceFrequency PerformanceFrequency: %llu", frequency);
+        mpLog->Console(SL_CODE_LOCATION, "TimeUtil::QueryPerformanceFrequency PerformanceFrequency: %llu", frequency);
     }
 
     void TimeUtilTest::TimeUtilTest_QueryPerformanceCounter()
@@ -108,7 +108,7 @@ namespace Shuanglong::Test
             << "----------------------------------- TimeUtilTest_QueryPerformanceCounter -----------------------------------" << std::endl;
         long long curWinTime = Shuanglong::Utils::TimeUtil::QueryPerformanceCounter();
         std::cout << "curWinTime: " << curWinTime << std::endl;
-        mpLog->Console(SL_CODELOCATION, "TimeUtil::QueryPerformanceCounter PerformanceCounter: %llu", curWinTime);
+        mpLog->Console(SL_CODE_LOCATION, "TimeUtil::QueryPerformanceCounter PerformanceCounter: %llu", curWinTime);
     }
 
     void TimeUtilTest::TimeUtilTest_TimeDiff()
@@ -120,11 +120,11 @@ namespace Shuanglong::Test
         tm tmStruct;
         time(&timeTest);
         gmtime_s(&tmStruct, &timeTest);
-        mpLog->Console(SL_CODELOCATION, "gmtimes %04d-%02d-%02d %02d:%02d:%02d",
+        mpLog->Console(SL_CODE_LOCATION, "gmtimes %04d-%02d-%02d %02d:%02d:%02d",
                        tmStruct.tm_year + 1900, tmStruct.tm_mon + 1, tmStruct.tm_mday, tmStruct.tm_hour, tmStruct.tm_min, tmStruct.tm_sec);
         timeTest += 28800;
         gmtime_s(&tmStruct, &timeTest);
-        mpLog->Console(SL_CODELOCATION, "locatTimes=gmtimes+28800 %04d-%02d-%02d %02d:%02d:%02d",
+        mpLog->Console(SL_CODE_LOCATION, "locatTimes=gmtimes+28800 %04d-%02d-%02d %02d:%02d:%02d",
                        tmStruct.tm_year + 1900, tmStruct.tm_mon + 1, tmStruct.tm_mday, tmStruct.tm_hour, tmStruct.tm_min, tmStruct.tm_sec);
 
         tm gmTime;
@@ -134,7 +134,7 @@ namespace Shuanglong::Test
         localtime_s(&loTime, &timeTest);
         time_t lot = mktime(&loTime);
         double diff = difftime(lot, gmt);
-        mpLog->Console(SL_CODELOCATION, "DIFF (From Greenwich to Local) = %lf", diff);
+        mpLog->Console(SL_CODE_LOCATION, "DIFF (From Greenwich to Local) = %lf", diff);
 
         _tzset();// set time environment variables: assign values to three global variables:_daylignt,_timezone and _tzname
 
@@ -152,7 +152,7 @@ namespace Shuanglong::Test
         size_t nameLen;
         _get_tzname(&nameLen, timeZoneName, sizeof(timeZoneName), 0);
 
-        mpLog->Console(SL_CODELOCATION, "dayLightHours=%d dayLightSeconds=%ld timeZone=%ld[%d] zoneName=%s errorCode=%d",
+        mpLog->Console(SL_CODE_LOCATION, "dayLightHours=%d dayLightSeconds=%ld timeZone=%ld[%d] zoneName=%s errorCode=%d",
                        dayLightHours, dayLightSeconds, timeZone, nameLen, timeZoneName, errorCode);
 
         // --> Structure specifies information specific to the time zone.
@@ -164,7 +164,7 @@ namespace Shuanglong::Test
         GetTimeZoneInformation(&timeZoneInfo);
         timeZoneInfo.StandardDate = gmtSysTime;
         timeZoneInfo.DaylightDate = localSysTime;
-        mpLog->Console(SL_CODELOCATION, "\n"
+        mpLog->Console(SL_CODE_LOCATION, "\n"
                        "%16s %-30s = %ld\n"  // TIME_ZONE_INFORMATION.Bias
                        "%16s %-30s = %s\n"   // TIME_ZONE_INFORMATION.StandardName
                        "%16s %-30s = %ld\n"  // TIME_ZONE_INFORMATION.StandardBias
@@ -175,7 +175,7 @@ namespace Shuanglong::Test
                        "LONG", "StandardBias", timeZoneInfo.StandardBias,
                        "WCHAR", "DaylightName", Utils::StringUtil::WStringToString(timeZoneInfo.DaylightName).c_str(),
                        "LONG", "DaylightBias", timeZoneInfo.DaylightBias);
-        mpLog->Console(SL_CODELOCATION, "\n"
+        mpLog->Console(SL_CODE_LOCATION, "\n"
                        "%16s %-30s = %d\n"  // TIME_ZONE_INFORMATION.StandardDate.wYear
                        "%16s %-30s = %d\n"  // TIME_ZONE_INFORMATION.StandardDate.wMonth
                        "%16s %-30s = %d\n"  // TIME_ZONE_INFORMATION.StandardDate.wDayOfWeek
@@ -192,7 +192,7 @@ namespace Shuanglong::Test
                        "WORD", "StandardDate.wMinute", timeZoneInfo.StandardDate.wMinute,
                        "WORD", "StandardDate.wSecond", timeZoneInfo.StandardDate.wSecond,
                        "WORD", "StandardDate.wMilliseconds", timeZoneInfo.StandardDate.wMilliseconds);
-        mpLog->Console(SL_CODELOCATION, "\n"
+        mpLog->Console(SL_CODE_LOCATION, "\n"
                        "%16s %-30s = %d\n"  // TIME_ZONE_INFORMATION.DaylightDate.wYear
                        "%16s %-30s = %d\n"  // TIME_ZONE_INFORMATION.DaylightDate.wMonth
                        "%16s %-30s = %d\n"  // TIME_ZONE_INFORMATION.DaylightDate.wDayOfWeek

@@ -101,19 +101,19 @@ namespace Shuanglong::Logger
         switch (level)
         {
         case Shuanglong::Utils::LOG_LEVEL_DEBUG:
-            root.debug(msg);
+            root.debug("%s --> %s", msg.c_str(), pLocation == nullptr ? "" : pLocation->ToString().c_str());
             break;
         case Shuanglong::Utils::LOG_LEVEL_INFO:
-            root.info(msg);
+            root.info("%s --> %s", msg.c_str(), pLocation == nullptr ? "" : pLocation->ToString().c_str());
             break;
         case Shuanglong::Utils::LOG_LEVEL_WARN:
-            root.warn(msg);
+            root.warn("%s --> %s", msg.c_str(), pLocation == nullptr ? "" : pLocation->ToString().c_str());
             break;
         case Shuanglong::Utils::LOG_LEVEL_ERROR:
-            root.error(msg);
+            root.error("%s --> %s", msg.c_str(), pLocation == nullptr ? "" : pLocation->ToString().c_str());
             break;
         case Shuanglong::Utils::LOG_LEVEL_FATAL:
-            root.fatal(msg);
+            root.fatal("%s --> %s", msg.c_str(), pLocation == nullptr ? "" : pLocation->ToString().c_str());
             break;
         case Shuanglong::Utils::LOG_LEVEL_NONE:
             break;
