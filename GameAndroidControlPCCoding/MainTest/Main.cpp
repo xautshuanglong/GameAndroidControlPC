@@ -23,6 +23,8 @@
 #include "WindowsInfoLookerTest.h"
 //------------ LibCurl -------------
 #include "LibcurlHttpTest.h"
+//------------ ProtoBuf -------------
+#include "UserInfoTest.h"
 //------------ TcpUdpCommunication -------------
 #include "TcpSocketServerTest.h"
 #include "UdpSocketServerTest.h"
@@ -73,6 +75,9 @@ int main(int argc, char** argv)
     Shuanglong::Test::LibcurlHttpTest::GetInstance()->Entry();
     Shuanglong::Test::LibcurlHttpTest::GetInstance()->Exit();
 
+    //--------------------- Protobuf Testing --------------------
+    Shuanglong::Test::UserInfoTest::GetInstance()->Entry();
+    Shuanglong::Test::UserInfoTest::GetInstance()->Exit();
 
     //--------------------- TcpUdpCommunication Testing ---------------------
     Shuanglong::Test::TcpSocketServerTest::Entry();

@@ -96,7 +96,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Shlwapi.lib;Version.lib;libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Shlwapi.lib;Version.lib;libcurl.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\$(PlatformShortName)\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -114,11 +114,13 @@
       <AdditionalIncludeDirectories>$(SolutionDir)Libs\include;$(SolutionDir)GenericLib;$(SolutionDir)TcpUdpCommunication;$(SolutionDir)ProtocolBuffer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>Shlwapi.lib;Version.lib;libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Shlwapi.lib;Version.lib;libcurl.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\$(PlatformShortName)\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -144,7 +146,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Shlwapi.lib;Version.lib;libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Shlwapi.lib;Version.lib;libcurl.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\$(PlatformShortName)\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -170,7 +172,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Shlwapi.lib;Version.lib;libcurl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Shlwapi.lib;Version.lib;libcurl.lib;libprotobuf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Libs\$(PlatformShortName)\$(ConfigurationName);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -178,6 +180,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClientInfo.pb.cc" />
     <ClCompile Include="DirectoryUtilTest.cpp" />
     <ClCompile Include="JsonTest.cpp" />
     <ClCompile Include="LibcurlHttpTest.cpp" />
@@ -213,11 +216,14 @@
     <ClCompile Include="UdpSocketServerTest.cpp" />
     <ClCompile Include="UnhandlerExceptionTest.cpp" />
     <ClCompile Include="UpPrivilegeTest.cpp" />
+    <ClCompile Include="UserInfo.pb.cc" />
+    <ClCompile Include="UserInfoTest.cpp" />
     <ClCompile Include="VersionUtilTest.cpp" />
     <ClCompile Include="WaitMultiEventTest.cpp" />
     <ClCompile Include="WindowsInfoLookerTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClientInfo.pb.h" />
     <ClInclude Include="DirectoryUtilTest.h" />
     <ClInclude Include="JsonTest.h" />
     <ClInclude Include="LibcurlHttpTest.h" />
@@ -250,6 +256,8 @@
     <ClInclude Include="UdpSocketServerTest.h" />
     <ClInclude Include="UnhandlerExceptionTest.h" />
     <ClInclude Include="UpPrivilegeTest.h" />
+    <ClInclude Include="UserInfo.pb.h" />
+    <ClInclude Include="UserInfoTest.h" />
     <ClInclude Include="VersionUtilTest.h" />
     <ClInclude Include="WaitMultiEventTest.h" />
     <ClInclude Include="WindowsInfoLookerTest.h" />
@@ -264,6 +272,10 @@
     <ProjectReference Include="..\TcpUdpCommunication\TcpUdpCommunication.vcxproj">
       <Project>{530ca1ad-a17b-4dcd-b43b-f93f2563bfc1}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClientInfo.proto" />
+    <None Include="UserInfo.proto" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -114,6 +114,15 @@
     <ClCompile Include="LibcurlHttpTest.cpp">
       <Filter>CurlTest</Filter>
     </ClCompile>
+    <ClCompile Include="UserInfoTest.cpp">
+      <Filter>ProtocolBufferTest</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientInfo.pb.cc">
+      <Filter>ProtocolBufferTest</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInfo.pb.cc">
+      <Filter>ProtocolBufferTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -206,5 +215,22 @@
     <ClInclude Include="LibcurlHttpTest.h">
       <Filter>CurlTest</Filter>
     </ClInclude>
+    <ClInclude Include="UserInfoTest.h">
+      <Filter>ProtocolBufferTest</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientInfo.pb.h">
+      <Filter>ProtocolBufferTest</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInfo.pb.h">
+      <Filter>ProtocolBufferTest</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClientInfo.proto">
+      <Filter>ProtocolBufferTest</Filter>
+    </None>
+    <None Include="UserInfo.proto">
+      <Filter>ProtocolBufferTest</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package Shuanglong.ProtoBufMsg;
+message ClientInfo 
+{
+   int32   id = 1;           // ID
+   string  description = 2;  // str
+   int32   opt = 3;          //optional field
+}

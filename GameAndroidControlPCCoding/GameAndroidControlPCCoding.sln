@@ -84,6 +84,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{29293174
 		Libs\x64\Debug\libcrypto.lib = Libs\x64\Debug\libcrypto.lib
 		Libs\x64\Debug\libcurl.dll = Libs\x64\Debug\libcurl.dll
 		Libs\x64\Debug\libcurl.lib = Libs\x64\Debug\libcurl.lib
+		Libs\x64\Debug\libprotobuf-lite.lib = Libs\x64\Debug\libprotobuf-lite.lib
+		Libs\x64\Debug\libprotobuf.lib = Libs\x64\Debug\libprotobuf.lib
+		Libs\x64\Debug\libprotoc.lib = Libs\x64\Debug\libprotoc.lib
 		Libs\x64\Debug\libssl-1_1-x64.dll = Libs\x64\Debug\libssl-1_1-x64.dll
 		Libs\x64\Debug\libssl.lib = Libs\x64\Debug\libssl.lib
 		Libs\x64\Debug\log4cpp.dll = Libs\x64\Debug\log4cpp.dll
@@ -100,6 +103,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{9C3F
 		Libs\x64\Release\libcrypto.lib = Libs\x64\Release\libcrypto.lib
 		Libs\x64\Release\libcurl.dll = Libs\x64\Release\libcurl.dll
 		Libs\x64\Release\libcurl.lib = Libs\x64\Release\libcurl.lib
+		Libs\x64\Release\libprotobuf-lite.lib = Libs\x64\Release\libprotobuf-lite.lib
+		Libs\x64\Release\libprotobuf.lib = Libs\x64\Release\libprotobuf.lib
+		Libs\x64\Release\libprotoc.lib = Libs\x64\Release\libprotoc.lib
 		Libs\x64\Release\libssl-1_1-x64.dll = Libs\x64\Release\libssl-1_1-x64.dll
 		Libs\x64\Release\libssl.lib = Libs\x64\Release\libssl.lib
 		Libs\x64\Release\log4cpp.dll = Libs\x64\Release\log4cpp.dll
@@ -116,6 +122,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{AEF27E8A
 		Libs\x86\Debug\libcrypto.lib = Libs\x86\Debug\libcrypto.lib
 		Libs\x86\Debug\libcurl.dll = Libs\x86\Debug\libcurl.dll
 		Libs\x86\Debug\libcurl.lib = Libs\x86\Debug\libcurl.lib
+		Libs\x86\Debug\libprotobuf-lite.lib = Libs\x86\Debug\libprotobuf-lite.lib
+		Libs\x86\Debug\libprotobuf.lib = Libs\x86\Debug\libprotobuf.lib
+		Libs\x86\Debug\libprotoc.lib = Libs\x86\Debug\libprotoc.lib
 		Libs\x86\Debug\libssl-1_1.dll = Libs\x86\Debug\libssl-1_1.dll
 		Libs\x86\Debug\libssl.lib = Libs\x86\Debug\libssl.lib
 		Libs\x86\Debug\log4cpp.dll = Libs\x86\Debug\log4cpp.dll
@@ -132,6 +141,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{A549
 		Libs\x86\Release\libcrypto.lib = Libs\x86\Release\libcrypto.lib
 		Libs\x86\Release\libcurl.dll = Libs\x86\Release\libcurl.dll
 		Libs\x86\Release\libcurl.lib = Libs\x86\Release\libcurl.lib
+		Libs\x86\Release\libprotobuf-lite.lib = Libs\x86\Release\libprotobuf-lite.lib
+		Libs\x86\Release\libprotobuf.lib = Libs\x86\Release\libprotobuf.lib
+		Libs\x86\Release\libprotoc.lib = Libs\x86\Release\libprotoc.lib
 		Libs\x86\Release\libssl-1_1.dll = Libs\x86\Release\libssl-1_1.dll
 		Libs\x86\Release\libssl.lib = Libs\x86\Release\libssl.lib
 		Libs\x86\Release\log4cpp.dll = Libs\x86\Release\log4cpp.dll
@@ -361,6 +373,190 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "curl", "curl", "{DB88FFDC-0
 		Libs\include\curl\typecheck-gcc.h = Libs\include\curl\typecheck-gcc.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "google", "google", "{9CA95F7E-7834-49B6-A2E9-438656831858}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "protobuf", "protobuf", "{3B78A07B-543C-47FB-BA8C-75BD6BEE03FF}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\any.h = Libs\include\google\protobuf\any.h
+		Libs\include\google\protobuf\any.pb.h = Libs\include\google\protobuf\any.pb.h
+		Libs\include\google\protobuf\any.proto = Libs\include\google\protobuf\any.proto
+		Libs\include\google\protobuf\api.pb.h = Libs\include\google\protobuf\api.pb.h
+		Libs\include\google\protobuf\api.proto = Libs\include\google\protobuf\api.proto
+		Libs\include\google\protobuf\arena.h = Libs\include\google\protobuf\arena.h
+		Libs\include\google\protobuf\arena_impl.h = Libs\include\google\protobuf\arena_impl.h
+		Libs\include\google\protobuf\arenastring.h = Libs\include\google\protobuf\arenastring.h
+		Libs\include\google\protobuf\descriptor.h = Libs\include\google\protobuf\descriptor.h
+		Libs\include\google\protobuf\descriptor.pb.h = Libs\include\google\protobuf\descriptor.pb.h
+		Libs\include\google\protobuf\descriptor.proto = Libs\include\google\protobuf\descriptor.proto
+		Libs\include\google\protobuf\descriptor_database.h = Libs\include\google\protobuf\descriptor_database.h
+		Libs\include\google\protobuf\duration.pb.h = Libs\include\google\protobuf\duration.pb.h
+		Libs\include\google\protobuf\duration.proto = Libs\include\google\protobuf\duration.proto
+		Libs\include\google\protobuf\dynamic_message.h = Libs\include\google\protobuf\dynamic_message.h
+		Libs\include\google\protobuf\empty.pb.h = Libs\include\google\protobuf\empty.pb.h
+		Libs\include\google\protobuf\empty.proto = Libs\include\google\protobuf\empty.proto
+		Libs\include\google\protobuf\extension_set.h = Libs\include\google\protobuf\extension_set.h
+		Libs\include\google\protobuf\field_mask.pb.h = Libs\include\google\protobuf\field_mask.pb.h
+		Libs\include\google\protobuf\field_mask.proto = Libs\include\google\protobuf\field_mask.proto
+		Libs\include\google\protobuf\generated_enum_reflection.h = Libs\include\google\protobuf\generated_enum_reflection.h
+		Libs\include\google\protobuf\generated_enum_util.h = Libs\include\google\protobuf\generated_enum_util.h
+		Libs\include\google\protobuf\generated_message_reflection.h = Libs\include\google\protobuf\generated_message_reflection.h
+		Libs\include\google\protobuf\generated_message_table_driven.h = Libs\include\google\protobuf\generated_message_table_driven.h
+		Libs\include\google\protobuf\generated_message_util.h = Libs\include\google\protobuf\generated_message_util.h
+		Libs\include\google\protobuf\has_bits.h = Libs\include\google\protobuf\has_bits.h
+		Libs\include\google\protobuf\map.h = Libs\include\google\protobuf\map.h
+		Libs\include\google\protobuf\map_entry.h = Libs\include\google\protobuf\map_entry.h
+		Libs\include\google\protobuf\map_entry_lite.h = Libs\include\google\protobuf\map_entry_lite.h
+		Libs\include\google\protobuf\map_field.h = Libs\include\google\protobuf\map_field.h
+		Libs\include\google\protobuf\map_field_inl.h = Libs\include\google\protobuf\map_field_inl.h
+		Libs\include\google\protobuf\map_field_lite.h = Libs\include\google\protobuf\map_field_lite.h
+		Libs\include\google\protobuf\map_type_handler.h = Libs\include\google\protobuf\map_type_handler.h
+		Libs\include\google\protobuf\message.h = Libs\include\google\protobuf\message.h
+		Libs\include\google\protobuf\message_lite.h = Libs\include\google\protobuf\message_lite.h
+		Libs\include\google\protobuf\metadata.h = Libs\include\google\protobuf\metadata.h
+		Libs\include\google\protobuf\metadata_lite.h = Libs\include\google\protobuf\metadata_lite.h
+		Libs\include\google\protobuf\reflection.h = Libs\include\google\protobuf\reflection.h
+		Libs\include\google\protobuf\reflection_ops.h = Libs\include\google\protobuf\reflection_ops.h
+		Libs\include\google\protobuf\repeated_field.h = Libs\include\google\protobuf\repeated_field.h
+		Libs\include\google\protobuf\service.h = Libs\include\google\protobuf\service.h
+		Libs\include\google\protobuf\source_context.pb.h = Libs\include\google\protobuf\source_context.pb.h
+		Libs\include\google\protobuf\source_context.proto = Libs\include\google\protobuf\source_context.proto
+		Libs\include\google\protobuf\struct.pb.h = Libs\include\google\protobuf\struct.pb.h
+		Libs\include\google\protobuf\struct.proto = Libs\include\google\protobuf\struct.proto
+		Libs\include\google\protobuf\text_format.h = Libs\include\google\protobuf\text_format.h
+		Libs\include\google\protobuf\timestamp.pb.h = Libs\include\google\protobuf\timestamp.pb.h
+		Libs\include\google\protobuf\timestamp.proto = Libs\include\google\protobuf\timestamp.proto
+		Libs\include\google\protobuf\type.pb.h = Libs\include\google\protobuf\type.pb.h
+		Libs\include\google\protobuf\type.proto = Libs\include\google\protobuf\type.proto
+		Libs\include\google\protobuf\unknown_field_set.h = Libs\include\google\protobuf\unknown_field_set.h
+		Libs\include\google\protobuf\wire_format.h = Libs\include\google\protobuf\wire_format.h
+		Libs\include\google\protobuf\wire_format_lite.h = Libs\include\google\protobuf\wire_format_lite.h
+		Libs\include\google\protobuf\wire_format_lite_inl.h = Libs\include\google\protobuf\wire_format_lite_inl.h
+		Libs\include\google\protobuf\wrappers.pb.h = Libs\include\google\protobuf\wrappers.pb.h
+		Libs\include\google\protobuf\wrappers.proto = Libs\include\google\protobuf\wrappers.proto
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "compiler", "compiler", "{18B25D94-D910-4AD8-87DD-41EBEBE563A4}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\code_generator.h = Libs\include\google\protobuf\compiler\code_generator.h
+		Libs\include\google\protobuf\compiler\command_line_interface.h = Libs\include\google\protobuf\compiler\command_line_interface.h
+		Libs\include\google\protobuf\compiler\importer.h = Libs\include\google\protobuf\compiler\importer.h
+		Libs\include\google\protobuf\compiler\parser.h = Libs\include\google\protobuf\compiler\parser.h
+		Libs\include\google\protobuf\compiler\plugin.h = Libs\include\google\protobuf\compiler\plugin.h
+		Libs\include\google\protobuf\compiler\plugin.pb.h = Libs\include\google\protobuf\compiler\plugin.pb.h
+		Libs\include\google\protobuf\compiler\plugin.proto = Libs\include\google\protobuf\compiler\plugin.proto
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "io", "io", "{F8BF51D6-9D37-45BF-A854-2504E568A5C9}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\io\coded_stream.h = Libs\include\google\protobuf\io\coded_stream.h
+		Libs\include\google\protobuf\io\gzip_stream.h = Libs\include\google\protobuf\io\gzip_stream.h
+		Libs\include\google\protobuf\io\printer.h = Libs\include\google\protobuf\io\printer.h
+		Libs\include\google\protobuf\io\strtod.h = Libs\include\google\protobuf\io\strtod.h
+		Libs\include\google\protobuf\io\tokenizer.h = Libs\include\google\protobuf\io\tokenizer.h
+		Libs\include\google\protobuf\io\zero_copy_stream.h = Libs\include\google\protobuf\io\zero_copy_stream.h
+		Libs\include\google\protobuf\io\zero_copy_stream_impl.h = Libs\include\google\protobuf\io\zero_copy_stream_impl.h
+		Libs\include\google\protobuf\io\zero_copy_stream_impl_lite.h = Libs\include\google\protobuf\io\zero_copy_stream_impl_lite.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stubs", "stubs", "{749C1B50-EEC5-4EC1-9C97-46A3BF66755D}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\stubs\atomic_sequence_num.h = Libs\include\google\protobuf\stubs\atomic_sequence_num.h
+		Libs\include\google\protobuf\stubs\atomicops.h = Libs\include\google\protobuf\stubs\atomicops.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_arm64_gcc.h = Libs\include\google\protobuf\stubs\atomicops_internals_arm64_gcc.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_arm_gcc.h = Libs\include\google\protobuf\stubs\atomicops_internals_arm_gcc.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_arm_qnx.h = Libs\include\google\protobuf\stubs\atomicops_internals_arm_qnx.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_generic_c11_atomic.h = Libs\include\google\protobuf\stubs\atomicops_internals_generic_c11_atomic.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_generic_gcc.h = Libs\include\google\protobuf\stubs\atomicops_internals_generic_gcc.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_mips_gcc.h = Libs\include\google\protobuf\stubs\atomicops_internals_mips_gcc.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_power.h = Libs\include\google\protobuf\stubs\atomicops_internals_power.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_ppc_gcc.h = Libs\include\google\protobuf\stubs\atomicops_internals_ppc_gcc.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_solaris.h = Libs\include\google\protobuf\stubs\atomicops_internals_solaris.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_tsan.h = Libs\include\google\protobuf\stubs\atomicops_internals_tsan.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_x86_gcc.h = Libs\include\google\protobuf\stubs\atomicops_internals_x86_gcc.h
+		Libs\include\google\protobuf\stubs\atomicops_internals_x86_msvc.h = Libs\include\google\protobuf\stubs\atomicops_internals_x86_msvc.h
+		Libs\include\google\protobuf\stubs\bytestream.h = Libs\include\google\protobuf\stubs\bytestream.h
+		Libs\include\google\protobuf\stubs\callback.h = Libs\include\google\protobuf\stubs\callback.h
+		Libs\include\google\protobuf\stubs\casts.h = Libs\include\google\protobuf\stubs\casts.h
+		Libs\include\google\protobuf\stubs\common.h = Libs\include\google\protobuf\stubs\common.h
+		Libs\include\google\protobuf\stubs\fastmem.h = Libs\include\google\protobuf\stubs\fastmem.h
+		Libs\include\google\protobuf\stubs\hash.h = Libs\include\google\protobuf\stubs\hash.h
+		Libs\include\google\protobuf\stubs\logging.h = Libs\include\google\protobuf\stubs\logging.h
+		Libs\include\google\protobuf\stubs\macros.h = Libs\include\google\protobuf\stubs\macros.h
+		Libs\include\google\protobuf\stubs\mutex.h = Libs\include\google\protobuf\stubs\mutex.h
+		Libs\include\google\protobuf\stubs\once.h = Libs\include\google\protobuf\stubs\once.h
+		Libs\include\google\protobuf\stubs\platform_macros.h = Libs\include\google\protobuf\stubs\platform_macros.h
+		Libs\include\google\protobuf\stubs\port.h = Libs\include\google\protobuf\stubs\port.h
+		Libs\include\google\protobuf\stubs\scoped_ptr.h = Libs\include\google\protobuf\stubs\scoped_ptr.h
+		Libs\include\google\protobuf\stubs\shared_ptr.h = Libs\include\google\protobuf\stubs\shared_ptr.h
+		Libs\include\google\protobuf\stubs\singleton.h = Libs\include\google\protobuf\stubs\singleton.h
+		Libs\include\google\protobuf\stubs\status.h = Libs\include\google\protobuf\stubs\status.h
+		Libs\include\google\protobuf\stubs\stl_util.h = Libs\include\google\protobuf\stubs\stl_util.h
+		Libs\include\google\protobuf\stubs\stringpiece.h = Libs\include\google\protobuf\stubs\stringpiece.h
+		Libs\include\google\protobuf\stubs\template_util.h = Libs\include\google\protobuf\stubs\template_util.h
+		Libs\include\google\protobuf\stubs\type_traits.h = Libs\include\google\protobuf\stubs\type_traits.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "util", "util", "{9F7CF506-3FFF-4ACE-982E-BE1F5BB58E8B}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\util\delimited_message_util.h = Libs\include\google\protobuf\util\delimited_message_util.h
+		Libs\include\google\protobuf\util\field_comparator.h = Libs\include\google\protobuf\util\field_comparator.h
+		Libs\include\google\protobuf\util\field_mask_util.h = Libs\include\google\protobuf\util\field_mask_util.h
+		Libs\include\google\protobuf\util\json_util.h = Libs\include\google\protobuf\util\json_util.h
+		Libs\include\google\protobuf\util\message_differencer.h = Libs\include\google\protobuf\util\message_differencer.h
+		Libs\include\google\protobuf\util\time_util.h = Libs\include\google\protobuf\util\time_util.h
+		Libs\include\google\protobuf\util\type_resolver.h = Libs\include\google\protobuf\util\type_resolver.h
+		Libs\include\google\protobuf\util\type_resolver_util.h = Libs\include\google\protobuf\util\type_resolver_util.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cpp", "cpp", "{8E4C5E9D-6C5F-4E53-85D0-E4FD0C5B4AD4}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\cpp\cpp_generator.h = Libs\include\google\protobuf\compiler\cpp\cpp_generator.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "csharp", "csharp", "{CD2F5060-2B34-4E61-83D4-4D5A10F41DBE}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\csharp\csharp_generator.h = Libs\include\google\protobuf\compiler\csharp\csharp_generator.h
+		Libs\include\google\protobuf\compiler\csharp\csharp_names.h = Libs\include\google\protobuf\compiler\csharp\csharp_names.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "java", "java", "{BEBAC7A9-D990-41E1-82E4-9D03C9656B04}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\java\java_generator.h = Libs\include\google\protobuf\compiler\java\java_generator.h
+		Libs\include\google\protobuf\compiler\java\java_names.h = Libs\include\google\protobuf\compiler\java\java_names.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "javanano", "javanano", "{F745ADE1-6A4D-4A53-BD0B-7482CDB36C81}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\javanano\javanano_generator.h = Libs\include\google\protobuf\compiler\javanano\javanano_generator.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{90BF4D75-10E2-4FDA-B50B-B4590F86387E}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\js\js_generator.h = Libs\include\google\protobuf\compiler\js\js_generator.h
+		Libs\include\google\protobuf\compiler\js\well_known_types_embed.h = Libs\include\google\protobuf\compiler\js\well_known_types_embed.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "objectivec", "objectivec", "{58A8B468-671D-473D-9D30-79AB1429B52A}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\objectivec\objectivec_generator.h = Libs\include\google\protobuf\compiler\objectivec\objectivec_generator.h
+		Libs\include\google\protobuf\compiler\objectivec\objectivec_helpers.h = Libs\include\google\protobuf\compiler\objectivec\objectivec_helpers.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "php", "php", "{CCCB93AD-C427-446D-9F52-170D781AB21C}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\php\php_generator.h = Libs\include\google\protobuf\compiler\php\php_generator.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "python", "python", "{DE821200-6A56-49CF-A162-F4434089E1FE}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\python\python_generator.h = Libs\include\google\protobuf\compiler\python\python_generator.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ruby", "ruby", "{AAFA799D-28F0-464C-B03C-4B21109CFC6A}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\google\protobuf\compiler\ruby\ruby_generator.h = Libs\include\google\protobuf\compiler\ruby\ruby_generator.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -484,5 +680,20 @@ Global
 		{C0E93C29-3093-4F4F-840B-145AE3854619} = {EA50AC94-3DB4-435E-A0D0-316AD6BC8BA8}
 		{F079885C-CE6B-4637-A0F4-CB457A811EB1} = {C181FF6D-C14F-4B55-844E-6D5D67FEDCBA}
 		{DB88FFDC-0234-4EE3-8623-3CB554815153} = {C181FF6D-C14F-4B55-844E-6D5D67FEDCBA}
+		{9CA95F7E-7834-49B6-A2E9-438656831858} = {C181FF6D-C14F-4B55-844E-6D5D67FEDCBA}
+		{3B78A07B-543C-47FB-BA8C-75BD6BEE03FF} = {9CA95F7E-7834-49B6-A2E9-438656831858}
+		{18B25D94-D910-4AD8-87DD-41EBEBE563A4} = {3B78A07B-543C-47FB-BA8C-75BD6BEE03FF}
+		{F8BF51D6-9D37-45BF-A854-2504E568A5C9} = {3B78A07B-543C-47FB-BA8C-75BD6BEE03FF}
+		{749C1B50-EEC5-4EC1-9C97-46A3BF66755D} = {3B78A07B-543C-47FB-BA8C-75BD6BEE03FF}
+		{9F7CF506-3FFF-4ACE-982E-BE1F5BB58E8B} = {3B78A07B-543C-47FB-BA8C-75BD6BEE03FF}
+		{8E4C5E9D-6C5F-4E53-85D0-E4FD0C5B4AD4} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
+		{CD2F5060-2B34-4E61-83D4-4D5A10F41DBE} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
+		{BEBAC7A9-D990-41E1-82E4-9D03C9656B04} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
+		{F745ADE1-6A4D-4A53-BD0B-7482CDB36C81} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
+		{90BF4D75-10E2-4FDA-B50B-B4590F86387E} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
+		{58A8B468-671D-473D-9D30-79AB1429B52A} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
+		{CCCB93AD-C427-446D-9F52-170D781AB21C} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
+		{DE821200-6A56-49CF-A162-F4434089E1FE} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
+		{AAFA799D-28F0-464C-B03C-4B21109CFC6A} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
 	EndGlobalSection
 EndGlobal

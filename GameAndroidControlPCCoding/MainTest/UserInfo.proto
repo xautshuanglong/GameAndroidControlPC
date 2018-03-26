@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package Shuanglong.ProtoBufMsg;
+message UserInfo 
+{
+   required int32   id = 1;    // ID
+   required string  name = 2;  // str
+   required bool    sex = 3;   // sex
+   optional int32   opt = 4;   //optional field
+}
