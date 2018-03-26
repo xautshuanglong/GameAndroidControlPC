@@ -244,3 +244,4 @@ ModelManifest.xml
 # Added by Shuanglong
 *.dmp
 
+/GameAndroidControlPCCoding/MainTest/CurlHttpGetTest.html
