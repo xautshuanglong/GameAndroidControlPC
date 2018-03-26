@@ -21,7 +21,7 @@ namespace Shuanglong::Test
         std::cout << "----------------------------- Libcurl Http Testing -----------------------------" << std::endl;
         mpLog = Log::GetInstance();
 
-        CurlHttpGetTest();
+        //CurlHttpGetTest();
     }
 
     void LibcurlHttpTest::Exit()

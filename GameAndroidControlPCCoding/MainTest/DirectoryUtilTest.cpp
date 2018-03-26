@@ -25,7 +25,7 @@ namespace Shuanglong::Test
         mpInstance->mpLog = Log::GetInstance();
 
         std::cout << std::endl << "----------------------------------- Directory Utils Testing -----------------------------------" << std::endl;
-        mpInstance->DirectoryUtilTest_Try();
+        //mpInstance->DirectoryUtilTest_Try();
         //mpInstance->DirectoryUtilTest_GetEnv();
     }
 
