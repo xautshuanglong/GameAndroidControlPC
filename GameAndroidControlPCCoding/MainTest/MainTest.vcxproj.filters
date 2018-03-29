@@ -123,6 +123,12 @@
     <ClCompile Include="UserInfo.pb.cc">
       <Filter>ProtocolBufferTest</Filter>
     </ClCompile>
+    <ClCompile Include="CryptogramTest.cpp">
+      <Filter>GenericLibTest</Filter>
+    </ClCompile>
+    <ClCompile Include="MySQLConnectionTest.cpp">
+      <Filter>Attempt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -223,6 +229,12 @@
     </ClInclude>
     <ClInclude Include="UserInfo.pb.h">
       <Filter>ProtocolBufferTest</Filter>
+    </ClInclude>
+    <ClInclude Include="CryptogramTest.h">
+      <Filter>GenericLibTest</Filter>
+    </ClInclude>
+    <ClInclude Include="MySQLConnectionTest.h">
+      <Filter>Attempt</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -21,6 +21,8 @@
 #include "TinyXml2Test.h"
 #include "MD5Test.h"
 #include "WindowsInfoLookerTest.h"
+#include "CryptogramTest.h"
+#include "MySQLConnectionTest.h"
 //------------ LibCurl -------------
 #include "LibcurlHttpTest.h"
 //------------ ProtoBuf -------------
@@ -64,6 +66,10 @@ int main(int argc, char** argv)
     //Shuanglong::Test::UnhandlerExceptionTest::GetInstance();
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Entry();
     //Shuanglong::Test::WaitMultiEventTest::GetInstance()->Exit();
+    Shuanglong::Test::CryptogramTest::Entry();
+    Shuanglong::Test::CryptogramTest::Exit();
+    Shuanglong::Test::MySQLConnectionTest::Entry();
+    Shuanglong::Test::MySQLConnectionTest::Exit();
 
     Shuanglong::Test::WindowsInfoLookerTest::GetInstance()->Entry();
 

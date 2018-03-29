@@ -21,7 +21,7 @@ namespace Shuanglong::Test
 
     void UserInfoTest::Entry()
     {
-        this->MessageTestProto2Test();
+        //this->MessageTestProto2Test();
     }
 
     void UserInfoTest::Exit()
@@ -43,22 +43,5 @@ namespace Shuanglong::Test
 
         UserInfo newUserInfo;
         newUserInfo.ParseFromString(tempString);
-
-        //unsigned int n = 0;
-        //do 
-        //{
-        //    int x = static_cast<int>((n >> 1) ^ ~(n & 1) + 1);
-        //    printf_s("n:%d  --> %d\n", n, x);
-        //    ++n;
-        //} while (n <= 6);
-
-        //int n2 = 1;
-        //do
-        //{
-        //    int x2 = (static_cast<unsigned int>(-n2) << 1) ^ static_cast<unsigned int>(-n2 >> 31);
-        //    int x3 = (static_cast<unsigned int>(n2) << 1) ^ static_cast<unsigned int>(n2 >> 31);
-        //    printf_s("n2:%d  --> %d\nn2:%d  --> %d\n", -n2, x2, n2, x3);
-        //    ++n2;
-        //} while (n2 <= 6);
     }
 }

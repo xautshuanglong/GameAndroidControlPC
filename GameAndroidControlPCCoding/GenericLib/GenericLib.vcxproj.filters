@@ -108,6 +108,18 @@
     <ClInclude Include="Utils\DirectoryUtil.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Algorithm\CryptogramAbstract.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\CryptogramFactory.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\AES.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm\AesImpl.h">
+      <Filter>Algorithm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -157,6 +169,18 @@
     </ClCompile>
     <ClCompile Include="Utils\DirectoryUtil.cpp">
       <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm\CryptogramAbstract.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm\CryptogramFactory.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm\AES.cpp">
+      <Filter>Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="Algorithm\AesImpl.c">
+      <Filter>Algorithm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

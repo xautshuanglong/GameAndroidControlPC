@@ -158,6 +158,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithm\AES.h" />
+    <ClInclude Include="Algorithm\AesImpl.h" />
+    <ClInclude Include="Algorithm\CryptogramAbstract.h" />
+    <ClInclude Include="Algorithm\CryptogramFactory.h" />
     <ClInclude Include="Algorithm\MessageDigestAbstract.h" />
     <ClInclude Include="Algorithm\MessageDigestFactory.h" />
     <ClInclude Include="Algorithm\MD5.h" />
@@ -186,6 +190,10 @@
     <ClInclude Include="Utils\TimeUtil.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Algorithm\AES.cpp" />
+    <ClCompile Include="Algorithm\AesImpl.c" />
+    <ClCompile Include="Algorithm\CryptogramAbstract.cpp" />
+    <ClCompile Include="Algorithm\CryptogramFactory.cpp" />
     <ClCompile Include="Algorithm\MessageDigestAbstract.cpp" />
     <ClCompile Include="Algorithm\MessageDigestFactory.cpp" />
     <ClCompile Include="Algorithm\MD5.cpp" />

@@ -181,6 +181,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ClientInfo.pb.cc" />
+    <ClCompile Include="CryptogramTest.cpp" />
     <ClCompile Include="DirectoryUtilTest.cpp" />
     <ClCompile Include="JsonTest.cpp" />
     <ClCompile Include="LibcurlHttpTest.cpp" />
@@ -188,6 +189,7 @@
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="MD5Test.cpp" />
     <ClCompile Include="MultiThreadTest.cpp" />
+    <ClCompile Include="MySQLConnectionTest.cpp" />
     <ClCompile Include="ProcessUtilTest.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -224,6 +226,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClientInfo.pb.h" />
+    <ClInclude Include="CryptogramTest.h" />
     <ClInclude Include="DirectoryUtilTest.h" />
     <ClInclude Include="JsonTest.h" />
     <ClInclude Include="LibcurlHttpTest.h" />
@@ -231,6 +234,7 @@
     <ClInclude Include="ILog.h" />
     <ClInclude Include="MD5Test.h" />
     <ClInclude Include="MultiThreadTest.h" />
+    <ClInclude Include="MySQLConnectionTest.h" />
     <ClInclude Include="ProcessUtilTest.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StdCppTest.h" />

@@ -91,6 +91,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{29293174
 		Libs\x64\Debug\libssl.lib = Libs\x64\Debug\libssl.lib
 		Libs\x64\Debug\log4cpp.dll = Libs\x64\Debug\log4cpp.dll
 		Libs\x64\Debug\log4cpp.lib = Libs\x64\Debug\log4cpp.lib
+		Libs\x64\Debug\mysqlcppconn.dll = Libs\x64\Debug\mysqlcppconn.dll
+		Libs\x64\Debug\mysqlcppconn.lib = Libs\x64\Debug\mysqlcppconn.lib
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{9C3FB211-2266-4A42-91F3-671519759DFD}"
@@ -110,6 +112,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{9C3F
 		Libs\x64\Release\libssl.lib = Libs\x64\Release\libssl.lib
 		Libs\x64\Release\log4cpp.dll = Libs\x64\Release\log4cpp.dll
 		Libs\x64\Release\log4cpp.lib = Libs\x64\Release\log4cpp.lib
+		Libs\x64\Release\mysqlcppconn.dll = Libs\x64\Release\mysqlcppconn.dll
+		Libs\x64\Release\mysqlcppconn.lib = Libs\x64\Release\mysqlcppconn.lib
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{AEF27E8A-BD5A-4836-B744-6226E0BFB2D0}"
@@ -129,6 +133,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Debug", "Debug", "{AEF27E8A
 		Libs\x86\Debug\libssl.lib = Libs\x86\Debug\libssl.lib
 		Libs\x86\Debug\log4cpp.dll = Libs\x86\Debug\log4cpp.dll
 		Libs\x86\Debug\log4cpp.lib = Libs\x86\Debug\log4cpp.lib
+		Libs\x86\Debug\mysqlcppconn.dll = Libs\x86\Debug\mysqlcppconn.dll
+		Libs\x86\Debug\mysqlcppconn.lib = Libs\x86\Debug\mysqlcppconn.lib
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{A549841F-7485-4F1D-B3EA-B673B074C988}"
@@ -148,6 +154,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Release", "Release", "{A549
 		Libs\x86\Release\libssl.lib = Libs\x86\Release\libssl.lib
 		Libs\x86\Release\log4cpp.dll = Libs\x86\Release\log4cpp.dll
 		Libs\x86\Release\log4cpp.lib = Libs\x86\Release\log4cpp.lib
+		Libs\x86\Release\mysqlcppconn.dll = Libs\x86\Release\mysqlcppconn.dll
+		Libs\x86\Release\mysqlcppconn.lib = Libs\x86\Release\mysqlcppconn.lib
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "threading", "threading", "{646EEF72-3D0A-4B75-8546-B7045DC00E40}"
@@ -557,6 +565,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ruby", "ruby", "{AAFA799D-2
 		Libs\include\google\protobuf\compiler\ruby\ruby_generator.h = Libs\include\google\protobuf\compiler\ruby\ruby_generator.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mysql", "mysql", "{58794825-B8D1-40A4-89CC-8D67C4751B6F}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\mysql\mysql_connection.h = Libs\include\mysql\mysql_connection.h
+		Libs\include\mysql\mysql_driver.h = Libs\include\mysql\mysql_driver.h
+		Libs\include\mysql\mysql_error.h = Libs\include\mysql\mysql_error.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cppconn", "cppconn", "{BC1B8BE2-D2C3-4045-BB56-A8B63DAC4C1F}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\include\mysql\cppconn\build_config.h = Libs\include\mysql\cppconn\build_config.h
+		Libs\include\mysql\cppconn\config.h = Libs\include\mysql\cppconn\config.h
+		Libs\include\mysql\cppconn\connection.h = Libs\include\mysql\cppconn\connection.h
+		Libs\include\mysql\cppconn\datatype.h = Libs\include\mysql\cppconn\datatype.h
+		Libs\include\mysql\cppconn\driver.h = Libs\include\mysql\cppconn\driver.h
+		Libs\include\mysql\cppconn\exception.h = Libs\include\mysql\cppconn\exception.h
+		Libs\include\mysql\cppconn\metadata.h = Libs\include\mysql\cppconn\metadata.h
+		Libs\include\mysql\cppconn\parameter_metadata.h = Libs\include\mysql\cppconn\parameter_metadata.h
+		Libs\include\mysql\cppconn\prepared_statement.h = Libs\include\mysql\cppconn\prepared_statement.h
+		Libs\include\mysql\cppconn\resultset.h = Libs\include\mysql\cppconn\resultset.h
+		Libs\include\mysql\cppconn\resultset_metadata.h = Libs\include\mysql\cppconn\resultset_metadata.h
+		Libs\include\mysql\cppconn\sqlstring.h = Libs\include\mysql\cppconn\sqlstring.h
+		Libs\include\mysql\cppconn\statement.h = Libs\include\mysql\cppconn\statement.h
+		Libs\include\mysql\cppconn\variant.h = Libs\include\mysql\cppconn\variant.h
+		Libs\include\mysql\cppconn\version_info.h = Libs\include\mysql\cppconn\version_info.h
+		Libs\include\mysql\cppconn\warning.h = Libs\include\mysql\cppconn\warning.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -695,5 +730,7 @@ Global
 		{CCCB93AD-C427-446D-9F52-170D781AB21C} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
 		{DE821200-6A56-49CF-A162-F4434089E1FE} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
 		{AAFA799D-28F0-464C-B03C-4B21109CFC6A} = {18B25D94-D910-4AD8-87DD-41EBEBE563A4}
+		{58794825-B8D1-40A4-89CC-8D67C4751B6F} = {C181FF6D-C14F-4B55-844E-6D5D67FEDCBA}
+		{BC1B8BE2-D2C3-4045-BB56-A8B63DAC4C1F} = {58794825-B8D1-40A4-89CC-8D67C4751B6F}
 	EndGlobalSection
 EndGlobal
