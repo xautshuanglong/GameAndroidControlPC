@@ -27,7 +27,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #ifndef _MYSQL_CONNECTION_H_
 #define _MYSQL_CONNECTION_H_
 
-#include <cppconn/connection.h>
+#include <mysql/cppconn/connection.h>
 #include <boost/shared_ptr.hpp>
 #include <boost/scoped_ptr.hpp>
 
@@ -176,9 +176,9 @@ private:
 
 	/* statement handle to execute queries initiated by driver. Perhaps it is
 	   a good idea to move it to a separate helper class */
-	boost::scoped_ptr< ::sql::mysql::MySQL_Statement > service;
+	boost::scoped_ptr< sql::mysql::MySQL_Statement > service;
 
-	boost::scoped_ptr< ::sql::mysql::MySQL_ConnectionData > intern; /* pimpl */
+	boost::scoped_ptr< sql::mysql::MySQL_ConnectionData > intern; /* pimpl */
 
 	/* Prevent use of these */
 	MySQL_Connection(const MySQL_Connection &);

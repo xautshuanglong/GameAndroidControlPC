@@ -21,6 +21,7 @@ namespace Shuanglong::Test
 
     void UserInfoTest::Entry()
     {
+        std::cout << "----------------------------- User Info Testing -----------------------------" << std::endl;
         //this->MessageTestProto2Test();
     }
 
