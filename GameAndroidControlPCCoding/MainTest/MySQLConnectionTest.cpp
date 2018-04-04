@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "MySQLConnectionTest.h"
 
-#include <mysql/mysql_driver.h>
-#include <mysql/mysql_connection.h>
-#include <mysql/cppconn/statement.h>
+#include <mysqlx/xdevapi.h>
+
+#include <Utils/StringUtil.h>
 
 #include "Log.h"
 
@@ -19,42 +19,60 @@ namespace Shuanglong::Test
     {
         std::cout << "----------------------------- Mysql Connection Testing -----------------------------" << std::endl;
 
-        sql::mysql::MySQL_Driver *pDriver = nullptr;
-        sql::Connection *pConn = nullptr;
-        sql::Statement *pStatement = nullptr;
-        sql::ResultSet *pResultSet = nullptr;
-
-        pDriver = sql::mysql::get_mysql_driver_instance();
-        pConn = pDriver->connect("tcp://192.168.0.84:3307", "shuanglong", "shuanglong123456");
-
-        int on_off = 1;
-        if (pConn->isValid())
+        try
         {
-            Log::GetInstance()->Console(SL_CODE_LOCATION, "Connect mysql successfully!");
-            pConn->setClientOption("clientTrace", &on_off);
-            pStatement = pConn->createStatement();
-            pStatement->execute("use shuanglongtest");
-            //pStatement->execute("insert into student(name, age) VALUES ('MysqlTest', 11)");
+            mysqlx::Session sqlSession(
+                mysqlx::SessionOption::USER, "shuanglong",
+                mysqlx::SessionOption::PWD, "shuanglong123456",
+                mysqlx::SessionOption::HOST, "192.168.0.84",
+                mysqlx::SessionOption::PORT, 33070,
+                mysqlx::SessionOption::SSL_MODE, mysqlx::SSLMode::DISABLED
+            );
+
+            mysqlx::Schema schema = sqlSession.getSchema("shuanglongtest");
+            std::vector<std::string> tableNames = schema.getTableNames();
+            std::cout << "size=" << tableNames.size() << std::endl;
+            for (auto tableName : tableNames)
+            {
+                std::cout << "table name: " << tableName << std::endl;
+            }
+
+            mysqlx::Table tbStudents = schema.getTable("students");
+            std::cout << "Table element count: " << tbStudents.count() << std::endl;
+
+            mysqlx::RowResult result = tbStudents.select("*").execute();
+            std::vector<mysqlx::Row> rowVector = result.fetchAll();
 
             int id = 0;
             int age = 0;
-            sql::SQLString name;
+            std::string nameStr("");
+            mysqlx::Value stuNameValue;
 
-            pResultSet = pStatement->executeQuery("select id,name,age from student");
-            while (pResultSet->next())
+            std::cout << "Row count = " << rowVector[0].colCount() << std::endl;
+            for (auto row : rowVector)
             {
-                id = pResultSet->getInt(1);
-                name = pResultSet->getString(2);
-                age = pResultSet->getInt(3);
-                std::cout << "id:" << id << std::setw(10)
-                    << "name:" << name.c_str() << std::setw(10)
-                    << "age:" << age << std::endl;
+                id = row.get(0);
+                age = row.get(2);
+                stuNameValue = row.get(1);
+                std::cout << "id: " << id
+                    << "   name: " << nameStr
+                    << "age: " << age << std::endl;
             }
+
+        }
+        catch (const mysqlx::Error &err)
+        {
+            std::cout << "Mysql error: " << err << std::endl;
+        }
+        catch (std::exception &e)
+        {
+            std::cout << "STD Exception: " << e.what() << std::endl;
+        }
+        catch (const char* e)
+        {
+            std::cout << "Exception: " << e << std::endl;
         }
 
-        delete pResultSet;
-        delete pStatement;
-        delete pConn;
     }
 
     void MySQLConnectionTest::Exit()
