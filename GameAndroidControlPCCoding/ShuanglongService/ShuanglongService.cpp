@@ -55,7 +55,7 @@ void ServiceControlHandler(DWORD request)
     return;
 }
 
-void ServiceMain(int argc, char** argv)
+void ServiceMain(DWORD argc, LPWSTR argv)
 {
     // 初始化服务类型、 状态、 接受的控制方法以及期待的返回值
     ServiceStatus.dwServiceType = SERVICE_WIN32;
@@ -113,11 +113,13 @@ void ServiceMain(int argc, char** argv)
 
 int main()
 {
-    SERVICE_TABLE_ENTRY entry;
-    entry.lpServiceName = L"MemoryStatus";
-    entry.lpServiceProc = (LPSERVICE_MAIN_FUNCTION)ServiceMain;
+    SERVICE_TABLE_ENTRY entryTables[] =
+    {
+        { L"MemoryStatus", (LPSERVICE_MAIN_FUNCTION)ServiceMain },
+        NULL
+    };
 
     // Start the control dispatcher thread for our service
-    StartServiceCtrlDispatcher(&entry);
+    StartServiceCtrlDispatcher(entryTables);
     return 0;
 }

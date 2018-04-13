@@ -69,12 +69,12 @@ namespace Shuanglong::Test
     void CryptogramTest::Entry()
     {
         std::cout << std::endl << "----------------------------------- Cryptogram Testing -----------------------------------" << std::endl;
-        Shuanglong::Algorithm::AES aes;
-        aes.Test();
+        //Shuanglong::Algorithm::AES aes;
+        //aes.Test();
 
-        uint8_t pTest[] = { 0x63, 0x53, 0xe0, 0x8c, 0x09, 0x60, 0xe1, 0x04, 0xcd, 0x70, 0xb7, 0x51, 0xba, 0xca, 0xd0, 0xe7 };
-        aes_mix_columns(pTest);
-        int i = 0;
+        //uint8_t pTest[] = { 0x63, 0x53, 0xe0, 0x8c, 0x09, 0x60, 0xe1, 0x04, 0xcd, 0x70, 0xb7, 0x51, 0xba, 0xca, 0xd0, 0xe7 };
+        //aes_mix_columns(pTest);
+        //int i = 0;
     }
 
     void CryptogramTest::Exit()

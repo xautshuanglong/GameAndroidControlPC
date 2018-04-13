@@ -35,11 +35,12 @@ namespace Shuanglong::Test
         CURLcode res;
         FILE *fp;
         bool openSuccess = true;
-        if ((fopen_s(&fp, "./CurlHttpGetTest.html", "w")) != 0)  // 返回结果用文件存储
-        {
-            openSuccess = false;
-            fp = stdout;
-        }
+        //if ((fopen_s(&fp, "./CurlHttpGetTest.html", "w")) != 0)  // 返回结果用文件存储
+        //{
+        //    openSuccess = false;
+        //    fp = stdout;
+        //}
+        fp = stdout;
 
         struct curl_slist *headers = NULL;
         headers = curl_slist_append(headers, "Accept: Agent-007");
