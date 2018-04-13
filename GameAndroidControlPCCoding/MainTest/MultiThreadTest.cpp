@@ -10,7 +10,9 @@ namespace Shuanglong::Test
 
     // ÷∏’Î Õ∑≈∏®÷˙¿‡
     MultiThreadTest::SingleHelpper::SingleHelpper()
-    {}
+    {
+        mpInstance = new MultiThreadTest();
+    }
 
     MultiThreadTest::SingleHelpper::~SingleHelpper()
     {
@@ -27,10 +29,15 @@ namespace Shuanglong::Test
     MultiThreadTest::~MultiThreadTest()
     {}
 
+    MultiThreadTest* MultiThreadTest::GetInstance()
+    {
+        return mpInstance;
+    }
+
     void MultiThreadTest::Entry()
     {
         std::cout << "----------------------------- MultiThreadTest -----------------------------" << std::endl;
-        mpInstance = new MultiThreadTest();
+
         mpInstance->mpLog = Log::GetInstance();
     }
 }

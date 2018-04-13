@@ -24,6 +24,7 @@ namespace Shuanglong::Test
 
     public:
         ~MultiThreadTest();
+        static MultiThreadTest* GetInstance();
         static void Entry();
 
     private:

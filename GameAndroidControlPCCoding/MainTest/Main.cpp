@@ -38,7 +38,7 @@ int main(int argc, char** argv)
     BOOL retValue = SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, TRUE);
     std::cout << "====================================== Main Testing ======================================" << std::endl;
     Shuanglong::Log *pLog = Shuanglong::Log::GetInstance();
-    pLog->Console(SL_CODE_LOCATION, "LogTest");
+    pLog->Console(SL_CODE_LOCATION, "LogTest tid=%u", GetCurrentThreadId());
 
     //---------------------- Json Testing ----------------------
     Shuanglong::Test::JsonTest::Entry();

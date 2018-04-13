@@ -11,6 +11,7 @@ namespace Shuanglong::Test
 
     StdCppTest::SingleHelpper::SingleHelpper()
     {
+        mpInstance = new StdCppTest();
     }
 
     StdCppTest::SingleHelpper::~SingleHelpper()
@@ -44,12 +45,12 @@ namespace Shuanglong::Test
     void StdCppTest::Entry()
     {
         std::cout << "----------------------------- StdCpp Testing -----------------------------" << std::endl;
-        mpInstance = new StdCppTest();
         mpInstance->mpLog = Log::GetInstance();
 
         //mpInstance->SharedPointerTypedefTest();
-
         //mpInstance->StdStringFormatTest();
+        mpInstance->NestedClassTest();
+
         //mpInstance->StdAsyncFuturePromiseTest(mRetFuture);
         //mpInstance->mpLog->Console(SL_CODE_LOCATION, "After StdAsyncFuturePromiseTest finished");
     }
@@ -132,5 +133,17 @@ namespace Shuanglong::Test
         //} while (status != std::future_status::ready && futureRes.valid());
 
         futureRes = std::async(std::launch::async, asyncTestFunc);// 可能：内部 future 析构导致阻塞
+    }
+
+    void StdCppTest::NestedClassTest()
+    {
+        // inObj 没有父类，InnerClassFuncTest 内部操作将损坏堆栈（待验证）
+        //OuterClass::InnerClass inObj;
+        //inObj.InnerClassFuncTest();
+
+        OuterClass outObj;
+        outObj.OuterClassFuncTest();
+        outObj.mOutPublicInnerObj.InnerClassFuncTest();
+        outObj.OuterClassFuncTest();
     }
 }
