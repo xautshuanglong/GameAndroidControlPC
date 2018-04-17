@@ -49,7 +49,10 @@ namespace Shuanglong::Test
 
         //mpInstance->SharedPointerTypedefTest();
         //mpInstance->StdStringFormatTest();
-        mpInstance->NestedClassTest();
+        //mpInstance->NestedClassTest();
+        //mpInstance->OperatorNewAndDelete();
+        //mpInstance->PlacementNewTest();
+        mpInstance->UnionStructTest();
 
         //mpInstance->StdAsyncFuturePromiseTest(mRetFuture);
         //mpInstance->mpLog->Console(SL_CODE_LOCATION, "After StdAsyncFuturePromiseTest finished");
@@ -145,5 +148,88 @@ namespace Shuanglong::Test
         outObj.OuterClassFuncTest();
         outObj.mOutPublicInnerObj.InnerClassFuncTest();
         outObj.OuterClassFuncTest();
+    }
+
+    void StdCppTest::OperatorNewAndDelete()
+    {
+        std::cout << "sizeof(OverloadNew) = " << sizeof(OverloadNew) << std::endl;
+
+        OverloadNew overloadNewTest;
+        OverloadNew *pOverloadNewTest = new OverloadNew();
+        if (pOverloadNewTest != nullptr)
+        {
+            delete pOverloadNewTest;
+        }
+
+        OverloadNew *pOverloadNewWithStrTest = new(std::string("aaa")) OverloadNew(110);
+        if (pOverloadNewWithStrTest != nullptr)
+        {
+            delete pOverloadNewWithStrTest;
+        }
+
+        // new[] 实际分配内存到底多大？
+        OverloadNew *pOverloadArray1 = new OverloadNew[1];
+        if (pOverloadArray1 != nullptr)
+        {
+            delete[] pOverloadArray1;
+        }
+
+        OverloadNew *pOverloadArray2 = new OverloadNew[2];
+        if (pOverloadArray2 != nullptr)
+        {
+            delete[] pOverloadArray2;
+        }
+
+        OverloadNew *pOverloadArray3 = new OverloadNew[3];
+        if (pOverloadArray3 != nullptr)
+        {
+            delete[] pOverloadArray3;
+        }
+    }
+
+    void StdCppTest::PlacementNewTest()
+    {
+        char pBufferTest[128] = { 0 };
+        std::cout << "_countof(pBufferTest) = " << _countof(pBufferTest) << std::endl;
+        for (int i = 0; i < _countof(pBufferTest); ++i)
+        {
+            pBufferTest[i] = i;
+        }
+
+        OverloadNew *pOverloadNew = new(pBufferTest) OverloadNew();
+        pOverloadNew->VirtualFuncTest();
+
+        std::cout << "sizeof(PlacementNew)= " << sizeof(PlacementNew) << std::endl;
+        PlacementNew  *pPlacementNewObj = new(pBufferTest+sizeof(OverloadNew)) PlacementNew();
+        if (pPlacementNewObj != nullptr)
+        {
+            pPlacementNewObj->~PlacementNew();
+        }
+    }
+
+    void StdCppTest::UnionStructTest()
+    {
+        union EndianTest
+        {
+            int intValue;
+            char charValue[8]; // 占内存大小取决于 数组长度 并以 int 4字节对齐
+        };
+
+        std::cout << "sizeof(EndianTest) = " << sizeof(EndianTest) << std::endl;
+
+        EndianTest endianObj;
+        //endianObj.intValue = 0x00010203;
+        endianObj.charValue[0] = 'A';
+        endianObj.charValue[1] = 'B';
+        endianObj.charValue[2] = 'C';
+        endianObj.charValue[3] = '\0';
+
+        std::ios::fmtflags oldFlags = std::cout.flags();
+        std::cout << "EndianTest.intValue = 0x" << std::hex << std::setw(8) << std::setfill('0')
+            << endianObj.intValue << std::endl
+            << "EndianTest.charValue = " << endianObj.charValue << std::endl;
+
+        std::cout.flags(oldFlags);
+        std::cout << 16 << std::endl;
     }
 }
