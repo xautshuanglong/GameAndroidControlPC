@@ -52,7 +52,8 @@ namespace Shuanglong::Test
         //mpInstance->NestedClassTest();
         //mpInstance->OperatorNewAndDelete();
         //mpInstance->PlacementNewTest();
-        mpInstance->UnionStructTest();
+        //mpInstance->UnionStructTest();
+        mpInstance->RangeBasedForLoopTest();
 
         //mpInstance->StdAsyncFuturePromiseTest(mRetFuture);
         //mpInstance->mpLog->Console(SL_CODE_LOCATION, "After StdAsyncFuturePromiseTest finished");
@@ -231,5 +232,30 @@ namespace Shuanglong::Test
 
         std::cout.flags(oldFlags);
         std::cout << 16 << std::endl;
+    }
+
+    void StdCppTest::RangeBasedForLoopTest()
+    {
+        std::vector<int> a = { 9,8,7,6,5 };
+        for each (int var1 in a)
+        {
+            printf_s("var1 = %d\n", var1);
+        }
+        for (int var2 : a)
+        {
+            printf_s("var2 = %d\n", var2);
+        }
+
+        printf_s("\n");
+
+        int testArray[6] = { 1,2,3,4,5,6 };
+        for each(int test1 in testArray)
+        {
+            printf_s("test1 = %d\n", test1);
+        }
+        for (int test2 : testArray)
+        {
+            printf_s("test2 = %d\n", test2);
+        }
     }
 }

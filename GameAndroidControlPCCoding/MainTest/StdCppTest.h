@@ -35,6 +35,7 @@ namespace Shuanglong::Test
         void OperatorNewAndDelete();
         void PlacementNewTest();
         void UnionStructTest();
+        void RangeBasedForLoopTest();
     };
 
     class OuterClass
