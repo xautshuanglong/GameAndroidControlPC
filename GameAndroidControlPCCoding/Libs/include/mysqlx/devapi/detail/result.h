@@ -74,6 +74,10 @@ class PUBLIC_API Result_detail
   Result_detail(const Result_detail&) = delete;
   Result_detail& operator=(const Result_detail&) = delete;
 
+public:
+
+  struct INTERNAL Impl;
+
 protected:
 
   Result_detail(common::Result_init&);
@@ -87,12 +91,8 @@ protected:
 
   Result_detail& operator=(Result_detail&&);
 
-public:
-
   Result_detail() = default;
   virtual ~Result_detail();
-
-  struct INTERNAL Impl;
 
   Impl& get_impl();
 
@@ -106,18 +106,16 @@ public:
   uint64_t get_affected_rows() const;
   uint64_t get_auto_increment() const;
 
-  using GUID = common::GUID;
-  using DocIdList = internal::List_initializer<const std::vector<GUID>&>;
+  using DocIdList = internal::List_initializer<const std::vector<std::string>&>;
 
-  const GUID& get_document_id() const;
-  DocIdList get_document_ids() const;
+  DocIdList get_generated_ids() const;
 
   // Handling multi-results
 
   bool has_data() const;
   bool next_result();
 
-private:
+protected:
 
   Impl  *m_impl = nullptr;
   bool m_owns_impl = false;
@@ -151,6 +149,8 @@ public:
 
   using WarningList = internal::List_initializer<Array_source<Warning_src>>;
 
+protected:
+
   unsigned    get_warning_count() const;
   Warning     get_warning(size_t pos);
 
@@ -183,7 +183,7 @@ public:
 class PUBLIC_API Column_detail
   : virtual common::Printable
 {
-public:
+protected:
 
   using Impl = common::Column_info<string>;
 
@@ -381,6 +381,14 @@ protected:
   col_count_t     col_count() const;
   const Column&   get_column(col_count_t) const;
   const Columns&  get_columns() const;
+
+  bool next_result()
+  {
+    bool rc = Result_detail::next_result();
+    if (rc)
+      m_cols.init(get_impl());
+    return rc;
+  }
 
   friend iterator;
   friend RowResult;
