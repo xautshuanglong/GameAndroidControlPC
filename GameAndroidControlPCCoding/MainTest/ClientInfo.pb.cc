@@ -7,7 +7,6 @@
 
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/stubs/port.h>
-#include <google/protobuf/stubs/once.h>
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
@@ -19,6 +18,7 @@
 #include "third_party/protobuf/version.h"
 #endif
 // @@protoc_insertion_point(includes)
+
 namespace Shuanglong {
 namespace ProtoBufMsg {
 class ClientInfoDefaultTypeInternal {
@@ -29,14 +29,9 @@ class ClientInfoDefaultTypeInternal {
 }  // namespace ProtoBufMsg
 }  // namespace Shuanglong
 namespace protobuf_ClientInfo_2eproto {
-void InitDefaultsClientInfoImpl() {
+static void InitDefaultsClientInfo() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
   {
     void* ptr = &::Shuanglong::ProtoBufMsg::_ClientInfo_default_instance_;
     new (ptr) ::Shuanglong::ProtoBufMsg::ClientInfo();
@@ -45,9 +40,11 @@ void InitDefaultsClientInfoImpl() {
   ::Shuanglong::ProtoBufMsg::ClientInfo::InitAsDefaultInstance();
 }
 
-void InitDefaultsClientInfo() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsClientInfoImpl);
+::google::protobuf::internal::SCCInfo<0> scc_info_ClientInfo =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsClientInfo}, {}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_ClientInfo.base);
 }
 
 ::google::protobuf::Metadata file_level_metadata[1];
@@ -72,15 +69,14 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
 
 void protobuf_AssignDescriptors() {
   AddDescriptors();
-  ::google::protobuf::MessageFactory* factory = NULL;
   AssignDescriptors(
-      "ClientInfo.proto", schemas, file_default_instances, TableStruct::offsets, factory,
+      "ClientInfo.proto", schemas, file_default_instances, TableStruct::offsets,
       file_level_metadata, NULL, NULL);
 }
 
 void protobuf_AssignDescriptorsOnce() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &protobuf_AssignDescriptors);
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
 }
 
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
@@ -103,8 +99,8 @@ void AddDescriptorsImpl() {
 }
 
 void AddDescriptors() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &AddDescriptorsImpl);
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
 }
 // Force AddDescriptors() to be called at dynamic initialization time.
 struct StaticDescriptorInitializer {
@@ -128,16 +124,14 @@ const int ClientInfo::kOptFieldNumber;
 
 ClientInfo::ClientInfo()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_ClientInfo_2eproto::InitDefaultsClientInfo();
-  }
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_ClientInfo_2eproto::scc_info_ClientInfo.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:Shuanglong.ProtoBufMsg.ClientInfo)
 }
 ClientInfo::ClientInfo(const ClientInfo& from)
   : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _cached_size_(0) {
+      _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   description_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.description().size() > 0) {
@@ -154,7 +148,6 @@ void ClientInfo::SharedCtor() {
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&opt_) -
       reinterpret_cast<char*>(&id_)) + sizeof(opt_));
-  _cached_size_ = 0;
 }
 
 ClientInfo::~ClientInfo() {
@@ -167,9 +160,7 @@ void ClientInfo::SharedDtor() {
 }
 
 void ClientInfo::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  _cached_size_.Set(size);
 }
 const ::google::protobuf::Descriptor* ClientInfo::descriptor() {
   ::protobuf_ClientInfo_2eproto::protobuf_AssignDescriptorsOnce();
@@ -177,17 +168,10 @@ const ::google::protobuf::Descriptor* ClientInfo::descriptor() {
 }
 
 const ClientInfo& ClientInfo::default_instance() {
-  ::protobuf_ClientInfo_2eproto::InitDefaultsClientInfo();
+  ::google::protobuf::internal::InitSCC(&protobuf_ClientInfo_2eproto::scc_info_ClientInfo.base);
   return *internal_default_instance();
 }
 
-ClientInfo* ClientInfo::New(::google::protobuf::Arena* arena) const {
-  ClientInfo* n = new ClientInfo;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
 
 void ClientInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:Shuanglong.ProtoBufMsg.ClientInfo)
@@ -208,7 +192,7 @@ bool ClientInfo::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:Shuanglong.ProtoBufMsg.ClientInfo)
   for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -376,9 +360,7 @@ size_t ClientInfo::ByteSizeLong() const {
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  SetCachedSize(cached_size);
   return total_size;
 }
 
@@ -440,11 +422,11 @@ void ClientInfo::Swap(ClientInfo* other) {
 }
 void ClientInfo::InternalSwap(ClientInfo* other) {
   using std::swap;
-  description_.Swap(&other->description_);
+  description_.Swap(&other->description_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
   swap(id_, other->id_);
   swap(opt_, other->opt_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
 }
 
 ::google::protobuf::Metadata ClientInfo::GetMetadata() const {
@@ -456,5 +438,12 @@ void ClientInfo::InternalSwap(ClientInfo* other) {
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace ProtoBufMsg
 }  // namespace Shuanglong
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Shuanglong::ProtoBufMsg::ClientInfo* Arena::CreateMaybeMessage< ::Shuanglong::ProtoBufMsg::ClientInfo >(Arena* arena) {
+  return Arena::CreateInternal< ::Shuanglong::ProtoBufMsg::ClientInfo >(arena);
+}
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
