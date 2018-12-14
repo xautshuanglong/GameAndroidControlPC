@@ -120,6 +120,9 @@
     <ClInclude Include="Algorithm\AesImpl.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
+    <ClInclude Include="SingletonUtil.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
