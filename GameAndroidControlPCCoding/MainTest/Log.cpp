@@ -6,7 +6,7 @@ namespace Shuanglong
     //volatile bool Log::m_bInitFlag = false;
     //std::mutex Log::m_mutex;
     Log::Helpper Log::helpper;
-    Log* Log::m_mpInstance = nullptr;
+    Log* Log::m_pInstance = nullptr;
     std::once_flag Log::m_instanceFlag;
 
     Log::Log()
@@ -26,7 +26,7 @@ namespace Shuanglong
 
     void Log::init()
     {
-        m_mpInstance = new Log();
+        m_pInstance = new Log();
     }
 
     Log* Log::GetInstance()
@@ -45,7 +45,16 @@ namespace Shuanglong
         //}
         std::call_once(m_instanceFlag, init);
 
-        return m_mpInstance;
+        return m_pInstance;
+    }
+
+    void Log::ClearInstance()
+    {
+        if (m_pInstance)
+        {
+            delete m_pInstance;
+            m_pInstance = nullptr;
+        }
     }
 
     void Log::Console(const char* msgFormat, ...)

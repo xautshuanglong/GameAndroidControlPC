@@ -2,6 +2,10 @@
 
 #include <iostream>
 
+#define VLD_FORCE_ENABLE
+#include <vld/vld.h>
+#include <google/protobuf/stubs/common.h>
+
 #include "Log.h"
 #include <Utils/CodeLocation.h>
 //-------------- GenericUtils --------------
@@ -57,6 +61,7 @@ int main(int argc, char** argv)
     //Shuanglong::Test::StringUtilTest::Entry();
     //Shuanglong::Test::TimeUtilTest::Entry();
     Shuanglong::Test::DirectoryUtilTest::Entry();
+    Shuanglong::Test::DirectoryUtilTest::Exit();
     //Shuanglong::Test::UpPrivilegeTest::Entry();
     //Shuanglong::Test::VersionUtilTest::Entry();
     //Shuanglong::Test::ProcessUtilTest::Entry();
@@ -91,8 +96,12 @@ int main(int argc, char** argv)
 
     getchar();
 
+    Shuanglong::Test::TcpSocketServerTest::Exit();
+    Shuanglong::Test::UdpSocketServerTest::Exit();
+
     SetConsoleCtrlHandler((PHANDLER_ROUTINE)ConsoleEventHandler, FALSE);
 
+    google::protobuf::ShutdownProtobufLibrary(); // VLD ¼ì²âµ½ ProtoBuf ÄÚ´æÐ¹Â©£¨²¹³ä£ºrepeated ÀàÐÍ add_foo --> clear_foo£©
     return 0;
 }
 

@@ -29,6 +29,15 @@ namespace Shuanglong::Test
         //mpInstance->DirectoryUtilTest_GetEnv();
     }
 
+    void DirectoryUtilTest::Exit()
+    {
+        if (mpInstance)
+        {
+            delete mpInstance;
+            mpInstance = nullptr;
+        }
+    }
+
     void DirectoryUtilTest::DirectoryUtilTest_Try()
     {
         char curDirBuffer[512];

@@ -31,6 +31,8 @@ namespace Shuanglong::Test
         if (mpInstance != nullptr)
         {
             mpInstance->StopListen();
+            delete mpInstance;
+            mpInstance = nullptr;
         }
     }
 

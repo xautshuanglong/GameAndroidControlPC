@@ -20,5 +20,14 @@ namespace Shuanglong::Test
 
         std::cout << "---------------------------------- TcpSocketServerTest ----------------------------------" << std::endl;
     }
+
+    void TcpSocketServerTest::Exit()
+    {
+        if (mpInstance)
+        {
+            delete mpInstance;
+            mpInstance = nullptr;
+        }
+    }
 }
 

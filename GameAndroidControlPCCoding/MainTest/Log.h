@@ -19,7 +19,7 @@ namespace Shuanglong
         Log();
         //static volatile bool      m_bInitFlag;
         //static std::mutex         m_mutex;
-        static Log               *m_mpInstance;
+        static Log               *m_pInstance;
         static std::once_flag     m_instanceFlag;
         std::ofstream             m_osFile;
 
@@ -27,6 +27,7 @@ namespace Shuanglong
         ~Log();
 
         static Log* GetInstance();
+        static void ClearInstance();
 
         virtual void Console(const char* msgFormat, ...);
         virtual void Console(CodeLocation location, char* msgFormat, ...);
@@ -46,9 +47,9 @@ namespace Shuanglong
             {}
             ~Helpper()
             {
-                if (m_mpInstance != nullptr)
+                if (m_pInstance != nullptr)
                 {
-                    delete m_mpInstance;
+                    delete m_pInstance;
                 }
             }
         };

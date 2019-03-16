@@ -14,5 +14,6 @@ namespace Shuanglong::Test
     public:
         ~TcpSocketServerTest();
         static void Entry();
+        static void Exit();
     };
 }
