@@ -4,8 +4,8 @@
     <Font name="微软雅黑" size="16" bold="false" italic="false" />
     <Default name="Button" value="normalimage=&quot;file=&apos;button_nor.bmp&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos; hsl=&apos;true&apos;&quot; hotimage=&quot;file=&apos;button_over.bmp&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos; hsl=&apos;true&apos;&quot; pushedimage=&quot;file=&apos;button_down.bmp&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos; hsl=&apos;true&apos; &quot; " />
     <Default name="Slider" value="thumbsize=&quot;10,10&quot; bkimage=&quot;file=&apos;bg.bmp&apos; corner=&apos;6,0,6,0&apos; mask=&apos;#FFFF00FF&apos;&quot; fgimage=&quot;file=&apos;fg.bmp&apos; corner=&apos;6,0,6,0&apos; mask=&apos;#FFFF00FF&apos;&quot; thumbimage=&quot;file=&apos;thumb.bmp&apos; source=&apos;30,0,40,10&apos; mask=&apos;#FFDAEBF9&apos;&quot; thumbhotimage=&quot;file=&apos;thumb.bmp&apos; source=&apos;10,0,20,10&apos; mask=&apos;#FFDAEBF9&apos;&quot; " />
-    <VerticalLayout name="VerticalLayout_Background" height="30" bkcolor="#FFEA679F" bordercolor="#000000FF">
-        <HorizontalLayout name="HorizontalLayout_Caption" height="30" bkcolor="#FF26A6F2" bordercolor="#FF26A6F2">
+    <VerticalLayout name="VerticalLayout_Background" height="30" bkcolor="#FF00FFFF" bordercolor="#FFFF0000">
+        <HorizontalLayout name="HorizontalLayout_Caption" height="30" bkcolor="#FF00E0E0" bordercolor="#FFFF0000">
             <VerticalLayout name="VerticalLayout_Title" width="160" height="30">
                 <Label name="Label_Title" text="ShuanglongTools" float="true" pos="10,0,0,0" width="150" height="30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" />
             </VerticalLayout>
