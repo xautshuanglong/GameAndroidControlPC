@@ -1145,7 +1145,7 @@ namespace DuiLib
 
     void CPaintManagerUI::Invalidate(RECT& rcItem)
     {
-        //::InvalidateRect(m_hWndPaint, &rcItem, FALSE);
+        ::InvalidateRect(m_hWndPaint, &rcItem, FALSE);
     }
 
     bool CPaintManagerUI::AttachDialog(CControlUI* pControl)
