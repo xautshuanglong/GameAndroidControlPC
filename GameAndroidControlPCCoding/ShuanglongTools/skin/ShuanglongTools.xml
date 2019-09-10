@@ -7,7 +7,7 @@
     <VerticalLayout name="VerticalLayout_Background" height="30" bkcolor="#FF00FFFF" bordercolor="#FFFF0000">
         <HorizontalLayout name="HorizontalLayout_Caption" height="30" bkcolor="#FF00E0E0" bordercolor="#FFFF0000">
             <VerticalLayout name="VerticalLayout_Title" width="180" height="30">
-                <Label name="Label_Title" text="ShuanglongTools" float="true" pos="10,0,0,0" width="150" height="30" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" />
+                <Label name="Label_Title" text="ShuanglongTools" float="true" pos="10,1,0,0" width="150" height="27" relativepos="0,0,0,0" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" font="1" />
             </VerticalLayout>
             <VerticalLayout name="VerticalLayout_Empty" height="30" />
             <VerticalLayout name="VerticalLayout_SystemBtn" width="115" height="30">
@@ -17,6 +17,12 @@
                 <Button name="closebtn" float="true" pos="60,0,0,0" width="39" height="19" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;btn_close_normal.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" hotimage="file=&apos;btn_close_highlight.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" pushedimage="file=&apos;btn_close_down.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" />
             </VerticalLayout>
         </HorizontalLayout>
-        <VerticalLayout />
+        <VerticalLayout name="VerticalLayout_MainContent">
+            <TabLayout name="MainTabLayout" width="548" height="301">
+                <Container width="548" height="301" />
+                <Container width="548" height="301" />
+                <Container width="548" height="301" />
+            </TabLayout>
+        </VerticalLayout>
     </VerticalLayout>
 </Window>
