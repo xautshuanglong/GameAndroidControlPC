@@ -111,7 +111,7 @@ namespace DuiLib
         }
 
         if (::IsZoomed(m_hWnd))
-        {	// 最大化时，计算当前显示器最适合宽高度
+        {   // 最大化时，计算当前显示器最适合宽高度
             MONITORINFO oMonitor = {};
             oMonitor.cbSize = sizeof(oMonitor);
             ::GetMonitorInfo(::MonitorFromWindow(*this, MONITOR_DEFAULTTONEAREST), &oMonitor);

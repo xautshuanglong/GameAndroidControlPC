@@ -47,24 +47,24 @@ int APIENTRY WinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
                                              ExceptionHandler::HANDLER_ALL,
                                              MiniDumpNormal, L"", NULL);
 
-    HRSRC findRes = ::FindResource(NULL, MAKEINTRESOURCE(IDR_XML_CONFIG), L"XML");
-    if (findRes != NULL)
-    {
-        DWORD resSize = ::SizeofResource(NULL, findRes);
-        HGLOBAL resGlobal = ::LoadResource(NULL, findRes);
-        LPVOID pBuffer = ::LockResource(resGlobal);
+    //HRSRC findRes = ::FindResource(NULL, MAKEINTRESOURCE(IDR_XML_CONFIG), L"XML");
+    //if (findRes != NULL)
+    //{
+    //    DWORD resSize = ::SizeofResource(NULL, findRes);
+    //    HGLOBAL resGlobal = ::LoadResource(NULL, findRes);
+    //    LPVOID pBuffer = ::LockResource(resGlobal);
 
-        char xml[2560] = { 0 };
-        memcpy_s(xml, 2560, pBuffer, resSize);
-        OutputDebugStringA(xml);
+    //    char xml[2560] = { 0 };
+    //    memcpy_s(xml, 2560, pBuffer, resSize);
+    //    OutputDebugStringA(xml);
 
-        ::FreeResource(resGlobal);
-    }
+    //    ::FreeResource(resGlobal);
+    //}
 
     MainWindow *pMainWin = new MainWindow();
     if (pMainWin != nullptr)
     {
-        pMainWin->CreateDuiWindow(NULL, TEXT("ShuanglongTools"), UI_WNDSTYLE_FRAME&~WS_SYSMENU, WS_CLIPCHILDREN);
+        pMainWin->CreateDuiWindow(NULL, TEXT("ShuanglongTools"), UI_WNDSTYLE_FRAME, UI_WNDSTYLE_EX_FRAME);
         pMainWin->SetIcon(IDI_HORSEWORD);
         pMainWin->CenterWindow();
         pMainWin->ShowWindow(true);

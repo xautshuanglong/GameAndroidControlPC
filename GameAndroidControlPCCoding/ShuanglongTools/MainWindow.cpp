@@ -3,10 +3,10 @@
 
 namespace Shuanglong::UI
 {
-    const TCHAR* const kMainBtnCtrlClose = _T("closebtn");
-    const TCHAR* const kMainBtnCtrlMin = _T("minbtn");
-    const TCHAR* const kMainBtnCtrlMax = _T("maxbtn");
-    const TCHAR* const kMainBtnCtrlRestore = _T("restorebtn");
+    //const TCHAR* const kMainBtnCtrlClose = _T("closebtn");
+    //const TCHAR* const kMainBtnCtrlMin = _T("minbtn");
+    //const TCHAR* const kMainBtnCtrlMax = _T("maxbtn");
+    //const TCHAR* const kMainBtnCtrlRestore = _T("restorebtn");
 
     using namespace DuiLib;
 
@@ -56,25 +56,26 @@ namespace Shuanglong::UI
         return 0;
     }
 
-    LRESULT MainWindow::OnNcPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
+    LRESULT MainWindow::OnNcActivate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
     {
-        CDuiString formatStr;
-        formatStr.Format(TEXT("MainWindow::OnNcPaint uMsg=%u wParam=%u lParam=%u bHandled=%d\n"),
-                         uMsg, wParam, lParam, bHandled);
-        OutputDebugString(formatStr.GetData());
-        //if (wParam == 1)
-        //{
-        //    HWND paintWnd = m_PaintManager.GetPaintWindow();
-        //    PAINTSTRUCT ps = { 0 };
-        //    ::BeginPaint(paintWnd, &ps);
-        //    ::Rectangle(ps.hdc, ps.rcPaint.left, ps.rcPaint.top, ps.rcPaint.right, ps.rcPaint.bottom);
-        //    ::EndPaint(paintWnd, &ps);
-        //    bHandled = FALSE;
-        //}
-
-        bHandled = FALSE;
-        return 0;
+        return (wParam == 0) ? TRUE : FALSE;
     }
+
+    //LRESULT MainWindow::OnNcCalcSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
+    //{
+    //    return FALSE;
+    //}
+
+    //LRESULT MainWindow::OnNcHitTest(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
+    //{
+    //    return HTNOWHERE;
+    //}
+
+    //LRESULT MainWindow::OnNcPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
+    //{
+    //    bHandled = FALSE;
+    //    return 0;
+    //}
 
     void MainWindow::OnPrepare(DuiLib::TNotifyUI& msg)
     {
