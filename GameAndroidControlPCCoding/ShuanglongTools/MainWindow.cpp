@@ -106,20 +106,6 @@ namespace Shuanglong::UI
 
     void MainWindow::OnClick(DuiLib::TNotifyUI& msg)
     {
-        static bool minBtn = true;
-        if (minBtn)
-        {
-            minBtn = false;
-            COptionUI* pControl = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("SettingPage")));
-            pControl->Selected(true);
-        }
-        else
-        {
-            minBtn = true;
-            COptionUI* pControl = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("MainPage")));
-            pControl->Selected(true);
-        }
-
         WindowImplBase::OnClick(msg);
     }
 
