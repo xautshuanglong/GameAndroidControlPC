@@ -18,10 +18,19 @@
             </VerticalLayout>
         </HorizontalLayout>
         <VerticalLayout name="VerticalLayout_MainContent">
+            <Option name="MainPage" text="Option_MainPage" float="true" pos="100,28,0,0" width="100" height="30" bkcolor="#FFFF00FF" selectedtextcolor="#FFFFFF00" selectedbkcolor="#FF00FF00" group="MainTabOption" selected="true" />
+            <Option name="TestPage" text="Option_TestPage" float="true" pos="210,28,0,0" width="100" height="30" bkcolor="#FFFF00FF" selectedtextcolor="#FFFFFF00" selectedbkcolor="#FF00FF00" group="MainTabOption" />
+            <Option name="SettingPage" text="Option_SettingPage" float="true" pos="320,28,0,0" width="100" height="30" bkcolor="#FFFF00FF" selectedtextcolor="#FFFFFF00" selectedbkcolor="#FF00FF00" group="MainTabOption" />
             <TabLayout name="MainTabLayout" width="548" height="301">
-                <Container width="548" height="301" />
-                <Container width="548" height="301" />
-                <Container width="548" height="301" />
+                <VerticalLayout pos="30,30,200,150" bkcolor="#FFFF0000">
+                    <Label text="MainPage text" float="true" pos="10,1,0,0" width="150" height="27" relativepos="0,0,0,0" textcolor="#FF000000" font="1" />
+                </VerticalLayout>
+                <VerticalLayout pos="30,30,200,150" bkcolor="#FF00FF00">
+                    <Label text="TestPage text" float="true" pos="10,1,0,0" width="150" height="27" relativepos="0,0,0,0" textcolor="#FF000000" font="1" />
+                </VerticalLayout>
+                <VerticalLayout pos="30,30,200,150" bkcolor="#FF0000FF">
+                    <Label text="SettingPage text" float="true" pos="10,1,0,0" width="150" height="27" relativepos="0,0,0,0" textcolor="#FF000000" font="1" />
+                </VerticalLayout>
             </TabLayout>
         </VerticalLayout>
     </VerticalLayout>

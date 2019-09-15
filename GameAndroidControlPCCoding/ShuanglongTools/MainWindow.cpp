@@ -8,6 +8,8 @@ namespace Shuanglong::UI
     //const TCHAR* const kMainBtnCtrlMax = _T("maxbtn");
     //const TCHAR* const kMainBtnCtrlRestore = _T("restorebtn");
 
+
+
     using namespace DuiLib;
 
     MainWindow::MainWindow()
@@ -32,6 +34,27 @@ namespace Shuanglong::UI
     {
         //return TEXT("MainWindow.xml");
         return TEXT("ShuanglongTools.xml");
+    }
+
+    void MainWindow::Notify(TNotifyUI& msg)
+    {
+        if (msg.sType == TEXT("selectchanged"))
+        {
+            CDuiString senderName = msg.pSender->GetName();
+            CTabLayoutUI* pControl = static_cast<CTabLayoutUI*>(m_PaintManager.FindControl(_T("MainTabLayout")));
+            if (senderName ==TEXT("MainPage"))
+                pControl->SelectItem(0);
+            else if (senderName == TEXT("TestPage"))
+                pControl->SelectItem(1);
+            else if (senderName == TEXT("SettingPage"))
+                pControl->SelectItem(2);
+        }
+        else if (msg.sType == DUI_MSGTYPE_CLICK)
+        {
+            int i = 0;
+        }
+
+        WindowImplBase::Notify(msg);
     }
 
     void MainWindow::OnFinalMessage(HWND hWnd)
@@ -83,6 +106,20 @@ namespace Shuanglong::UI
 
     void MainWindow::OnClick(DuiLib::TNotifyUI& msg)
     {
+        static bool minBtn = true;
+        if (minBtn)
+        {
+            minBtn = false;
+            COptionUI* pControl = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("SettingPage")));
+            pControl->Selected(true);
+        }
+        else
+        {
+            minBtn = true;
+            COptionUI* pControl = static_cast<COptionUI*>(m_PaintManager.FindControl(_T("MainPage")));
+            pControl->Selected(true);
+        }
+
         WindowImplBase::OnClick(msg);
     }
 
