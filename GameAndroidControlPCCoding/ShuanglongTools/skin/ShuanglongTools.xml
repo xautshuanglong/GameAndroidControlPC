@@ -17,7 +17,7 @@
                 <Button name="closebtn" float="true" pos="60,0,0,0" width="39" height="19" textcolor="#FF000000" disabledtextcolor="#FFA7A6AA" align="center" normalimage="file=&apos;btn_close_normal.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" hotimage="file=&apos;btn_close_highlight.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" pushedimage="file=&apos;btn_close_down.png&apos; corner=&apos;4,2,4,2&apos; fade=&apos;200&apos;" />
             </VerticalLayout>
         </HorizontalLayout>
-        
+
         <HorizontalLayout>
             <Option name="MainPage" text="Option_MainPage" float="true" align="bottom" pos="100,28,0,0" width="100" height="30" bkcolor="#FFFF00FF" selectedtextcolor="#FFFFFF00" selectedbkcolor="#FF00FF00" group="MainTabOption" selected="true" />
             <Option name="TestPage" text="Option_TestPage" float="true" pos="210,28,0,0" width="100" height="30" bkcolor="#FFFF00FF" selectedtextcolor="#FFFFFF00" selectedbkcolor="#FF00FF00" group="MainTabOption" />

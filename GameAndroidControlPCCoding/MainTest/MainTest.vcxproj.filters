@@ -129,6 +129,9 @@
     <ClCompile Include="MySQLConnectionTest.cpp">
       <Filter>Attempt</Filter>
     </ClCompile>
+    <ClCompile Include="RandomNumberTest.cpp">
+      <Filter>Attempt</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Log.h">
@@ -234,6 +237,9 @@
       <Filter>GenericLibTest</Filter>
     </ClInclude>
     <ClInclude Include="MySQLConnectionTest.h">
+      <Filter>Attempt</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomNumberTest.h">
       <Filter>Attempt</Filter>
     </ClInclude>
   </ItemGroup>
