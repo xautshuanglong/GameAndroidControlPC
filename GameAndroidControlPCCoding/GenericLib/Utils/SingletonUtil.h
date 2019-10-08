@@ -13,7 +13,7 @@ namespace Shuanglong
 //    Date       : 2019-10-8
 //    Description: 单例模式的模板实现，简化繁琐的编码。
 //************************************************************************/
-        template <typename T>
+        template <class T>
         class SingletonUtil
         {
         private:
@@ -32,19 +32,22 @@ namespace Shuanglong
                 {
                     std::cout << "DestructHellpper::~DestructHellpper()" << std::endl;
 
-                    //T *pInstance = mpInstance.load(std::memory_order_acquire);
-                    //if (pInstance != nullptr && mpInstance.compare_exchange_strong(pInstance, nullptr))
-                    //{
-                    //    std::cout << "atomic compare successfully ..." std::endl;
-                    //    //delete pInstance;
-                    //    //pInstance = nullptr;
-                    //    //mpInstance.store(pInstance, std::memory_order_release);
-                    //}
-                    //else
-                    //{
-                    //    std::cout << "atomic compare failed ..." std::endl;
-                    //}
+                    T *pInstance = mpInstance.load(std::memory_order_acquire);
+                    if (pInstance != nullptr && mpInstance.compare_exchange_strong(pInstance, nullptr))
+                    {
+                        std::cout << "atomic compare successfully ..." << std::endl;
+                        delete pInstance;
+                        // Testing if pInstance has been set to nullptr
+                        //pInstance = nullptr;
+                        //pInstance = mpInstance.load(std::memory_order_acquire);
+                    }
+                    else
+                    {
+                        std::cout << "atomic compare failed ..." << std::endl;
+                    }
                 }
+
+                inline void DoNothing() {}
             };
             static DestructHellpper mDestructHellper;
 
@@ -59,6 +62,7 @@ namespace Shuanglong
                 T *pInstance = mpInstance.load(std::memory_order_acquire);
                 if (pInstance == nullptr)
                 {
+                    mDestructHellper.DoNothing();
                     std::lock_guard<std::mutex> lock(mInstanceMutex);
                     pInstance = mpInstance.load(std::memory_order_relaxed);
                     if (pInstance == nullptr)
@@ -88,11 +92,11 @@ namespace Shuanglong
             }
         };
 
-        template<typename T>
+        template<class T>
         std::atomic<T*> SingletonUtil<T>::mpInstance = nullptr;
-        template<typename T>
+        template<class T>
         std::mutex      SingletonUtil<T>::mInstanceMutex;
-        template<typename T>
+        template<class T>
         typename SingletonUtil<T>::DestructHellpper SingletonUtil<T>::mDestructHellper;
     }
 }
