@@ -178,7 +178,6 @@
     <ClInclude Include="Json\value.h" />
     <ClInclude Include="Json\version.h" />
     <ClInclude Include="Json\writer.h" />
-    <ClInclude Include="SingletonUtil.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TinyXML2\TinyXML2.h" />
@@ -187,6 +186,7 @@
     <ClInclude Include="Utils\EnvUtil.h" />
     <ClInclude Include="Utils\LogUtil.h" />
     <ClInclude Include="Utils\RegistryUtil.h" />
+    <ClInclude Include="Utils\SingletonUtil.h" />
     <ClInclude Include="Utils\StringUtil.h" />
     <ClInclude Include="Utils\TimeUtil.h" />
   </ItemGroup>

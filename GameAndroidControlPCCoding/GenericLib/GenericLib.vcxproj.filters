@@ -120,7 +120,7 @@
     <ClInclude Include="Algorithm\AesImpl.h">
       <Filter>Algorithm</Filter>
     </ClInclude>
-    <ClInclude Include="SingletonUtil.h">
+    <ClInclude Include="Utils\SingletonUtil.h">
       <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>

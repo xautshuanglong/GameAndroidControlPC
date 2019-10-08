@@ -12,6 +12,7 @@ namespace Shuanglong::Test
 
     WaitMultiEventTest::DestructHellpper::DestructHellpper()
     {
+        std::cout << "WaitMultiEventTest::DestructHellpper::DestructHellpper()" << std::endl;
     }
 
     WaitMultiEventTest::DestructHellpper::~DestructHellpper()

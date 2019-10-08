@@ -6,8 +6,8 @@ namespace Shuanglong::Utils
 {
     std::string DirectoryUtil::GetCurrentDirectoryString()
     {
-        char curDirBuffer[512];
-        ::GetCurrentDirectoryA(512, curDirBuffer);
+        char curDirBuffer[MAX_PATH];
+        ::GetCurrentDirectoryA(MAX_PATH, curDirBuffer);
         return std::string(curDirBuffer);
     }
 
