@@ -4,7 +4,8 @@
 
 namespace Shuanglong::Test
 {
-    class RandomNumberTest : public Utils::SingletonUtil<RandomNumberTest>
+    //class RandomNumberTest : public Utils::SingletonUtil<RandomNumberTest>
+    class RandomNumberTest
     {
     public:
         ~RandomNumberTest();

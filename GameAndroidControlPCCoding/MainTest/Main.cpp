@@ -96,8 +96,10 @@ int main(int argc, char** argv)
     Shuanglong::Test::UdpSocketServerTest::Entry();
 
     //------------------------ Random Number Testing ------------------------
-    Shuanglong::Test::RandomNumberTest::GetInstance()->Entry();
-    Shuanglong::Test::RandomNumberTest::GetInstance()->Exit();
+    //Shuanglong::Test::RandomNumberTest::GetInstance()->Entry();
+    //Shuanglong::Test::RandomNumberTest::GetInstance()->Exit();
+    Shuanglong::Utils::SingletonUtil<Shuanglong::Test::RandomNumberTest>::GetInstance()->Entry();
+    Shuanglong::Utils::SingletonUtil<Shuanglong::Test::RandomNumberTest>::GetInstance()->Exit();
 
     std::cout << "Press any key to exit !" << std::endl;
     getchar();
