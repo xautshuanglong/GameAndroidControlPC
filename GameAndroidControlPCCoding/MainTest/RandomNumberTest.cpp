@@ -25,26 +25,32 @@ namespace Shuanglong::Test
 
     void RandomNumberTest::LinearCongruentialGeneratorTest()
     {
+        srand(1);
         for (int i = 0; i < 100; ++i)
         {
-            if (i + 1 % 10 == 0)
+            std::cout.width(10);
+            std::cout << rand();
+            //std::cout << i;
+            if ((i + 1) % 10 == 0)
             {
                 std::cout << std::endl;
             }
-            std::cout.width(10);
-            std::cout << rand(); //std::cout << i;
         }
 
         std::cout << std::endl << std::endl;
 
+        srand(1);
         for (int i = 0; i < 100; ++i)
         {
-            if (i + 1 % 10 == 0)
+            std::cout.width(10);
+            std::cout << rand();
+            //std::cout << i;
+            if ((i + 1) % 10 == 0)
             {
                 std::cout << std::endl;
             }
-            std::cout.width(10);
-            std::cout << rand(); //std::cout << i;
         }
+
+        std::cout << std::endl << std::endl;
     }
 }
