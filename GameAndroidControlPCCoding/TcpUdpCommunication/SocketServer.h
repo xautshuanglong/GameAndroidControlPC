@@ -39,4 +39,3 @@ namespace Shuanglong::Socket
         static void WSACleanup(void);
     };
 }
-

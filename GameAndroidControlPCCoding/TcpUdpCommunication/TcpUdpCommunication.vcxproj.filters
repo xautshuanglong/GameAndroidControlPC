@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Socket">
+      <UniqueIdentifier>{f1569ea0-574d-49fd-bdcb-ca4abdd71786}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -24,17 +27,20 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TcpSocketServer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TcpUdpDefines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SocketException.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SocketServer.h">
-      <Filter>Header Files</Filter>
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketException.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpSocketServer.h">
+      <Filter>Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="IOCPServer.h">
+      <Filter>Socket</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -44,14 +50,17 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TcpSocketServer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="SocketServer.cpp">
+      <Filter>Socket</Filter>
     </ClCompile>
     <ClCompile Include="SocketException.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Socket</Filter>
     </ClCompile>
-    <ClCompile Include="SocketServer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="TcpSocketServer.cpp">
+      <Filter>Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="IOCPServer.cpp">
+      <Filter>Socket</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
