@@ -27,6 +27,7 @@
 #include "WindowsInfoLookerTest.h"
 #include "CryptogramTest.h"
 #include "MySQLConnectionTest.h"
+#include "MultiThreadTest.h"
 #include "RandomNumberTest.h"
 //------------ LibCurl -------------
 #include "LibcurlHttpTest.h"
@@ -95,11 +96,15 @@ int main(int argc, char** argv)
     Shuanglong::Test::TcpSocketServerTest::Entry();
     Shuanglong::Test::UdpSocketServerTest::Entry();
 
+    //------------------------ Multiple Thread Testing ------------------------
+    Shuanglong::Test::MultiThreadTest::GetInstance()->Entry();
+
     //------------------------ Random Number Testing ------------------------
-    //Shuanglong::Test::RandomNumberTest::GetInstance()->Entry();
-    //Shuanglong::Test::RandomNumberTest::GetInstance()->Exit();
-    Shuanglong::Utils::SingletonUtil<Shuanglong::Test::RandomNumberTest>::GetInstance()->Entry();
-    Shuanglong::Utils::SingletonUtil<Shuanglong::Test::RandomNumberTest>::GetInstance()->Exit();
+    Shuanglong::Test::RandomNumberTest::GetInstance()->Entry();
+    Shuanglong::Test::RandomNumberTest::GetInstance()->Exit();
+
+    //Shuanglong::Utils::SingletonUtil<Shuanglong::Test::RandomNumberTest>::GetInstance()->Entry();
+    //Shuanglong::Utils::SingletonUtil<Shuanglong::Test::RandomNumberTest>::GetInstance()->Exit();
 
     std::cout << "Press any key to exit !" << std::endl;
     getchar();

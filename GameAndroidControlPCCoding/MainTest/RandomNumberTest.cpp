@@ -15,7 +15,7 @@ namespace Shuanglong::Test
     void RandomNumberTest::Entry()
     {
         std::cout << "void RandomNumberTest::Entry()" << std::endl;
-        this->LinearCongruentialGeneratorTest();
+        //this->LinearCongruentialGeneratorTest();
     }
 
     void RandomNumberTest::Exit()

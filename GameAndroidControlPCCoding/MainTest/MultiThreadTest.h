@@ -14,6 +14,9 @@ namespace Shuanglong::Test
         Log*                         mpLog;
         static MultiThreadTest      *mpInstance;
 
+        static int                   mgCountCommon;
+        static std::atomic<int>      mgCountAtomic;
+
         class SingleHelpper
         {
         public:
@@ -25,8 +28,12 @@ namespace Shuanglong::Test
     public:
         ~MultiThreadTest();
         static MultiThreadTest* GetInstance();
-        static void Entry();
+        void Entry();
 
     private:
+        void ThreadCommon_Test();
+        void ThreadAtomic_Test();
+        static void ThreadFunc_Common();
+        static void ThreadFunc_Atomic();
     };
 }
