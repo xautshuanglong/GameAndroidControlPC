@@ -1,8 +1,8 @@
 #pragma once
 
 #include <iostream>
-#include <mutex>
 #include <atomic>
+//#include <mutex>
 
 namespace Shuanglong
 {
@@ -17,7 +17,7 @@ namespace Shuanglong
         class SingletonUtil
         {
         private:
-            static std::mutex      mInstanceMutex;
+            //static std::mutex      mInstanceMutex;
             static std::atomic<T*> mpInstance;
 
             class DestructHellpper
@@ -31,15 +31,11 @@ namespace Shuanglong
                 ~DestructHellpper()
                 {
                     std::cout << "DestructHellpper::~DestructHellpper()" << std::endl;
-
                     T *pInstance = mpInstance.load(std::memory_order_acquire);
                     if (pInstance != nullptr && mpInstance.compare_exchange_strong(pInstance, nullptr))
                     {
-                        std::cout << "atomic compare successfully ..." << std::endl;
+                        //std::cout << "atomic compare successfully ..." << std::endl;
                         delete pInstance;
-                        // Testing if pInstance has been set to nullptr
-                        //pInstance = nullptr;
-                        //pInstance = mpInstance.load(std::memory_order_acquire);
                     }
                     else
                     {
@@ -59,17 +55,21 @@ namespace Shuanglong
 
             static T* GetInstance()
             {
-                T *pInstance = mpInstance.load(std::memory_order_acquire);
+                T *pInstance = mpInstance.load(std::memory_order_relaxed);
                 if (pInstance == nullptr)
                 {
                     mDestructHellper.DoNothing();
-                    std::lock_guard<std::mutex> lock(mInstanceMutex);
-                    pInstance = mpInstance.load(std::memory_order_relaxed);
-                    if (pInstance == nullptr)
-                    {
-                        pInstance = new T();
-                        mpInstance.store(pInstance, std::memory_order_release);
-                    }
+                    mpInstance.compare_exchange_strong(pInstance, new T(), std::memory_order_release);
+                    pInstance = mpInstance.load(std::memory_order_acquire);
+                    std::cout << "SingletonUtil()::GetInstance() == 0x" << pInstance << std::endl;
+
+                    //std::lock_guard<std::mutex> lock(mInstanceMutex);
+                    //pInstance = mpInstance.load(std::memory_order_relaxed);
+                    //if (pInstance == nullptr)
+                    //{
+                    //    pInstance = new T();
+                    //    mpInstance.store(pInstance, std::memory_order_release);
+                    //}
                 }
 
                 return pInstance;
@@ -91,11 +91,10 @@ namespace Shuanglong
                 std::cout << "SingletonUtil()::operator= return reference" << std::endl;
             }
         };
-
+        //template<class T>
+        //std::mutex                                  SingletonUtil<T>::mInstanceMutex;
         template<class T>
-        std::atomic<T*> SingletonUtil<T>::mpInstance = nullptr;
-        template<class T>
-        std::mutex      SingletonUtil<T>::mInstanceMutex;
+        std::atomic<T*>                             SingletonUtil<T>::mpInstance = nullptr;
         template<class T>
         typename SingletonUtil<T>::DestructHellpper SingletonUtil<T>::mDestructHellper;
     }
