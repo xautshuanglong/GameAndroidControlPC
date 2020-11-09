@@ -71,6 +71,10 @@ namespace Shuanglong::Socket
         int errorCode = 0;
         SOCKET retValue = INVALID_SOCKET;
 
+        if (pAddressLen != NULL)
+        {
+            *pAddressLen = 0;
+        }
         retValue = ::accept(mListenSocket, pAddress, pAddressLen);
         if (retValue == INVALID_SOCKET)
         {
@@ -82,13 +86,16 @@ namespace Shuanglong::Socket
     }
 
     int SocketServer::RecvFromSocket(_Out_ char *outBuffer,
-                                      _In_ int bufLen,
-                                      _In_ int flags,
-                                      _Out_ struct sockaddr *pAddress,
-                                      _Out_ int *pAddressLen)
+                                     _In_ int bufLen,
+                                     _In_ int flags,
+                                     _Out_ struct sockaddr *pAddress,
+                                     _Out_ int *pAddressLen)
     {
-        int res = 0;
-        res = ::recvfrom(mListenSocket, outBuffer, bufLen, flags, pAddress, pAddressLen);
+        if (pAddressLen != NULL)
+        {
+            *pAddressLen = 0;
+        }
+        int res = ::recvfrom(mListenSocket, outBuffer, bufLen, flags, pAddress, pAddressLen);
         if (res == 0)
         {// client gracefully closed
         }
@@ -131,7 +138,12 @@ namespace Shuanglong::Socket
 
     void SocketServer::WSAStartup(_In_ WORD wVersionRequested, _Out_ LPWSADATA lpWSAData)
     {
-        ::WSAStartup(wVersionRequested, lpWSAData);
+        int res = ::WSAStartup(wVersionRequested, lpWSAData);
+        if (res != 0)
+        {
+            int errorCode = WSAGetLastError();
+            printf_s("SocketServer.cpp WSAStartup failed errorCode=%d\n", errorCode);
+        }
     }
 
     void SocketServer::WSACleanup()
