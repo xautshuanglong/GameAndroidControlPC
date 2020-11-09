@@ -18,4 +18,5 @@
 #include <tchar.h>
 
 // TODO: reference additional headers your program requires here
+#define _HAS_STD_BYTE 0  // Shuanglong byte ambiguous symbol because of std::c++17 add enum class std::byte
 #include <UIlib.h>

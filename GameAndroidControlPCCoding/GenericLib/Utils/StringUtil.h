@@ -1,6 +1,7 @@
 #pragma once
 #include "../GenericDefines.h"
 
+#include <string>
 #include <vector>
 
 #define SL_STRINGUTIL_BUFFERLEN 1024

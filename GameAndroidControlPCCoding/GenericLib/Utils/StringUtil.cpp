@@ -136,7 +136,8 @@ namespace Shuanglong::Utils
         }
         catch (const std::bad_alloc& e)
         {
-            e.what();
+            const char* pErrMsg = e.what();
+            printf(pErrMsg);
             return std::wstring(L"");
         }
 
@@ -164,7 +165,8 @@ namespace Shuanglong::Utils
         }
         catch (const std::bad_alloc& e)
         {
-            e.what();
+            const char* pErrMsg = e.what();
+            printf(pErrMsg);
             return std::string("");
         }
 
@@ -177,8 +179,12 @@ namespace Shuanglong::Utils
 
     std::string StringUtil::WStringToString(const std::wstring& originalStr)
     {
-        std::wstring_convert<std::codecvt<wchar_t, char, std::mbstate_t>> cvtAnsi(new std::codecvt<wchar_t, char, std::mbstate_t>("chs"));
-        std::string retString = cvtAnsi.to_bytes(originalStr);
+        // (since C++11)
+        // (deprecated in C++17)
+        //std::wstring_convert<std::codecvt<wchar_t, char, std::mbstate_t>> cvtAnsi(new std::codecvt<wchar_t, char, std::mbstate_t>("chs"));
+        //std::string retString = cvtAnsi.to_bytes(originalStr);
+
+        std::string retString = StringUtil::WStringToStringAPI(originalStr);
 
         // UTF-8 ? UNICODE
         //std::wstring_convert<std::codecvt_utf8<wchar_t>> convert;
@@ -190,8 +196,12 @@ namespace Shuanglong::Utils
 
     std::wstring StringUtil::StringToWString(const std::string& originalStr)
     {
-        std::wstring_convert<std::codecvt<wchar_t, char, std::mbstate_t>> cvtAnsi(new std::codecvt<wchar_t, char, std::mbstate_t>("chs"));
-        std::wstring retString = cvtAnsi.from_bytes(originalStr);
+        // (since C++11)
+        // (deprecated in C++17)
+        //std::wstring_convert<std::codecvt<wchar_t, char, std::mbstate_t>> cvtAnsi(new std::codecvt<wchar_t, char, std::mbstate_t>("chs"));
+        //std::wstring retString = cvtAnsi.from_bytes(originalStr);
+
+        std::wstring retString = StringUtil::StringToWStringAPI(originalStr);
 
         return retString;
     }
