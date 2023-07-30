@@ -4,7 +4,7 @@
 
 namespace Shuanglong::Utils
 {
-    CodeLocation::CodeLocation(char* fileName, char* funcName, int lineNumber)
+    CodeLocation::CodeLocation(const char* fileName, const char* funcName, int lineNumber)
     {
         m_strFileName = fileName;
         m_strFuncName = funcName;

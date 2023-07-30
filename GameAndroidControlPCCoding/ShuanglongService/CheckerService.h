@@ -8,12 +8,12 @@ namespace Shuanglong
         class CheckerService : public ServiceBase
         {
         public:
-            CheckerService(PTSTR serviceName,
-                          PTSTR pstrDisplayName,
+            CheckerService(PCTSTR serviceName,
+                          PCTSTR pstrDisplayName,
                           DWORD dwStartType,
-                          PTSTR pstrDependencies,
-                          PTSTR pstrAccount,
-                          PTSTR pstrPassword,
+                          PCTSTR pstrDependencies,
+                          PCTSTR pstrAccount,
+                          PCTSTR pstrPassword,
                           BOOL canStop = TRUE,
                           BOOL canShutdown = TRUE,
                           BOOL canPauseContinue = FALSE);

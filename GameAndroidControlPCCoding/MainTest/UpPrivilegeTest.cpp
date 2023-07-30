@@ -29,7 +29,7 @@ namespace Shuanglong::Test
         return IsWindowsVersionOrGreater(5, 0, 1);
     }
     //检查并根据系统版本选择打开程序方式  
-    void UpPrivilegeTest::ShellExecuteExOpen(LPWSTR appName, LPWSTR appPath)
+    void UpPrivilegeTest::ShellExecuteExOpen(LPCWSTR appName, LPCWSTR appPath)
     {
         if (IsOsVersionVistaOrGreater())
         {

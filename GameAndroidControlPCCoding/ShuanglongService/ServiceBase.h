@@ -17,22 +17,22 @@ namespace Shuanglong
 
         private:
             DWORD                      mServiceStartType;
-            PTSTR                      mServiceName;
-            PTSTR                      mServiceDisplayName;
-            PTSTR                      mServiceDependencies;
-            PTSTR                      mServiceAccount;
-            PTSTR                      mServicePassword;
+            PCTSTR                     mServiceName;
+            PCTSTR                     mServiceDisplayName;
+            PCTSTR                     mServiceDependencies;
+            PCTSTR                     mServiceAccount;
+            PCTSTR                     mServicePassword;
             SERVICE_STATUS             mServiceStatus;
             SERVICE_STATUS_HANDLE      mServiceStatusHandle;
             static ServiceList         mServices;
 
         public:
-            ServiceBase(PTSTR serviceName,
-                        PTSTR pstrDisplayName,
+            ServiceBase(PCTSTR serviceName,
+                        PCTSTR pstrDisplayName,
                         DWORD dwStartType,
-                        PTSTR pstrDependencies,
-                        PTSTR pstrAccount,
-                        PTSTR pstrPassword,
+                        PCTSTR pstrDependencies,
+                        PCTSTR pstrAccount,
+                        PCTSTR pstrPassword,
                         BOOL canStop = TRUE,
                         BOOL canShutdown = TRUE,
                         BOOL canPauseContinue = FALSE);
@@ -60,8 +60,8 @@ namespace Shuanglong
             void Shutdown();
 
             void SetServiceStatus(DWORD dwCurrentState, DWORD dwWin32ExitCode = NO_ERROR, DWORD dwWaitHint = 0);
-            void WriteEventLogEntry(PTSTR pszMessage, WORD wType);
-            void WriteErrorLogEntry(PTSTR pszFunction, DWORD dwError = GetLastError());
+            void WriteEventLogEntry(PCTSTR pszMessage, WORD wType);
+            void WriteErrorLogEntry(PCTSTR pszFunction, DWORD dwError = GetLastError());
 
             static void  WINAPI ServiceMainEntry(DWORD dwArgc, PTSTR *pArgv);
             static DWORD WINAPI ServiceCtrlHandlerEx(DWORD  dwControl, DWORD  dwEventType, LPVOID lpEventData, LPVOID lpContext);

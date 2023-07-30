@@ -45,30 +45,30 @@ namespace Shuanglong
 
         public:
             ~LogUtil();
-            static void Console(char *fmt, ...);
-            static void Console(CodeLocation location, char *fmt, ...);
+            static void Console(const char *fmt, ...);
+            static void Console(CodeLocation location, const char *fmt, ...);
 
             static void OutputDebug(char *fmt, ...);
-            static void OutputDebug(CodeLocation location, char *fmt, ...);
+            static void OutputDebug(CodeLocation location, const char *fmt, ...);
 
             static void Init(LogLevelType level);
             static void InitLogCallback(LogUtilCallback logCallback);
             static void InitLogCallback(LogUtilCallbackExt logCallback);
 
-            static void Debug(char *fmt, ...);
-            static void Debug(CodeLocation location, char *fmt, ...);
+            static void Debug(const char *fmt, ...);
+            static void Debug(CodeLocation location, const char *fmt, ...);
 
-            static void Info(char *fmt, ...);
-            static void Info(CodeLocation location, char *fmt, ...);
+            static void Info(const char *fmt, ...);
+            static void Info(CodeLocation location, const char *fmt, ...);
 
-            static void Warn(char *fmt, ...);
-            static void Warn(CodeLocation location, char *fmt, ...);
+            static void Warn(const char *fmt, ...);
+            static void Warn(CodeLocation location, const char *fmt, ...);
 
-            static void Error(char *fmt, ...);
-            static void Error(CodeLocation location, char *fmt, ...);
+            static void Error(const char *fmt, ...);
+            static void Error(CodeLocation location, const char *fmt, ...);
 
-            static void Fatal(char *fmt, ...);
-            static void Fatal(CodeLocation location, char *fmt, ...);
+            static void Fatal(const char *fmt, ...);
+            static void Fatal(CodeLocation location, const char *fmt, ...);
 
             static std::string ConvertToString(std::wstring wstring);
         private:

@@ -20,7 +20,7 @@ namespace Shuanglong::Utils
     {
     }
 
-    void LogUtil::Console(char *fmt, ...)
+    void LogUtil::Console(const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -32,7 +32,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Console(CodeLocation location, char *fmt, ...)
+    void LogUtil::Console(CodeLocation location, const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -60,7 +60,7 @@ namespace Shuanglong::Utils
         OutputDebugStringA(strMsg.c_str());
     }
 
-    void LogUtil::OutputDebug(CodeLocation location, char *fmt, ...)
+    void LogUtil::OutputDebug(CodeLocation location, const char *fmt, ...)
     {
         if (mLevel > LOG_LEVEL_DEBUG)
         {
@@ -91,7 +91,7 @@ namespace Shuanglong::Utils
         mpLogCallbackExt = logCallback;
     }
 
-    void LogUtil::Debug(char *fmt, ...)
+    void LogUtil::Debug(const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -102,7 +102,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Debug(CodeLocation location, char *fmt, ...)
+    void LogUtil::Debug(CodeLocation location, const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_DEBUG)
         {
@@ -113,7 +113,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Warn(char *fmt, ...)
+    void LogUtil::Warn(const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_WARN)
         {
@@ -124,7 +124,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Warn(CodeLocation location, char *fmt, ...)
+    void LogUtil::Warn(CodeLocation location, const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_WARN)
         {
@@ -135,7 +135,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Info(char *fmt, ...)
+    void LogUtil::Info(const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_INFO)
         {
@@ -146,7 +146,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Info(CodeLocation location, char *fmt, ...)
+    void LogUtil::Info(CodeLocation location, const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_INFO)
         {
@@ -157,7 +157,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Error(char *fmt, ...)
+    void LogUtil::Error(const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_ERROR)
         {
@@ -168,7 +168,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Error(CodeLocation location, char *fmt, ...)
+    void LogUtil::Error(CodeLocation location, const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_ERROR)
         {
@@ -179,7 +179,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Fatal(char *fmt, ...)
+    void LogUtil::Fatal(const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_FATAL)
         {
@@ -190,7 +190,7 @@ namespace Shuanglong::Utils
         }
     }
 
-    void LogUtil::Fatal(CodeLocation location, char *fmt, ...)
+    void LogUtil::Fatal(CodeLocation location, const char *fmt, ...)
     {
         if (mLevel <= LOG_LEVEL_FATAL)
         {

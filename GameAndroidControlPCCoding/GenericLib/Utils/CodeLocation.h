@@ -22,7 +22,7 @@ namespace Shuanglong
             int m_nLineNumber;               // ÐÐºÅ
 
         public:
-            CodeLocation(char* fileName, char* funcName, int lineNumber);
+            CodeLocation(const char* fileName, const char* funcName, int lineNumber);
             ~CodeLocation();
 
             int GetLineNumber();

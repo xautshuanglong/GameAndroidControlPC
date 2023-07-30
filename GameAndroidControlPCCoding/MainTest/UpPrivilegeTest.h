@@ -8,7 +8,7 @@ namespace Shuanglong::Test
     {
     private:
         UpPrivilegeTest();
-        Log* mpLog;
+        Log* mpLog = nullptr;
 
     public:
         ~UpPrivilegeTest();
@@ -17,6 +17,6 @@ namespace Shuanglong::Test
         static void Entry();
 
         bool IsOsVersionVistaOrGreater();
-        void ShellExecuteExOpen(LPWSTR appName, LPWSTR appPath);
+        void ShellExecuteExOpen(LPCWSTR appName, LPCWSTR appPath);
     };
 }

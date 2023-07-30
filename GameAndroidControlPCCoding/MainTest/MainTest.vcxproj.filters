@@ -93,18 +93,6 @@
     <ClCompile Include="StdStlTest.cpp">
       <Filter>Attempt</Filter>
     </ClCompile>
-    <ClCompile Include="SteamShared\DataUtil.cpp">
-      <Filter>SteamShared</Filter>
-    </ClCompile>
-    <ClCompile Include="SteamShared\lodepng.cpp">
-      <Filter>SteamShared</Filter>
-    </ClCompile>
-    <ClCompile Include="SteamShared\Matrices.cpp">
-      <Filter>SteamShared</Filter>
-    </ClCompile>
-    <ClCompile Include="SteamShared\pathtools.cpp">
-      <Filter>SteamShared</Filter>
-    </ClCompile>
     <ClCompile Include="MD5Test.cpp">
       <Filter>GenericLibTest</Filter>
     </ClCompile>
@@ -131,6 +119,18 @@
     </ClCompile>
     <ClCompile Include="RandomNumberTest.cpp">
       <Filter>Attempt</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamShared\DataUtil.cpp">
+      <Filter>SteamShared</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamShared\lodepng.cpp">
+      <Filter>SteamShared</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamShared\Matrices.cpp">
+      <Filter>SteamShared</Filter>
+    </ClCompile>
+    <ClCompile Include="SteamShared\pathtools.cpp">
+      <Filter>SteamShared</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -197,24 +197,6 @@
     <ClInclude Include="StdStlTest.h">
       <Filter>Attempt</Filter>
     </ClInclude>
-    <ClInclude Include="SteamShared\compat.h">
-      <Filter>SteamShared</Filter>
-    </ClInclude>
-    <ClInclude Include="SteamShared\DataUtil.h">
-      <Filter>SteamShared</Filter>
-    </ClInclude>
-    <ClInclude Include="SteamShared\lodepng.h">
-      <Filter>SteamShared</Filter>
-    </ClInclude>
-    <ClInclude Include="SteamShared\Matrices.h">
-      <Filter>SteamShared</Filter>
-    </ClInclude>
-    <ClInclude Include="SteamShared\pathtools.h">
-      <Filter>SteamShared</Filter>
-    </ClInclude>
-    <ClInclude Include="SteamShared\Vectors.h">
-      <Filter>SteamShared</Filter>
-    </ClInclude>
     <ClInclude Include="MD5Test.h">
       <Filter>GenericLibTest</Filter>
     </ClInclude>
@@ -241,6 +223,24 @@
     </ClInclude>
     <ClInclude Include="RandomNumberTest.h">
       <Filter>Attempt</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\compat.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\DataUtil.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\lodepng.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\Matrices.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\pathtools.h">
+      <Filter>SteamShared</Filter>
+    </ClInclude>
+    <ClInclude Include="SteamShared\Vectors.h">
+      <Filter>SteamShared</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

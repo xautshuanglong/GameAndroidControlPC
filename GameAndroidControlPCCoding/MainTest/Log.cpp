@@ -70,7 +70,7 @@ namespace Shuanglong
         }
     }
 
-    void Log::Console(CodeLocation location, char* msgFormat, ...)
+    void Log::Console(CodeLocation location, const char* msgFormat, ...)
     {
         if (SL_DEBUG_ENABLE)
         {
@@ -97,7 +97,7 @@ namespace Shuanglong
         }
     }
 
-    void Log::WriteFile(CodeLocation location, char* msgFormat, ...)
+    void Log::WriteFile(CodeLocation location, const char* msgFormat, ...)
     {
         if (m_osFile.is_open())
         {

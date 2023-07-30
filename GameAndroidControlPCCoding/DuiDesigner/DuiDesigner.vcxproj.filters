@@ -14,16 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
     <Filter Include="tinyxml">
-      <UniqueIdentifier>{89bd5207-ace3-4ba4-a124-3b0a2cdacefa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="duilib">
-      <UniqueIdentifier>{556eb699-f57d-4c9b-be50-14495b04cbfd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="duilib\Debug">
-      <UniqueIdentifier>{7f10a984-3e26-4602-8117-3fe6874c51f9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="duilib\Release">
-      <UniqueIdentifier>{687bfa44-c25f-4a14-83bd-aa596407f80f}</UniqueIdentifier>
+      <UniqueIdentifier>{a6864374-ed29-41bf-b8d2-5fd08015d97c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +37,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DialogSaveAsName.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogSkinFileNew.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DialogTemplateOpen.cpp">
@@ -79,6 +73,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="MultiUITracker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertiesWnd.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="PropertyTabLayoutUI.cpp">
@@ -128,12 +125,6 @@
     </ClCompile>
     <ClCompile Include="third_party\tinyxml\tinyxmlparser.cpp">
       <Filter>tinyxml</Filter>
-    </ClCompile>
-    <ClCompile Include="PropertiesWnd.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="DialogSkinFileNew.cpp">
-      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -441,22 +432,8 @@
       <Filter>资源文件</Filter>
     </None>
     <None Include="DuiDesigner.reg" />
-    <None Include="third_party\duilib\Debug\DuiLib.dll">
-      <Filter>duilib\Debug</Filter>
-    </None>
-    <None Include="third_party\duilib\Release\DuiLib.dll">
-      <Filter>duilib\Release</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="third_party\duilib\Debug\DuiLib.lib">
-      <Filter>duilib\Debug</Filter>
-    </Library>
-    <Library Include="third_party\duilib\Release\DuiLib.lib">
-      <Filter>duilib\Release</Filter>
-    </Library>
   </ItemGroup>
 </Project>

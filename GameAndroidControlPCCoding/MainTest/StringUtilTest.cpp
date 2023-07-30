@@ -68,7 +68,7 @@ namespace Shuanglong::Test
         mpLog->Console(SL_CODE_LOCATION, "StringUtil.FormatWString: %s", Utils::StringUtil::WStringToString(retString).c_str());
     }
 
-    void StringUtilTest::StringUtilTest_FormatArguments(char *format, ...)
+    void StringUtilTest::StringUtilTest_FormatArguments(const char *format, ...)
     {
         std::cout << std::endl << "-------------------------------- StringUtilTest_FormatArguments --------------------------------" << std::endl;
         va_list argList;
@@ -78,7 +78,7 @@ namespace Shuanglong::Test
         std::cout << "StringUtil::FormatArguments " << retString.c_str() << std::endl;
     }
 
-    void StringUtilTest::StringUtilTest_FormatArgumentsW(wchar_t *format, ...)
+    void StringUtilTest::StringUtilTest_FormatArgumentsW(const wchar_t *format, ...)
     {
         std::cout << std::endl << "-------------------------------- StringUtilTest_FormatArgumentsW --------------------------------" << std::endl;
         va_list argList;

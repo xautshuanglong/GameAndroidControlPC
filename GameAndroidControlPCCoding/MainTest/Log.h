@@ -30,9 +30,9 @@ namespace Shuanglong
         static void ClearInstance();
 
         virtual void Console(const char* msgFormat, ...);
-        virtual void Console(CodeLocation location, char* msgFormat, ...);
+        virtual void Console(CodeLocation location, const char* msgFormat, ...);
         virtual void WriteFile(const char* msgFormat, ...);
-        virtual void WriteFile(CodeLocation location, char* msgFormat, ...);
+        virtual void WriteFile(CodeLocation location, const char* msgFormat, ...);
 
     private:
         static void init();

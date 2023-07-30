@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MainTest", "MainTest\MainTest.vcxproj", "{50D8D01C-21FA-46D9-BCC6-58BFD0FF3816}"
 EndProject
@@ -99,11 +99,10 @@ Global
 		{83344E5F-FB53-43A8-BA2F-4B2740854B9D}.Release|x64.Build.0 = Release|x64
 		{83344E5F-FB53-43A8-BA2F-4B2740854B9D}.Release|x86.ActiveCfg = Release|Win32
 		{83344E5F-FB53-43A8-BA2F-4B2740854B9D}.Release|x86.Build.0 = Release|Win32
-		{8CC28A8B-CD88-44A7-8994-066CCD8938CB}.Debug|x64.ActiveCfg = Debug|Win32
+		{8CC28A8B-CD88-44A7-8994-066CCD8938CB}.Debug|x64.ActiveCfg = Debug|x64
 		{8CC28A8B-CD88-44A7-8994-066CCD8938CB}.Debug|x86.ActiveCfg = Debug|Win32
 		{8CC28A8B-CD88-44A7-8994-066CCD8938CB}.Debug|x86.Build.0 = Debug|Win32
-		{8CC28A8B-CD88-44A7-8994-066CCD8938CB}.Release|x64.ActiveCfg = Release|Win32
-		{8CC28A8B-CD88-44A7-8994-066CCD8938CB}.Release|x64.Build.0 = Release|Win32
+		{8CC28A8B-CD88-44A7-8994-066CCD8938CB}.Release|x64.ActiveCfg = Release|x64
 		{8CC28A8B-CD88-44A7-8994-066CCD8938CB}.Release|x86.ActiveCfg = Release|Win32
 		{8CC28A8B-CD88-44A7-8994-066CCD8938CB}.Release|x86.Build.0 = Release|Win32
 		{1D42ACE1-8ED4-4D80-9FAB-C0689F5098BC}.Debug|x64.ActiveCfg = Debug|x64

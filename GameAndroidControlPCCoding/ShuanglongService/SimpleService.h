@@ -14,12 +14,12 @@ namespace Shuanglong
         class SimpleService : public ServiceBase
         {
         public:
-            SimpleService(PTSTR serviceName,
-                          PTSTR pstrDisplayName,
+            SimpleService(PCTSTR serviceName,
+                          PCTSTR pstrDisplayName,
                           DWORD dwStartType,
-                          PTSTR pstrDependencies,
-                          PTSTR pstrAccount,
-                          PTSTR pstrPassword,
+                          PCTSTR pstrDependencies,
+                          PCTSTR pstrAccount,
+                          PCTSTR pstrPassword,
                           BOOL canStop = TRUE,
                           BOOL canShutdown = TRUE,
                           BOOL canPauseContinue = FALSE);

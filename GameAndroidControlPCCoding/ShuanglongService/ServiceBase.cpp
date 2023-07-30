@@ -7,7 +7,7 @@ namespace Shuanglong::Service
 {
     ServiceList ServiceBase::mServices;
 
-    ServiceBase::ServiceBase(PTSTR serviceName, PTSTR pstrDisplayName, DWORD dwStartType, PTSTR pstrDependencies, PTSTR pstrAccount, PTSTR pstrPassword, BOOL canStop /* = TRUE */, BOOL canShutdown /* = TRUE */, BOOL canPauseContinue /* = FALSE */)
+    ServiceBase::ServiceBase(PCTSTR serviceName, PCTSTR pstrDisplayName, DWORD dwStartType, PCTSTR pstrDependencies, PCTSTR pstrAccount, PCTSTR pstrPassword, BOOL canStop /* = TRUE */, BOOL canShutdown /* = TRUE */, BOOL canPauseContinue /* = FALSE */)
     {
         mServiceName = (serviceName == NULL) ? TEXT("TempServiceName") : serviceName;
         mServiceDisplayName = (pstrDisplayName == NULL) ? TEXT("TempServiceDisplayName") : pstrDisplayName;
@@ -53,7 +53,7 @@ namespace Shuanglong::Service
 
         for (ServiceBase* pServiceItem : mServices)
         {
-            pServiceTableEntries[index].lpServiceName = pServiceItem->mServiceName;
+            pServiceTableEntries[index].lpServiceName = const_cast<LPWSTR>(pServiceItem->mServiceName);
             pServiceTableEntries[index].lpServiceProc = ServiceBase::ServiceMainEntry;
             ++index;
         }
@@ -237,7 +237,7 @@ namespace Shuanglong::Service
         ::SetServiceStatus(mServiceStatusHandle, &mServiceStatus);
     }
 
-    void ServiceBase::WriteEventLogEntry(PTSTR pszMessage, WORD wType)
+    void ServiceBase::WriteEventLogEntry(PCTSTR pszMessage, WORD wType)
     {
         HANDLE hEventSource = NULL;
         LPCWSTR lpszStrings[2] = { NULL, NULL };
@@ -263,7 +263,7 @@ namespace Shuanglong::Service
         }
     }
 
-    void ServiceBase::WriteErrorLogEntry(PTSTR pszFunction, DWORD dwError /* = GetLastError() */)
+    void ServiceBase::WriteErrorLogEntry(PCTSTR pszFunction, DWORD dwError /* = GetLastError() */)
     {
         wchar_t szMessage[260];
         StringCchPrintf(szMessage, ARRAYSIZE(szMessage), L"%s failed : 0x%08lx (%U)", pszFunction, dwError, dwError);

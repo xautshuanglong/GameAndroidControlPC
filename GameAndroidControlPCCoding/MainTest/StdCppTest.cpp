@@ -237,10 +237,11 @@ namespace Shuanglong::Test
     void StdCppTest::RangeBasedForLoopTest()
     {
         std::vector<int> a = { 9,8,7,6,5 };
-        for each (int var1 in a)
-        {
-            printf_s("var1 = %d\n", var1);
-        }
+        // 록폴
+        //for each (int var1 in a)
+        //{
+        //    printf_s("var1 = %d\n", var1);
+        //}
         for (int var2 : a)
         {
             printf_s("var2 = %d\n", var2);
@@ -249,10 +250,11 @@ namespace Shuanglong::Test
         printf_s("\n");
 
         int testArray[6] = { 1,2,3,4,5,6 };
-        for each(int test1 in testArray)
-        {
-            printf_s("test1 = %d\n", test1);
-        }
+        // 록폴
+        //for each(int test1 in testArray)
+        //{
+        //    printf_s("test1 = %d\n", test1);
+        //}
         for (int test2 : testArray)
         {
             printf_s("test2 = %d\n", test2);

@@ -25,7 +25,7 @@ namespace Shuanglong::Utils
         StringUtil(StringUtil&& originalObj) = delete;
 
     private:
-        static char StringUtil::GetHexChar(const char charByte, bool bUpperCase);
+        static char GetHexChar(const char charByte, bool bUpperCase);
 
     public:
         std::string static FormatString(const char* format, ...);
